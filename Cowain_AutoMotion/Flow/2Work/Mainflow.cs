@@ -250,6 +250,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                         LogAuto.Notify("Z移动到夹取位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.movePoint(EnumParam_Point.物料夹取Z位);
                         m_nStep = (int)Mainflow_WorkStep.电夹爪夹;
+
                     }
                     break;
                 case Mainflow_WorkStep.电夹爪夹:
