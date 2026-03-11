@@ -1,0 +1,39 @@
+{
+  "AssyCheckURL": "http://10.33.30.56:8080/api/Assy/AssyCheck",
+  "AssyGoURL": "http://10.33.30.56:8080/api/Assy/AssyGo",
+  "GetCmdResURL": "http://10.33.30.56:8080/api/Assy/GetCmdResult",
+  "ColTestDataURL": "http://10.33.30.56:8080/api/Assy/CollectTestData",
+  "AssyGoCode": "REC",
+  "StrStationID": "ITKS_E03-4FT-01A_1_STATION111",
+  "StrMachineID": "ITJX_A07-4FT-01B_1_STATION9",
+  "StrURL": "http://10.103.10.203/MesForMacUrl/MainWebFrom.aspx",
+  "StrGetSNDat": "CMD=ATT&P=RFID_GET_SN",
+  "StrCheckSNDat": "CMD=UOP",
+  "StrLinkSNDat": "CMD=ADD",
+  "StrGlueSNFront": "0QUV435F12+230208E01M+000327+230808+0033G",
+  "StrGlueSNBack": "0QUV435F12+1234567890+123456+230501+0033G",
+  "StrGlueReplceTime": [
+    "20230428083618",
+    ""
+  ],
+  "StrPurgeTime": [
+    "",
+    ""
+  ],
+  "StrLine": "D1-3F-H26-OFF-L02",
+  "StrMacName": "ITJX_A07-1FT-01A_1_",
+  "StrLocalPath": "E:\\\\IMG",
+  "StrRemotepath": "abg_pic",
+  "StrImgUrl": "http://10.103.6.30/UploadFileData/abgService?wsdl",
+  "StrStationName": "AE_38",
+  "StrCopyLoPath": "E:\\IMG",
+  "StrCopyRePath": "Y:",
+  "StrVersion": "CowainAutoDispenser V2.1",
+  "StrMiniIP": "169.254.1.10",
+  "StrMiniPort": "1111",
+  "StrMesIP": "10.33.30.56",
+  "StrUser": "Cowain",
+  "StrPassWord": "cowain",
+  "StrPDCAImagePath": "smb://169.254.1.12/IMG/",
+  "StrOp": "AUTOH38"
+}

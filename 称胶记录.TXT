@@ -1,0 +1,108 @@
+一。frm_Recipe
+ 1.bool GantryStatus = true;      ok
+ 2.bool RecheckWeight = false     ok
+ 3.Stopwatch sw = new Stopwatch();  ok
+ 4. System.Timers.Timer m_tmDelay;
+   private void OnTimedEvent_DelayTimeOut(object source, System.Timers.ElapsedEventArgs e) { m_tmDelay.Enabled = false; }  ok
+ 5.double resultGlue = 0;      ok
+ 6. string str = "";
+    decimal result = 0;        ok
+ 7. string str1 = "";
+    decimal result1 = 0;       ok
+
+ 8.MachineStatusEumn.手动点胶中  涉及的内容还未修改。
+
+
+
+二、1AutoMachine 文件夹
+  新增   DispenserDataCheck.cs文件    ok
+  
+
+
+三、clsDispenserAuto.cs
+ 1.public IScalesClass m_pScalesFunction_Select = null;     ok
+ 2.public IScalesClass m_pScalesFunction1 = null;           ok
+ 3.public IScalesClass m_pScalesFunction2 = null;           ok
+ 4.public clsAutoWeighGlue[] m_AutoWeighGlue = new clsAutoWeighGlue[4]   ok
+ 5. string strStation;     ok
+
+
+
+四、MachineDataDefine.cs 文件 中 class  MachineControl
+ 1.public bool Button_Stop = false;                   ok
+ 2.public bool Button_Stop_IO = false;                ok
+
+
+
+五、class  GantryParm: JsonHelper 中
+1.  public ComPortData ElectronicBalance = new ComPortData();   ok
+
+
+六、 clsDispenserStAuto.cs文件中
+1.public IScalesClass m_pScalesFunction11 = null, m_pScalesFunction12 = null, pSelect_m_pScalesFunction = null;    ok
+
+
+1364  、
+
+HomeForm   
+尺寸变更：340  
+chart +230   右面+110
+
+电子秤参数
+"ElectronicBalance":{"nLaser":"","bEnable":true,"strPortName":"COM3","iBaudRate":9600,"iDataBit":8,"StopBits":1,"Parity":0},
+
+  "ElectronicBalance": {
+    "nLaser": "",
+    "bEnable": true,
+    "strPortName": "COM6",
+    "iBaudRate": 9600,
+    "iDataBit": 8,
+    "StopBits": 1,
+    "Parity": 0
+  },
+
+
+
+
+
+
+            #region  加入啟用之Station
+
+            m_iDisStID = 0;
+            combo_StationID.Items.Clear();
+           
+
+            clsDispenserAuto pDis = pMachine.m_DispenserAuto;
+            for (int i = 0; i < pDis.m_DispenserSt.Length; i++)
+            {
+                if (pDis.m_DispenserSt[i].GetStationEnable())
+                {
+                    string strStation = "Station_" + (i + 1).ToString();
+                    combo_StationID.Items.Add(strStation);
+                   
+                }
+            }
+            combo_StationID.SelectedIndex = m_iDisStID;
+            
+            label_DispenserID.Text = "St ID: " + (m_iDisStID + 1).ToString();
+            #endregion
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

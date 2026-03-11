@@ -1,0 +1,1183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <Paramter>
+    <Language>1</Language>
+  </Paramter>
+  <Language>
+    <Z值太低有撞针危险请重新确认校针补偿值 CN="Z值太低，有撞针危险，请重新确认校针补偿值！" UK="If the Z value is too low, there is a danger of hitting a needle, please reconfirm!" VN="Nếu giá trị Z quá thấp, có nguy cơ đâm vào kim, vui lòng xác nhận lại!" />
+    <校针结果 CN="校针结果" UK="Calibration results" VN="Kết quả hiệu chuẩn" />
+    <擦胶夾子 CN="_擦胶夾子" UK="_Wipe the glue clip" VN="_Lau kẹp keo" />
+    <擦胶感应SR1 CN="擦胶感应SR1" UK="Wiping sensor SR1" VN="Cảm biến lau SR1" />
+    <擦胶感应SR2 CN="擦胶感应SR2" UK="Wiping sensor SR2" VN="Cảm biến lau SR2" />
+    <擦胶感应SR3 CN="擦胶感应SR3" UK="Wiping sensor SR3" VN="Cảm biến lau SR3" />
+    <擦胶夾子_OnSR CN="擦胶夾子_OnSR" UK="Wipe the glue clip_OnSR" VN="Lau kẹp keo_OnSR" />
+    <擦胶夾子_OffSR CN="擦胶夾子_OffSR" UK="Wipe the glue clip_OffSR" VN="Lau kẹp keo_OffSR" />
+    <擦胶电机_启动 CN="擦胶电机_启动" UK="Glue motor_start" VN="Keo motor_start" />
+    <擦胶电机_反向 CN="擦胶电机_反向" UK="Glue Motor_Reverse" VN="Keo Motor_Reverse" />
+    <擦胶夾子On CN="擦胶夾子On" UK="Glue clip On" VN="Lau kẹp keo on" />
+    <Type1擦胶模组擦胶布错位或无布请确认 CN="Type1擦胶模组 , 擦胶布错位或无布，请确认！" UK="Type1 glue wiper module, the wiper cloth is misplaced or there is no cloth, please confirm!" VN="Mô-đun gạt keo loại 1, khăn lau bị đặt sai vị trí hoặc không có vải, vui lòng xác nhận!" />
+    <Type2擦胶模组擦胶布错位或无布请确认 CN="Type2擦胶模组 , 擦胶布错位或无布，请确认！" UK="Type2 glue wiper module, the wiper cloth is misplaced or there is no cloth, please confirm!" VN="Mô-đun gạt keo loại 2, khăn lau bị đặt sai vị trí hoặc không có vải, vui lòng xác nhận!" />
+    <前龙门CCD引导捕捉数据异常 CN="前龙门CCD引导 , 捕捉数据异常！" UK="The front gantry CCD guides, the captured data is abnormal!" VN="CCD giàn trước hướng dẫn, dữ liệu thu được là bất thường!" />
+    <后龙门CCD引导捕捉数据异常 CN="后龙门CCD引导 , 捕捉数据异常！" UK="The rear-gantry CCD guides, and the captured data is abnormal!" VN="Các hướng dẫn CCD giàn sau, và dữ liệu thu được là không bình thường!" />
+    <扫码枪捕捉数据异常 CN="#扫码枪捕捉数据异常！" UK="#Scan code gun capture data abnormal" VN="#Quét mã chụp dữ liệu súng bất thường" />
+    <流道产品超时 CN="#流道产品超时！" UK="#Runner product timeout" VN="#Á hậu sản phẩm hết thời gian chờ" />
+    <流道Check产品SN反馈异常或产品未过站 CN="#流道,Check产品SN，反馈异常或产品未过站！" UK="#Runner, Check product SN, abnormal feedback or product has not passed the station!" VN="#Người chạy, Kiểm tra SN sản phẩm, phản hồi bất thường hoặc sản phẩm chưa qua trạm!" />
+    <点胶系统准备OK CN="点胶系统准备OK" UK="The dispensing system is ready" VN="Hệ thống pha chế đã sẵn sàng" />
+    <点胶系统准备OK1 CN="1#点胶系统准备OK" UK="1#The dispensing system is ready" VN="1#Hệ thống pha chế đã sẵn sàng" />
+    <点胶系统准备OK2 CN="2#点胶系统准备OK" UK="2#The dispensing system is ready" VN="2#Hệ thống pha chế đã sẵn sàng" />
+    <点胶报警 CN="点胶报警" UK="Dispensing alarm" VN="Báo thức pha chế" />
+    <点胶报警1 CN="1#点胶报警" UK="1#Dispensing alarm" VN="1#Báo thức pha chế" />
+    <点胶报警2 CN="2#点胶报警" UK="2#Dispensing alarm" VN="2#Báo thức pha chế" />
+    <顶升气缸_动点SR CN="顶升气缸_动点SR" UK="Jacking cylinder_moving point" VN="Jacking cylinder_moving point SR" />
+    <Stage1顶升气缸_动点SR CN="Stage1顶升气缸_动点SR" UK="Stage1 Jacking cylinder_moving point" VN="Stage1 Jacking cylinder_moving point SR" />
+    <Stage2顶升气缸_动点SR CN="Stage2顶升气缸_动点SR" UK="Stage2 Jacking cylinder_moving point" VN="Stage2Jacking cylinder_moving point SR" />
+    <顶升气缸_静点SR CN="顶升气缸_静点SR" UK="Jacking cylinder_Static point SR" VN="Jacking xy lanh_Static point SR" />
+    <Stage1顶升气缸_静点SR CN="Stage1顶升气缸_静点SR" UK="Stage1 Jacking cylinder_Static point SR" VN="Stage1 Jacking xy lanh_Static point SR" />
+    <Stage2顶升气缸_静点SR CN="Stage2顶升气缸_静点SR" UK="Stage2 Jacking cylinder_Static point SR" VN="Stage2 Jacking xy lanh_Static point SR" />
+    <Z轴校针信号 CN="Z轴校针信号" UK="Tín hiệu hiệu chuẩn trục Z" VN="Z axis calibration signal" />
+    <校针Z信号 CN="Z校针Z信号" UK="Tín hiệu hiệu chuẩn trục Z" VN="Z axis calibration signal" />
+    <校针Z位 CN="校针Z位" UK="Calibration needle Z position" VN="Kim hiệu chuẩn vị trí Z" />
+    <校针位 CN="校针位" UK="Calibration needle Z position" VN="Kim hiệu chuẩn vị trí Z" />
+    <点胶阀_点胶 CN="点胶阀_点胶" UK="Van phân phối_dung dịch" VN="Dispensing valve_dispensing" />
+    <点胶阀_点胶1 CN="1#点胶阀_点胶" UK="1#Van phân phối_dung dịch" VN="1#Dispensing valve_dispensing" />
+    <点胶阀_出气 CN="点胶阀_出气" UK="Van phân phối_exhaust" VN="Dispensing valve_exhaust" />
+    <点胶阀_出气1 CN="1#点胶阀_出气" UK="1#Van phân phối_exhaust" VN="1#Dispensing valve_exhaust" />
+    <点胶阀_点胶速度 CN="点胶阀_点胶速度" UK="Van phân phối_tốc độ phân phối" VN="Dispensing valve_dispensing speed" />
+    <点胶阀_点胶速度1 CN="1#点胶阀_点胶速度" UK="1#Van phân phối_tốc độ phân phối" VN="1#Dispensing valve_dispensing speed" />
+    <点胶阀_点胶完成 CN="点胶阀_点胶完成" UK="Van phân phối_đã hoàn thành" VN="Dispensing valve_dispensing completed" />
+    <点胶阀_点胶完成1 CN="1#点胶阀_点胶完成" UK="1#Van phân phối_đã hoàn thành" VN="1#Dispensing valve_dispensing completed" />
+    <顶升气缸_动点 CN="顶升气缸_动点" UK="Jacking xy lanh_moving point" VN="Jacking xy lanh_moving point" />
+    <确认取消 CN="确认  取消" UK="Confirm Cancel " VN="Xác nhận Hủy bỏ" />
+    <取消 CN="       取消" UK="cancel" VN="Hủy bỏ" />
+    <用户名 CN="用户名:" UK="User name:" VN="Tên tài khoản:" />
+    <密码 CN="密码:" UK="Password:" VN="Mật khẩu" />
+    <密碼變更 CN="密碼變更:" UK="Password change:" VN="Mật khẩu biến đồi" />
+    <流道原点完成 CN="流道-原点完成" UK="Conveyor to original position OK" VN="Băng tải về vị trí ban đầu OK" />
+    <设备回原点完成 CN="设备回原点完成" UK="Machine to original status OK" VN="thiết bị hoàn thành về nguyên vị trí" />
+    <归原停止 CN="归原  停止" UK="Reset Stop" VN="tạm dừng quay về nguyên vị trí" />
+    <单龙门 CN="单龙门" UK="Single gantry" VN="Giàn đơn" />
+    <原点完成 CN="原点完成" UK="To original status OK" VN="hoàn thành nguyên diểm" />
+    <Dispenser-原点完成 CN="Dispenser-原点完成" UK="Dispenser-To original status OK" VN="Dispenser-hoàn thành nguyên diểm" />
+    <异常讯息 CN="异常讯息" UK="Error information" VN="Thông tin lỗi " />
+    <通讯正常 CN="通讯正常" UK="Communication status OK" VN="thông tin bình thường" />
+    <软件 CN="软件" UK="Software" VN="phầm mềm" />
+    <左右 CN="左 右" UK="Left Right" VN="trái phải" />
+    <使用者 CN="使用者:" UK="Operator:" VN="người sự dụng:" />
+    <使用者ID CN="使用者 ID: " UK="Operator ID:" VN="người sự dụng ID:" />
+    <使用者ID档案来源 CN="使用者ID档案来源:" UK="Operator ID origin:" VN="nguồn tệp ID người dùng:" />
+    <生产型号 CN="生產型號: " UK="Production model" VN="mô hình sản xuất" />
+    <左流道 CN="左流道:" UK="Left conveyor" VN="đường chuyền trái" />
+    <右流道 CN="右流道:" UK="Right conveyor" VN="đường chuyền phải" />
+    <压力 CN="压力 " UK="Pressure" VN="lực áp" />
+    <龙门 CN="龙门:" UK="Gantry：" VN="giàn phơi：" />
+    <自动 CN="自动" UK="Automatic mode" VN="tự động" />
+    <状态 CN="状态" UK="Status" VN="trạng thái " />
+    <功能测试 CN="功能测试" UK="Functional test" VN="chức năng test" />
+    <选择 CN="选择" UK="Selection" VN="chọn lựa" />
+    <点胶 CN="点胶:" UK="Cycle stop" VN="điểm keo" />
+    <循环停止 CN="      循环停止" UK="    Loop stop" VN="tạm dừng vòng tuần hoàn" />
+    <恢复自动 CN="恢复自动" UK="Resume automatic mode" VN="khôi phục tự động" />
+    <生产资讯 CN="生产资讯" UK="Production information" VN="thông tin sản xuất" />
+    <运行 CN="运行" UK="Running" VN="vận hành " />
+    <门检检查功能 CN="门检检查功能" UK="Safety guard at the doors " VN="cửa kiểm tra chức năng" />
+    <禁用扫码枪 CN="禁用扫码枪" UK="Shield barcode scanning function" VN="cấm dùng súng quét mã" />
+    <禁用检测 CN="禁用检测 " UK="Shield inspection function" VN="cấm dùng kiểm tra" />
+    <自动排胶 CN="自动排胶" UK="Automatic glue purging" VN="tự động sắp xếp điểm keo" />
+    <自动标定 CN="自动标定" UK="Automatic position calibration" VN="tự động chỉ định" />
+    <校针 CN="校针" UK="Needle calibration" VN="kim chân" />
+    <开始校针 CN="开始校针" UK="Needle calibration" VN="kim chân" />
+    <校针拍照位 CN="校针拍照位" UK="Needle calibration Photo taking position" VN="kim chân vị trí chụp ảnh" />
+    <计时 CN="计时" UK="Counting time" VN="ghi giờ" />
+    <DownTime计时 CN="DownTime计时" UK="DownTime Counting time" VN="DownTime ghi giờ" />
+    <点胶图样数量 CN="点胶图样数量:" UK="Glue dispensing inspection photo quantity" VN="số lượng ảnh điểm keo" />
+    <变更数量 CN="变更数量" UK="Variation quantity" VN="biến đồi số lượng" />
+    <禁用相机 CN="禁用相机" UK="Shield CCD" VN="cấm dùng máy ảnh" />
+    <安全位 CN="安全位" UK="Safety position" VN="vị trí an toàn" />
+    <顶升位 CN="顶升位" UK="Up lifting position" VN="vị trí năng lên" />
+    <拍照位 CN="拍照位" UK="Photo taking position" VN="vị trí chụp ảnh" />
+    <拍照位1 CN="拍照位1" UK="1#Photo taking position" VN="1#vị trí chụp ảnh" />
+    <拍照位2 CN="拍照位2" UK="2#Photo taking position" VN="2#vị trí chụp ảnh" />
+    <拍照位3 CN="拍照位3" UK="3#Photo taking position" VN="3#vị trí chụp ảnh" />
+    <点胶位 CN="点胶位" UK="Glue dispensing position" VN="vị trí điểm keo" />
+    <点胶位1 CN="点胶位1" UK="1#Glue dispensing position" VN="1#vị trí điểm keo" />
+    <点胶位2 CN="点胶位2" UK="2#Glue dispensing position" VN="2#vị trí điểm keo" />
+    <点胶位3 CN="点胶位3" UK="3#Glue dispensing position" VN="3#vị trí điểm keo" />
+    <出料位 CN="出料位" UK="Product outlet position" VN="vị trí xuất liệu" />
+    <擦胶位 CN="擦胶位" UK="Glue wiping position" VN="vị trí lau keo" />
+    <排胶位 CN="排胶位" UK="Glue purging position" VN="vị trí sắp xếp keo" />
+    <时动距离 CN="时动距离" UK="Real time movement length" VN="tự động cách ly" />
+    <顶升气缸 CN="顶升气缸" UK="Uplifting cylinder" VN="xi lanh kích" />
+    <Stage1顶升气缸 CN="Stage1顶升气缸" UK="Stage1 Uplifting cylinder" VN="Stage1 xi lanh kích" />
+    <位置储存 CN="         位置储存" UK="Position saving" VN="vị trí lưu giữ" />
+    <物料感应 CN="物料感应" UK="Production detection" VN="cảm ứng vật liệu" />
+    <检测位 CN="检测位" UK="Inspection position" VN="vị trí kiểm tra " />
+    <产品待取 CN="产品待取" UK="Product waitting to be picked up" VN="sản phẩm đợi lấy" />
+    <电磁阀 CN="电磁阀" UK="Solenoid vavle" VN="cục tích điện" />
+    <阻挡气缸 CN="阻挡气缸" UK="Stop cylinder" VN="khối trụ chắn" />
+    <_读码阻挡气缸 CN="_读码阻挡气缸" UK="_Stop cylinder for barcode scanning" VN="_đọc mã khối trụ chắn " />
+    <读码阻挡气缸 CN="读码阻挡气缸" UK="Stop cylinder for barcode scanning" VN="đọc mã khối trụ chắn " />
+    <压合气缸 CN="压合气缸" UK="Pressing cylinder" VN="xi lanh nén" />
+    <压合顶升气缸 CN="压合顶升气缸" UK="Uplifting cylinder for pressing" VN="hợp áp xi lanh kích" />
+    <流道正向运动 CN="流道正向运动" UK="Conveyor normal direction movement" VN="chuyền tải vận hành chính hướng" />
+    <流道反向运动 CN="流道反向运动" UK="Conveyor reverse direction movement" VN="chuyển tải hướng vận hành" />
+    <流道停止运动 CN="流道停止运动" UK="Conveyor stop movement" VN="chuyền tải tạm dừng vận hành" />
+    <启动讯号 CN="启动讯号" UK="Signal to start" VN="tín hiệu khởi động" />
+    <停止讯号 CN="停止讯号" UK="Signal to stop" VN="tạm dừng tín hiệu" />
+    <复位讯号 CN="复位讯号" UK="Signal to reset" VN="tín hiệu về vị trí" />
+    <急停讯号 CN="急停讯号" UK="急停讯号" VN="tín hiệu dừng gấp" />
+    <入口光栅遮挡 CN="入口光栅遮挡" UK="Inlet safety light curtain shield" VN="lối vào lưới tắc" />
+    <门检 CN="门检" UK="Safety guard" VN="cửa kiểm tra" />
+    <三色橙 CN="三色橙" UK="Tri-light in orange color" VN="3 màu vàng" />
+    <三色黄 CN="三色黄" UK="Tri-light in yellow color" VN="3 nàu xanh" />
+    <三色绿 CN="三色绿 " UK="Tri-light in green color" VN="còi tín hiệu" />
+    <三色燈-紅 CN="三色橙" UK="Tri-light in orange color" VN="3 màu vàng" />
+    <三色燈-黃 CN="三色黄" UK="Tri-light in yellow color" VN="3 nàu xanh" />
+    <三色燈-綠 CN="三色绿 " UK="Tri-light in green color" VN="còi tín hiệu" />
+    <蜂鸣器 CN="蜂鸣器" UK="Buzzer" VN="Vui lòng quét mã" />
+    <蜂鳴器 CN="蜂鸣器" UK="Buzzer" VN="Vui lòng quét mã" />
+    <停止灯 CN="停止灯" UK="Stop indication light" VN="đèn tạm dừng" />
+    <复位灯 CN="复位灯" UK="Reset indication light" VN="đèn quay về vị trí" />
+    <启动灯 CN="启动灯" UK="Start indication light" VN="đèn khởi động" />
+    <开启输出 CN="开启输出" UK="Start output" VN="khởi động ra" />
+    <异常复位 CN="异常复位" UK="Error reset" VN="bình thường về vị trí" />
+    <原点复位 CN="原点复位" UK="Original position reset" VN="về nguyên vị trí" />
+    <移动值 CN="移动值" UK="shifting value" VN="chuyển động thẳng" />
+    <延时时间 CN="延时时间" UK="Delay time" VN="kéo dài thời gian" />
+    <马达动作讯号 CN="马达动作讯号" UK="Signal motor to action" VN="tín hiệu động tác mô-dun" />
+    <顶升气缸 CN="顶升气缸" UK="Uplifting cylinder" VN="xi lanh kích" />
+    <擦胶夹子 CN="擦胶夹子" UK="Glue wiping clamp" VN="kẹp lau keo" />
+    <Clear1_擦胶夹子 CN="V01011 Clear#1_擦胶夹子" UK="V01011 Clear#1_Glue wiping clamp" VN="V01011 Clear#1_kẹp lau keo" />
+    <右侧流道_读码阻挡气缸 CN="V02000 右侧流道_读码阻挡气缸" UK="V02000 Right conveyor_Stop cylinder for barcode scanning" VN="V02000 chuyền test phải_đọc mã khối trụ chắn" />
+    <左侧流道_读码阻挡气缸 CN="V02000 左侧流道_读码阻挡气缸" UK="V02000 Left converyor_Stop cylinder for barcode scanning" VN="V02000 chuyền test trái_đọc mã khối trụ chắn" />
+    <左侧流道 CN="左侧流道" UK="Left converyor" VN="chuyền test trái" />
+    <右侧流道 CN="右侧流道" UK="Right conveyor" VN="chuyền test phải" />
+    <动作模式 CN="动作模式" UK="Motion pattern " VN="mô hình động tác" />
+    <开启 CN="开启" UK="Start" VN="khởi động" />
+    <往返 CN="往返" UK="Out and return" VN="rút lui" />
+    <讯号 CN="讯号" UK="Signal" VN="tín hiệu" />
+    <关闭 CN="关闭" UK="Stop" VN="đóng dừng" />
+    <电磁阀开 CN="电磁阀开" UK="Solenoid valve on " VN="cục tích điện mở" />
+    <电磁阀关 CN="电磁阀关" UK="Solenoid valve off" VN="cục tích điện đóng" />
+    <电磁阀动作 CN="磁阀动作" UK="Solenoid valve action" VN="động tác cục tích điện" />
+    <移动速度 CN="移动速度" UK="Movement speed" VN="tốc độ dịch chuyển" />
+    <位置 CN="位置" UK="Position" VN="vị trí" />
+    <未使用 CN="未使用" UK="Not being used" VN="chưa sử dụng" />
+    <当前报警 CN="当前报警" UK="Current alarm" VN="báo động hiện tại" />
+    <清空报警 CN="清空报警" UK="Reset alarm" VN="báo động hết sạch" />
+    <报警历史 CN="报警历史" UK="Error log" VN="lịch sử báo động" />
+    <操作日志 CN="操作日志" UK="Operation log" VN="báo thao tác" />
+    <获取数据异常 CN="获取数据异常" UK="Acquire data error" VN="đạt được dữ liệu bất thường" />
+    <条码枪1读码失败 CN="条码枪1读码失败" UK="Scanner 1 fail to read barcode" VN="súng quét mã 1 đọc mã thất bại" />
+    <左侧流道压合2气缸 Close报警="" CN="左侧流道压合2气缸 Close报警" UK="Left conveyor pressing cylinder 2 close error" VN="Băng tải trái ép xi lanh 2 lỗi đóng" />
+    <伺服Gantry1X轴未ServoOn CN="伺服Gantry1X轴未ServoOn" UK="Gantry 1 X axial servo motor servo on" VN="Gantry 1 X trục servo động cơ servo bật" />
+    <左侧流道读码阻挡气缸Open报警 CN="左侧流道读码阻挡气缸 Open报警" UK="Left conveyor barcode scanning stop cylinder open error" VN="báo động mã đọc chuyền tải trái chặn đọc mã mở" />
+    <伺服Gantry1Z轴驱动器报警 CN="伺服Gantry1Z轴驱动器报警" UK="Gantry 1 Z axial servo motor driver error" VN="báo động ổ đĩa Gantry1Z chuyển động" />
+    <机构站号 CN="机构and站号" UK="Mechanism and station number" VN="cơ cấu và trạm số" />
+    <异常说明 CN="异常说明" UK="Error description" VN="hướng dẫn về bất thường" />
+    <电磁阀逾时 CN="电磁阀逾时" UK="Solenoid valve timeout" VN="van tích điện thời gian chờ" />
+    <处理选项 CN="处理选项" UK="Processing options" VN="xử lý lựa chọn mục" />
+    <再试一次 CN="再试一次" UK="Try again" VN="thử thêm 1 lần" />
+    <列表显示 CN="列表显示" UK="Display information in form" VN="biểu hiển thị" />
+    <图形显示 CN="图形显示" UK="Display information in graph" VN="hiện thị ảnh hình" />
+    <产量统计 CN="产量统计" UK="Production quantity statistics" VN="thông kê sản luongej" />
+    <时间统计 CN="时间统计" UK="Time count statistics" VN="thời gian thống kê" />
+    <CT统计 CN="CT统计" UK="CT statistics" VN="CT thống kê" />
+    <时间段 CN="时间段" UK="Time period" VN="đoạn thời gian" />
+    <产能 CN="产能" UK="Production capability" VN="sản lượng" />
+    <生产总数 CN="生产总数" UK="Total production quantity" VN="tổng số sản xuất" />
+    <左工位数量 CN="左工位数量" UK="Left station output" VN="số lượng vị trí trái" />
+    <右工位数量 CN="右工位数量" UK="Right station output" VN="số lượng vị trí phải" />
+    <白班 CN="白班" UK="Day shift" VN="ca ngày" />
+    <合计 CN="合计" UK="Total quantity" VN="tổng kết " />
+    <产出总量 CN="产出总量" UK="Total output" VN="sản xuất tổng số lượng" />
+    <白班合计 CN="白班合计" UK="Day shift total quantity" VN="tổng kết ca ngày " />
+    <夜班合计 CN="夜班合计" UK="Night shift total quantity" VN="tổng kết ca đêm" />
+    <运行时间 CN="运行时间" UK="Running time " VN="thời gian vận hành" />
+    <待机时间 CN="待机时间" UK="Idle time " VN="thời gian máy chờ" />
+    <待机 CN="待机" UK="Idle " VN="máy chờ" />
+    <异常时间 CN="异常时间" UK="Error time " VN="thời gian bất thường" />
+    <稼动率 CN="稼动率" UK="utilization" VN="tỷ lệ di chuyển" />
+    <平均CT CN="平均CT" UK="Average CT" VN=" bình quân CT" />
+    <产量 CN="产量" UK="Production quantity" VN="sản lượng" />
+    <产量数量 CN="产量数量/小时" UK="Production quantity/hour" VN="Số lượng sản xuất / giờ" />
+    <日平均CT CN="日平均CT" UK="Average CT/day" VN="bình quân ngày CT" />
+    <顶升气缸_静点 CN="_顶升气缸_静点" UK="Jacking cylinder_static point" VN="Jacking xy lanh_ điểm tĩnh" />
+    <擦胶 CN="_擦胶" UK="Wipe glue" VN="Lau keo" />
+    <电机 CN="电机" UK="Motor" VN="Động cơ" />
+    <_CCD阻挡气缸 CN="_CCD阻挡气缸" UK="_CCD blocking cylinder" VN="_CCD chặn xi lanh" />
+    <_压合1气缸 CN="_压合1气缸" UK="_Press 1 cylinder" VN="Nhấn 1 xi lanh" />
+    <_压合2气缸 CN="_压合2气缸" UK="Press 2 cylinder" VN="Nhấn 2 xi lanh" />
+    <_压合顶升1气缸 CN="_压合顶升1气缸" UK="Pressing and lifting 1 cylinder" VN="Ép và nâng 1 xi lanh" />
+    <_压合顶升2气缸 CN="压合顶升2气缸" UK="Pressing and lifting 2 cylinder" VN="Ép và nâng 2 xi lanh" />
+    <物料感应SR CN="物料感应SR" UK="Material sensing SR" VN="SR cảm biến vật liệu" />
+    <读码阻挡气缸2 CN="读码阻挡气缸" UK="Code reading blocking cylinder" VN="Xi lanh chặn đọc mã" />
+    <读码阻挡气缸3 CN="读码‎阻挡气缸" UK="Code reading blocking cylinder" VN="Xi lanh chặn đọc mã" />
+    <读码阻挡气缸_动点SR CN="读码阻挡气缸_动点SR" UK="Reading code blocking cylinder_moving point SR" VN="Đọc mã chặn điểm trụ_truyệt_động SR" />
+    <读码阻挡气缸_静点SR CN="读码阻挡气缸_静点SR" UK="Reading code blocking cylinder_static point SR" VN="Đọc mã chặn điểm trụ_điểm tĩnh SR" />
+    <CCD阻挡气缸_动点SR CN="_CCD阻挡气缸_动点SR " UK="CCD blocking cylinder_moving point SR" VN="CCD chặn hình trụ_ điểm di chuyển SR" />
+    <CCD阻挡气缸_静点SR CN="_CCD阻挡气缸_静点SR" UK="CCD blocking cylinder_static point SR" VN="CCD chặn xi lanh_ điểm tĩnh SR" />
+    <压合顶升1气缸_动点SR CN="压合顶升1气缸_动点SR" UK="Press-fit jacking 1 cylinder_moving point SR" VN="Nhấn-fit jacking 1 điểm trụ_ chuyển động SR" />
+    <压合顶升1气缸_静点SR CN="压合顶升1气缸_静点SR" UK="Press-fit jacking 1 cylinder_static point SR" VN="Nhấn vừa vặn kích 1 trụ_ điểm tĩnh SR" />
+    <压合1气缸_动点SR CN="压合1气缸_动点SR" UK="Pressing 1 cylinder_moving point SR" VN="Nhấn 1 điểm xylanh_moving SR" />
+    <压合1气缸_静点SR CN="压合1气缸_静点SR" UK="Press 1 cylinder_static point SR" VN="Nhấn 1 điểm trụ_ tĩnh SR" />
+    <压合顶升2气缸_动点SR CN="压合顶升2气缸_动点SR" UK="Press-fit jacking 2 cylinder_moving point SR" VN="Nhấn-fit jacking 2 xy lanh_moving point SR" />
+    <压合顶升2气缸_静点SR CN="压合顶升2气缸_静点SR" UK="Press-fit jacking 2 cylinder_static point SR" VN="Nhấn-fit jacking 2 xy lanh_ điểm tĩnh SR" />
+    <压合2气缸_动点SR CN="压合2气缸_动点SR" UK="Press fit 2 cylinders_moving point SR" VN="Nhấn phù hợp 2 xi lanh_ điểm di chuyển SR" />
+    <压合2气缸_静点SR CN="压合2气缸_静点SR" UK="Press fit 2 cylinders_static point SR" VN="Nhấn phù hợp với 2 xi lanh_ điểm tĩnh SR" />
+    <读码阻挡气缸_动点 CN="读码阻挡气缸_动点" UK="Reading code blocking cylinder_moving point" VN="Đọc mã điểm chặn xy lanh_moving" />
+    <CCD阻挡气缸_动点 CN="_CCD阻挡气缸_动点" UK="CCD blocking cylinder_moving point" VN="CCD chặn hình trụ_ điểm di chuyển" />
+    <CCD阻挡气缸 CN="CCD阻挡气缸" UK="CCD blocking cylinder" VN="CCD chặn hình trụ" />
+    <压合顶升1气缸_动点 CN="压合顶升1气缸_动点" UK="Press-fit jacking 1 cylinder_moving point" VN="Nhấn-fit jacking 1 xy lanh_moving point" />
+    <压合1气缸_动点 CN="压合1气缸_动点" UK="Press 1 cylinder_moving point" VN="Nhấn 1 điểm xylanh_moving" />
+    <压合顶升2气缸_动点 CN="压合顶升2气缸_动点" UK="Press-fit jacking 2 cylinder_moving point" VN="Press-fit jacking 2 xylanh_moving point" />
+    <压合2气缸_动点 CN="压合2气缸_动点" UK="Pressing 2 cylinders_moving point" VN="Nhấn 2 xi lanh_ điểm di chuyển" />
+    <流道电机_启动 CN="流道电机_启动" UK="Runner motor_start" VN="Runner motor_start" />
+    <流道电机_反向 CN="流道电机_反向" UK="Runner motor_reverse" VN="Runner motor_reverse" />
+    <允许进料 CN="允许进料" UK="Allow feed" VN="Cho phép nguồn cấp dữ liệu" />
+    <三色燈 CN="三色燈 " UK="Three-color light" VN="Ánh sáng ba màu" />
+    <入口安全光栅遮挡 CN="入口安全光栅遮挡" UK="Entrance safety grating occlusion" VN="Lối vào an toàn lưới tắc" />
+    <警示 CN="警示" UK="Warning" VN="Cảnh báo" />
+    <胶阀未准备OK禁止启动 CN="胶阀未准备OK,禁止启动!" UK="The valve is not ready, OK, prohibit start" VN="Van chưa sẵn sàng, OK, cấm khởi động" />
+    <急停訊號觸發 CN="急停訊號觸發" UK="Emergency stop signal trigger" VN="Kích hoạt tín hiệu dừng khẩn cấp" />
+    <請確認設備狀況 CN="請確認設備狀況" UK="Please confirm the equipment condition" VN="Vui lòng xác nhận tình trạng thiết bị" />
+    <解除後並進行設備回Home CN="解除後並進行設備回Home" UK="After dismissing and returning to Home" VN="Sau khi tan sở và trở về Trang chủ" />
+    <解除後並進行設備回Home2 CN="急停訊號觸發 - 請確認設備狀況 , 解除後並進行設備回Home" UK="Emergency stop signal trigger-Please confirm the equipment condition,After dismissing and returning to Home" VN="Kích hoạt tín hiệu dừng khẩn cấp-Vui lòng xác nhận tình trạng thiết bị,Sau khi tan sở và trở về Trang chủ" />
+    <空壓壓力不足 CN="空壓壓力不足" UK="Insufficient air pressure" VN="Không đủ áp suất không khí" />
+    <請確認設備Air進氣錶頭 CN="請確認設備Air進氣錶頭" UK="Please confirm the device Air intake meter" VN="Vui lòng xác nhận thiết bị Đồng hồ đo lượng khí nạp" />
+    <請確認設備Air進氣錶頭2 CN="空壓壓力不足 - 請確認設備Air進氣錶頭" UK="Insufficient air pressure-Please confirm the device Air intake meter" VN="Không đủ áp suất không khí-Vui lòng xác nhận thiết bị Đồng hồ đo lượng khí nạp" />
+    <廠務空壓狀況 CN="廠務空壓狀況" UK="Factory air pressure status" VN="Trạng thái áp suất không khí nhà máy" />
+    <請確認設備安全門狀況 CN="Door Sensor - 請確認設備安全門狀況" UK="Door Sensor-Please confirm the condition of the equipment safety door" VN="Door Sensor-Vui lòng xác nhận tình trạng của cửa an toàn thiết bị" />
+    <急停訊號觸發 CN="急停訊號觸發" UK="Emergency stop signal trigger" VN="Kích hoạt tín hiệu dừng khẩn cấp" />
+    <重新连接读写器失败 CN="重新连接读写器失败" UK="Failed to reconnect the reader" VN="Không thể kết nối lại trình đọc" />
+    <读写器异常频率过高 CN="读写器异常频率过高" UK="The abnormal frequency of the reader is too high" VN="Tần suất bất thường của trình đọc quá cao" />
+    <断开 CN="断开 " UK="disconnect" VN="ngắt kết nối" />
+    <请选择天线端口数 CN="请选择天线端口数" UK="Please select the number of antenna ports" VN="Vui lòng chọn số lượng cổng ăng-ten" />
+    <连接失败 CN="连接失败" UK="Connection failed" VN="Kết nối thất bại" />
+    <请检查读写器地址是否正确 CN="请检查读写器地址是否正确" UK="Please check if the reader address is correct" VN="Vui lòng kiểm tra xem địa chỉ người đọc có chính xác không" />
+    <请选择天线 CN="请选择天线" UK="Please select antenna" VN="Vui lòng chọn ăng-ten" />
+    <在未检测到天线的端口执行搜索 CN="在未检测到天线的端口执行搜索" UK="Perform a search on the port where the antenna is not detected" VN="Thực hiện tìm kiếm trên cổng không phát hiện thấy ăng-ten" />
+    <真的要执行吗 CN="真的要执行吗" UK="Really want to execute" VN="Thực sự muốn thực hiện" />
+    <警告 CN="警告" UK="caveat" VN="báo trước" />
+    <启动读取失败 CN="启动读取失败" UK="Start reading failed" VN="Bắt đầu đọc không thành công" />
+    <停止读取失败 CN="停止读取失败" UK="Stop reading failed" VN="Dừng đọc không thành công" />
+    <将要写入的数据长度大于写入区域的容量 CN="将要写入的数据长度大于写入区域的容量" UK="The length of the data to be written is greater than the capacity of the writing area" VN="Độ dài của dữ liệu được ghi lớn hơn dung lượng của vùng ghi" />
+    <没法发现标签 CN="没法发现标签 " UK="Unable to find the label" VN="Không thể tìm thấy nhãn" />
+    <操作失败 CN="操作失败" UK="operation failed" VN="lỗi hệ thống" />
+    <修改成功 CN="修改成功" UK="Successfully modified" VN="Đã sửa đổi thành công" />
+    <耗时 CN="耗时:" UK="time consuming" VN="mất thời gian" />
+    <天线选择 CN="天线选择" UK="Antenna selection" VN="Lựa chọn ăng ten" />
+    <打开 CN="打开" UK="turn on" VN="bật" />
+    <连接设置 CN="连接设置" UK="Cài đặt kết nối" VN="Connection settings" />
+    <地址 CN="地址" UK="address" VN="Địa chỉ" />
+    <天线端口数 CN="天线端口数" UK="Number of antenna ports" VN="Số lượng cổng ăng-ten" />
+    <连接 CN="连接" UK="connection" VN="kết nối" />
+    <开始 CN="开始" UK="start" VN="khởi đầu" />
+    <停止 CN="     停止" UK="stop" VN="dừng lại" />
+    <清空 CN="清空" UK="Empty" VN="Trống" />
+    <打开串口 CN="打开串口" UK="Open the serial port" VN="Mở cổng nối tiếp" />
+    <自动传MES CN="自动传MES" UK="Automatic transmission of MES" VN="Hộp số tự động MES" />
+    <恢復自動 CN="       恢復自動" UK="Resume automatically" VN="Tiếp tục tự động" />
+    <暫停 CN="       暫停" UK="pause" VN="tạm ngừng" />
+    <未选取Excel档案请重新确认 CN="未选取Excel档案,请重新确认!!" UK="Excel file is not selected, please reconfirm!!" VN="Tệp Excel chưa được chọn, vui lòng xác nhận lại !!" />
+    <档案 CN="档案" UK="archives" VN="kho lưu trữ" />
+    <自动1 CN="       自动" UK="  automatic" VN="  tự động" />
+    <右流道CT CN="右流道CT:" UK="The right port CT:" VN="CT ở mạn phải:" />
+    <左流道CT CN="左流道CT :" UK="Left channel CT:" VN="CT bên trái:" />
+    <龙门2 CN="龙门2" UK="Dragon Gate 2" VN="Cổng rồng 2" />
+    <龙门1 CN="龙门1" UK="Dragon Gate 1" VN="Cổng rồng 1" />
+    <生產資訊 CN="生產資訊" UK="Production Information" VN="Thông tin sản xuất" />
+    <暂停 CN="       暂停" UK="pause" VN="tạm ngừng" />
+    <停止1 CN="       停止" UK="    stop" VN="  dừng lại" />
+    <Vision状态 CN="Vision 状态" UK="Vision status" VN="Vision trạng thái" />
+    <归原 CN="     归原" UK="Return to the original" VN="Quay lại bản gốc" />
+    <保存GlueSn CN="保存GlueSn" UK="save GlueSn" VN="bảo lưu GlueSn" />
+    <程序已启动不可重複開啟 CN="程序已启动,不可重複開啟!" UK="The program has been started and cannot be opened repeatedly!" VN="Chương trình đã được bắt đầu và không thể mở lại nhiều lần!" />
+    <生产模式 CN="生产模式" UK="Production mode" VN="Chế độ sản xuất" />
+    <通讯异常 CN="通讯异常" UK="Communication abnormal" VN="Giao tiếp bất thường" />
+    <異常訊息 CN="異常訊息" UK="Exception message" VN="Thông báo ngoại lệ" />
+    <左SN CN="左SN:" UK="Left SN:" VN="SN bên trái:" />
+    <右SN CN="右SN:" UK="Right SN:" VN="SN phải:" />
+    <左UC CN="左UC:" UK="Left UC:" VN="UC bên trái:" />
+    <右UC CN="右UC:" UK="Right UC:" VN="UC phải:" />
+    <获取失败 CN="获取失败" UK="Nhận thất bại" VN="Get failed" />
+    <PDCA无反馈数据 CN="PDCA无反馈数据" UK="PDCA no feedback data" VN="PDCA không có dữ liệu phản hồi" />
+    <获取SN CN="获取SN" UK="Get SN" VN="Nhận SN" />
+    <发送数据 CN="发送数据：" UK="send data" VN="gửi dữ liệu" />
+    <显示PDCA反馈数据 CN="显示PDCA反馈数据" UK="Display PDCA feedback data" VN="Hiển thị dữ liệu phản hồi PDCA" />
+    <UC码 CN="UC码：" UK="UC code" VN="Mã UC" />
+    <SN码 CN="SN码：" UK="SN code" VN="Mã SN" />
+    <接收数据 CN="接收数据：" UK="Receive data" VN="Nhận dữ liệu" />
+    <旋转位 CN="旋转位" UK="Rotation position" VN="Vị trí xoay" />
+    <校针点胶位 CN="校针点胶位" UK="Calibration needle dispensing position" VN="Vị trí phân phối kim hiệu chuẩn" />
+    <翻转位 CN="翻转位" UK="Flip position" VN="Lật vị trí" />
+    <测试位 CN="测试位" UK="test position" VN="kiểm tra vị trí" />
+    <影像位 CN="影像位" UK="Imaging a" VN="Bit ảnh" />
+    <影像起始位 CN="影像起始位" UK="Image starting position" VN="Hình ảnh bắt đầu bit" />
+    <吸嘴校正板影像位 CN="吸嘴校正板影像位" UK="Calibration plate image position of suction nozzle" VN="Bit ảnh bảng điều chỉnh miệng" />
+    <請選擇移動點位 CN="請選擇移動點位" UK="Please select the move point" VN="Hãy chọn điểm di chuyển" />
+    <確認是否 CN="確認是否" UK="Confirm whether" VN="Xác nhận" />
+    <确认是否SAVE CN="确认是否SAVE" UK="Confirm whether SAVE" VN="Xác nhận SAVE" />
+    <點位 CN="點位" UK="point" VN="DianWei" />
+    <光源 CN="光源" UK="The light source" VN="Ánh sáng" />
+    <確認是否儲存檔案 CN="確認是否儲存檔案" UK="Confirm whether to save the file" VN="Xác nhận lưu trữ hồ sơ" />
+    <資料內容格式錯誤請確認修改過之資料數值 CN="資料內容格式錯誤 ,請確認修改過之資料數值" UK="The format of the data is wrong, please confirm the revised data value" VN="Thông tin nội dung lỗi định dạng, hãy xác nhận giá trị dữ liệu đã được sửa đổi" />
+    <未選取Recipe請重新確認 CN="未選取Recipe , 請重新確認" UK="Recipe is not selected, please reconfirm!!" VN="Recipe không được chọn, xin vui lòng xác nhận một lần nữa" />
+    <與目前使用之Recipe相同請重新確認 CN="與目前使用之Recipe相同, 請重新確認" UK="Same Recipe as currently used, please reconfirm" VN="Cùng với Recipe hiện tại, xin vui lòng xác nhận lại" />
+    <檔案 CN="檔案" UK="archives" VN="Hồ sơ" />
+    <請先選擇欲複製之 CN="請先選擇欲複製之" UK="Please select which one you want to copy first" VN="Hãy chọn cái bạn muốn SAO chép trước" />
+    <新ID為空值 CN="新ID為空值" UK="The new ID is null" VN="ID mới là giá trị rỗng" />
+    <另存新檔失敗 CN="另存新檔失敗" UK="Failed to save new file" VN="Một lỗi mới" />
+    <新ID資料已經存在 CN="新ID資料已經存在" UK="The new ID data already exists" VN="Thông tin nhận dạng mới đã tồn tại" />
+    <Recipe另存新檔失敗 CN="Recipe另存新檔失敗" UK="Recipe fails to save new file" VN="Recipe gửi một tập tin mới thất bại" />
+    <未選取Recipe CN="未選取Recipe" UK="Did not choose the Recipe" VN="Không chọn Recipe" />
+    <請重新確認 CN="請重新確認" UK="Please reconfirm." VN="Xin vui lòng xác nhận lại" />
+    <翻转位前 CN="翻转位(前)" UK="Flipped bit (front)" VN="Thay đổi (trước)" />
+    <镭射检测位 CN="镭射检测位" UK="Laser detection bit" VN="Vị trí phát hiện tia la-de" />
+    <翻转位后 CN="翻转位(后)" UK="Flip bit (back)" VN="Lật ngược (sau)" />
+    <请选择移动点位 CN="请选择移动点位" UK="Please select the move point" VN="Hãy chọn điểm di chuyển" />
+    <请选择储存点位 CN="请选择储存点位" UK="Please select the storage point" VN="Hãy chọn vị trí lưu trữ" />
+    <确认是否 CN="确认是否" UK="Confirm whether" VN="Xác nhận" />
+    <点位 CN="点位" UK="point" VN="DianWei" />
+    <程序数据异常 CN="程序数据异常" UK="Program data exception" VN="Dữ liệu chương trình ngoại lệ" />
+    <将关闭软件 CN="将关闭软件" UK="Will close the software" VN="Sẽ tắt phần mềm" />
+    <程序已启动 CN="程序已启动" UK="Program started" VN="Chương trình đã bắt đầu" />
+    <不可重複開啟 CN="不可重複開啟" UK="Non-repeatable opening" VN="Không thể lặp lại mở" />
+    <请确认是否关闭相机 CN="请确认是否关闭相机" UK="Please make sure to turn off the camera" VN="Hãy xác nhận là camera có bị tắt hay không" />
+    <未选取Excel档案 CN="未选取Excel档案" UK="No Excel file is selected" VN="Chưa chọn tập tin Excel" />
+    <请重新确认 CN="请重新确认" UK="Please reconfirm." VN="Xin vui lòng xác nhận lại" />
+    <确认载入 CN="确认载入" UK="Confirm loading" VN="Xác nhận nạp đạn." />
+    <位置儲存 CN="         位置儲存" UK="Store location" VN="Vị trí lưu trữ" />
+    <吋動距離 CN="吋動距離:" UK="Moving distance" VN="Inch khoảng cách" />
+    <取像 CN="       取像" UK="like" VN="Lấy giống như" />
+    <連續取像 CN="連續取像" UK="Continuous like" VN="Liên tục chụp ảnh" />
+    <儲存 CN="儲存" UK="storage" VN="Lưu trữ" />
+    <CCD對應function選擇 CN="CCD 對應function選擇" UK="CCD corresponds to Function selection" VN="Hàm chọn tương ứng với CCD" />
+    <馬達動作 CN="馬達動作" UK="Motor movement" VN="Động cơ hoạt động" />
+    <動作模式 CN="動作模式:" UK="Mode of action" VN="Chế độ hành động" />
+    <開啟 CN="         開啟" UK="open" VN="Mở ra" />
+    <訊號OFF CN="訊號OFF" UK="Sign OFF" VN="Tín hiệu tắt." />
+    <關閉 CN="          關閉" UK="Shut down" VN="Đóng cửa" />
+    <電磁閥動作訊號 CN="電磁閥動作訊號" UK="Solenoid valve action signal" VN="Tín hiệu hoạt động van solenoid" />
+    <電磁閥_開 CN="電磁閥_開 : " UK="Solenoid valve _ open:" VN="Van solenoid _ mở:" />
+    <電磁閥_關 CN="電磁閥_關 : " UK="Solenoid valve _ close:" VN="Van solenoid _ tắt:" />
+    <電磁閥_動作 CN="電磁閥_動作 : " UK="Solenoid valve _ action:" VN="Van solenoid _ hành động:" />
+    <開啟SR CN="開啟SR : " UK="Solenoid valve _ open:" VN="Van solenoid _ mở:" />
+    <開啟輸出 CN="開啟輸出 : " UK="Enable output:" VN="Bật kết quả:" />
+    <關閉輸出 CN="關閉輸出 : " UK="Close output:" VN="Tắt kết quả:" />
+    <關閉SR CN="關閉SR : " UK="Close the SR:" VN="Tắt SR:" />
+    <点胶系统 CN="点胶系统" UK="Dispensing system" VN="Hệ thống keo" />
+    <流道系统1 CN="流道系统1" UK="Channel system 1" VN="Hệ thống ống dẫn 1" />
+    <流道系统2 CN="流道系统2" UK="Channel system 2" VN="Hệ thống ống 2" />
+    <点胶控制器选择 CN="点胶控制器选择:" UK="Dispensing controller selection:" VN="Chọn bộ điều khiển bằng nhựa:" />
+    <Nordson_热胶串口 CN="Nordson_热胶 串口" UK="Nordson_ hot glue serial port" VN="Cửa nối dây nóng Nordson_" />
+    <Nordson_热胶网口 CN="Nordson_热胶 网口" UK="Nordson_ hot glue mesh mouth" VN="Cổng Nordson_ nhiệt cao su" />
+    <Loctite串口 CN="Loctite 串口" UK="Loctite serial port" VN="Cổng nối tiếp Loctite" />
+    <运行Speed CN="运行Speed  (%):" UK="Running Speed (%) :" VN="Tốc độ chạy (%):" />
+    <空跑模式 CN="空跑模式" UK="Empty running mode" VN="Chế độ chạy rỗng" />
+    <禁用MES CN="禁用MES" UK="Disable the MES" VN="Tôi vô hiệu hóa." />
+    <标定 CN="标定" UK="calibration" VN="Hiệu chuẩn" />
+    <点胶翻转角度前 CN="点胶翻转角度（前）：" UK="Dispensing turnover Angle (before) :" VN="Xoay góc (trước) :" />
+    <点胶翻转速度前 CN="点胶翻转速度（前）：" UK="Dispensing turnover speed (before) :" VN="Tốc độ thay đổi (trước) :" />
+    <点胶翻转角度后 CN="点胶翻转角度（后）：" UK="Dispensing turnover Angle (after) :" VN="Xoay góc (sau) :" />
+    <点胶翻转速度后 CN="点胶翻转速度（后）：" UK="Dispensing turnover speed (after) :" VN="Thay đổi tốc độ (sau) :" />
+    <CCD检测位SR CN="CCD检测位SR" UK="CCD detects bit-Sr" VN="Bit SR phát hiện CCD" />
+    <产品待取SR CN="产品待取SR" UK="Product to be taken SR" VN="SR cho sản phẩm" />
+    <流道-正向运动 CN="         流道-正向运动" UK="Channel - Forward motion" VN="Dòng chảy - hướng về phía trước" />
+    <流道-反向运动 CN="         流道-反向运动" UK="Channel - reverse motion" VN="Chuyển động ngược dòng" />
+    <流道-停止运动 CN="         流道-停止运动" UK="Runner - stop motion" VN="- ngừng chuyển động" />
+    <流道 CN="      流道      " UK="Flow channel" VN="LiuDao" />
+    <禁用检测DBTime CN="禁用检测DBTime" UK="Disable detection of DBTime" VN="Tắt phát hiện DBTime" />
+    <禁用CCD CN="禁用CCD" UK="Disable CCD" VN="Tắt CCD" />
+    <动态测试 CN="动态测试" UK="dynamics test" VN="kiểm tra động lực học" />
+    <CCD动态测试 CN="CCD动态测试" UK="CCD dynamics test" VN="CCD kiểm tra động lực học" />
+    <CCD静态测试 CN="CCD静态测试" UK="CCD static test" VN="Kiểm tra tĩnh CCD" />
+    <摇臂位 CN="摇臂位" UK="Rocker position" VN="Vị trí rocker" />
+    <Stage1摇臂前移_动点SR CN="Stage1摇臂前移_动点SR" UK="Stage1 swing arm forward_moving point SR" VN="Giai đoạn 1 vung tay về phía trước_ điểm di chuyển SR" />
+    <Stage2摇臂前移_动点SR CN="Stage2摇臂前移_动点SR" UK="Stage2 swing arm forward_moving point SR" VN="Giai đoạn 2 vung tay về phía trước_ điểm di chuyển SR" />
+    <Stage1摇臂前移_静点SR CN="Stage1摇臂前移_静点SR" UK="Stage1 swing arm forward_static point SR" VN="Giai đoạn 1 xoay cánh tay về phía trước_ điểm tĩnh SR" />
+    <Stage2摇臂前移_静点SR CN="Stage2摇臂前移_静点SR" UK="Stage2 swing arm forward_static point SR" VN="Giai đoạn 2 xoay cánh tay về phía trước_ điểm tĩnh SR" />
+    <Stage1摇臂翻转_动点SR CN="Stage1摇臂翻转_动点SR" UK="Stage1 swing arm flip_moving point SR" VN="Giai đoạn 1 vung cánh tay flip_moving điểm SR" />
+    <Stage2摇臂翻转_动点SR CN="Stage2摇臂翻转_动点SR" UK="Stage2 swing arm flip_moving point SR" VN="Giai đoạn 2 vung cánh tay flip_moving điểm SR" />
+    <Stage1摇臂翻转_静点SR CN="Stage1摇臂翻转_静点SR" UK="Stage1 swing arm flip_static point SR" VN="Cánh tay xoay giai đoạn 1 flip_static point SR" />
+    <Stage2摇臂翻转_静点SR CN="Stage2摇臂翻转_静点SR" UK="Stage2 swing arm flip_static point SR" VN="Cánh tay xoay giai đoạn 2 flip_static point SR" />
+    <工位 CN="工位：" UK="Station:" VN="Ga tàu:" />
+    <次 CN="次" UK="Times" VN="Times" />
+    <Mimi连接状态 CN="Mimi,MES连接状态" UK="Mimi, MES connection status:" VN="Trạng thái kết nối Mimi, MES:" />
+    <视觉软件连接状态 CN="视觉软件连接状态:" UK="Vision software connection status:" VN="Trạng thái kết nối phần mềm Vision:" />
+    <当前机台模式 CN="当前机台模式:" UK="Current machine mode:" VN="Chế độ máy hiện tại:" />
+    <产能统计 CN="产能统计" UK="Pending translation" VN="Bản dịch đang chờ xử lý" />
+    <日分析 CN="日分析" UK="Daily analysis" VN="Phân tích hàng ngày" />
+    <数据查询 CN="数据查询" UK="data query" VN="truy vấn dữ liệu" />
+    <CT动作分解 CN="CT动作分解" UK="CT action breakdown" VN="Phân tích hành động CT" />
+    <时间复位 CN="时间复位" UK="Time reset" VN="Đặt lại thời gian" />
+    <监控周期时间 CN="监控周期时间" UK="Monitoring cycle time" VN="Giám sát thời gian chu kỳ" />
+    <使用CT分解功能 CN="使用CT分解功能" UK="Use CT decomposition function" VN="Sử dụng chức năng phân hủy CT" />
+    <生成EXCEL CN="生成EXCEL" UK="Generate EXCEL" VN="Tạo EXCEL" />
+    <主界面 CN="主界面" UK="Main interface" VN="Giao diện chính" />
+    <IO监视 CN="IO监视" UK="IO monitoring" VN="Giám sát IO" />
+    <操作 CN="操作" UK="operating" VN="điều hành" />
+    <设置 CN="设置" UK="Set up" VN="Thiết lập" />
+    <未连接 CN="未连接" UK="not connected" VN="không kết nối" />
+    <急停中 CN="急停中" UK="Emergency stop" VN="Dừng khẩn cấp" />
+    <复位中 CN="复位中" UK="Resetting" VN="Đặt lại" />
+    <复位超时 CN="复位超时" UK="Reset timeout" VN="Đặt lại thời gian chờ" />
+    <自动中 CN="自动中" UK="Automatically" VN="Tự động" />
+    <寸动中 CN="寸动中" UK="Inching" VN="Inch" />
+    <复位完成 CN="复位完成" UK="Reset complete" VN="Đặt lại hoàn tất" />
+    <请复位 CN="请复位" UK="Please reset" VN="Vui lòng đặt lại" />
+    <警报 CN="警报" UK="alarm" VN="báo thức" />
+    <启动按钮 CN="0.00 启动按钮" UK="0.00 start button" VN="0,00 nút bắt đầu" />
+    <切换开关 CN="0.01 切换开关" UK="0.01 toggle switch" VN="0,01 công tắc chuyển đổi" />
+    <急停按钮 CN="0.02 急停按钮" UK="0.02 Emergency stop button" VN="0,02 Nút dừng khẩn cấp" />
+    <复位按钮 CN="0.03 复位按钮" UK="0.03 Reset button" VN="0,03 Nút đặt lại" />
+    <预留 CN="0.04 预留" UK="0.04 reserved" VN="0,04 đặt trước" />
+    <预留1 CN="0.05 预留" UK="0.05 reserved" VN="0,05 đặt trước" />
+    <预留2 CN="0.06 预留" UK="0.06 reserved" VN="0,06 đặt trước" />
+    <预留3 CN="0.07 预留" UK="0.07 reserved" VN="0,07 đặt trước" />
+    <机台工位1要料 CN="0.08 机台工位1要料" UK="0.08 Material for machine station 1" VN="0,08 Vật liệu cho trạm máy 1" />
+    <机台工位2要料 CN="0.09 机台工位2要料" UK="0.09 Material for machine station 2" VN="0,09 Vật liệu cho trạm máy 2" />
+    <工位1机台入料感应 CN="0.10 工位1机台入料感应" UK="0.10 station 1 machine feeding induction" VN="0,10 trạm 1 cảm ứng cho ăn máy" />
+    <工位2机台入料感应 CN="0.11 工位2机台入料感应" UK="0.11 station 2 machine feeding induction" VN="0,11 trạm 2 cảm ứng cho ăn máy" />
+    <主流线分料气缸1原点 CN="1.00 主流线分料气缸1原点" UK="1.00 Main stream line feed cylinder 1 origin" VN="1,00 Xi lanh cấp liệu dòng chính 1 điểm gốc" />
+    <主流线分料气缸1动点 CN="1.01 主流线分料气缸1动点" UK="1.01 Mainstream line feed cylinder 1 moving point" VN="1.01 Xi lanh cấp liệu dòng chính 1 điểm di chuyển" />
+    <主流线分料气缸2原点 CN="1.02 主流线分料气缸2原点" UK="1.02 Main stream line feed cylinder 2 origin" VN="1,02 Điểm gốc của xi lanh cấp liệu dòng chính 2" />
+    <主流线分料气缸2动点 CN="1.03 主流线分料气缸2动点" UK="1.03 Mainstream line feed cylinder 2 moving point" VN="1,03 Điểm di chuyển xi lanh nạp dòng chính 2" />
+    <主流线入料拨载具气缸原点 CN="1.04 主流线入料拨载具气缸原点" UK="1.04 Mainstream line feed carrier cylinder origin" VN="1.04 Nguồn gốc xi lanh vận chuyển nguồn cấp dữ liệu dòng chính" />
+    <主流线入料拨载具气缸动点 CN="1.05 主流线入料拨载具气缸动点" UK="1.05 Mainstream line feed carrier cylinder moving point" VN="1.05 Điểm di chuyển xi lanh vận chuyển nguồn cấp dữ liệu dòng chính" />
+    <流道1缓存气缸1原点 CN="1.06 流道1缓存气缸1原点" UK="1.06 Runner 1 cache cylinder 1 origin" VN="1.06 Runner 1 trụ cache 1 gốc" />
+    <流道1缓存气缸1动点 CN="1.07 流道1缓存气缸1动点" UK="1.07 Runner 1 buffer cylinder 1 moving point" VN="1,07 Á hậu 1 xi lanh đệm 1 điểm di chuyển" />
+    <流道1缓存气缸2原点 CN="1.08 流道1缓存气缸2原点" UK="1.08 Runner 1 buffer cylinder 2 origin" VN="1,08 Runner 1 xi lanh đệm 2 gốc" />
+    <流道1缓存气缸2动点 CN="1.09 流道1缓存气缸2动点" UK="1.09 Runner 1 buffer cylinder 2 moving point" VN="1,09 Á hậu 1 xi lanh đệm 2 điểm di chuyển" />
+    <流道1顶升气缸原点 CN="1.10 流道1顶升气缸原点" UK="1.10 Runner 1 jacking cylinder origin" VN="1.10 Nguồn gốc xylanh kích từ Á hậu 1" />
+    <流道1顶升气缸动点 CN="1.11 流道1顶升气缸动点" UK="1.11 Runner 1 jacking cylinder moving point" VN="1.11 Á hậu 1 điểm di chuyển của xi lanh kích" />
+    <流道2工位1挡停气缸原点 CN="2.00 流道2工位1挡停气缸原点" UK="2.00 Runner 2 station 1 gear stop cylinder origin" VN="2,00 Á hậu 2 trạm 1 bánh răng dừng gốc xi lanh" />
+    <流道2工位1挡停气缸动点 CN="2.01 流道2工位1挡停气缸动点" UK="2.01 Runner, 2 stations, 1 stop, cylinder movement point" VN="2.01 Người chạy, 2 trạm, 1 điểm dừng, điểm chuyển động hình trụ" />
+    <流道2工位1顶升气缸原点 CN="2.02 流道2工位1顶升气缸原点" UK="2.02 runner 2 station 1 jacking cylinder origin" VN="2.02 Á hậu 2 trạm 1 xylanh kích từ gốc" />
+    <流道2工位1顶升气缸动点 CN="2.03 流道2工位1顶升气缸动点" UK="2.03 runners, 2 stations, 1 jacking cylinder moving point" VN="2.03 người chạy, 2 trạm, 1 điểm di chuyển xi lanh kích" />
+    <流道2工位2挡停气缸原点 CN="2.04 流道2工位2挡停气缸原点" UK="2.04 Runner 2 station 2 stop cylinder origin" VN="2.04 Runner 2 trạm 2 dừng gốc xi lanh" />
+    <流道2工位2挡停气缸动点 CN="2.05 流道2工位2挡停气缸动点" UK="2.05 Runner, 2 stations, 2 stops, cylinder moving point" VN="2.05 Người chạy, 2 trạm, 2 điểm dừng, điểm di chuyển hình trụ" />
+    <流道2工位2顶升气缸原点 CN="2.06 流道2工位2顶升气缸原点" UK="2.06 Runner 2 station 2 jacking cylinder origin" VN="2.06 Runner 2 trạm 2 kích thước xi lanh gốc" />
+    <流道2工位2顶升气缸动点 CN="2.07 流道2工位2顶升气缸动点" UK="2.07 runners, 2 stations, 2 jacking cylinder moving points" VN="2.07 người chạy, 2 trạm, 2 điểm di chuyển xi lanh kích" />
+    <流道2工位1到位感应 CN="2.08 流道2工位1到位感应" UK="2.08 runners, 2 stations, 1 in-position induction" VN="2.08 người chạy, 2 trạm, 1 cảm ứng tại vị trí" />
+    <流道2工位1流走感应 CN="2.09 	流道2工位1流走感应" UK="2.09 Runner 2 station 1 flow sensor" VN="2.09 Runner 2 trạm 1 cảm biến lưu lượng" />
+    <流道2工位2到位感应 CN="2.10 流道2工位2到位感应" UK="2.10 Runner 2 station 2 in-position induction" VN="2.10 Á hậu 2 trạm 2 cảm ứng tại vị trí" />
+    <流道2工位2流走感应 CN="2.11 流道2工位2流走感应" UK="2.11 Runner 2 station 2 flow sensor" VN="2.11 Cảm biến dòng chảy 2 trạm 2 Runner" />
+    <主流线分料1到位感应 CN="3.00 主流线分料1到位感应" UK="3.00 Main stream line feed 1 in-place induction" VN="3,00 Nguồn cấp dòng chính 1 cảm ứng tại chỗ" />
+    <主流线分料1满载具感应 CN="3.01 主流线分料1满载具感应" UK="3.01 Mainstream line splitting 1 full load sensing" VN="3.01 Tách dòng chính 1 cảm biến tải đầy đủ" />
+    <主流线分料2到位感应 CN="3.02 主流线分料2到位感应" UK="3.02 Mainstream line distribution 2 in-position induction" VN="3.02 Cảm ứng tách dòng chính 2 tại chỗ" />
+    <主流线分料2流走感应 CN="3.03 主流线分料2流走感应" UK="3.03 Main stream line feed 2 flow away induction" VN="3.03 Nguồn cấp dữ liệu dòng chính 2 cảm ứng dòng chảy" />
+    <主流线拨载具到位感应 CN="3.04 主流线拨载具到位感应" UK="3.04 Mainstream line dialing vehicle in place induction" VN="3.04 Cảm ứng xe quay số dòng chính tại chỗ" />
+    <流道1缓存1到位感应 CN="3.05 流道1缓存1到位感应" UK="3.05 Runner 1 cache 1 in-position sensing" VN="3.05 Runner 1 cache 1 cảm biến tại vị trí" />
+    <流道1缓存1流走感应 CN="3.06 流道1缓存1流走感应" UK="3.06 Runner 1 cache 1 flow sensor" VN="Cảm biến dòng chảy 3.06 Runner 1 1" />
+    <流道1缓存2到位感应 CN="3.07 流道1缓存2到位感应" UK="3.07 Runner 1 cache 2 in-position sensing" VN="3.07 Runner 1 cache 2 cảm biến tại vị trí" />
+    <流道1缓存2流走感应 CN="3.08 流道1缓存2流走感应" UK="3.08 Runner 1 cache 2 flow sensor" VN="Cảm biến luồng 3.08 Runner 1 cache 2" />
+    <流道1运载位到位感应 CN="3.09 流道1运载位到位感应" UK="3.09 Runner 1 carrier position sensing" VN="Cảm biến vị trí sóng mang 3.09 Runner 1" />
+    <流道1运载位流走感应 CN="3.10 流道1运载位流走感应" UK="3.10 Channel 1 carries bit flow away sensing" VN="3.10 Kênh 1 mang cảm biến luồng bit đi" />
+    <预留4 CN="3.11 预留" UK="3.11 Reserved" VN="3.11 Được bảo lưu" />
+    <预留5 CN="4.00 预留" UK="4.00 reserved" VN="4.00 đặt trước" />
+    <预留6 CN="4.01 预留" UK="4.01 reserved" VN="4.01 được đặt trước" />
+    <预留7 CN="4.02 预留" UK="4.02 reserved" VN="4.02 được đặt trước" />
+    <预留8 CN="4.03 预留" UK="4.03 reserved" VN="4.03 được đặt trước" />
+    <预留9 CN="4.04 预留" UK="4.04 reserved" VN="4.04 đặt trước" />
+    <预留10 CN="4.05 预留" UK="4.05 reserved" VN="4.05 được đặt trước" />
+    <预留11 CN="4.06 预留" UK="4.06 reserved" VN="4.06 được đặt trước" />
+    <预留12 CN="4.07 预留" UK="4.07 reserved" VN="4.07 được đặt trước" />
+    <预留13 CN="4.08 预留" UK="4.08 reserved" VN="4.08 được đặt trước" />
+    <预留14 CN="4.09 预留" UK="4.09 reserved" VN="4.09 được đặt trước" />
+    <预留15 CN="4.10 预留" UK="4.10 Reserved" VN="4.10 Reserved" />
+    <预留16 CN="4.11 预留" UK="4.11 Reserved" VN="4.11 Được bảo lưu" />
+    <流道1启动 CN="100.00 	流道1启动" UK="100.00 Runner 1 start" VN="100,00 Á hậu 1 bắt đầu" />
+    <流道1反向 CN="100.01 	流道1反向" UK="100.01 Runner 1 reverse" VN="100.01 Á hậu 1 ngược lại" />
+    <流道2启动 CN="100.02 流道2启动" UK="100.02 Runner 2 starts" VN="100.02 Á hậu 2 bắt đầu" />
+    <流道2反向 CN="100.03 流道2反向" UK="100.03 Runner 2 reverse" VN="100.03 Á hậu 2 ngược lại" />
+    <运载流道启动 CN="100.04 运载流道启动" UK="100.04 Carrier runner start" VN="100,04 Bắt đầu vận động viên chạy" />
+    <运载流道反向 CN="100.05 运载流道反向" UK="100.05 Reverse carrier flow" VN="100.05 Luồng sóng mang ngược" />
+    <预留17 CN="100.06 预留" UK="100.06 reserved" VN="100.06 được đặt trước" />
+    <预留18 CN="101.07 预留" UK="101.07 reserved" VN="101.07 được đặt trước" />
+    <流道2工位1挡停气缸 CN="102.00 	流道2工位1挡停气缸" UK="102.00 Runner 2 station 1 gear stop cylinder" VN="102,00 Á hậu 2 trạm 1 bánh răng dừng xi lanh" />
+    <流道2工位1顶升气缸 CN="102.01 	流道2工位1顶升气缸" UK="102.01 Runner 2 station 1 jacking cylinder" VN="102.01 Người chạy 2 trạm 1 xylanh kích" />
+    <流道2工位2挡停气缸 CN="102.02 	流道2工位2挡停气缸" UK="102.02 Runner 2 station 2 stop cylinder" VN="102.02 Người chạy 2 trạm 2 trụ dừng" />
+    <流道2工位2顶升气缸 CN="102.03 	流道2工位2顶升气缸" UK="102.03 runner 2 station 2 jacking cylinder" VN="102.03 Á hậu 2 trạm 2 xi lanh kích" />
+    <启动按钮灯 CN="102.04 启动按钮灯" UK="102.04 Start button light" VN="102.04 Đèn nút khởi động" />
+    <停止按钮灯 CN="102.05 停止按钮灯" UK="102.05 Stop button light" VN="102.05 Đèn nút dừng" />
+    <复位按钮灯 CN="102.06 复位按钮灯" UK="102.06 Reset button light" VN="102.06 Đèn nút Reset" />
+    <流道一启动 CN="流道一启动" UK="Runner start" VN="Á quân bắt đầu" />
+    <反转 CN="反转" UK="Reverse" VN="Đảo ngược" />
+    <流道二启动 CN="流道二启动" UK="Runner 2 start" VN="Á hậu 2 bắt đầu" />
+    <运载一启动 CN="运载一启动" UK="Carry-start" VN="Khởi động" />
+    <清零 CN="清零" UK="Cleared" VN="Đã xóa" />
+    <主流线分料气缸1 CN="主流线分料气缸1" UK="Main stream feed cylinder 1" VN="Xi lanh cấp liệu dòng chính 1" />
+    <主流线分料气缸2 CN="主流线分料气缸2" UK="Main stream feed cylinder 2" VN="Xi lanh cấp liệu dòng chính 2" />
+    <主流线入料拨载具气缸 CN="主流线入料拨载具气缸" UK="Mainstream line feed carrier cylinder" VN="Xi lanh vận chuyển nguồn cấp dữ liệu dòng chính" />
+    <流道1缓存气缸1 CN="流道1缓存气缸1" UK="Runner 1 cache cylinder 1" VN="Á hậu 1 hình trụ bộ đệm 1" />
+    <流道1缓存气缸2 CN="流道1缓存气缸2" UK="Runner 1 cache cylinder 2" VN="Á hậu 1 hình trụ bộ nhớ cache 2" />
+    <流道1顶升气缸 CN="流道1顶升气缸" UK="Runner 1 jacking cylinder" VN="Á hậu 1 xylanh kích" />
+    <流道2工位1挡停气缸2 CN="流道2工位1挡停气缸" UK="Runner 2 station 1 block stop cylinder" VN="Á hậu 2 trạm 1 khối trụ dừng" />
+    <流道2工位1顶升气缸2 CN="流道2工位1顶升气缸" UK="Runner 2 station 1 jacking cylinder" VN="Á hậu 2 trạm 1 xylanh kích" />
+    <流道2工位2挡停气缸2 CN="流道2工位2挡停气缸" UK="Runner 2 station 2 stop cylinder" VN="Á hậu 2 trạm 2 dừng xi lanh" />
+    <流道2工位2顶升气缸2 CN="流道2工位2顶升气缸" UK="Runner 2 station 2 jacking cylinder" VN="Á hậu 2 trạm 2 xi lanh kích" />
+    <蜂鸣器屏蔽 CN="蜂鸣器屏蔽" UK="Buzzer shield" VN="Lá chắn buzzer" />
+    <左流道屏蔽 CN="左流道屏蔽" UK="Left runner shield" VN="Người chạy bên trái khiên" />
+    <右流道屏蔽 CN="右流道屏蔽" UK="Right runner shield" VN="Lá chắn người chạy bên phải" />
+    <寸动 CN="寸动" UK="Inching" VN="Inch" />
+    <屏蔽 CN="屏蔽" UK="shield" VN="cái khiên" />
+    <主流线分料汽缸1原点屏蔽延时时间 CN="D200	主流线分料汽缸1原点屏蔽延时时间" UK="D200 Main line feeder cylinder 1 origin shielding delay time" VN="D200 Xi lanh nạp đường chính 1 thời gian trễ che chắn gốc" />
+    <主流线分料汽缸1动点屏蔽延时时间 CN="D201	主流线分料汽缸1动点屏蔽延时时间" UK="D201 Main line feeder cylinder 1 moving point shielding delay time" VN="D201 Xi lanh nạp chính 1 điểm di chuyển thời gian trễ che chắn" />
+    <主流线分料汽缸2原点屏蔽延时时间 CN="D205	主流线分料汽缸2原点屏蔽延时时间" UK="D205 Main line feeder cylinder 2 origin shielding delay time" VN="D205 Thời gian trễ che chắn gốc của xi lanh nạp đường chính 2" />
+    <主流线分料汽缸2动点屏蔽延时时间 CN="D206	主流线分料汽缸2动点屏蔽延时时间" UK="D206 Mainstream feeder cylinder 2 moving point shielding delay time" VN="D206 Xi lanh nạp chính 2 điểm di chuyển che chắn thời gian trễ" />
+    <主流线入料拨载具汽缸原点屏蔽延时时间 CN="D210	主流线入料拨载具汽缸原点屏蔽延时时间" UK="D210 Mainstream line feed carrier cylinder origin shielding delay time" VN="D210 Thời gian trễ che chắn gốc xi lanh mang nguồn cấp dữ liệu dòng chính" />
+    <主流线入料拨载具汽缸动点屏蔽延时时间 CN="D211	主流线入料拨载具汽缸动点屏蔽延时时间" UK="D211 Mainstream line feed carrier cylinder moving point shielding delay time" VN="D211 Thời gian trễ che chắn điểm di chuyển của xi lanh cấp dữ liệu dòng chính" />
+    <流道1缓存汽缸1原点屏蔽延时时间 CN="D245	流道1缓存汽缸1原点屏蔽延时时间" UK="D245 Runner 1 buffer cylinder 1 origin shielding delay time" VN="D245 Runner 1 xi lanh đệm 1 gốc thời gian trễ che chắn" />
+    <流道1缓存汽缸1动点屏蔽延时时间 CN="D246	流道1缓存汽缸1动点屏蔽延时时间" UK="D246 Runner 1 buffer cylinder 1 moving point shielding delay time" VN="D246 Runner 1 xi lanh đệm 1 điểm di chuyển thời gian trễ che chắn" />
+    <流道1缓存汽缸2原点屏蔽延时时间 CN="D250	流道1缓存汽缸2原点屏蔽延时时间" UK="D250 Runner 1 buffer cylinder 2 origin shielding delay time" VN="D250 Runner 1 xi lanh đệm 2 gốc thời gian trễ che chắn" />
+    <流道1缓存汽缸2动点屏蔽延时时间 CN="D251	流道1缓存汽缸2动点屏蔽延时时间" UK="D251 Runner 1 buffer cylinder 2 moving point shielding delay time" VN="D251 Runner 1 xi lanh đệm 2 thời gian trễ che chắn điểm di chuyển" />
+    <流道1顶升汽缸原点屏蔽延时时间 CN="D255	流道1顶升汽缸原点屏蔽延时时间" UK="D255 Runner 1 jacking cylinder origin shielding delay time" VN="D255 Runner 1 kích hoạt thời gian trễ che chắn gốc xi lanh" />
+    <流道1顶升汽缸动点屏蔽延时时间 CN="D256	流道1顶升汽缸动点屏蔽延时时间" UK="D256 Channel 1 jacking cylinder moving point shielding delay time" VN="D256 Kênh 1 thời gian trễ che chắn điểm di chuyển xi lanh kích" />
+    <流道2工位1挡停汽缸原点屏蔽延时时间 CN="D265	流道2工位1挡停汽缸原点屏蔽延时时间" UK="D265 Runner 2 station 1 gear stop cylinder origin shielding delay time" VN="D265 Á hậu 2 trạm 1 bánh răng dừng thời gian trễ che chắn gốc xi lanh" />
+    <流道2工位1挡停汽缸动点屏蔽延时时间 CN="D266	流道2工位1挡停汽缸动点屏蔽延时时间" UK="D266 Runner 2 station 1 gear stop cylinder moving point shielding delay time" VN="D266 Á hậu 2 trạm 1 bánh răng dừng xi lanh điểm chuyển động che chắn thời gian trễ" />
+    <流道2工位1顶升汽缸原点屏蔽延时时间 CN="D270	流道2工位1顶升汽缸原点屏蔽延时时间" UK="D270 Runner 2 station 1 jacking cylinder origin shielding delay time" VN="D270 Runner 2 trạm 1 kích thời gian trễ che chắn gốc xi lanh" />
+    <流道2工位1顶升汽缸动点屏蔽延时时间 CN="D271	流道2工位1顶升汽缸动点屏蔽延时时间" UK="D271 Runner 2 station 1 jacking cylinder moving point shielding delay time" VN="D271 Á hậu 2 trạm 1 xylanh kích hoạt điểm di chuyển che chắn thời gian trễ" />
+    <流道2工位2挡停汽缸原点屏蔽延时时间 CN="D280	流道2工位2挡停汽缸原点屏蔽延时时间" UK="D280 Runner 2 station 2 gear stop cylinder origin shielding delay time" VN="D280 Runner 2 trạm 2 bánh răng dừng thời gian trễ che chắn gốc xi lanh" />
+    <流道2工位2挡停汽缸动点屏蔽延时时间 CN="D281	流道2工位2挡停汽缸动点屏蔽延时时间" UK="D281 Runner 2 station 2 gear stop cylinder moving point shielding delay time" VN="D281 Runner 2 trạm 2 bánh răng dừng xi lanh điểm chuyển động che chắn thời gian trễ" />
+    <流道2工位2顶升汽缸原点屏蔽延时时间 CN="D285	流道2工位2顶升汽缸原点屏蔽延时时间" UK="D285 Runner 2 station 2 jacking cylinder origin shielding delay time" VN="D285 Á hậu 2 trạm 2 kích thích thời gian trễ che chắn gốc xi lanh" />
+    <流道2工位2顶升汽缸动点屏蔽延时时间2 CN="D286	流道2工位2顶升汽缸动点屏蔽延时时间" UK="D286 runner 2 station 2 jacking cylinder moving point shielding delay time" VN="D286	流道2工位2顶升汽缸动点屏蔽延时时间" />
+    <蜂鸣器11 CN="100.07 蜂鸣器" UK="100.07 Buzzer" VN="100.07 Buzzer" />
+    <主流线分料气缸00 CN="101.00 	主流线分料气缸1" UK="101.00 Main stream feed cylinder 1" VN="101.00 Xi lanh cấp liệu dòng chính 1" />
+    <主流线分料气缸20 CN="101.01 	主流线分料气缸2" UK="101.01 Mainstream line feed cylinder 2" VN="101.01 Xi lanh cấp liệu dòng chính 2" />
+    <主流线入料拨载具气缸2 CN="101.02 	主流线入料拨载具气缸" UK="101.02 Mainstream line feed carrier cylinder" VN="101.02 Xi lanh vận chuyển nguồn cấp dữ liệu dòng chính" />
+    <流道1缓存气缸10 CN="101.03 	流道1缓存气缸1" UK="101.03 Runner 1 cache cylinder 1" VN="101.03 Á hậu 1 1 trụ bộ nhớ cache 1" />
+    <流道1缓存气缸20 CN="101.04 	流道1缓存气缸2" UK="101.04 Runner 1 cache cylinder 2" VN="101.04 Runner 1 hình trụ bộ nhớ cache 2" />
+    <流道1顶升气缸11 CN="101.05 	流道1顶升气缸" UK="101.05 Runner 1 jacking cylinder" VN="101.05 Á hậu 1 xi lanh kích" />
+    <报警Top5 CN="报警Top5" UK="Alarm Top5" VN="Alarm Top5" />
+    <异常次数 CN="异常次数" UK="Number of exceptions" VN="Số lượng ngoại lệ" />
+    <异常次数Top5 CN="异常次数Top5" UK="Top5 Abnormal Times" VN="Top 5 lần bất thường" />
+    <报警代码 CN="报警代码" UK="Alarm code" VN="Alarm code" />
+    <报警信息 CN="报警信息" UK="Alarm information" VN="Thông tin báo động" />
+    <关键字 CN="关键字" UK="Keyword" VN="Từ khóa" />
+    <时间 CN="时间" UK="time" VN="thời gian" />
+    <Y1214 CN="Y1214 Clear#1擦胶电机_启动" UK="Y1214 Clear#1 Glue cleaning motor_start" VN="Y1214 Clear # 1 Động cơ làm sạch keo_start" />
+    <Y1215 CN="Y1215 前龙门擦胶前吹气" UK="Y1215 前龙门擦胶前吹气" VN="Y1215 前龙门擦胶前吹气" />
+    <Y1208 CN="Y1208 Clear#1擦胶夾子On" UK="Y1208 Clear#1 Wipe Clip On" VN="Y1208 Clear # 1 Wipe Clip On" />
+    <X0410 CN="X0410 Clear#2擦胶感应SR1" UK="X0410 Clear#2 wiping sensor SR1" VN="Cảm biến lau X0410 Clear # 2 SR1" />
+    <X0411 CN="X0411 Clear#2擦胶感应SR2" UK="X0411 Clear#2 Wiping sensor SR2" VN="X0411 Clear # 2 Wiping sensor SR2" />
+    <X0412 CN="X0412 Clear#2擦胶感应SR3" UK="X0412 Clear#2 Wiping sensor SR3" VN="X0412 Clear # 2 Cảm biến lau SR3" />
+    <X0408 CN="X0408 Clear#2擦胶夾子_OnSR" UK="X0408 Clear#2 Wiping Glue Clip_OnSR" VN="X0408 Clear # 2 Lau keo Clip_OnSR" />
+    <X0409 CN="X0409 Clear#2擦胶夾子_OffSR" UK="X0409 Clear#2 Wiping Glue Clip_OffSR" VN="X0409 Clear # 2 Lau keo Clip_OffSR" />
+    <Y1314 CN="Y1314 Clear#2擦胶电机_启动" UK="Y1314 Clear#2 Glue cleaning motor_start" VN="Y1314 Clear # 2 Động cơ làm sạch keo_start" />
+    <Y1315 CN="Y1315 后龙门擦胶前吹气" UK="Y1315 后龙门擦胶前吹气" VN="Y1315 后龙门擦胶前吹气" />
+    <Y1308 CN="Y1308 Clear#2擦胶夾子On" UK="Y1308 Clear#2 Wipe Clip On" VN="Y1308 Xóa # 2 Xóa clip Bật" />
+    <X0500 CN="X0500 Stage1摇臂前移_动点SR" UK="X0500 Stage1 rocker arm forward_moving point SR" VN="Điểm di chuyển về phía trước của tay lái X0500 Stage1 SR" />
+    <X0501 CN="X0501 Stage1摇臂前移_静点SR" UK="X0501 Stage1 rocker arm forward_static point SR" VN="X0501 Cánh tay rocker Stage1 về phía trước_ điểm tĩnh SR" />
+    <X0502 CN="X0502 Stage1摇臂翻转_动点SR" UK="X0502 Stage1 rocker arm flip_moving point SR" VN="X0502 Điểm di chuyển cánh tay của rocker X0502 Stage1 SR" />
+    <X0503 CN="X0503 Stage1摇臂翻转_静点SR" UK="X0503 Stage1 Rocker Arm Flip_Static SR" VN="X0503 Stage1 Rocker Arm Flip_Static SR" />
+    <X0508 CN="X0508 Stage2摇臂前移_动点SR" UK="X0508 Stage2 rocker arm forward_moving point SR" VN="X0508 Điểm di chuyển trên cánh tay của rocker Stage2 SR" />
+    <X0509 CN="X0509 Stage2摇臂前移_静点SR" UK="X0509 Stage2 rocker arm forward _ static point SR" VN="Cánh tay của rocker X0509 Stage2 về phía trước _ điểm tĩnh SR" />
+    <X0510 CN="X0510 Stage2摇臂翻转_动点SR" UK="X0510 Stage2 rocker arm flip_moving point SR" VN="X0510 Điểm lật_ di chuyển trên cánh tay của rocker Stage2 SR" />
+    <X0511 CN="X0511 Stage2摇臂翻转_静点SR" UK="X0511 Stage2 Rocker Arm Flip_Static SR" VN="X0511 Stage2 Rocker Arm Flip_Static SR" />
+    <X0500-1 CN="X0500 工位：" UK="X0500 station:" VN="Trạm X0500:" />
+    <X0501-1 CN="X0501 工位：" UK="X0501 Station:" VN="Trạm X0501:" />
+    <X0502-1 CN="X0502 工位：" UK="X0502 Station:" VN="Trạm X0502:" />
+    <X0503-1 CN="X0503 工位：" UK="X0503 Station:" VN="Trạm X0503:" />
+    <X0508-1 CN="X0508 工位：" UK="X0508 station:" VN="Trạm X0508:" />
+    <X0509-1 CN="X0509 工位：" UK="X0509 station:" VN="Trạm X0509:" />
+    <X0510-1 CN="X0510 工位：" UK="X0510 Station:" VN="Trạm X0510:" />
+    <X0511-1 CN="X0511 工位：" UK="X0511 Station:" VN="Trạm X0511:" />
+    <Clear1_擦胶夹子2 CN="V01011  Clear#1_擦胶夾子" UK="V01011 Clear#1_Glue wiping clamp" VN="V01011 Clear#1_kẹp lau keo" />
+    <Clear2_擦胶夾子 CN="V01012  Clear#2_擦胶夾子" UK="V01012 Clear#2_Glue wiping clamp" VN="V01012 Clear#2_kẹp lau keo" />
+    <V02009 CN="V02009  Stage1_摇臂气缸" UK="V02009  Stage1_Rocker cylinder" VN="V02009  Stage1_Xi lanh rocker" />
+    <V02010 CN="V02010  Stage1_摇臂前移气缸" UK="V02010  Stage1_Rocker arm forward cylinder" VN="V02010  Stage1_Cánh tay rocker hình trụ phía trước" />
+    <V03009 CN="V03009  Stage2_摇臂气缸" UK="V03009  Stage2_Rocker cylinder" VN="V03009  Stage2_Xi lanh rocker" />
+    <V03010 CN="V03010  Stage2_摇臂前移气缸" UK="V03010  Stage2_Rocker arm forward cylinder" VN="V03010  Stage2_Cánh tay rocker hình trụ phía trước" />
+    <V02000 CN="V02000  左侧流道_读码‎阻挡气缸" UK="V02000  Left runner_reading ‎blocking cylinder" VN="V02000  Trụ chặn bên trái runner_reading" />
+    <V02002 CN="V02002  左侧流道_压合1气缸" UK="V02002 left port _ pressing 1 cylinder" VN="V02002 ống nước bên trái _ ép xi lanh 1" />
+    <V02003 CN="V02003  左侧流道_压合2气缸" UK="V02003 left port _ pressing 2 cylinders" VN="V02003 ống nước bên trái _ ép 2 xi lanh" />
+    <V02004 CN="V02004  左侧流道_压合顶升1气缸" UK="V02004 left runner _ press jacking 1 cylinder" VN="V02004 bên trái dòng chảy _ ép xi lanh 1" />
+    <V02005 CN="V02005  左侧流道_压合顶升2气缸" UK="V02005 left runner _ press jacking 2 cylinders" VN="V02005 bên trái dòng chảy _ ép xi lanh 2" />
+    <V02001 CN="V02001  左侧流道_CCD阻挡气缸" UK="V02001  Left runner_CCD blocking cylinder" VN="V02001  Hình trụ chặn bên trái_CCD" />
+    <V03000 CN="V03000  右侧流道_读码‎阻挡气缸" UK="V03000   Right runner_reading ‎blocking cylinder" VN="V03000  Trụ chặn bên phải runner_reading" />
+    <V03001 CN="V03001  右侧流道_CCD阻挡气缸" UK="V03001  Right runner_CCD blocking cylinder" VN="V03001  Xi lanh chặn bên phải runner_CCD" />
+    <V03002 CN="V03002  右侧流道_压合1气缸" UK="V03002 right flow channel _ pressing 1 cylinder" VN="V03002 dòng chảy phải _ ép 1 xi lanh" />
+    <V03003 CN="V03003  右侧流道_压合2气缸" UK="V03003 right runner _ pressing 2 cylinders" VN="V03003 dòng nước phải _ ép 2 xi lanh" />
+    <V03004 CN="V03004  右侧流道_压合顶升1气缸" UK="V03004 right runner _ press jacking 1 cylinder" VN="V03004 dòng chảy bên phải _ ép lít 1 xi lanh" />
+    <V03005 CN="V03005  右侧流道_压合顶升2气缸" UK="V03005 right runner _ pressure jacking 2 cylinders" VN="V03005 dòng chảy phải _ ép lít 2 xi lanh" />
+    <V03001 CN="V03001  右侧流道_CCD阻挡气缸" UK="V03001  Right runner_CCD blocking cylinder" VN="V03001  Xi lanh chặn bên phải runner_CCD" />
+    <V03001 CN="V03001  右侧流道_CCD阻挡气缸" UK="V03001  Right runner_CCD blocking cylinder" VN="V03001  Xi lanh chặn bên phải runner_CCD" />
+    <請選擇移動點位 CN="請選擇移動點位" UK="Please select the move point" VN="Hãy chọn điểm di chuyển" />
+    <確認是否SAVE CN="確認是否SAVE" UK="Confirm whether to SAVE" VN="Xác nhận SAVE." />
+    <點位 CN="點位" UK="Point position" VN="DianWei" />
+    <修改成功 CN="修改成功" UK="Modify the success" VN="Sửa đổi thành công" />
+    <僅可修改級別1與級別2之密碼 CN="僅可修改 級別1 與 級別2 之密碼" UK="Passwords can only be changed for levels 1 and 2" VN="Chỉ có thể thay đổi mật khẩu cho cấp 1 và cấp 2" />
+    <UserName錯誤或原密碼錯誤 CN=" User Name錯誤 或 原密碼錯誤" UK="User Name error or original password error" VN="Lỗi User Name hoặc mật khẩu gốc" />
+    <未选取Excel档案请重新确认 CN="未选取Excel档案 , 请重新确认 !!" UK="Excel file is not selected, please reconfirm!!" VN="Không chọn tập tin Excel, xin vui lòng xác nhận lại!!" />
+    <确认载入 CN=" 确认载入" UK="Confirm loading" VN="Xác nhận nạp đạn." />
+    <档案 CN="档案 ?" UK="File?" VN="Hồ sơ?" />
+    <请选择移动点位 CN="请选择移动点位" UK="Please select the move point" VN="Hãy chọn điểm di chuyển" />
+    <请选择储存点位 CN="请选择储存点位" UK="Please select the storage point" VN="Hãy chọn vị trí lưu trữ" />
+    <确认是否SAVE CN="确认是否SAVE" UK="Confirm whether to SAVE" VN="Xác nhận SAVE." />
+    <点位 CN="点位 ?" UK="Point?" VN="Điểm?" />
+    <未選取Recipe請重新確認 CN="未選取Recipe , 請重新確認 !!" UK="Recipe is not selected, please reconfirm!!" VN="Recipe không được chọn, xin vui lòng xác nhận một lần nữa!!" />
+    <與目前使用之Recipe相同請重新確認 CN="與目前使用之Recipe相同 , 請重新確認 !!" UK="Same Recipe as currently used, please reconfirm!!" VN="Cùng với Recipe hiện tại, xin vui lòng xác nhận lại!!" />
+    <確認是否Load CN="確認是否Load" UK="Verify Load" VN="Xác nhận tải." />
+    <檔案 CN="檔案 ?" UK="File?" VN="Hồ sơ?" />
+    <請先選擇欲複製之RecipeID CN="請先選擇欲複製之Recipe ID" UK="Please select the Recipe ID that you want to copy first" VN="Hãy chọn Recipe ID mà bạn muốn SAO chép" />
+    <新ID為空值Recipe另存新檔失敗 CN="新ID為空值，Recipe另存新檔失敗！" UK="Recipe fails to save the new file!" VN="ID mới với giá trị không có, Recipe một lỗi trong các tập tin mới!" />
+    <新ID資料已經存在Recipe另存新檔失敗 CN="新ID資料已經存在，Recipe另存新檔失敗！" UK="The new ID data already exists, the Recipe fails to save the new file!" VN="Dữ liệu ID mới đã tồn tại, Recipe một lỗi trong các tập tin mới!" />
+    <校针结果 CN="校针结果" UK="The school needle results" VN="Kết quả pin" />
+    <请检查机台内部是否有产品 CN="请检查机台内部是否有产品" UK="Please check whether there are any products inside the machine" VN="Xin vui lòng kiểm tra bên trong máy sản phẩm" />
+    <提示 CN="提示" UK="prompt" VN="Gợi ý" />
+    <配置文件不存在 CN="配置文件不存在！" UK="Configuration file does not exist!" VN="Hồ sơ không tồn tại!" />
+    <创建配置文件失败 CN="创建配置文件失败！" UK="Failed to create configuration file!" VN="Lỗi tạo hồ sơ!" />
+    <读取配置文件失败 CN="读取配置文件失败！" UK="Failed to read configuration file!" VN="Lỗi đọc hồ sơ!" />
+    <配置文件读取错误请检查是否有误并重启软件 CN="配置文件读取错误,请检查是否有误，并重启软件！" UK="Configuration file reading error, please check if there is any error and restart the software!" VN="Lỗi đọc hồ sơ, hãy kiểm tra xem có lỗi và khởi động lại phần mềm!" />
+    <写入配置文件失败 CN="写入配置文件失败！" UK="Failed to write configuration file!" VN="Lỗi ghi hồ sơ!" />
+    <读取NODE CN="读取NODE:" UK="Read the NODE:" VN="NODE:" />
+    <失败 CN="失败" UK="failure" VN="Thất bại" />
+    <首字母不合法添加key失败 CN="  首字母不合法，添加key失败！" UK="Invalid initials, failed to add key!" VN="Tên viết tắt không hợp pháp." />
+    <包含不合法字符添加key失败 CN="  包含不合法字符，添加key失败！" UK="Contain illegal character, add key failed!" VN="Chứa các ký tự bất hợp pháp, lỗi thêm phím!" />
+    <程序已启动不可重複開啟 CN="程序已启动,不可重複開啟！" UK="The program has been started, cannot be opened again!" VN="Chương trình đã bắt đầu, không thể lặp lại mở!" />
+    <请确认是否退出软件 CN="请确认是否退出软件?" UK="Please confirm whether you want to exit the software?" VN="Xin vui lòng xác nhận nếu thoát khỏi phần mềm?" />
+    <確認是否儲存檔案 CN=" 確認是否儲存檔案? " UK="Confirm whether to save the file? " VN="Xác nhận lưu trữ hồ sơ? " />
+    <資料內容格式錯誤請確認修改過之資料數值 CN="資料內容格式錯誤 ,請確認修改過之資料數值!! " UK="The format of the data is wrong, please confirm the revised data value!! " VN="Thông tin nội dung lỗi định dạng, hãy xác nhận giá trị dữ liệu đã được sửa đổi!! " />
+    <更新校准Z轴点位后重新获取Z轴的基准值后期Z轴方向偏移将依赖此基准值 CN="更新校准Z轴点位后，重新获取Z轴的基准值，后期Z轴方向偏移将依赖此基准值" UK="After updating the point position of the calibration Z-axis, the reference value of the Z-axis is obtained again. Later Z-axis direction migration will depend on this reference value" VN="Cập nhật điểm xác định trục Z, lấy lại giá trị cơ sở của trục Z, sau khi trục Z thay đổi sẽ phụ thuộc vào giá trị cơ sở này" />
+    <请先归原再进行此操作 CN="请先归原，再进行此操作！" UK="Please go to the original, then do this operation!" VN="Xin vui lòng đi trước và sau đó thực hiện chiến dịch này!" />
+    <CCD1获取数据异常 CN="CCD1获取数据异常" UK="Abnormal data acquisition by CCD1" VN="Thu thập dữ liệu bất thường bởi CCD1" />
+    <CCD2获取数据异常 CN="CCD2获取数据异常" UK="Abnormal data acquisition by CCD2" VN="Thu thập dữ liệu bất thường bởi CCD2" />
+    <扫码枪超时 CN="扫码枪超时" UK="Scan code gun timeout" VN="Quét mã thời gian chờ súng" />
+    <CheckSN異常 CN="CheckSN異常" UK="CheckSN exception" VN="Ngoại lệ CheckSN" />
+    <扫码枪超时 CN="扫码枪超时" UK="Scan code gun timeout" VN="Quét mã thời gian chờ súng" />
+    <前龙门胶阀报警 CN="前龙门胶阀报警" UK="Front gantry valve alarm" VN="Báo động van giàn trước" />
+    <后龙门胶阀报警 CN="后龙门胶阀报警" UK="Rear gantry valve alarm" VN="Báo động van giàn sau" />
+    <擦胶模组1異常 CN="擦胶模组1異常" UK="Glue wipe module 1 is abnormal" VN="Mô-đun lau keo 1 không bình thường" />
+    <擦胶模组2異常 CN="擦胶模组2異常" UK="Glue wipe module 2 is abnormal" VN="Mô-đun lau keo 2 không bình thường" />
+    <Stage1Teach1_动作不完全 CN="Stage1Teach1_动作不完全" UK="Stage1Teach1_ incomplete action" VN="Giai đoạn1Teach1_ hành động chưa hoàn thành" />
+    <Stage2Teach1_动作不完全 CN="Stage2Teach1_动作不完全" UK="Stage2Teach1_ incomplete action" VN="Stage2Teach1_ hành động chưa hoàn thành" />
+    <Stage1Teach2_动作不完全 CN="Stage1Teach2_动作不完全" UK="Stage1Teach2_ incomplete action" VN="Stage1Teach2_ hành động chưa hoàn thành" />
+    <Stage2Teach2_动作不完全 CN="Stage2Teach2_动作不完全" UK="Stage2Teach2_ incomplete action" VN="Stage2Teach2_ hành động chưa hoàn thành" />
+    <無異常 CN="無異常" UK="No abnormality" VN="Không có bất thường" />
+    <Excel文件不存在地址为 CN="Excel文件不存在,地址为:" UK="The Excel file does not exist, the address is:" VN="Tệp Excel không tồn tại, địa chỉ là:" />
+    <传入的文件不是Excel文件 CN="传入的文件不是Excel文件,地址为:" UK="The incoming file is not an Excel file, the address is:" VN="Tệp đến không phải là tệp Excel, địa chỉ là:" />
+    <读取Excel文件未指定Sheet名称 CN="读取Excel文件未指定Sheet名称" UK="The sheet name is not specified when reading the Excel file" VN="Tên trang tính không được chỉ định khi đọc tệp Excel" />
+    <在调用DataTableHelper中SplitDT方法时 CN="在调用DataTableHelper中SplitDT方法时，StartRowsIndex&gt; EndRowsIndex不满足执行条件" UK="When calling the SplitDT method in DataTableHelper, StartRowsIndex&gt; EndRowsIndex does not meet the execution conditions" VN="Khi gọi phương thức SplitDT trong DataTableHelper, StartRowsIndex&gt; EndRowsIndex không đáp ứng các điều kiện thực thi" />
+    <在调用DataTableHelper中SplitDT方法时2 CN="在调用DataTableHelper中SplitDT方法时，EndRowsIndex&gt; DataTable.Rows.Count不满足执行条件" UK="When calling the SplitDT method in DataTableHelper, EndRowsIndex&gt; DataTable.Rows.Count does not meet the execution conditions" VN="Khi gọi phương thức SplitDT trong DataTableHelper, EndRowsIndex&gt; DataTable.Rows.Count không đáp ứng điều kiện thực thi" />
+    <excel文件的路径不存在或者excel文件没有创建好 CN="excel文件的路径不存在或者excel文件没有创建好" UK="The path of the excel file does not exist or the excel file is not created" VN="Đường dẫn của tệp excel không tồn tại hoặc tệp excel không được tạo" />
+    <调机模式1 CN=" 调机模式" UK="The machine model" VN="Chế độ điều chỉnh" />
+    <调机模式2 CN="调机模式" UK="The machine model" VN="Chế độ điều chỉnh" />
+    <调机模式3 CN="机模式 调" UK="Machine mode" VN="Chế độ điều chỉnh" />
+    <调机模式4 CN="模式 调机" UK="Mode machine" VN="Chế độ máy" />
+    <调机模式5 CN="式 调机模" UK="Type the tools" VN="Chế độ điều chỉnh kiểu" />
+    <调机模式6 CN=" 调机模式 " UK="The machine model" VN="Chế độ điều chỉnh" />
+    <生产模式1 CN=" 生产模式" UK="Production model" VN=" Mô hình sản xuất" />
+    <生产模式2 CN="生产模式" UK="Production model " VN=" Mô hình sản xuất" />
+    <生产模式3 CN="产模式 生" UK="Production mode of raw" VN="Chế độ sản xuất" />
+    <生产模式4 CN="模式 生产" UK="Model production" VN="Mô hình sản xuất" />
+    <生产模式5 CN="产 生产模" UK="Production mold production" VN="Chế độ sản xuất" />
+    <生产模式6 CN=" 生产模式 " UK="Production model" VN="Mô hình sản xuất" />
+    <正常模式 CN="正常模式" UK="Normal mode" VN="Chế độ bình thường" />
+    <切换语言成功 CN="切换语言成功" UK="Switch languages successfully" VN="Chuyển đổi thành công ngôn ngữ" />
+    <Mini通讯异常 CN="Mini/MES通讯异常" UK="Mini/MES communication is abnormal" VN="Giao tiếp Mini / MES không bình thường" />
+    <Mini通讯正常 CN="Mini/MES通讯正常" UK="Mini/MES communication is normal" VN="Giao tiếp Mini / MES vẫn bình thường" />
+    <发送SJ0给相机相机反馈为NO CN="发送SJ0给相机，相机反馈为NO" UK="SJ0 is sent to the camera and the camera feedback is NO" VN="Gửi SJ0 cho máy quay, máy quay phản hồi không" />
+    <发送SJ1给相机相机反馈为NO CN="发送SJ1给相机，相机反馈为NO" UK="SJ1 is sent to the camera and the camera feedback is NO" VN="Gửi SJ1 cho máy quay, máy quay phản hồi không" />
+    <前龙门校针结果 CN="前龙门校针结果" UK="The front gantry school needle results" VN="Long môn trước khi kết quả" />
+    <后龙门校针结果 CN="后龙门校针结果" UK="After the gantry school needle results" VN="Sau khi dragon gate Kim kết quả" />
+    <XY校正失败请重新校正 CN="XY校正失败，请重新校正" UK="XY correction failed, please rectify" VN="Hệ thống XY đã thất bại" />
+    <存在撞机风险请确认自动模式将停止 CN="存在撞机风险！，请确认！！！自动模式将停止" UK="Risk of collision!, please confirm!!Automatic mode will stop" VN="Có nguy cơ va chạm!Xin vui lòng xác nhận!Chế độ tự động sẽ dừng lại" />
+    <请确认是否关闭CCD CN="请确认是否关闭CCD" UK="Please confirm whether CCD is closed" VN="Hãy xác nhận là tắt CCD" />
+    <程序数据异常将关闭软件 CN="程序数据异常，将关闭软件" UK="The program data is abnormal. The software will be shut down" VN="Dữ liệu bất thường của chương trình sẽ tắt phần mềm" />
+    <确认关闭软件 CN="确认关闭软件" UK="Confirm to close software" VN="Xác nhận đóng phần mềm" />
+    <关闭软件 CN="关闭软件" UK="Close the software" VN="Tắt phần mềm" />
+    <登录成功 CN="登录成功" UK="Login successful" VN="Đăng nhập thành công" />
+    <登录失败 CN="登录失败" UK="Login failed" VN="Đăng nhập không thành công" />
+    <胶路数据异常保存失败请检查 CN="胶路数据异常，保存失败，请检查！" UK="The data of rubber path is abnormal, save failed, please check!" VN="Thông tin ngoại lệ, lưu thất bại, xin vui lòng kiểm tra!" />
+    <胶路文件不存在保存失败 CN="胶路文件不存在，保存失败！" UK="The glue file does not exist, save failed!" VN="Tập tin đường keo không tồn tại, lưu thất bại!" />
+    <确认标定 CN="确认标定" UK="Confirm the calibration" VN="Xác nhận hiệu chuẩn" />
+    <标定开始 CN="标定开始" UK="Calibration start" VN="Hiệu chuẩn bắt đầu" />
+    <请确认当前是否在点胶位 CN="请确认当前是否在点胶位? " UK="Please confirm whether you are at the dispensing position. " VN="Xin vui lòng xác nhận hiện tại tại vị trí? " />
+    <请选择胶路文档 CN="请选择胶路文档" UK="Please select the glue path document" VN="Hãy chọn tài liệu đường keo" />
+    <调试模式 CN="调试模式" UK="Debug mode" VN="Gỡ lỗi chế độ" />
+    <点胶1 CN="1#点胶" UK="1 # dispensing" VN="1# điểm keo" />
+    <点胶2 CN="2#点胶" UK="2 # dispensing" VN="2# điểm keo" />
+    <排胶时间 CN="排胶时间" UK="Evacuation time" VN="Sắp xếp thời gian" />
+    <排胶间隔 CN="排胶间隔" UK="Hàng keo khoảng cách" VN="Gỡ lỗi chế độ" />
+    <排胶次数 CN="排胶次数" UK="Evacuation times" VN="Hàng số lượng keo" />
+    <前龙门排胶 CN="前龙门排胶" UK="Front gantry row glue" VN="Longmen hàng trước khi keo" />
+    <后龙门排胶 CN="后龙门排胶" UK="Rear gantry row glue" VN="Sau con rồng cửa hàng keo" />
+    <双龙门 CN="双龙门" UK="Double dragon" VN="Song long môn" />
+    <OP登录 CN="OP登录" UK="OP login" VN="OP đăng nhập" />
+    <PDCA断开连接 CN="PDCA断开连接" UK="PDCA disconnected" VN="PDCA đã ngắt kết nối" />
+    <前龙门点胶阀状态 CN="前龙门点胶阀状态" UK="The state of the front gate dispensing valve" VN="Tình trạng van nhựa trước con rồng" />
+    <后龙门点胶阀状态 CN="后龙门点胶阀状态" UK="Rear gantry dispensing valve state" VN="Tình trạng van sau con rồng" />
+    <诺信气阀开 CN="诺信气阀开" UK="Noshon gas valve open" VN="Noroxin van mở" />
+    <诺信胶阀开 CN="诺信胶阀开" UK="Nosin glue valve open" VN="Van nới lỏng mở" />
+    <屏蔽擦胶布报警 CN="屏蔽擦胶布报警" UK="Shielding wipe tape alarm" VN="Bảo vệ băng cảnh sát" />
+    <标定校针 CN="标定校针" UK="Calibration school needle" VN="Hiệu chuẩn Kim" />
+    <步距 CN="步距" UK="Step away from" VN="Bước cách" />
+    <开始标定 CN="开始标定" UK="To start calibration" VN="Bắt đầu hiệu chuẩn" />
+    <自动标定工位 CN="自动标定工位：" UK="Automatic calibration station:" VN="Tự động xác định vị trí:" />
+    <点胶针宽度 CN="点胶针宽度" UK="Dispensing needle width" VN="Chỉ chiều rộng của Kim keo" />
+    <自动排胶出胶时长 CN="自动排胶出胶时长" UK="Automatic glue discharging time" VN="Thời gian kết dính tự động" />
+    <自动排胶间隔时间 CN="自动排胶间隔时间" UK="Automatic glue discharge interval time" VN="Thời gian liên kết tự động" />
+    <貼附 CN="貼附" UK="Attached with a" VN="Dán khống chế" />
+    <貼附前 CN="貼附前" UK="Attached with a former" VN="Trước khi đính kèm" />
+    <貼附後 CN="貼附後" UK="Stick attached" VN="Đăng sau" />
+    <启用视觉点位交互 CN="启用视觉点位交互" UK="Enable visual point-position interaction" VN="Cho phép tương tác chấm/bit" />
+    <点选插入行 CN="点选插入行" UK="Click on insert row" VN="Nhấp chuột vào hàng chèn" />
+    <示教模式 CN="示教模式" UK="Teaching mode" VN="Mô hình hiển thị" />
+    <点位存储 CN="点位存储" UK="Point storage" VN="Lưu trữ điểm" />
+    <站名 CN="站名：" UK="The name:" VN="Tên nhà ga:" />
+    <更新版本信息 CN="更新版本信息" UK="Updated version information" VN="Phiên bản cập nhật thông tin" />
+    <位 CN="位" UK="position" VN="Vị trí" />
+    <压合顶升1气缸 CN="压合顶升1气缸" UK="Press up 1 cylinder" VN="Xi lanh ép lít 1" />
+    <压合1气缸 CN="压合1气缸" UK="Press 1 cylinder" VN="Ép xi lanh 1" />
+    <压合2气缸 CN="压合2气缸" UK="Press 2 cylinders" VN="Xi lanh ép 2" />
+    <获取SN CN="获取SN" UK="Get SN" VN="Truy cập vào SN." />
+    <用户登录 CN="用户登录" UK="The user login" VN="Người dùng đăng nhập" />
+    <上传参数信息 CN="上传参数信息" UK="Upload parameter information" VN="Tải thông tin tham số" />
+    <检查过站 CN="检查过站" UK="Checked the station" VN="Kiểm tra nhà ga" />
+    <获取胶水配置 CN="获取胶水配置" UK="Get the glue configuration" VN="Nhận được cấu hình keo" />
+    <检查追溯信息 CN="检查追溯信息" UK="Check traceability information" VN="Kiểm tra thông tin theo dõi" />
+    <上传PDCA CN="上传PDCA" UK="Upload the PDCA" VN="Tải PDCA lên." />
+    <设置胶水信息 CN="设置胶水信息" UK="Set glue information" VN="Thiết lập thông tin keo" />
+    <绑定胶水物料 CN="绑定胶水物料" UK="Binding glue material" VN="Ràng buộc chất liệu keo" />
+    <显示PDCA反馈数据 CN="显示PDCA反馈数据" UK="Display PDCA feedback data" VN="Cho thấy phản hồi PDCA" />
+    <移动距离mm CN="移动距离mm:" UK="Moving distance mm:" VN="Di chuyển khoảng cách mm:" />
+    <未使用 CN="未使用" UK="Don't use" VN="Không được sử dụng" />
+    <夜班 CN="夜班" UK="The night shift" VN="Ông làm ca tối" />
+    <Mini掉线 CN="Mini掉线\r\n" UK="The Mini drops \ r \ n" VN="Máy giảm tốc độ" />
+    <M01_05 CN="M01_05  点胶0_擦胶Motor" UK="M01_05 dispensing 0_ rubbing Motor" VN="M01_05 điểm 0_ chà nhựa Motor" />
+    <M02_05 CN="M02_05  点胶1_擦胶Motor" UK="M02_05 dispensing glue 1_ rubbing Motor" VN="M02_05 điểm keo 1_ chà keo Motor" />
+    <通讯类型 CN="通讯类型" UK="Types of communication" VN="Kiểu liên lạc" />
+    <串口 CN="串口" UK="A serial port" VN="ChuanKou" />
+    <网口 CN="网口" UK="so" VN="WangKou" />
+    <串口参数 CN="串口参数" UK="A serial port parameters" VN="Thông số liên tiếp" />
+    <旋转补偿功能 CN="3D旋转补偿功能" UK="3D rotation compensation function" VN="Chức năng bù đắp bằng xoay 3D" />
+    <角度修正 CN="角度修正" UK="Angle correction" VN="Điều chỉnh góc" />
+    <允許角度範圍 CN="允許角度範圍" UK="Permissible Angle range" VN="Cho phép các góc độ" />
+    <旋转位使用 CN="旋转位使用" UK="Rotation bit usage" VN="Các bit quay được sử dụng" />
+    <启用换位擦胶 CN="启用换位擦胶" UK="Enable transposition rubbing" VN="Dùng thay đổi keo dán" />
+    <复拍功能 CN="复拍功能" UK="After taken function" VN="Chức năng lặp lại" />
+    <拍照位次数 CN="拍照位次数" UK="Number of camera positions" VN="Số lần chụp ảnh" />
+    <复拍次数 CN="复拍次数" UK="After shoot number" VN="Số lần lặp lại" />
+    <左-视觉命令参数 CN="左-视觉命令参数" UK="Left - visual command parameter" VN="Bên trái - tham số lệnh" />
+    <右-视觉命令参数 CN="右-视觉命令参数" UK="Right - visual command parameters" VN="Phải - tham số lệnh trực quan" />
+    <测距功能 CN="测距功能" UK="Distance function" VN="Chức năng tìm kiếm khoảng cách" />
+    <翻转模组使用 CN="翻转模组使用" UK="Flip module used" VN="Chế độ thay đổi được sử dụng" />
+    <测距 CN="测距" UK="ranging" VN="Ngắm bằng" />
+    <流道启用 CN="流道启用" UK="Port is enabled" VN="Kênh đã kích hoạt" />
+    <外部流道连接 CN="外部流道连接" UK="External runner connection" VN="Kết nối ống dẫn nước ngoài" />
+    <入料阻挡气缸使用 CN="入料阻挡气缸使用" UK="The feed block cylinder is used" VN="Xi lanh khối lượng được sử dụng" />
+    <CCD阻挡气缸使用 CN="CCD阻挡气缸使用" UK="CCD block cylinder use" VN="Xi lanh ngăn CCD được sử dụng" />
+    <压合气缸启用 CN="压合气缸启用" UK="The pressing cylinder is enabled" VN="Xi lanh ép đã kích hoạt" />
+    <压合顶升汽缸启用 CN="压合顶升汽缸启用" UK="Pressing jacking cylinder enabled" VN="Xi lanh ép nâng kích hoạt" />
+    <BarCode1启用 CN="BarCode#1启用" UK="BarCode# 1 enabled" VN="BarCode#1 đã bật" />
+    <BarCode2启用 CN="BarCode#2启用" UK="BarCode# 2 enabled" VN="BarCode#2 đã bật" />
+    <启用 CN="启用" UK="To enable the" VN="bật" />
+    <新大陆 CN="新大陆" UK="The new world" VN="Tân thế giới" />
+    <视界 CN="视界" UK="horizon" VN="ShiJie" />
+    <品牌 CN="品牌：" UK="Brand:" VN="Nhãn hiệu:" />
+    <拍照位1视觉命令 CN="拍照位1 视觉命令" UK="Photo position 1 visual command" VN="Ảnh chụp ảnh số 1" />
+    <拍照位2视觉命令 CN="拍照位2 视觉命令" UK="Photo position 2 visual command" VN="Ảnh chụp vị trí 2" />
+    <拍照位3视觉命令 CN="拍照位3 视觉命令" UK="Photo position 3 visual command" VN="Ảnh chụp vị trí 3" />
+    <拍照位4视觉命令 CN="拍照位4 视觉命令" UK="Photo position 4 visual command" VN="Ảnh chụp vị trí 4" />
+    <拍照位5视觉命令 CN="拍照位5 视觉命令" UK="Photo position 5 visual command" VN="Ảnh chụp vị trí 5" />
+    <复拍1视觉命令 CN="复拍1 视觉命令" UK="Multibeat 1 visual command" VN="Lặp lại lệnh hình ảnh 1" />
+    <复拍2视觉命令 CN="复拍2 视觉命令" UK="Multibeat 2 visual commands" VN="Lặp lại lệnh hình ảnh 2" />
+    <复拍3视觉命令 CN="复拍3 视觉命令" UK="Multibeat 3 visual commands" VN="Lặp lại 3 lệnh trực quan" />
+    <复拍4视觉命令 CN="复拍4 视觉命令" UK="Multibeat 4 visual commands" VN="Lặp lại 4 lệnh hình ảnh" />
+    <复拍5视觉命令 CN="复拍5 视觉命令" UK="Multibeat 5 visual commands" VN="Lặp lại lệnh trực quan 5" />
+    <旋转度数 CN="旋转度数" UK="Rotating degree" VN="Quay số" />
+    <拍照位1前翻转 CN="拍照位1前翻转" UK="Position 1 is flipped forward" VN="Quay lại vị trí 1" />
+    <拍照位2前翻转 CN="拍照位2前翻转" UK="Position 2 is flipped forward" VN="Ảnh chụp vị trí 2 được lật trước" />
+    <拍照位3前翻转 CN="拍照位3前翻转" UK="Position 3 is flipped forward" VN="Ảnh chụp vị trí 3 được lật trước" />
+    <拍照位4前翻转 CN="拍照位4前翻转" UK="Position 4 is flipped forward" VN="Ảnh số 4 được lật trước" />
+    <拍照位5前翻转 CN="拍照位5前翻转" UK="Position 5 is flipped forward" VN="Ảnh chụp vị trí 5 được lật trước" />
+    <X步距 CN="X步距：" UK="X step:" VN="Bước X" />
+    <Y步距 CN="Y步距：" UK="Y step:" VN="Y bước" />
+    <X轴 CN="X轴：" UK="X axis:" VN="Trục X:" />
+    <Y轴 CN="Y轴：" UK="Y axis:" VN="Trục Y:" />
+    <Z轴 CN="Z轴：" UK="Z axis:" VN="Trục Z:" />
+    <A轴 CN="A轴：" UK="A axis:" VN="Trục A:" />
+    <R轴 CN="R轴：" UK="R axis:" VN="Trục R:" />
+    <入料阻挡汽缸启用 CN="入料阻挡汽缸启用" UK="Inlet blocking cylinder enabled" VN="Chặn xi lanh đã kích hoạt" />
+    <CCD阻挡汽缸启用 CN="CCD阻挡汽缸启用" UK="CCD block cylinder enabled" VN="Xi lanh chặn CCD đã kích hoạt" />
+    <波特率 CN="波特率(Baud Rate) " UK="Baud Rate" VN="Tỷ lệ Baud Rate" />
+    <数据位 CN="数据位（data bit）" UK="Data bit" VN="Bit dữ liệu " />
+    <奇偶校验位 CN="奇偶校验位（parity bit）" UK="Parity bit Parity bit" VN="Bit kiểm tra (parity bit)" />
+    <停止位 CN="停止位（stop bit）" UK="Stop bit" VN="Dừng bit" />
+    <mini状态 CN="mini状态：" UK="The mini state:" VN="Trạng thái mini:" />
+    <连续拍照功能 CN="连续拍照功能" UK="Continuous camera function" VN="Hình ảnh liên tục" />
+    <異常訊息 CN="異常訊息" UK="Exception message" VN="Thông điệp bất thường" />
+    <StandBy位 CN="Stand By位" UK="Stand By a" VN="Stand By" />
+    <喷嘴 CN="喷嘴" UK="The nozzle" VN="Cái vòi" />
+    <通讯失败 CN="通讯失败" UK="Communication failure" VN="Liên lạc thất bại" />
+    <确认 CN="       确认" UK="Confirm " VN="Xác nhận" />
+    <门检触发请确认设备状况再解除 CN="门检触发 - 请确认设备状况 , 再解除" UK="Gate Check Trigger - Please check the equipment condition before disabling" VN="Kiểm tra kích hoạt cửa - hãy xác nhận tình trạng thiết bị, và sau đó hủy bỏ" />
+    <生產數量 CN="生產數量: " UK="Production quantity:" VN="Số lượng sản xuất:" />
+    <测试功能 CN="测试功能" UK="Testing capabilities" VN="Chức năng kiểm tra" />
+    <清洗胶阀 CN="清洗胶阀" UK="Cleaning rubber valve" VN="Làm sạch các van nhựa" />
+    <副本 CN="副本" UK="A copy of the" VN="Bản SAO" />
+    <软件Release CN=" 软件 Release: " UK="Software Release:" VN="Phát hành phần mềm:" />
+    <Laser测距功能 CN="Laser测距功能" UK="Laser ranging function" VN="Chức năng laser khác nhau" />
+    <Laser测距 CN="Laser测距" UK="Laser ranging" VN="Laser khác nhau" />
+    <前龙门点胶阀 CN="前龙门点胶阀:" UK="Front gantry dispensing valve:" VN="Trước khi con rồng nhựa van:" />
+    <后龙门点胶阀 CN="后龙门点胶阀:" UK="Rear gantry dispensing valve:" VN="Sau khi con rồng điểm van:" />
+    <通讯类型 CN="通讯类型:" UK="Communication type:" VN="Liên lạc kiểu:" />
+    <没有获取到令牌 CN="没有获取到令牌:" UK="Did not get the token" VN="Không nhận được mã thông báo" />
+    <PDCA通讯未连接 CN="PDCA通讯未连接" UK="PDCA communication is not connected" VN="Giao tiếp PDCA không được kết nối" />
+    <CCD1通讯未连接 CN="CCD1通讯未连接:" UK="CCD1 communication is not connected" VN="Giao tiếp CCD1 không được kết nối" />
+    <CCD2通讯未连接 CN="CCD2通讯未连接" UK="CCD2 communication is not connected" VN="Giao tiếp CCD2 không được kết nối" />
+    <屏蔽胶阀数据报警 CN="屏蔽胶阀数据报警" UK="Shielding valve data alarm" VN="Bảo vệ van báo động dữ liệu" />
+    <确定要切换语言吗 CN="确定要切换语言吗" UK="Are you sure you want to switch language" VN="Bạn có chắc chắn muốn chuyển đổi ngôn ngữ không" />
+    <提示 CN="提示" UK="prompt" VN="lời nhắc" />
+    <操作员登录 CN="操作员登录" UK="Operator login" VN="Đăng nhập nhà điều hành" />
+    <不允许存在连续两次拍照指令都不启用 CN="不允许存在连续两次拍照指令都不启用" UK="Two consecutive camera commands are not allowed" VN="Hai lệnh camera liên tiếp không được phép" />
+    <操作员 CN="操作员" UK="operator" VN="nhà điều hành" />
+    <工程师 CN="工程师" UK="engineer" VN="kỹ sư" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <设备状态 CN="设备状态" UK="Device status" VN="Tình trạng thiết bị" />
+    <控制状态 CN="控制状态" UK="Control state" VN="Trạng thái kiểm soát" />
+    <扫码 CN="扫码" UK="Scan the code" VN="Sau-lơ có thước" />
+    <CCD相机 CN="CCD相机" UK="CCD camera" VN="Máy quay CCD" />
+    <串机 CN="串机" UK="String machine" VN="Danh sách máy" />
+    <硬件状态 CN="硬件状态" UK="Hardware state" VN="Trạng thái phần cứng" />
+    <PDCA网络 CN="PDCA网络:" UK="PDCA Network:" VN="Mạng lưới PDCA:" />
+    <MES网络 CN="MES网络:" UK="MES Network:" VN="Mạng lưới MES:" />
+    <相机1 CN="相机1:" UK="Camera 1:" VN="Camera 1:" />
+    <扫码枪 CN="扫码枪:" UK="Scanning gun:" VN="Súng quét mã:" />
+    <生产信息 CN="生产信息" UK="Production information" VN="Thông tin sản xuất" />
+    <轴位置信息 CN="轴位置信息" UK="Axis position information" VN="Thông tin vị trí trục" />
+    <主要信息 CN="主要信息" UK="Main information" VN="Thông điệp chính" />
+    <结果 CN="结果 :" UK="The result:" VN="Kết quả:" />
+    <产品码信息 CN="产品码信息" UK="Product code information" VN="Sản phẩm mã thông tin" />
+    <图片 CN="图片" UK="Picture" VN="Hình ảnh" />
+    <站位信息 CN="站位信息" UK="Station information" VN="Thông tin vị trí" />
+    <主监控 CN="主监控" UK="Equipment zero" VN="Thiết bị zero" />
+    <设备归零 CN="设备归零" UK="maker" VN="nhà chế tạo" />
+    <站别 CN="站别:" UK="Station Type:" VN="Đứng yên:" />
+    <机台状态 CN="机台状态" UK="Machine status" VN="Tình trạng máy" />
+    <机器人 CN="机器人" UK="Robot" VN="Người máy" />
+    <生产数量 CN="生产数量: " UK="Production quantity:" VN="Số lượng sản xuất:" />
+    <前龙门-回原点完成 CN="前龙门-回原点完成" UK="Front gantry - back to origin complete" VN="Dragon gate phía trước - hoàn thành trở về điểm gốc" />
+    <调整位-回原点完成 CN="调整位-回原点完成" UK="Adjustment - Back to origin complete" VN="Điều chỉnh bit - hoàn thành trở lại nguồn gốc" />
+    <后龙门-回原点完成 CN="后龙门-回原点完成" UK="Rear gantry - back to origin complete" VN="Cổng sau - hoàn tất quay về điểm gốc" />
+    <设备-回原点完成 CN="设备-回原点完成" UK="Device - Back to origin complete" VN="Thiết bị - quay trở lại điểm gốc hoàn thành" />
+    <正常生产模式 CN="正常生产模式" UK="Normal mode of production" VN="Chế độ sản xuất bình thường" />
+    <启用CCD CN="启用CCD" UK="CCD enabled" VN="Bật CCD" />
+    <启用扫码枪 CN="启用扫码枪" UK="Enable scan gun" VN="Kích hoạt súng quét mã" />
+    <启用MES CN="启用MES" UK="Enable MES" VN="Đã kích hoạt MES." />
+    <启用PDCA CN="启用PDCA" UK="Enable PDCA" VN="Đã kích hoạt PDCA." />
+    <启用Hive CN="启用Hive" UK="Enabling Hive" VN="Kích hoạt Hive." />
+    <启用机械手 CN="启用机械手" UK="Enabling Robot" VN="Kích hoạt tay máy" />
+    <禁用蜂鸣器 CN="禁用蜂鸣器" UK="Disable the buzzer" VN="Vô hiệu hóa buzzer" />
+    <球标定 CN="球标定" UK="Sphere calibration" VN="Bóng xác định" />
+    <模式设置 CN="模式设置" UK="Mode setting" VN="Thiết lập chế độ" />
+    <设备运行参数 CN="设备运行参数" UK="Equipment operating parameter" VN="Thông số thiết bị chạy" />
+    <功能设置 CN="功能设置" UK="Function setting" VN="Thiết lập chức năng" />
+    <辅助功能 CN="辅助功能" UK="Auxiliary function" VN="Chức năng phụ trợ" />
+    <启用复检模式 CN="启用复检模式" UK="Enable the recheck mode" VN="Bật chế độ kiểm tra lại" />
+    <启用进给模式 CN="启用进给模式" UK="Enable feed mode" VN="Bật chế độ nạp" />
+    <轴标定 CN="轴标定" UK="Axis calibration" VN="Trục xác định" />
+    <球进给测试 CN="球进给测试" UK="Ball in test" VN="Bóng vào bài kiểm tra" />
+    <物料进给测试 CN="物料进给测试" UK="Material feed test" VN="Vật liệu cho thử nghiệm" />
+    <插拔测试 CN="插拔测试" UK="Plug and pull test" VN="Cắm bài kiểm tra" />
+    <数据测试 CN="数据测试" UK="Data testing" VN="Kiểm tra dữ liệu" />
+    <基本参数 CN="基本参数" UK="Basic parameter" VN="Thông số cơ bản" />
+    <MES和HIVE参数 CN="MES和HIVE参数" UK="MES and HIVE parameters" VN="Các thông số của MES và HIVE" />
+    <哈希值参数 CN="哈希值参数" UK="Hash value parameter" VN="Tham số giá trị hashing" />
+    <设备参数信息 CN="设备参数信息" UK="Device parameter information" VN="Thông tin thông số thiết bị" />
+    <通讯相关设置 CN="通讯相关设置" UK="Communication related Settings" VN="Thiết lập liên lạc" />
+    <测试 CN="测试" UK="Test" VN="Kiểm tra" />
+    <指令集合 CN="指令集合" UK="Instruction set" VN="Tập hợp các hướng dẫn" />
+    <发送 CN="发送" UK="Send" VN="Gửi đi" />
+    <扫码枪测试 CN="扫码枪测试" UK="Scanning gun test" VN="Kiểm tra súng quét mã" />
+    <返回值 CN="返回值：" UK="Return value:" VN="Giá trị trả lời:" />
+    <类型 CN="类型" UK="Type" VN="loại" />
+    <指令 CN="指令" UK="Order" VN="Hướng dẫn" />
+    <进给 CN="进给" UK="Feed" VN="Vào cho" />
+    <复检 CN="复检" UK="Recheck" VN="FuJian" />
+    <电机动作 CN="电机动作" UK="Motor action" VN="Động cơ hành động" />
+    <吋动距离 CN="吋动距离:" UK="Inch motion distance:" VN="Inch di chuyển khoảng cách:" />
+    <负方向移动 CN="          负方向移动" UK="Negative movement" VN="Chuyển hướng tiêu cực" />
+    <正方向移动 CN="           正方向移动" UK="Positive movement" VN="Di chuyển theo hướng" />
+    <原点复归 CN="     原点复归" UK="Resetting of origin" VN="Sự trở lại nguồn gốc" />
+    <移动停止 CN="    移动停止" UK="Moving stop" VN="Dừng di động" />
+    <异常复归 CN="    异常复归" UK="Abnormal return" VN="Sự trở lại bất thường" />
+    <参数储存 CN="    参数储存" UK="Parameter store" VN="Lưu trữ thông số" />
+    <移动速度 CN="移动速度 (%):" UK="Moving speed (%):" VN="Tốc độ di chuyển (%):" />
+    <A移动值 CN="A移动值(mm):" UK="A Move value (mm):" VN="Giá trị di chuyển A (mm):" />
+    <B移动值 CN="B移动值(mm):" UK="B Move value (mm):" VN="Giá trị di chuyển B (mm):" />
+    <延迟时间ms CN="延迟时间 (ms):" UK="Delay time (ms):" VN="Thời gian trì hoãn (ms):" />
+    <电机动作讯号 CN="电机动作讯号" UK="Motor action signal" VN="Tín hiệu động cơ" />
+    <A位置 CN="          A位置" UK="A position" VN="Vị trí A" />
+    <B位置 CN="           B位置" UK="B position" VN="Vị trí B" />
+    <A.B往返 CN="          A.B往返" UK="A.B round trip" VN="A.B chuyến đi vòng" />
+    <添加分组 CN="添加分组" UK="Add group" VN="Thêm vào các nhóm" />
+    <删除组 CN="删除组" UK="Delete group" VN="Xóa nhóm" />
+    <添加点位 CN="添加点位" UK="Add point" VN="Thêm điểm" />
+    <删除点位 CN="删除点位" UK="Delete point" VN="Xóa các điểm" />
+    <流道日志 CN="流道日志" UK="Runner log" VN="Dòng chảy nhật ký" />
+    <保存 CN="保存" UK="Save" VN="Bảo tồn" />
+    <查询 CN="查询" UK="Inquire" VN="Truy vấn" />
+    <保存文件 CN="保存文件" UK="Save file" VN="Thời gian báo động" />
+    <日期 CN="日期" UK="Date" VN="Ngày tháng" />
+    <开始时间 CN="开始时间" UK="Start time" VN="Thời gian bắt đầu" />
+    <结束时间 CN="结束时间" UK="End time" VN="Thời gian kết thúc" />
+    <报错代码 CN="报错代码" UK="Error code" VN="Mã báo lỗi" />
+    <报错信息 CN="报错信息" UK="Error message" VN="Thông tin sai" />
+    <报错类型 CN="报错类型" UK="Error type" VN="Báo lỗi kiểu" />
+    <持续时间 CN="持续时间" UK="Duration" VN="Thời gian" />
+    <处理方法 CN="处理方法" UK="Treatment method" VN="Phương pháp xử lý" />
+    <颜色 CN="颜色" UK="Colour" VN="Màu sắc" />
+    <次数 CN="次数" UK="Frequency" VN="Số lượt" />
+    <点胶工位 CN="点胶工位" UK="Glue point position" VN="Điểm cao su" />
+    <X0100启动按钮 CN="X0100 启动按钮" UK="X0100 Start button" VN="Nút khởi động X0100" />
+    <X0101停止按钮 CN="X0101 停止按钮" UK="X0101 Stop button" VN="Nút dừng X0101" />
+    <X0102复位按钮 CN="X0102 复位按钮" UK="X0102 Reset button" VN="Nút khởi động lại X0102" />
+    <X0103急停按钮 CN="X0103 急停按钮" UK="X0103 Emergency stop button" VN="Nút dừng khẩn cấp X0103" />
+    <X0104前门禁 CN="X0104 前门禁" UK="Access control before X0104" VN="Lệnh truy cập trước khi X0104" />
+    <X0105后门禁 CN="X0105 后门禁" UK="X0105 rear access control" VN="Kiểm tra cổng sau" />
+    <X0106底层电气柜门禁 CN="X0106 底层电气柜门禁" UK="X0106 ground floor electrical cabinet access control" VN="Kiểm soát truy cập tủ điện phía dưới X0106" />
+    <X0107门禁1 CN="X0107 门禁1" UK="X0107 Access Control 1" VN="X0107 truy cập 1" />
+    <X0108门禁2 CN="X0108 门禁2" UK="X0108 Access Control 2" VN="X0108 truy cập 2" />
+    <X0109入料口位载具阻挡气缸原点 CN="X0109 入料口位载具阻挡气缸原点" UK="X0109 inlet position carrier block cylinder origin" VN="X0109 nguồn gốc của xi lanh" />
+    <X0110入料口位载具阻挡气缸动点 CN="X0110 入料口位载具阻挡气缸动点" UK="X0110 feed port position carrier blocking cylinder moving point" VN="X0110 vào vị trí ổ khóa xi lanh điểm" />
+    <X0111备用1 CN="X0111 备用1" UK="X0111 dự phòng 1" VN="X0111 dự phòng 1" />
+    <X0112流道阻挡气缸原点 CN="X0112 流道阻挡气缸原点" UK="X0112 runner block cylinder origin" VN="Ống X0112 ngăn nguồn xi lanh" />
+    <X0113流道阻挡气缸动点 CN="X0113 流道阻挡气缸动点" UK="X0113 runner block cylinder moving point" VN="X0113 Kênh ngăn chặn các điểm di chuyển của xi lanh" />
+    <X0114扫码位到位信号 CN="X0114 扫码位到位信号" UK="X0114 Scan code position signal" VN="X0114 quét mã vị trí tín hiệu" />
+    <X0115入料口载具感应信号 CN="X0115 入料口载具感应信号" UK="X0115 feed port vehicle induction signal" VN="X0115 nhập khẩu tải tín hiệu cảm ứng" />
+    <X0200顶升位1感应信号 CN="X0200 顶升位1感应信号" UK="X0200 Top lift 1 sensing signal" VN="X0200 Tín hiệu cảm ứng" />
+    <X0201入料龙门位夹爪气缸原点 CN="X0201 入料龙门位夹爪气缸原点" UK="X0201 Feed gantry clamp cylinder origin" VN="X0201 nguồn gốc xi lanh móng vuốt kẹp vị trí con rồng" />
+    <X0202入料龙门位夹爪气缸动点 CN="X0202 入料龙门位夹爪气缸动点" UK="X0202 Feed gantry clamp cylinder moving point" VN="X0202 vào con rồng cửa vị trí kẹp chân xi lanh điểm" />
+    <X0203入料龙门位载具顶升气缸原点 CN="X0203 入料龙门位载具顶升气缸原点" UK="X0203 vào vị trí con rồng trang bị nâng lên xi lanh nguồn gốc" VN="X0203 Feed gantry position carrier jacking cylinder origin" />
+    <X0204入料龙门位载具顶升气缸动点 CN="X0204 入料龙门位载具顶升气缸动点" UK="X0204 Feed gantry carrier jacking cylinder moving point" VN="X0204 con rồng vị trí trang bị nâng xi lanh điểm" />
+    <X0205备用2 CN="X0205 备用2" UK="X0205 Spare 2" VN="X0205 dự phòng 2" />
+    <X0206调整位压板限位气缸原点 CN="X0206 调整位压板限位气缸原点" UK="X0206 Adjust the origin of the stopper cylinder" VN="X0206 điều chỉnh xi lanh giới hạn vị trí nguồn gốc" />
+    <X0207调整位压板限位气缸动点 CN="X0207 调整位压板限位气缸动点" UK="X0207 Adjusting position clamp stop cylinder moving point" VN="X0207 điều chỉnh xi lanh giới hạn vị trí" />
+    <X0208调整位定位销固定顶升气缸原点 CN="X0208 调整位定位销固定顶升气缸原点" UK="X0208 Adjust the positioning pin to fix the origin of the jacking cylinder" VN="X0208 điều chỉnh vị trí pin cố định nguồn gốc xi lanh lít" />
+    <X0209调整位定位销固定顶升气缸动点 CN="X0209 调整位定位销固定顶升气缸动点" UK="X0209 Adjust the positioning pin to fix the jacking cylinder moving point" VN="X0209 điều chỉnh vị trí pin cố định xi lanh lít điểm" />
+    <X0210调整位膨胀顶升气缸原点 CN="X0210 调整位膨胀顶升气缸原点" UK="X0210 Adjust the origin of expansion jacking cylinder" VN="X0210 điều chỉnh xi lanh mở rộng lít nguồn gốc" />
+    <X0211调整位膨胀顶升气缸动点 CN="X0211 调整位膨胀顶升气缸动点" UK="X0211 Adjust the moving point of expansion jacking cylinder" VN="X0211 điều chỉnh xi lanh mở rộng lít điểm động lực" />
+    <X0212调整位膨胀气缸原点 CN="X0212 调整位膨胀气缸原点" UK="X0212 Adjust the origin of the expansion cylinder" VN="X0212 điều chỉnh nguồn gốc của xi lanh mở rộng bit" />
+    <X0213调整位膨胀气缸动点 CN="X0213 调整位膨胀气缸动点" UK="X0213 Adjust the moving point of the expansion cylinder" VN="X0213 điều chỉnh xi lanh mở rộng bit điểm động" />
+    <X0214备用3 CN="X0214 备用3" UK="X0214 Standby 3" VN="X0214 dự phòng 3" />
+    <X0215备用4 CN="X0215 备用4" UK="X0215 Standby 4" VN="X0215 dự phòng 4" />
+    <X0300出料龙门位到位信号 CN="X0300 出料龙门位到位信号" UK="X0300 Discharge gantry position signal" VN="X0300 nguồn cấp dữ liệu con rồng vị trí tín hiệu" />
+    <X0301出料龙门位夹爪气缸原点 CN="X0301 出料龙门位夹爪气缸原点" UK="X0301 Outlet gantry clamp cylinder origin" VN="X0301 nguồn gốc của xi lanh móng vuốt kẹp vị trí cửa rồng" />
+    <X0302出料龙门位夹爪气缸动点 CN="X0302 出料龙门位夹爪气缸动点" UK="X0302 Discharge jaw cylinder moving point" VN="X0302 thoát vị trí xi-lanh móng vuốt kẹp cửa" />
+    <X0303备用 CN="X0303 备用" UK="X0303 Standby" VN="X0303 dự phòng" />
+    <X0304出料口位前到位信号 CN="X0304 出料口位前到位信号" UK="X0304 Discharge port in front of the position signal" VN="X0304 xuất khẩu vị trí tín hiệu" />
+    <X0305出料口位前顶升气缸原点 CN="X0305 出料口位前顶升气缸原点" UK="X0305 Discharge port front jacking cylinder origin" VN="X0305 nguồn gốc xi lanh lít phía trước vị trí xuất khẩu" />
+    <X0306出料口位前顶升气缸动点 CN="X0306 出料口位前顶升气缸动点" UK="X0306 Discharge port front jacking cylinder moving point" VN="X0306 xuất khẩu trước xi lanh lít điểm" />
+    <X0307出料口位阻挡气缸原点 CN="X0307 出料口位阻挡气缸原点" UK="X0307 Discharge port block cylinder origin" VN="X0307 vị trí cổng ngăn chặn nguồn gốc của xi lanh" />
+    <X0308出料口位阻挡气缸动点 CN="X0308 出料口位阻挡气缸动点" UK="X0308 Discharge port stops the cylinder moving point" VN="X0308 vị trí ngăn chặn xi lanh chuyển động điểm" />
+    <X0309出料口位后到位信号 CN="X0309 出料口位后到位信号" UK="X0309 Outlet position position signal" VN="X0309 ra vị trí sau khi tín hiệu vị trí" />
+    <X0310出料口位后顶升气缸原点 CN="X0310 出料口位后顶升气缸原点" UK="X0310 Discharge port rear jacking cylinder origin" VN="X0310 xuất khẩu lên xi lanh nguồn gốc" />
+    <X0311出料口位后顶升气缸动点 CN="X0311 出料口位后顶升气缸动点" UK="X0311 Discharge port at the rear jacking cylinder moving point" VN="X0311 sau khi xuất khẩu xi lanh lít điểm" />
+    <X0312出料口位上下阻挡气缸原点 CN="X0312 出料口位上下阻挡气缸原点" UK="X0312 Discharge port above and below block cylinder origin" VN="X0312 xuất khẩu vị lên và xuống để ngăn chặn nguồn gốc của xi lanh" />
+    <X0313出料口位上下阻挡气缸动点 CN="X0313 出料口位上下阻挡气缸动点" UK="X0313 Discharge port above and below block cylinder moving point" VN="X0313 xuất khẩu vị lên và xuống chặn xi lanh điểm" />
+    <X0314备用6 CN="X0314 备用6" UK="X0314 Spare 6" VN="X0314 dự phòng 6" />
+    <X0315备用7 CN="X0315 备用7" UK="X0315 Standby 7" VN="X0315 dự phòng 7" />
+    <X0400调整位压板限位气缸2原点 CN="X0400 调整位压板限位气缸2原点" UK="X0400 Adjusting position platen limit cylinder 2 origin" VN="X0400 điều chỉnh giới hạn xi lanh xi lanh 2 nguồn gốc" />
+    <X0401调整位压板限位气缸2动点 CN="X0401 调整位压板限位气缸2动点" UK="X0401 Adjusting position platen limit cylinder 2 moving point" VN="X0401 điều chỉnh xi lanh giới hạn vị trí xi lanh 2 điểm" />
+    <X0402调整位膨胀顶升气缸2原点 CN="X0402 调整位膨胀顶升气缸2原点" UK="X0402 Adjusted expansion jacking cylinder 2 origin" VN="X0402 điều chỉnh mở rộng xi lanh 2 nguồn gốc" />
+    <X0403调整位膨胀顶升气缸2动点 CN="X0403 调整位膨胀顶升气缸2动点" UK="X0403 Adjustable expansion jacking cylinder 2 moving point" VN="X0403 điều chỉnh mở rộng lít xi lanh 2 điểm" />
+    <X0404备用8 CN="X0404 备用8" UK="X0404 Spare 8" VN="X0404 dự phòng 8" />
+    <X0405出料口位阻挡感应信号 CN="X0405 出料口位阻挡感应信号" UK="X0405 Discharge port blocks induction signal" VN="X0405 Tín hiệu cảm biến chặn lối ra" />
+    <X0406机械手宕机信号 CN="X0406 机械手宕机信号" UK="X0406 Manipulator downtime signal" VN="X0406 máy tắt tín hiệu" />
+    <X0407备用11 CN="X0407 备用11" UK="X0407 Spare 11" VN="X0407 dự phòng 11" />
+    <X0408机械手取料完成信号 CN="X0408 机械手取料完成信号" UK="X0408 Manipulator complete material extraction signal" VN="X0408 máy lấy vật liệu để hoàn thành tín hiệu" />
+    <Y1100三色灯_红灯 CN="Y1100 三色灯_红灯" UK="Y1100 Three Color light _ Red light" VN="Y1100 đèn 3 màu _ đèn đỏ" />
+    <Y1101三色灯_黄灯 CN="Y1101 三色灯_黄灯" UK="Y1101 Tricolor Light _ Yellow light" VN="Y1101 đèn 3 màu _ đèn vàng" />
+    <Y1102三色灯_绿灯 CN="Y1102 三色灯_绿灯" UK="Y1102 Tricolor light _ Green" VN="Y1102 đèn 3 màu _ màu xanh lá cây" />
+    <Y1103三色灯_蜂鸣器 CN="Y1103 三色灯_蜂鸣器" UK="Y1103 Tricolor Light _ Buzzer" VN="Y1103 đèn 3 màu _ chuông" />
+    <Y1104启动灯 CN="Y1104 启动灯" UK="Y1104 Starting light" VN="Y1104 bật đèn" />
+    <Y1105停止灯 CN="Y1105 停止灯" UK="Y1105 Stop light" VN="Y1105 Đèn dừng" />
+    <Y1106复位灯 CN="Y1106 复位灯" UK="Y1106 Reset indicator" VN="Y1106 Đèn tắt" />
+    <Y1107备用1 CN="Y1107 备用1" UK="Y1107 Standby 1" VN="Y1107 Dự phòng 1" />
+    <Y1108A流道步进运行 CN="Y1108 A流道步进运行" UK="Y1108 A runner step operation" VN="Y1108 Đường A chạy từng bước" />
+    <Y1109A流道步进方向 CN="Y1109 A流道步进方向" UK="Y1109 A flow path stepping direction" VN="Y1109 A Hướng đi của đường" />
+    <Y1110B流道步进运行 CN="Y1110 B流道步进运行" UK="Y1110 B runner step running" VN="Y1110B Chạy từng bước trên đường" />
+    <Y1111B流道步进方向 CN="Y1111 B流道步进方向" UK="Y1111 B flow path stepping direction" VN="Y1111B Hướng đi của đường" />
+    <Y1112机械手取料信号 CN="Y1112 机械手取料信号" UK="Y1112 manipulator fetch signal" VN="Y1112 Tín hiệu máy" />
+    <Y1113备用3 CN="Y1113 备用3" UK="Y1113 Standby 3" VN="Y1113 dự phòng 3" />
+    <Y1114备用流道入料要料信号 CN="Y1114 备用流道入料要料信号" UK="Y1114 standby runner feed request signal" VN="Y1114 nguồn cung cấp cấp dữ liệu cho tín hiệu" />
+    <Y1115流道入料要料信号 CN="Y1115 流道入料要料信号" UK="Y1115 runner feed request signal" VN="Y1115 kênh nhập liệu tín hiệu" />
+    <Y1200入料龙门位Z轴刹车 CN="Y1200 入料龙门位Z轴刹车" UK="Y1200 feed gantry Z-axis brake" VN="Y1200 vào vị trí Z trục phanh" />
+    <Y1201出料龙门位Z轴刹车 CN="Y1201 出料龙门位Z轴刹车" UK="Y1201 Discharge gantry Z-axis brake" VN="Y1201 thoát vị trí Z trục phanh" />
+    <Y1202备用6 CN="Y1202 备用6" UK="Y1202 Standby 6" VN="Y1202 dự phòng 6" />
+    <Y1203入料口位载具阻挡气缸 CN="Y1203 入料口位载具阻挡气缸" UK="Y1203 inlet carrier blocking cylinder" VN="Y1203 vào vị trí ổ khóa xi lanh" />
+    <Y1204流道阻挡气缸 CN="Y1204 流道阻挡气缸" UK="Y1204 runner block cylinder" VN="Y1204 ống chắn dòng nước" />
+    <Y1205入料龙门位取料夹爪气缸 CN="Y1205 入料龙门位取料夹爪气缸" UK="Y1205 intake gantry reclaimer claw cylinder" VN="Y1205 vào vị trí con rồng kẹp chân xi lanh" />
+    <Y1206入料龙门位载具顶升气缸上 CN="Y1206 入料龙门位载具顶升气缸上" UK="Y1206 feed gantry on the lift cylinder" VN="Y1206 vào vị trí con rồng trang bị nâng lên xi lanh" />
+    <Y1207入料龙门位载具顶升气缸下 CN="Y1207 入料龙门位载具顶升气缸下" UK="Y1207 Feed gantry carrier under jacking cylinder" VN="Y1207 vào con rồng vị trí trang bị lít xi lanh" />
+    <Y1208备用7 CN="Y1208 备用7" UK="Y1208 Standby 7" VN="Y1208 dự phòng 7" />
+    <Y1209调整位压板限位气缸 CN="Y1209 调整位压板限位气缸" UK="Y1209 adjusting pressure plate limit cylinder" VN="Y1209 điều chỉnh giới hạn xi lanh tấm" />
+    <Y1210调整位定位销固定顶升气缸上 CN="Y1210 调整位定位销固定顶升气缸上" UK=" Y1210 The adjusting positioning pin is fixed on the jacking cylinder" VN="Y1210 vị trí pin cố định trên xi lanh lít" />
+    <Y1211调整位定位销固定顶升气缸下 CN="Y1211 调整位定位销固定顶升气缸下" UK="Y1211 adjusting positioning pin fixed under jacking cylinder" VN="Y1211 điều chỉnh vị trí pin cố định lít xi lanh" />
+    <Y1212调整位膨胀顶升气缸 CN="Y1212 调整位膨胀顶升气缸" UK="Y1212 adjustable expansion jacking cylinder" VN="Y1212 điều chỉnh xi lanh mở rộng lít" />
+    <Y1213调整位膨胀气缸 CN="Y1213 调整位膨胀气缸" UK="Y1213 adjustable expansion cylinder" VN="Y1213 điều chỉnh xi lanh mở rộng bit" />
+    <Y1214备用8 CN="Y1214 备用8" UK="Y1214 Standby 8" VN="Y1214 dự phòng 8" />
+    <Y1215备用9 CN="Y1215 备用9" UK="Y1215 standby 9" VN="Y1215 dự phòng 9" />
+    <Y1300出料龙门位夹爪气缸 CN="Y1300 出料龙门位夹爪气缸" UK="Y1300 discharge jaw cylinder" VN="Y1300 nguồn cấp dữ liệu con rồng kẹp chân xi lanh" />
+    <Y1301出料口位前顶升气缸上 CN="Y1301 出料口位前顶升气缸上" UK="Y1301 Discharge port on front jacking cylinder" VN="Y1301 xuất khẩu trước khi lít xi lanh" />
+    <Y1302出料口位前顶升气缸下 CN="Y1302 出料口位前顶升气缸下" UK="Y1302 Discharge port under front jacking cylinder" VN="Y1302 xuất khẩu trước khi lít xi lanh" />
+    <Y1303出料口位阻挡气缸 CN="Y1303 出料口位阻挡气缸" UK="Y1303 Outlet stop cylinder" VN="Y1303 lối ra để ngăn chặn xi lanh" />
+    <Y1304出料口位后顶升气缸上 CN="Y1304 出料口位后顶升气缸上" UK="Y1304 discharge port on the rear jacking cylinder" VN="Y1304 sau khi xuất khẩu trên xi lanh lít" />
+    <Y1305出料口位后顶升气缸下 CN="Y1305 出料口位后顶升气缸下" UK="Y1305 Discharge port at rear jacking under cylinder" VN="Y1305 sau khi xuất khẩu lên xi lanh" />
+    <Y1306出料口位上下阻挡气缸 CN="Y1306 出料口位上下阻挡气缸" UK="Y1306 Discharge port upper and lower block cylinder" VN="Y1306 xuất khẩu lên và xuống để ngăn chặn xi lanh" />
+    <Y1307CCD相机触发拍照 CN="Y1307 CCD相机触发拍照" UK="Y1307 CCD camera triggers to take pictures" VN="Y1307 máy ảnh CCD kích hoạt chụp ảnh" />
+    <Y1308入料龙门位取料夹爪气缸开 CN="Y1308 入料龙门位取料夹爪气缸开" UK="Y1308 Material intake gantry reclaimer claw cylinder open" VN="Y1308 vào các vị trí con rồng kẹp chân xi lanh mở" />
+    <Y1309出料龙门位夹爪气缸开 CN="Y1309 出料龙门位夹爪气缸开" UK="Y1309 Discharge gantry clamp cylinder open" VN="Y1309 dragon gate kẹp chân xi lanh mở" />
+    <Y1310备用12 CN="Y1310 备用12" UK="Y1310 Standby 12" VN="Y1310 dự phòng 12" />
+    <Y1311备用13 CN="Y1311 备用13" UK="Y1311 Standby 13" VN="Y1311 dự phòng 13" />
+    <Y1312备用14 CN="Y1312 备用14" UK="Y1312 Standby 14" VN="Y1312 dự phòng 14" />
+    <V01000入料口位载具阻挡气缸 CN="V01000  入料口位载具阻挡气缸" UK="V01000 inlet position carrier blocking cylinder" VN="V01000 vào vị trí ổ khóa xi lanh" />
+    <V01001流道阻挡气缸 CN="V01001  流道阻挡气缸" UK="V01001 runner block cylinder" VN="V01001 Ống chắn" />
+    <V01002入料龙门位载具顶升气缸上 CN="V01002  入料龙门位载具顶升气缸上" UK="V01002 Feed gantry on the lift cylinder" VN="V01002 vào con rồng trang bị nâng lên xi lanh" />
+    <V01003入料龙门位取料夹爪气缸 CN="V01003  入料龙门位取料夹爪气缸" UK="V01003 Intake gantry reclaimer claw cylinder" VN="V01003 vào vị trí con rồng kẹp chân xi lanh" />
+    <V01004调整位压板限位气缸 CN="V01004  调整位压板限位气缸" UK="V01004 Adjusting pressure plate limit cylinder" VN="V01004 điều chỉnh xi lanh giới hạn bit tấm" />
+    <V01005调整位定位销固定顶升气缸上 CN="V01005  调整位定位销固定顶升气缸上" UK="maker" VN="V01005 positioning pin is fixed on the jacking cylinder vị trí pin cố định trên xi lanh lít" />
+    <V01006调整位膨胀顶升气缸 CN="V01006  调整位膨胀顶升气缸" UK="V01006 Adjustable expansion jacking cylinder" VN="V01006 điều chỉnh mở rộng xi lanh" />
+    <V01007调整位膨胀气缸 CN="V01007  调整位膨胀气缸" UK="maker" VN="V01007 Xi lanh mở rộng bit điều chỉnh" />
+    <V01008出料龙门位夹爪气缸 CN="V01008  出料龙门位夹爪气缸" UK="V01008 Discharge gantry clamp cylinder" VN="V01008 thoát con rồng kẹp chân xi lanh" />
+    <V01009出料口位前顶升气缸上 CN="V01009  出料口位前顶升气缸上" UK="V01009 Discharge port on front jacking cylinder" VN="V01009 xuất khẩu phía trước trên xi lanh" />
+    <V01010出料口位阻挡气缸 CN="V01010  出料口位阻挡气缸" UK="V01010 Outlet stop cylinder" VN="V01010 lối ra ngăn chặn xi lanh" />
+    <V01011出料口位后顶升气缸上 CN="V01011  出料口位后顶升气缸上" UK="V01011 Discharge port on rear jacking cylinder" VN="V01011 sau khi xuất khẩu lên xi lanh" />
+    <V01012出料口位上下阻挡气缸 CN="V01012  出料口位上下阻挡气缸" UK="V01012 Discharge port upper and lower block cylinder" VN="V01012 lối ra lên xuống để ngăn chặn xi lanh" />
+    <信息配置 CN="信息配置" UK="Information configuration" VN="Cấu hình thông tin" />
+    <用户管理 CN="用户管理" UK="User management" VN="Quản lý người dùng" />
+    <回原 CN="回原" UK="Return to one's original state" VN="Quay về tha" />
+    <设备参数 CN="设备参数" UK="Equipment parameter" VN="Thông số thiết bị" />
+    <手动 CN="手动" UK="Manual operation" VN="Tay này" />
+    <外部流道 CN="外部流道" UK="External runner" VN="Dòng chảy bên ngoài" />
+    <报警 CN="报警" UK="Give an alarm" VN="Cảnh sát" />
+    <运行数据 CN="运行数据" UK="Operational data" VN="Chạy dữ liệu" />
+    <扫码测试 CN="扫码测试" UK="Code scanning test" VN="Quét thử nghiệm" />
+    <触发 CN="触发" UK="trigger" VN="Kích hoạt" />
+    <获取SN CN="获取SN" UK="Obtain SN" VN="Truy cập vào SN." />
+    <UC码 CN="UC码：" UK="UC Code:" VN="UC Thước:" />
+    <SN码 CN="SN码：" UK="SN Code:" VN="SN Thước:" />
+    <选择模式 CN="选择模式：" UK="Selection mode:" VN="Chọn chế độ:" />
+    <显示PDCA反馈数据 CN="显示PDCA反馈数据" UK="Display PDCA feedback data" VN="Cho thấy phản hồi PDCA" />
+    <手动测试上传图片 CN="手动测试上传图片" UK="Manually test upload pictures" VN="Kiểm tra ảnh tải lên bằng tay" />
+    <上传PDCA CN="上传PDCA" UK="Upload PDCA" VN="Tải PDCA lên." />
+    <上传MES CN="上传MES" UK="Upload MES" VN="Truyền tin đi." />
+    <发送数据 CN="发送数据：" UK="Send data:" VN="Gửi dữ liệu:" />
+    <接收数据 CN="接收数据：" UK="Receive data:" VN="Dữ liệu nhận được:" />
+    <加载传图失败信息 CN="加载传图失败信息" UK="Failed to load the image" VN="Lỗi tải thông tin chuyển ảnh" />
+    <大量重新上传图片 CN="大量重新上传图片" UK="Mass re-upload images" VN="Và tải lên rất nhiều hình ảnh" />
+    <气缸1 CN="气缸" UK="Cylinder" VN="QiGang" />
+    <轴 CN="轴" UK="Axis" VN="Trên trục" />
+    <设备重要参数 CN="设备重要参数" UK="Equipment important parameter" VN="Thông số thiết bị quan trọng" />
+    <Station选择 CN="Station选择:" UK="Station selection:" VN="Trạm chọn:" />
+    <工位 CN="工位" UK="Station" VN="GongWei" />
+    <绑定轴 CN="绑定轴" UK="Binding Axis" VN="Cột trục" />
+    <绑定优先级和速度 CN="绑定优先级和速度" UK="Bind priority and speed" VN="Ưu tiên và tốc độ ràng buộc" />
+    <点位禁用 CN="点位禁用" UK="Point disable" VN="Chấm vô hiệu hóa" />
+    <禁用 CN="禁用" UK="Forbidden" VN="Bị tắt" />
+    <Z先运动到安全位 CN="Z先运动到安全位" UK="Z first moves to the safe position" VN="Z di chuyển đến vị trí an toàn trước" />
+    <导出配置 CN="导出配置" UK="Export configuration" VN="Xuất khẩu cấu hình" />
+    <删除 CN="删除" UK="Delete" VN="Xoá bỏ" />
+    <添加 CN="添加" UK="Add" VN="thêm" />
+    <AlarmDurations报警时长 CN="Alarm Durations(报警时长)" UK="Alarm Durations(thời gian báo động)" VN="Alarm Durations(alarm duration)" />
+    <基本信息 CN="基本信息" UK="Basic information" VN="Thông tin cơ bản" />
+    <身份 CN="身份:" UK="Identity:" VN="Danh tính:" />
+    <增加 CN="增加" UK="Augment" VN="Gia tăng" />
+    <编辑 CN="编辑" UK="EDITOR" VN="Biên tập" />
+    <导出 CN="导出" UK="Derive" VN="xuất" />
+    <同步 CN="同步" UK="Synchronization" VN="Đồng bộ hóa" />
+    <将进行数据测试 CN="将进行数据测试" UK="Data testing will be performed" VN="Sẽ tiến hành kiểm tra dữ liệu" />
+    <将进行进给测试 CN="将进行进给测试" UK="A feed test will be performed" VN="Sẽ được kiểm tra" />
+    <确认保存吗 CN="确认保存吗？" UK="Do you want to save it?" VN="Xác nhận lưu?" />
+    <确认启用复检模式吗设备将只复检不调整 CN="确认启用复检模式吗？设备将只复检，不调整" UK="Are you sure to enable the recheck mode? Equipment will only be rechecked, not adjusted" VN="Xác nhận kích hoạt chế độ kiểm tra? Thiết bị sẽ chỉ được kiểm tra lại mà không cần điều chỉnh" />
+    <确认启用相机标定模式吗在标定完成后请及时关闭 CN="确认启用相机标定模式吗？在标定完成后，请及时关闭" UK="Are you sure to enable camera calibration mode? After the calibration is completed, please close it in time" VN="Xác nhận đã bật chế độ xác định máy ảnh chưa? Sau khi kiểm tra xong, xin vui lòng đóng cửa" />
+    <确认启用复检模式吗设备将只复检不调整 CN="确认启用复检模式吗？设备将只复检，不调整" UK="Are you sure to enable the recheck mode? Equipment will only be rechecked, not adjusted" VN="Xác nhận kích hoạt chế độ kiểm tra? Thiết bị sẽ chỉ được kiểm tra lại mà không cần điều chỉnh" />
+    <确认启用进给模式吗设备将进行设定点位运动 CN="确认启用进给模式吗？设备将进行设定点位运动" UK="Are you sure to enable feed mode? The device will perform a set point motion" VN="Xác nhận chế độ nạp chưa? Thiết bị sẽ di chuyển điểm" />
+    <将进行球标定 CN="将进行球标定" UK="The ball will be calibrated" VN="Chuẩn bi" />
+    <将进行轴标定 CN="将进行轴标定" UK="Axis calibration will be performed" VN="Xác định trục" />
+    <将进行插拔测试 CN="将进行插拔测试" UK="A plug and unplug test will be performed" VN="Sẽ tiến hành kiểm tra phích cắm" />
+    <上传数据给MES失败 CN="上传数据给MES失败" UK="Failed to upload data to the MES. Procedure" VN="Tải dữ liệu về MES thất bại" />
+    <上传数据给PDCA失败 CN="上传数据给PDCA失败" UK="Description Failed to upload data to PDCA" VN="Tải dữ liệu vào PDCA đã thất bại" />
+    <获取SN失败 CN="获取SN失败" UK="SN failed to be obtained. Procedure" VN="Truy cập vào SN thất bại" />
+    <名称重复添加失败 CN="名称重复,添加失败!" UK="Duplicate name, failed to add!" VN="Nhắc lại tên, thêm lỗi!" />
+    <保存失败 CN="保存失败" UK="Save failure" VN="Lưu thất bại" />
+    <参数已经保存在 CN="参数已经保存在 " UK="Parameters have been saved in" VN="Các thông số đã được lưu trong" />
+    <参数保存失败 CN="参数保存失败 " UK="Parameter saving failure" VN="Thông số lưu thất bại" />
+    <用户ID卡号 CN="用户ID卡号" UK="User ID Card number" VN="Số thẻ ID người dùng" />
+    <工号 CN="工号" UK="Job number" VN="GongHao" />
+    <注销 CN="注销" UK="Sign OUT" VN="Hồ sơ" />
+    <登录 CN="登录" UK="Log in" VN="Đăng nhập" />
+    <确认1 CN="确认" UK="verify" VN="Xác nhận" />
+    <取消1 CN="取消" UK="Cancel" VN="Hủy bỏ" />
+    <HIVE连接超时确认HIVE连接后重启程序 CN="HIVE连接超时!确认HIVE连接后重启程序!" UK="HIVE connection timed out! Confirm the HIVE connection and restart the program!" VN="Quá giờ kết nối HIVE! Khởi động lại chương trình sau khi xác nhận HIVE đã kết nối!" />
+    <卡号 CN="卡号:" UK="Card Number:" VN="Số thẻ:" />
+    <职责 CN="职责:" UK="Responsibilities:" VN="Nhiệm vụ:" />
+    <请输入新RecipeID CN="请输入新Recipe ID：" UK="Enter your new Recipe ID:" VN="Hãy nhập Recipe ID mới." />
+    <当前为调机模式 CN="当前为调机模式!" UK="The current mode is switch!" VN="Chế độ điều chỉnh hiện tại!" />
+    <当前为生产模式 CN="当前为生产模式!" UK="The current production mode!" VN="Chế độ sản xuất hiện tại!" />
+    <HIVE记录界面 CN="HIVE记录界面" UK="HIVE recording interface" VN="Giao diện ghi âm HIVE" />
+    <请选择停机原因 CN="请选择停机原因：" UK="Please select the cause of the shutdown:" VN="Hãy chọn lý do dừng lại:" />
+    <龙门选择 CN="龙门选择" UK="Gantry selection" VN="Dragon gate chọn" />
+    <停机种类 CN="停机种类" UK="Type of shutdown" VN="Thời gian chết" />
+    <计划停机 CN="计划停机" UK="Scheduled shutdown" VN="Kế hoạch dừng lại" />
+    <返回 CN="返回" UK="Back" VN="Trở về" />
+    <确定 CN="确定" UK="OK" VN="Chắc chắn" />
+    <前龙门 CN="前龙门" UK="Front gantry" VN="Trước khi con rồng" />
+    <后龙门 CN="后龙门" UK="Rear gantry" VN="Sau con rồng" />
+    <工程停机 CN="工程停机" UK="Engineering shutdown" VN="Công trình dừng lại" />
+    <日常点检 CN="日常点检" UK="Routine inspection" VN="Kiểm tra hàng ngày" />
+    <更换针头 CN="更换针头" UK="Needle change" VN="Thay thế Kim tiêm" />
+    <其它 CN="其它" UK="other" VN="khác" />
+    <更换AB胶水 CN="更换AB胶水" UK="Replace AB glue" VN="Thay thế keo AB" />
+    <更换胶阀 CN="更换胶阀" UK="Replace rubber valve" VN="Thay thế van" />
+    <更换HM胶水 CN="更换HM胶水" UK="Replace HM glue" VN="Thay thế HHM keo" />
+    <设备耗材更换 CN="设备耗材更换" UK="Equipment consumables replacement" VN="Thiết bị vật tư thay thế" />
+    <屏蔽胶阀报警 CN="屏蔽胶阀报警" UK="Shield rubber valve alarm" VN="Van bảo vệ báo động" />
+    <报警类型 CN="报警类型：" UK="Alarm type:" VN="Báo động kiểu:" />
+    <报警内容 CN="报警内容：" UK="Alarm content:" VN="Nội dung cảnh báo:" />
+    <确认发送报警状态 CN="确认发送报警状态" UK="Confirm sending alarm status" VN="Xác nhận tình trạng báo động" />
+    <结束报警状态 CN="结束报警状态" UK="End alarm state" VN="Kết thúc báo động" />
+    <开始时间 CN="开始时间:" UK="Start time:" VN="Thời gian bắt đầu:" />
+    <详细信息 CN="详细信息:" UK="Details:" VN="Chi tiết:" />
+    <选项卡 CN="选项卡" UK="TAB" VN="TAB" />
+    <静音 CN="静音" UK="Sound off" VN="Tắt tiếng" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+    <制造商 CN="制造商" UK="maker" VN="nhà chế tạo" />
+  </Language>
+</configuration>

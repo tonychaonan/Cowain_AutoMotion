@@ -1,0 +1,14 @@
+{
+"empNo": "AUTOH36",
+"terminalName": "工站",
+"serial_Number": "产品SN",
+"machine": "",
+"toolingNo": "",
+"lotNo": "",
+"kpsn": "",
+"workOrder": "",
+"cavity": "",
+"testData":"test_result=结果$unit_sn=产品SN$uut_start=开始时间$uut_stop=结束时间$limits_version=$software_name=$software_version=软件版本$station_id=工站$fixture_id=载具号",
+"results":"lower_limit=-999.000$parametric_key=$priority=$result=结果$sub_sub_test=$sub_test=$test=OffsetX$units=mm$upper_limit=999.000$value=OffsetX值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=OffsetY$units=mm$upper_limit=999.000$value=OffsetY值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=OffsetR$units=ang$upper_limit=999.000$value=OffsetR值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P1$units=mm$upper_limit=999.000$value=P1值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P2$units=mm$upper_limit=999.000$value=P2值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P3$units=mm$upper_limit=999.000$value=P3值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P4$units=mm$upper_limit=999.000$value=P4值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P5$units=mm$upper_limit=999.000$value=P5值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P6$units=mm$upper_limit=999.000$value=P6值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P7$units=mm$upper_limit=999.000$value=P7值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=P8$units=mm$upper_limit=999.000$value=P8值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=ShiftP1P5$units=mm$upper_limit=999.000$value=ShiftP1P5值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=ShiftP2P6$units=mm$upper_limit=999.000$value=ShiftP2P6值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=ShiftP3P7$units=mm$upper_limit=999.000$value=ShiftP3P7值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=ShiftP4P8$units=mm$upper_limit=999.000$value=ShiftP4P8值$Message=,lower_limit=-999.000$parametric_key=$priority=$result=PASS$sub_sub_test=$sub_test=$test=AlignmentCount$units=mm$upper_limit=999.000$value=调整次数$Message=",
+"collectType": "REC"
+}

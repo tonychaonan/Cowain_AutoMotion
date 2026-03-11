@@ -1,0 +1,11 @@
+﻿{
+"empNo": "AUTOH38",
+"terminalName": "工站",
+"serial_Number": "产品SN",
+"machine": "",
+"toolingNo": "",
+"lotNo": "",
+"kpsn": "",
+"reelNo": "",
+"workOrder": ""
+}

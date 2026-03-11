@@ -1,0 +1,11 @@
+﻿{
+"message":"错误类型",
+"code":"错误代码",
+"severity":"类型",
+"occurrence_time":"错误开始时间",
+"resolved_time":"解决时间",
+"data":{
+"hive_state":"5",
+"error_detail":"错误内容"
+}
+}

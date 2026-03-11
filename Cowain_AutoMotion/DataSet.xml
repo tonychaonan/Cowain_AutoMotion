@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataSet>
+  <PathData>
+    <MachinePath>D:\Cowain_AutoDispenser\DataBaseData\Machine.mdb</MachinePath>
+    <WorkDirectory>D:\Cowain_AutoDispenser\DataBaseData\WorkData\</WorkDirectory>
+    <WorkPath>D:\Cowain_AutoDispenser\DataBaseData\WorkData\MYTEST.xml</WorkPath>
+    <DispenserDataDirectory>D:\Cowain_AutoDispenser\DataBaseData\DispenserData\</DispenserDataDirectory>
+    <DispenserPathDirectory1>D:\Cowain_AutoDispenser\DataBaseData\DispenserPath1\</DispenserPathDirectory1>
+    <DispenserPathDirectory2>D:\Cowain_AutoDispenser\DataBaseData\DispenserPath2\</DispenserPathDirectory2>
+    <DispenserPathDirectory3>D:\Cowain_AutoDispenser\DataBaseData\DispenserPath3\</DispenserPathDirectory3>
+    <DispenserPathDirectory4>D:\Cowain_AutoDispenser\DataBaseData\DispenserPath4\</DispenserPathDirectory4>
+  </PathData>
+  <MachineType>
+    <GantryType>1</GantryType>
+    <TrackType>0</TrackType>
+    <Stage1_Type>2</Stage1_Type>
+    <Stage2_Type>2</Stage2_Type>
+    <Dispenser1_ClearType>2</Dispenser1_ClearType>
+    <Dispenser2_ClearType>2</Dispenser2_ClearType>
+    <Dispenser1_HeadType>1</Dispenser1_HeadType>
+    <Dispenser2_HeadType>3</Dispenser2_HeadType>
+  </MachineType>
+</DataSet>

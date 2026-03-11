@@ -1,0 +1,12 @@
+﻿{
+"machine_state":当前状态,
+"state_change_time":"状态改变时间",
+"data":
+{
+"previous state":以前状态,
+"sw_version":"软件版本",
+"MS_SHA1":"MS哈希值",
+"VS_SHA1":"VS哈希值",
+"u_id":"卡号"
+}
+}

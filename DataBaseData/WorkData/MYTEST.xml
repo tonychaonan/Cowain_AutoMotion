@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<WorkData>
+  <Machine_Parm>
+    <RunSpeed>37</RunSpeed>
+    <TestMode>0</TestMode>
+    <CheckDoorSR1>0</CheckDoorSR1>
+    <CheckDoorSR2>0</CheckDoorSR2>
+    <CheckDoorSR3>0</CheckDoorSR3>
+    <CheckDoorSR4>0</CheckDoorSR4>
+    <CheckDoorSR5>0</CheckDoorSR5>
+    <CheckDoorSR6>0</CheckDoorSR6>
+    <CheckDoorSR7>0</CheckDoorSR7>
+    <CheckDoorSR8>0</CheckDoorSR8>
+    <CheckDoorSR9>0</CheckDoorSR9>
+    <CheckDoorSR10>0</CheckDoorSR10>
+    <CheckDoorSR11>0</CheckDoorSR11>
+    <CheckDoorSR12>0</CheckDoorSR12>
+    <DispenserMaxNum>4</DispenserMaxNum>
+  </Machine_Parm>
+  <Station_Parm>
+    <Mode>0</Mode>
+    <Stage1Type>0</Stage1Type>
+    <Stage2Type>0</Stage2Type>
+    <DispenserMaxNum>4</DispenserMaxNum>
+  </Station_Parm>
+</WorkData>

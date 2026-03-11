@@ -1,0 +1,1 @@
+{"RS232Params":[{"controlName":"扫码枪","b_Use":true,"strPortName":"COM8","iBaudRate":9600,"iDataBit":8,"StopBits":1,"Parity":0}],"SocketParams":[{"b_Use":true,"controlName":"CCD","IP":"127.0.0.2","port":7777,"b_IsClient":true},{"b_Use":true,"controlName":"串机","IP":"127.0.0.5","port":9001,"b_IsClient":true}]}

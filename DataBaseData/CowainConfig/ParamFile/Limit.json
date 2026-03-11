@@ -1,0 +1,205 @@
+[
+  {
+    "Name": "FAI110-4",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI110-5",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI110-6",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI110-7",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI110-8",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI110-9",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI106-1",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI106-2",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI106-3",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI111-1",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI111-2",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI111-3",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI282-4",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -0.47
+  },
+  {
+    "Name": "FAI282-5",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -0.77
+  },
+  {
+    "Name": "FAI282-6",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -2.24
+  },
+  {
+    "Name": "FAI282-7",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -2.9
+  },
+  {
+    "Name": "FAI282-8",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -3.23
+  },
+  {
+    "Name": "FAI282-9",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -3.42
+  },
+  {
+    "Name": "FAI281-1",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -2.68
+  },
+  {
+    "Name": "FAI281-2",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -1.81
+  },
+  {
+    "Name": "FAI281-3",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": -0.98
+  },
+  {
+    "Name": "FAI166-1",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-2",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-3",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-4",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-5",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-6",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-7",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  },
+  {
+    "Name": "FAI166-8",
+    "Enable": true,
+    "Standard": 0,
+    "lower_limit": -999,
+    "upper_limit": 999
+  }
+]

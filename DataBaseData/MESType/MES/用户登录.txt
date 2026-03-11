@@ -1,0 +1,16 @@
+﻿{
+"empNo": "AUTOH38",
+"terminalName": "工站",
+"serial_Number": "操作员卡号",
+"machine": "",
+"toolingNo": "",
+"lotNo": "",
+"kpsn": "",
+"workOrder": "",
+"cavity": "",
+"testData": "",
+"results": "",
+"status": "",
+"pCmd": "GET_OP_ACCESS",
+"defectCode": ""
+}

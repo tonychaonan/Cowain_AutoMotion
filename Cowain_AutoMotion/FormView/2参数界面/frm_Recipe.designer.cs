@@ -1,0 +1,824 @@
+﻿namespace Cowain_Form.FormView
+{
+    partial class frm_Recipe
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Load = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.listView_Recipe = new System.Windows.Forms.ListView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.group_TestParm = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.checkBox_isNGKO = new System.Windows.Forms.CheckBox();
+            this.checkBox1_hummer = new System.Windows.Forms.CheckBox();
+            this.checkBox_UseHive = new System.Windows.Forms.CheckBox();
+            this.cBox_Useimage = new System.Windows.Forms.CheckBox();
+            this.cBox_UsePDCA = new System.Windows.Forms.CheckBox();
+            this.cBoxUseCCD = new System.Windows.Forms.CheckBox();
+            this.checkBox_CheckDoorSR = new System.Windows.Forms.CheckBox();
+            this.checkBox_UseScan = new System.Windows.Forms.CheckBox();
+            this.checkBox_UseMES = new System.Windows.Forms.CheckBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.checkBoxTestMode = new System.Windows.Forms.CheckBox();
+            this.cBoxNolmalWork = new System.Windows.Forms.CheckBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.numericUpDown_AutoSpeed = new System.Windows.Forms.NumericUpDown();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSave1 = new System.Windows.Forms.Button();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.propertyGrid_hash = new System.Windows.Forms.PropertyGrid();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.propertyGrid_Config = new System.Windows.Forms.PropertyGrid();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnSimulator = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBarcodeSN = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cBoxConnetType = new System.Windows.Forms.ComboBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView_CMD = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
+            this.checkBox_grating = new System.Windows.Forms.CheckBox();
+            this.tabControl1.SuspendLayout();
+            this.tabPage0.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.group_TestParm.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AutoSpeed)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_Add.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Add.Image = global::Cowain_AutoMotion.Properties.Resources.file_add;
+            this.btn_Add.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Add.Location = new System.Drawing.Point(7, 30);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(73, 75);
+            this.btn_Add.TabIndex = 234;
+            this.btn_Add.Text = "Add File";
+            this.btn_Add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Visible = false;
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_Load.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Load.Image = global::Cowain_AutoMotion.Properties.Resources.file_load;
+            this.btn_Load.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Load.Location = new System.Drawing.Point(85, 30);
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.Size = new System.Drawing.Size(74, 75);
+            this.btn_Load.TabIndex = 235;
+            this.btn_Load.Text = "Load File";
+            this.btn_Load.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Load.UseVisualStyleBackColor = false;
+            this.btn_Load.Visible = false;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_Save.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Save.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
+            this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Save.Location = new System.Drawing.Point(1183, 474);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(92, 75);
+            this.btn_Save.TabIndex = 236;
+            this.btn_Save.Text = "Save File";
+            this.btn_Save.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // listView_Recipe
+            // 
+            this.listView_Recipe.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.listView_Recipe.HideSelection = false;
+            this.listView_Recipe.Location = new System.Drawing.Point(6, 11);
+            this.listView_Recipe.Name = "listView_Recipe";
+            this.listView_Recipe.Size = new System.Drawing.Size(153, 13);
+            this.listView_Recipe.TabIndex = 237;
+            this.listView_Recipe.UseCompatibleStateImageBehavior = false;
+            this.listView_Recipe.View = System.Windows.Forms.View.List;
+            this.listView_Recipe.Visible = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage0);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tabControl1.ItemSize = new System.Drawing.Size(155, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1329, 609);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 238;
+            // 
+            // tabPage0
+            // 
+            this.tabPage0.AutoScroll = true;
+            this.tabPage0.Controls.Add(this.groupBox9);
+            this.tabPage0.Controls.Add(this.btn_Save);
+            this.tabPage0.Controls.Add(this.group_TestParm);
+            this.tabPage0.Location = new System.Drawing.Point(4, 34);
+            this.tabPage0.Name = "tabPage0";
+            this.tabPage0.Size = new System.Drawing.Size(1321, 571);
+            this.tabPage0.TabIndex = 4;
+            this.tabPage0.Text = "基本参数";
+            this.tabPage0.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.button5);
+            this.groupBox9.Controls.Add(this.button4);
+            this.groupBox9.Location = new System.Drawing.Point(943, 51);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(213, 404);
+            this.groupBox9.TabIndex = 334;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "辅助功能";
+            this.groupBox9.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(22, 113);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(134, 40);
+            this.button5.TabIndex = 482;
+            this.button5.Text = "电批标定";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(22, 54);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(134, 32);
+            this.button4.TabIndex = 481;
+            this.button4.Text = "联合标定";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // group_TestParm
+            // 
+            this.group_TestParm.Controls.Add(this.groupBox17);
+            this.group_TestParm.Controls.Add(this.groupBox16);
+            this.group_TestParm.Location = new System.Drawing.Point(22, 16);
+            this.group_TestParm.Name = "group_TestParm";
+            this.group_TestParm.Size = new System.Drawing.Size(426, 337);
+            this.group_TestParm.TabIndex = 291;
+            this.group_TestParm.TabStop = false;
+            this.group_TestParm.Text = "设备运行参数";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.checkBox_grating);
+            this.groupBox17.Controls.Add(this.checkBox_isNGKO);
+            this.groupBox17.Controls.Add(this.checkBox1_hummer);
+            this.groupBox17.Controls.Add(this.checkBox_UseHive);
+            this.groupBox17.Controls.Add(this.cBox_Useimage);
+            this.groupBox17.Controls.Add(this.cBox_UsePDCA);
+            this.groupBox17.Controls.Add(this.cBoxUseCCD);
+            this.groupBox17.Controls.Add(this.checkBox_CheckDoorSR);
+            this.groupBox17.Controls.Add(this.checkBox_UseScan);
+            this.groupBox17.Controls.Add(this.checkBox_UseMES);
+            this.groupBox17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox17.Location = new System.Drawing.Point(217, 37);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(193, 294);
+            this.groupBox17.TabIndex = 465;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "功能设置";
+            // 
+            // checkBox_isNGKO
+            // 
+            this.checkBox_isNGKO.AutoSize = true;
+            this.checkBox_isNGKO.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_isNGKO.Location = new System.Drawing.Point(17, 139);
+            this.checkBox_isNGKO.Name = "checkBox_isNGKO";
+            this.checkBox_isNGKO.Size = new System.Drawing.Size(60, 16);
+            this.checkBox_isNGKO.TabIndex = 312;
+            this.checkBox_isNGKO.Text = "NG过站";
+            this.checkBox_isNGKO.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1_hummer
+            // 
+            this.checkBox1_hummer.AutoSize = true;
+            this.checkBox1_hummer.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox1_hummer.Location = new System.Drawing.Point(18, 111);
+            this.checkBox1_hummer.Name = "checkBox1_hummer";
+            this.checkBox1_hummer.Size = new System.Drawing.Size(84, 16);
+            this.checkBox1_hummer.TabIndex = 311;
+            this.checkBox1_hummer.Text = "禁用蜂鸣器";
+            this.checkBox1_hummer.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_UseHive
+            // 
+            this.checkBox_UseHive.AutoSize = true;
+            this.checkBox_UseHive.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_UseHive.Location = new System.Drawing.Point(18, 86);
+            this.checkBox_UseHive.Name = "checkBox_UseHive";
+            this.checkBox_UseHive.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_UseHive.TabIndex = 309;
+            this.checkBox_UseHive.Text = "启用Hive";
+            this.checkBox_UseHive.UseVisualStyleBackColor = true;
+            // 
+            // cBox_Useimage
+            // 
+            this.cBox_Useimage.AutoSize = true;
+            this.cBox_Useimage.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cBox_Useimage.Location = new System.Drawing.Point(18, 220);
+            this.cBox_Useimage.Name = "cBox_Useimage";
+            this.cBox_Useimage.Size = new System.Drawing.Size(96, 16);
+            this.cBox_Useimage.TabIndex = 306;
+            this.cBox_Useimage.Text = "启用上传图片";
+            this.cBox_Useimage.UseVisualStyleBackColor = true;
+            this.cBox_Useimage.Visible = false;
+            // 
+            // cBox_UsePDCA
+            // 
+            this.cBox_UsePDCA.AutoSize = true;
+            this.cBox_UsePDCA.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cBox_UsePDCA.Location = new System.Drawing.Point(18, 198);
+            this.cBox_UsePDCA.Name = "cBox_UsePDCA";
+            this.cBox_UsePDCA.Size = new System.Drawing.Size(72, 16);
+            this.cBox_UsePDCA.TabIndex = 298;
+            this.cBox_UsePDCA.Text = "启用PDCA";
+            this.cBox_UsePDCA.UseVisualStyleBackColor = true;
+            this.cBox_UsePDCA.Visible = false;
+            this.cBox_UsePDCA.CheckedChanged += new System.EventHandler(this.cBox_UsePDCA_CheckedChanged);
+            // 
+            // cBoxUseCCD
+            // 
+            this.cBoxUseCCD.AutoSize = true;
+            this.cBoxUseCCD.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cBoxUseCCD.Location = new System.Drawing.Point(18, 20);
+            this.cBoxUseCCD.Name = "cBoxUseCCD";
+            this.cBoxUseCCD.Size = new System.Drawing.Size(66, 16);
+            this.cBoxUseCCD.TabIndex = 251;
+            this.cBoxUseCCD.Text = "启用CCD";
+            this.cBoxUseCCD.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_CheckDoorSR
+            // 
+            this.checkBox_CheckDoorSR.AutoSize = true;
+            this.checkBox_CheckDoorSR.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_CheckDoorSR.Location = new System.Drawing.Point(18, 64);
+            this.checkBox_CheckDoorSR.Name = "checkBox_CheckDoorSR";
+            this.checkBox_CheckDoorSR.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_CheckDoorSR.TabIndex = 292;
+            this.checkBox_CheckDoorSR.Text = "启用安全门";
+            this.checkBox_CheckDoorSR.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_UseScan
+            // 
+            this.checkBox_UseScan.AutoSize = true;
+            this.checkBox_UseScan.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_UseScan.Location = new System.Drawing.Point(18, 257);
+            this.checkBox_UseScan.Name = "checkBox_UseScan";
+            this.checkBox_UseScan.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_UseScan.TabIndex = 293;
+            this.checkBox_UseScan.Text = "启用扫码枪";
+            this.checkBox_UseScan.UseVisualStyleBackColor = true;
+            this.checkBox_UseScan.Visible = false;
+            // 
+            // checkBox_UseMES
+            // 
+            this.checkBox_UseMES.AutoSize = true;
+            this.checkBox_UseMES.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_UseMES.Location = new System.Drawing.Point(18, 42);
+            this.checkBox_UseMES.Name = "checkBox_UseMES";
+            this.checkBox_UseMES.Size = new System.Drawing.Size(66, 16);
+            this.checkBox_UseMES.TabIndex = 295;
+            this.checkBox_UseMES.Text = "启用MES";
+            this.checkBox_UseMES.UseVisualStyleBackColor = true;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.checkBoxTestMode);
+            this.groupBox16.Controls.Add(this.cBoxNolmalWork);
+            this.groupBox16.Controls.Add(this.label39);
+            this.groupBox16.Controls.Add(this.numericUpDown_AutoSpeed);
+            this.groupBox16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox16.Location = new System.Drawing.Point(13, 36);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(183, 259);
+            this.groupBox16.TabIndex = 464;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "模式设置";
+            // 
+            // checkBoxTestMode
+            // 
+            this.checkBoxTestMode.AutoSize = true;
+            this.checkBoxTestMode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBoxTestMode.Location = new System.Drawing.Point(24, 156);
+            this.checkBoxTestMode.Name = "checkBoxTestMode";
+            this.checkBoxTestMode.Size = new System.Drawing.Size(72, 16);
+            this.checkBoxTestMode.TabIndex = 300;
+            this.checkBoxTestMode.Text = "调机模式";
+            this.checkBoxTestMode.UseVisualStyleBackColor = true;
+            this.checkBoxTestMode.CheckedChanged += new System.EventHandler(this.CheckedChanged);
+            // 
+            // cBoxNolmalWork
+            // 
+            this.cBoxNolmalWork.AutoSize = true;
+            this.cBoxNolmalWork.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cBoxNolmalWork.Location = new System.Drawing.Point(24, 112);
+            this.cBoxNolmalWork.Name = "cBoxNolmalWork";
+            this.cBoxNolmalWork.Size = new System.Drawing.Size(96, 16);
+            this.cBoxNolmalWork.TabIndex = 298;
+            this.cBoxNolmalWork.Text = "正常生产模式";
+            this.cBoxNolmalWork.UseVisualStyleBackColor = true;
+            this.cBoxNolmalWork.CheckedChanged += new System.EventHandler(this.CheckedChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label39.Location = new System.Drawing.Point(21, 23);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(95, 12);
+            this.label39.TabIndex = 250;
+            this.label39.Text = "运行Speed  (%):";
+            // 
+            // numericUpDown_AutoSpeed
+            // 
+            this.numericUpDown_AutoSpeed.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDown_AutoSpeed.Location = new System.Drawing.Point(100, 47);
+            this.numericUpDown_AutoSpeed.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_AutoSpeed.Name = "numericUpDown_AutoSpeed";
+            this.numericUpDown_AutoSpeed.Size = new System.Drawing.Size(73, 21);
+            this.numericUpDown_AutoSpeed.TabIndex = 249;
+            this.numericUpDown_AutoSpeed.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnSave1);
+            this.tabPage1.Controls.Add(this.propertyGrid1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1321, 571);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "MES和HIVE参数";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnSave1
+            // 
+            this.btnSave1.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSave1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSave1.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
+            this.btnSave1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSave1.Location = new System.Drawing.Point(1217, 483);
+            this.btnSave1.Name = "btnSave1";
+            this.btnSave1.Size = new System.Drawing.Size(74, 75);
+            this.btnSave1.TabIndex = 337;
+            this.btnSave1.Text = "Save File";
+            this.btnSave1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSave1.UseVisualStyleBackColor = false;
+            this.btnSave1.Click += new System.EventHandler(this.btnSave1_Click);
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.propertyGrid1.CategorySplitterColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.propertyGrid1.CommandsBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.propertyGrid1.CommandsDisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.propertyGrid1.HelpBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.propertyGrid1.LineColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.propertyGrid1.Location = new System.Drawing.Point(8, 19);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(1193, 544);
+            this.propertyGrid1.TabIndex = 336;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.propertyGrid_hash);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1321, 571);
+            this.tabPage2.TabIndex = 6;
+            this.tabPage2.Text = "哈希值参数";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1214, 484);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 75);
+            this.button1.TabIndex = 339;
+            this.button1.Text = "Save File";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // propertyGrid_hash
+            // 
+            this.propertyGrid_hash.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.propertyGrid_hash.CategorySplitterColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.propertyGrid_hash.CommandsBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.propertyGrid_hash.CommandsDisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.propertyGrid_hash.HelpBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.propertyGrid_hash.LineColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.propertyGrid_hash.Location = new System.Drawing.Point(8, 19);
+            this.propertyGrid_hash.Name = "propertyGrid_hash";
+            this.propertyGrid_hash.Size = new System.Drawing.Size(1191, 544);
+            this.propertyGrid_hash.TabIndex = 338;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.propertyGrid_Config);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1321, 571);
+            this.tabPage3.TabIndex = 7;
+            this.tabPage3.Text = "设备参数信息";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(1215, 486);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(74, 75);
+            this.button2.TabIndex = 341;
+            this.button2.Text = "Save File";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // propertyGrid_Config
+            // 
+            this.propertyGrid_Config.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.propertyGrid_Config.CategorySplitterColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.propertyGrid_Config.CommandsBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.propertyGrid_Config.CommandsDisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.propertyGrid_Config.HelpBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.propertyGrid_Config.LineColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.propertyGrid_Config.Location = new System.Drawing.Point(9, 14);
+            this.propertyGrid_Config.Name = "propertyGrid_Config";
+            this.propertyGrid_Config.Size = new System.Drawing.Size(1191, 549);
+            this.propertyGrid_Config.TabIndex = 340;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button8);
+            this.tabPage5.Controls.Add(this.button7);
+            this.tabPage5.Controls.Add(this.btnSimulator);
+            this.tabPage5.Controls.Add(this.button12);
+            this.tabPage5.Controls.Add(this.label4);
+            this.tabPage5.Controls.Add(this.txtBarcodeSN);
+            this.tabPage5.Controls.Add(this.button10);
+            this.tabPage5.Controls.Add(this.button9);
+            this.tabPage5.Controls.Add(this.label3);
+            this.tabPage5.Controls.Add(this.cBoxConnetType);
+            this.tabPage5.Controls.Add(this.btnSend);
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.dataGridView_CMD);
+            this.tabPage5.Location = new System.Drawing.Point(4, 34);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1321, 571);
+            this.tabPage5.TabIndex = 9;
+            this.tabPage5.Text = "测试";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(1118, 250);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(168, 43);
+            this.button8.TabIndex = 352;
+            this.button8.Text = "流程显示界面1";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1118, 183);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(168, 43);
+            this.button7.TabIndex = 351;
+            this.button7.Text = "流程显示界面";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // btnSimulator
+            // 
+            this.btnSimulator.Location = new System.Drawing.Point(1118, 117);
+            this.btnSimulator.Name = "btnSimulator";
+            this.btnSimulator.Size = new System.Drawing.Size(168, 43);
+            this.btnSimulator.TabIndex = 350;
+            this.btnSimulator.Text = "开始仿真测试";
+            this.btnSimulator.UseVisualStyleBackColor = true;
+            this.btnSimulator.Click += new System.EventHandler(this.btnSimulator_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(1118, 47);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(168, 43);
+            this.button12.TabIndex = 349;
+            this.button12.Text = "仿真参数配置";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(556, 279);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 24);
+            this.label4.TabIndex = 345;
+            this.label4.Text = "返回值：";
+            // 
+            // txtBarcodeSN
+            // 
+            this.txtBarcodeSN.Location = new System.Drawing.Point(671, 276);
+            this.txtBarcodeSN.Name = "txtBarcodeSN";
+            this.txtBarcodeSN.Size = new System.Drawing.Size(206, 29);
+            this.txtBarcodeSN.TabIndex = 344;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(663, 201);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(127, 36);
+            this.button10.TabIndex = 343;
+            this.button10.Text = "扫码枪测试";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(663, 120);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(127, 36);
+            this.button9.TabIndex = 342;
+            this.button9.Text = "发送";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(575, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.TabIndex = 341;
+            this.label3.Text = "通讯类型";
+            // 
+            // cBoxConnetType
+            // 
+            this.cBoxConnetType.FormattingEnabled = true;
+            this.cBoxConnetType.Location = new System.Drawing.Point(690, 53);
+            this.cBoxConnetType.Name = "cBoxConnetType";
+            this.cBoxConnetType.Size = new System.Drawing.Size(182, 32);
+            this.cBoxConnetType.TabIndex = 340;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(228, 395);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(127, 36);
+            this.btnSend.TabIndex = 339;
+            this.btnSend.Text = "发送";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(233, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 24);
+            this.label2.TabIndex = 338;
+            this.label2.Text = "指令集合";
+            // 
+            // dataGridView_CMD
+            // 
+            this.dataGridView_CMD.AllowUserToAddRows = false;
+            this.dataGridView_CMD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CMD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.Column5});
+            this.dataGridView_CMD.Location = new System.Drawing.Point(19, 58);
+            this.dataGridView_CMD.Name = "dataGridView_CMD";
+            this.dataGridView_CMD.RowHeadersWidth = 4;
+            this.dataGridView_CMD.RowTemplate.Height = 23;
+            this.dataGridView_CMD.Size = new System.Drawing.Size(509, 322);
+            this.dataGridView_CMD.TabIndex = 337;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "类型";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "指令";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 400;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 15000;
+            // 
+            // panel13
+            // 
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1329, 609);
+            this.panel13.TabIndex = 239;
+            // 
+            // checkBox_grating
+            // 
+            this.checkBox_grating.AutoSize = true;
+            this.checkBox_grating.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_grating.Location = new System.Drawing.Point(17, 167);
+            this.checkBox_grating.Name = "checkBox_grating";
+            this.checkBox_grating.Size = new System.Drawing.Size(96, 16);
+            this.checkBox_grating.TabIndex = 314;
+            this.checkBox_grating.Text = "启用安全光栅";
+            this.checkBox_grating.UseVisualStyleBackColor = true;
+            // 
+            // frm_Recipe
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1329, 609);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.listView_Recipe);
+            this.Controls.Add(this.btn_Load);
+            this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.panel13);
+            this.Font = new System.Drawing.Font("新宋体", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Name = "frm_Recipe";
+            this.Text = "frm_Recipe";
+            this.Load += new System.EventHandler(this.frm_Recipe_Load);
+            this.VisibleChanged += new System.EventHandler(this.frm_Recipe_VisibleChanged);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage0.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.group_TestParm.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AutoSpeed)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Load;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.ListView listView_Recipe;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage0;
+        private System.Windows.Forms.GroupBox group_TestParm;
+        private System.Windows.Forms.NumericUpDown numericUpDown_AutoSpeed;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.CheckBox checkBox_CheckDoorSR;
+        private System.Windows.Forms.CheckBox cBoxUseCCD;
+        private System.Windows.Forms.CheckBox checkBox_UseScan;
+        private System.Windows.Forms.CheckBox checkBox_UseMES;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.CheckBox cBox_UsePDCA;
+        private System.Windows.Forms.CheckBox cBox_Useimage;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.CheckBox checkBox_UseHive;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Timer timer_ScalesData;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnSave1;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PropertyGrid propertyGrid_hash;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PropertyGrid propertyGrid_Config;
+        private System.Windows.Forms.CheckBox cBoxNolmalWork;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView_CMD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cBoxConnetType;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBarcodeSN;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.CheckBox checkBox1_hummer;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSimulator;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.CheckBox checkBoxTestMode;
+        private System.Windows.Forms.CheckBox checkBox_isNGKO;
+        private System.Windows.Forms.CheckBox checkBox_grating;
+    }
+}

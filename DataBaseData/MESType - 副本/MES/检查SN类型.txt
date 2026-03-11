@@ -1,0 +1,16 @@
+﻿{
+"empNo": "",
+"terminalName": "工站",
+"serial_Number": "产品SN",
+"machine": "",
+"toolingNo": "",
+"lotNo": "",
+"kpsn": "",
+"workOrder": "",
+"cavity": "",
+"testData": "",
+"results": "",
+"status": "",
+"pCmd": "GET_SN_PART_TYPE",
+"defectCode": ""
+}

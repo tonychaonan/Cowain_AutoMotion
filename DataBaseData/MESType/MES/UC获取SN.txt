@@ -1,0 +1,16 @@
+{
+"empNo": "",
+"terminalName": "工站",
+"serial_Number": "载具编号",
+"machine": "",
+"toolingNo": "",
+"lotNo": "",
+"kpsn": "",
+"workOrder": "",
+"cavity": "",
+"testData": "",
+"results": "",
+"status": "",
+"pCmd": "RFID_GET_SN",
+"defectCode": ""
+}
