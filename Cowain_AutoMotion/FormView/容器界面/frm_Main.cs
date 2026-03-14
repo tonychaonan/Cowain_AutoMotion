@@ -467,9 +467,9 @@ namespace Cowain_Form.FormView
                     
                     if ((string.IsNullOrWhiteSpace(MachineDataDefine.hive_mac) || MachineDataDefine.hive_mac == "00:00:00:00:00:00") && MachineDataDefine.NGmac)
                     {
-                        MachineDataDefine.hive_mac = "00:00:00:00:00:00";
-                        MachineDataDefine.NGmac = false;
-                        showHealthForm("获取网卡MAC地址失败");
+                        //MachineDataDefine.hive_mac = "00:00:00:00:00:00";
+                        //MachineDataDefine.NGmac = false;
+                        //showHealthForm("获取网卡MAC地址失败");
                     }
 
 

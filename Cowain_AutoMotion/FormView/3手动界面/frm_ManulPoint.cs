@@ -317,7 +317,7 @@ namespace Cowain_Form.FormView
             }
             if (currentPoint != null)
             {
-                EnumParam_Point pointName = EnumParam_Point.待料位;
+                EnumParam_Point pointName = EnumParam_Point.待命位;
                 Enum.TryParse(currentPoint.CName, out pointName);
                 if (BaseDataDefine.clsPointsMoveManage.getPointIdel(pointName))
                 {
@@ -384,7 +384,7 @@ namespace Cowain_Form.FormView
             if (currentPoint != null)
             {
                 btn_Move.Enabled = false;
-                EnumParam_Point pointName = EnumParam_Point.待料位;
+                EnumParam_Point pointName = EnumParam_Point.待命位;
                 Enum.TryParse(currentPoint.CName, out pointName);
                 BaseDataDefine.clsPointsMoveManage.movePoint(pointName);
             }

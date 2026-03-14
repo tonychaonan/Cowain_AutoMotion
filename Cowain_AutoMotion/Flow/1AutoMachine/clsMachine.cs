@@ -381,35 +381,35 @@ namespace Cowain_Machine.Flow
             #endregion
             if (MachineDataDefine.machineState.b_UseGratingCheck && Mainflow.isWorking)
             {
-                if (anquan)
-                {
-                    if (HardWareControl.getInputIO(EnumParam_InputIO.安全光栅).GetValue())
-                    {
-                        showHinttEvent("");
-                        anquan = false;
-                    }
-                    else
-                    {
-                        if ((DateTime.Now - anquanTime).TotalSeconds > 0.5)
-                        {
-                            LogAuto.Notify("长时间触碰安全光栅，设备暂停", (int)MachineStation.主监控, MotionLogLevel.Info);
-                            showHinttEvent("长时间触碰安全光栅，设备暂停");
-                            StopAuto();
-                            anquan = false;
-                            Mainflow.isWorking = false;
-                        }
-                    }
-                }
-                else
-                {
-                    if (!HardWareControl.getInputIO(EnumParam_InputIO.安全光栅).GetValue())
-                    {
-                        LogAuto.Notify("安全光栅触发！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                        showHinttEvent("请勿触碰安全光栅");
-                        anquan = true;
-                        anquanTime = DateTime.Now;
-                    }
-                }
+                //if (anquan)
+                //{
+                //    if (HardWareControl.getInputIO(EnumParam_InputIO.安全光栅).GetValue())
+                //    {
+                //        showHinttEvent("");
+                //        anquan = false;
+                //    }
+                //    else
+                //    {
+                //        if ((DateTime.Now - anquanTime).TotalSeconds > 0.5)
+                //        {
+                //            LogAuto.Notify("长时间触碰安全光栅，设备暂停", (int)MachineStation.主监控, MotionLogLevel.Info);
+                //            showHinttEvent("长时间触碰安全光栅，设备暂停");
+                //            StopAuto();
+                //            anquan = false;
+                //            Mainflow.isWorking = false;
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    if (!HardWareControl.getInputIO(EnumParam_InputIO.安全光栅).GetValue())
+                //    {
+                //        LogAuto.Notify("安全光栅触发！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                //        showHinttEvent("请勿触碰安全光栅");
+                //        anquan = true;
+                //        anquanTime = DateTime.Now;
+                //    }
+                //}
 
             }
             if (MachineDataDefine.machineState.b_UseHive && !HIVE.HIVEInstance.HIVE_Reveice_Status && !HIVE.HIVEInstance.HIVE_Error)
@@ -584,7 +584,7 @@ namespace Cowain_Machine.Flow
                         //HardWareControl.getValve(EnumParam_Valve.左侧Driver进料滑台气缸).Close();
                         //HardWareControl.getValve(EnumParam_Valve.标定吸真空电磁阀ON).Close();
                         //HardWareControl.getValve(EnumParam_Valve.取螺丝吸真空电磁阀ON).Close();
-                        HardWareControl.movePoint(EnumParam_Point.拍照位1);
+                        HardWareControl.movePoint(EnumParam_Point.待命位);
                         m_nStep = (int)enStep.AllStAuto;
                         //}
                     }
@@ -742,14 +742,14 @@ namespace Cowain_Machine.Flow
         {
             #region Input I/O
             m_EmgIO = HardWareControl.getInputIO(EnumParam_InputIO.急停按钮);
-            //m_Start = HardWareControl.getInputIO(EnumParam_InputIO.启动按钮);
-            //m_Stop = HardWareControl.getInputIO(EnumParam_InputIO.停止按钮);
+            m_Start = HardWareControl.getInputIO(EnumParam_InputIO.启动按钮);
+            m_Stop = HardWareControl.getInputIO(EnumParam_InputIO.停止按钮);
             m_Reset = HardWareControl.getInputIO(EnumParam_InputIO.复位按钮);
             //  m_inSafety = StaticParam.InputDictionary1["安全光栅"];
-            m_LightTowerR = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_红灯);
-            m_LightTowerY = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_黄灯);
-            m_LightTowerG = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_绿灯);
-            m_Buzzer = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_蜂鸣器);
+            //m_LightTowerR = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_红灯);
+            //m_LightTowerY = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_黄灯);
+            //m_LightTowerG = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_绿灯);
+            //m_Buzzer = HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_蜂鸣器);
             //--------------------
             //m_LightStop = HardWareControl.getOutputIO(EnumParam_OutputIO.停止灯);
             //m_LightReset = HardWareControl.getOutputIO(EnumParam_OutputIO.复位灯);

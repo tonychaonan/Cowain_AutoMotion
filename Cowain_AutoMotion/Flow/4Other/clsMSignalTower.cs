@@ -25,34 +25,34 @@ namespace Cowain_AutoMotion
             thread.Start();
         }
         #region 參數&變數
-        public DrvIO pLightR
-        {
-            get
-            {
-                return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_红灯);
-            }
-        }
-        public DrvIO pLightY
-        {
-            get
-            {
-                return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_黄灯);
-            }
-        }
-        public DrvIO pLightG
-        {
-            get
-            {
-                return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_绿灯);
-            }
-        }
-        public DrvIO pBuzzer
-        {
-            get
-            {
-                return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_蜂鸣器);
-            }
-        }
+        //public DrvIO pLightR
+        //{
+        //    //get
+        //    //{
+        //    //    return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_红灯);
+        //    //}
+        //}
+        //public DrvIO pLightY
+        //{
+        //    //get
+        //    //{
+        //    //    return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_黄灯);
+        //    //}
+        //}
+        //public DrvIO pLightG
+        //{
+        //    get
+        //    {
+        //        return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_绿灯);
+        //    }
+        //}
+        //public DrvIO pBuzzer
+        //{
+        //    get
+        //    {
+        //        return HardWareControl.getOutputIO(EnumParam_OutputIO.三色灯_蜂鸣器);
+        //    }
+        //}
         System.Timers.Timer m_tmLightOpen, m_tmLightClose;
         bool m_bBuzzerOff = false;
         uint m_OpenTime, m_CloseTime;
@@ -97,7 +97,7 @@ namespace Cowain_AutoMotion
                 StepCycle();
                 if (Base.baseStatus == Base.Status.停止)
                 {
-                    pBuzzer.SetIO(false);
+                   // pBuzzer.SetIO(false);
                 }
             }
         }
@@ -111,12 +111,12 @@ namespace Cowain_AutoMotion
                     {
                         if (m_enTowerMode == enTowerMode.enAutoRuning)
                         {
-                            SetLightStatus(false, false, true, false);//绿灯亮-运行
+                            //SetLightStatus(false, false, true, false);//绿灯亮-运行
                             m_nStep = (int)enStep.TowerLightCompleted;
                         }
                         else if (m_enTowerMode == enTowerMode.enIdle)
                         {
-                            SetLightStatus(false, true, false, false);//黄灯闪-运行待料
+                            //SetLightStatus(false, true, false, false);//黄灯闪-运行待料
                             m_tmLightOpen.Interval = m_OpenTime;
                             m_tmLightOpen.Start();
                             m_nStep = (int)enStep.WaitOpenTimeOut;
@@ -124,7 +124,7 @@ namespace Cowain_AutoMotion
                         }
                         else if (m_enTowerMode == enTowerMode.enDoHome)
                         {
-                            SetLightStatus(false, true, false, false);//黄灯闪-回原中
+                            //SetLightStatus(false, true, false, false);//黄灯闪-回原中
                             m_tmLightOpen.Interval = m_OpenTime;
                             m_tmLightOpen.Start();
                             m_nStep = (int)enStep.WaitOpenTimeOut;
@@ -137,7 +137,7 @@ namespace Cowain_AutoMotion
                             //{
                             //    m_bBuzzerOff = true;
                             //}
-                            SetLightStatus(true, false, false, true);//红灯+蜂鸣+3/1-报警
+                            //SetLightStatus(true, false, false, true);//红灯+蜂鸣+3/1-报警
                             m_tmLightOpen.Interval = m_OpenTime;
                             m_tmLightOpen.Start();
                             Alarm = true;
@@ -145,18 +145,18 @@ namespace Cowain_AutoMotion
                         }
                         else if (m_enTowerMode == enTowerMode.enEmg)
                         {
-                            SetLightStatus(true, false, false, true);//红灯+蜂鸣+3/1-急停
+                            //SetLightStatus(true, false, false, true);//红灯+蜂鸣+3/1-急停
                             Alarm = true;
                             m_nStep = (int)enStep.WaitOpenTimeOut;
                         }
                         else if (m_enTowerMode == enTowerMode.enStop)
                         {
-                            SetLightStatus(false, true, false, false);//黄灯亮-停止
+                            //SetLightStatus(false, true, false, false);//黄灯亮-停止
                             m_nStep = (int)enStep.TowerLightCompleted;
                         }
                         else if (m_enTowerMode == enTowerMode.enLoading)
                         {
-                            SetLightStatus(false, true, false, false);//黄灯亮-停止
+                            //SetLightStatus(false, true, false, false);//黄灯亮-停止
                             m_nStep = (int)enStep.TowerLightCompleted;
                         }
                     }
@@ -166,14 +166,14 @@ namespace Cowain_AutoMotion
                     {
                         if (m_enTowerMode == enTowerMode.enDoHome)
                         {
-                            SetLightStatus(false, false, false, false);//归原
+                           // SetLightStatus(false, false, false, false);//归原
                             m_tmLightClose.Interval = m_CloseTime;
                             m_tmLightClose.Start();
                             m_nStep = (int)enStep.WaitCloseTimeOut;
                         }
                         else if (m_enTowerMode == enTowerMode.enAlarm)
                         {
-                            SetLightStatus(false, false, false, false);//红灯闪-报警
+                            //SetLightStatus(false, false, false, false);//红灯闪-报警
                             //SetLightStatus(true, false, false, false);//红灯亮-报警
                             m_tmLightClose.Interval = m_CloseTime;
                             m_tmLightClose.Start();
@@ -181,7 +181,7 @@ namespace Cowain_AutoMotion
                         }
                         else if (m_enTowerMode == enTowerMode.enIdle)
                         {
-                            SetLightStatus(false, false, false, false);//黄灯闪-运行待料
+                           // SetLightStatus(false, false, false, false);//黄灯闪-运行待料
                             //SetLightStatus(false, true, false, false);//黄灯亮-运行待料
                             m_tmLightClose.Interval = m_CloseTime;
                             m_tmLightClose.Start();
@@ -208,15 +208,15 @@ namespace Cowain_AutoMotion
         /// <param name="bBuzzer">蜂鸣</param>
         public void SetLightStatus(bool bLightR, bool bLightY, bool bLightG, bool bBuzzer)
         {
-            if (pLightR != null)
-                pLightR.SetIO(bLightR);
+            //if (pLightR != null)
+            //    pLightR.SetIO(bLightR);
 
-            if (pLightY != null)
-                pLightY.SetIO(bLightY);
-            if (pLightG != null)
-                pLightG.SetIO(bLightG);
-            if (pBuzzer != null && !m_bBuzzerOff)
-                pBuzzer.SetIO(bBuzzer);
+            //if (pLightY != null)
+            //    pLightY.SetIO(bLightY);
+            //if (pLightG != null)
+            //    pLightG.SetIO(bLightG);
+            //if (pBuzzer != null && !m_bBuzzerOff)
+            //    pBuzzer.SetIO(bBuzzer);
         }
         public void TowerLight(enTowerMode enMode)
         {
@@ -250,12 +250,12 @@ namespace Cowain_AutoMotion
         public void SetBuzzerOff()
         {
             m_bBuzzerOff = true;
-            pBuzzer.SetIO(false);
+           // pBuzzer.SetIO(false);
         }
         public void SetBuzzerOn()
         {
             m_bBuzzerOff = false;
-            pBuzzer.SetIO(true);
+            //pBuzzer.SetIO(true);
         }
     }
 }

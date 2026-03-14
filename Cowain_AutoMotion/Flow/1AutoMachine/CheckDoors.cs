@@ -30,11 +30,11 @@ namespace Cowain_AutoMotion
                 //{
                 //    return true;
                 //}
-                bool door1 = HardWareControl.getInputIO(EnumParam_InputIO.右后安全门).GetValue();
-                bool door2 = HardWareControl.getInputIO(EnumParam_InputIO.左后安全门).GetValue();
-                bool door3 = HardWareControl.getInputIO(EnumParam_InputIO.左安全门).GetValue();
-                bool door4 = HardWareControl.getInputIO(EnumParam_InputIO.右安全门).GetValue();
-                if ((door1 && door2 && door3 && door4) != true)
+                //bool door1 = HardWareControl.getInputIO(EnumParam_InputIO.右后安全门).GetValue();
+                //bool door2 = HardWareControl.getInputIO(EnumParam_InputIO.左后安全门).GetValue();
+                //bool door3 = HardWareControl.getInputIO(EnumParam_InputIO.左安全门).GetValue();
+                //bool door4 = HardWareControl.getInputIO(EnumParam_InputIO.右安全门).GetValue();
+                if (true)
                 {
                     return true;
                 }

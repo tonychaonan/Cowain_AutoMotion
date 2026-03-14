@@ -70,9 +70,9 @@ namespace Cowain_Form.FormView
         string errorcode = "";
         private void frm_ErrorDlg_Shown(object sender, EventArgs e)
         {
-            pMachine.m_LightTowerR.SetIO(true);
-            pMachine.m_LightTowerG.SetIO(false);
-            pMachine.m_LightTowerY.SetIO(false);
+            //pMachine.m_LightTowerR.SetIO(true);
+            //pMachine.m_LightTowerG.SetIO(false);
+            //pMachine.m_LightTowerY.SetIO(false);
             if (!MachineDataDefine.machineState.b_Usehummer)
             {
                 pMachine.m_Buzzer.SetIO(true);
@@ -228,7 +228,7 @@ namespace Cowain_Form.FormView
                 {
                     HIVE.HIVEInstance.HIVE_Error = false;
                     HIVE.HIVEInstance.HIVE_Reveice_Status = true;
-                    pMachine.m_Buzzer.SetIO(false);
+                    //pMachine.m_Buzzer.SetIO(false);
                     Close();
                     return;
                 }
@@ -255,7 +255,7 @@ namespace Cowain_Form.FormView
         }
         private void btn_BuzzerOff_Click(object sender, EventArgs e)
         {
-            pMachine.m_Buzzer.SetIO(false);
+            //pMachine.m_Buzzer.SetIO(false);
         }
 
         private void dia_EMG_FormClosing(object sender, FormClosingEventArgs e)

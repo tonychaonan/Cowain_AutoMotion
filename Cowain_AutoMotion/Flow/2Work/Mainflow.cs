@@ -26,7 +26,7 @@ namespace Cowain_AutoMotion.Flow._2Work
     {
         public Mainflow_HomeStep currentHomeStep;
         private Mainflow_WorkStep currentWorkStep;
-      //  MiSuMiControl miSuMiControl;
+        private MiSuMiControl miSuMiControl;
         public static double speed = 80;
         /// <summary>
         /// 前龙门可放料
@@ -90,22 +90,40 @@ namespace Cowain_AutoMotion.Flow._2Work
         public Dictionary<string, string> datas = new Dictionary<string, string>();
         public Mainflow(Type homeEnum1, Type stepEnum1, string instanceName1, Base parent) : base(homeEnum1, stepEnum1, instanceName1, parent, false)
         {
-           
+            // 初始化电爪控制器
+            miSuMiControl = new MiSuMiControl();
+            try
+            {
+                // 连接电爪（需要根据实际串口号修改）
+                miSuMiControl.Connect("COM8"); // TODO: 从配置文件读取串口号
 
+                // 首次使用需要激活并搜索行程
+                if (!miSuMiControl.IsReady())
+                {
+                    miSuMiControl.EnableWithSearch();
+                    miSuMiControl.WaitReady(5000);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogAuto.Notify($"电爪初始化失败：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+            }
         }
         public enum Mainflow_HomeStep
         {
             Start = 0,
             Z轴回原,
             判断Z轴回原完成,
-            A轴回原,
-            R轴回原,
+            Y轴回原,
+            判断Y轴回原完成,
+            R1轴回原,
+
             判断R轴回原完成,
             Completed,
             X轴回原,
             判断X轴回原完成,
             XY轴回原,
-            判断XY轴回原完成,
+  
             移动到待命位
         }
         public enum Mainflow_WorkStep
@@ -170,30 +188,50 @@ namespace Cowain_AutoMotion.Flow._2Work
                     if (HardWareControl.getMotor(EnumParam_Axis.Z).isHomeCompleted())
                     {
                         LogAuto.Notify("Z轴回原点完成&气缸复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                        HardWareControl.getValve(EnumParam_Valve.载具打开气缸).Close();
-                        m_nHomeStep = (int)Mainflow_HomeStep.XY轴回原;
+                        ///HardWareControl.getValve(EnumParam_Valve.载具打开气缸).Close();
+                        m_nHomeStep = (int)Mainflow_HomeStep.Y轴回原;
                     }
                     break;
-                case Mainflow_HomeStep.XY轴回原:
+                case Mainflow_HomeStep.Y轴回原:
 
-                    LogAuto.Notify("XY轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                    HardWareControl.getMotor(EnumParam_Axis.X).DoHome();
+                    LogAuto.Notify("Y轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    //HardWareControl.getMotor(EnumParam_Axis.X).DoHome();
                     HardWareControl.getMotor(EnumParam_Axis.Y).DoHome();
-                    m_nHomeStep = (int)Mainflow_HomeStep.判断XY轴回原完成;
+                    m_nHomeStep = (int)Mainflow_HomeStep.判断Y轴回原完成;
                     break;
-                case Mainflow_HomeStep.判断XY轴回原完成:
-                    if (HardWareControl.getMotor(EnumParam_Axis.X).isHomeCompleted()&& HardWareControl.getMotor(EnumParam_Axis.Y).isHomeCompleted()& HardWareControl.getValve(EnumParam_Valve.载具打开气缸).isIDLE())
+                case Mainflow_HomeStep.判断Y轴回原完成:
+                    if ( HardWareControl.getMotor(EnumParam_Axis.Y).isHomeCompleted())//& HardWareControl.getValve(EnumParam_Valve.载具打开气缸).isIDLE())
                     {
-                        LogAuto.Notify("XY轴回原完成！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        LogAuto.Notify("R2轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        HardWareControl.getMotor(EnumParam_Axis.R2).DoHome();
+                        m_nHomeStep = (int)Mainflow_HomeStep.R1轴回原;
+                    }
+                    break;
+                case Mainflow_HomeStep.R1轴回原:
+                    if (HardWareControl.getMotor(EnumParam_Axis.R2).isHomeCompleted())
+                    {
+                        LogAuto.Notify("R1轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
 
+                        HardWareControl.getMotor(EnumParam_Axis.R1).DoHome();
+                        m_nHomeStep = (int)Mainflow_HomeStep.X轴回原;
+                    }
+                    break;
+                case Mainflow_HomeStep.X轴回原:
+                    if (HardWareControl.getMotor(EnumParam_Axis.R1).isHomeCompleted() )
+                    {
+                        LogAuto.Notify("X轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        HardWareControl.getMotor(EnumParam_Axis.X).DoHome();
                         m_nHomeStep = (int)Mainflow_HomeStep.移动到待命位;
                     }
                     break;
-                case Mainflow_HomeStep.移动到待命位:
 
-                    LogAuto.Notify("XY轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                    HardWareControl.movePoint(EnumParam_Point.待命位);
-                     m_nHomeStep = (int)Mainflow_HomeStep.Completed;
+                case Mainflow_HomeStep.移动到待命位:
+                    if (HardWareControl.getMotor(EnumParam_Axis.X).isHomeCompleted())
+                    {
+                        LogAuto.Notify("XY轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        HardWareControl.movePoint(EnumParam_Point.待命位);
+                        m_nHomeStep = (int)Mainflow_HomeStep.Completed;
+                    }
                     break;
 
                 case Mainflow_HomeStep.Completed:
@@ -254,17 +292,65 @@ namespace Cowain_AutoMotion.Flow._2Work
                     }
                     break;
                 case Mainflow_WorkStep.电夹爪夹:
-                    LogAuto.Notify("电夹爪夹取！", (int)MachineStation.主监控, MotionLogLevel.Info);
-
-
-                    m_nStep = (int)Mainflow_WorkStep.判断电夹爪夹取状态;
-                    //}
+                    if (HardWareControl.getPointIdel(EnumParam_Point.物料夹取Z位))
+                    {
+                        if (MachineDataDefine.machineState.b_UseTestRun)
+                        {
+                            m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
+                            break;
+                        }
+                        LogAuto.Notify("电夹爪开始夹取！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        
+                        // 全速全力关闭到 26mm 位置（0x0A28 = 2600 = 26.00mm）
+                        if (miSuMiControl.CloseToPosition(2600))
+                        {
+                            m_nStep = (int)Mainflow_WorkStep.判断电夹爪夹取状态;
+                        }
+                        else
+                        {
+                            LogAuto.Notify("电夹爪关闭指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                            m_nStep = (int)Mainflow_WorkStep.Completed;
+                        }
+                    }
                     break;
+                    
                 case Mainflow_WorkStep.判断电夹爪夹取状态:
-                    LogAuto.Notify("判断电夹爪夹取状态！", (int)MachineStation.主监控, MotionLogLevel.Info);
-
-
-                    m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
+                    LogAuto.Notify("等待电夹爪夹取完成！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    
+                    // 等待电爪动作完成（最多10秒）
+                    if (miSuMiControl.WaitMovementComplete(10000))
+                    {
+                        // 读取详细状态
+                        var status = miSuMiControl.ReadDetailedStatus();
+                        if (status != null)
+                        {
+                            LogAuto.Notify($"电夹爪状态：{status.ToString()}", (int)MachineStation.主监控, MotionLogLevel.Info);
+                            
+                            // 检查是否成功夹到工件
+                            if (status.GripState == MiSuMiControl.GRIP_HOLDING || status.GripState == MiSuMiControl.GRIP_ARRIVED)
+                            {
+                                LogAuto.Notify("电夹爪夹取成功！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                                m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
+                            }
+                            else
+                            {
+                                LogAuto.Notify($"电夹爪夹取异常，状态={status.GripState}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                                showHinttEvent("电夹爪夹取失败，请检查！");
+                                m_nStep = (int)Mainflow_WorkStep.Completed;
+                            }
+                        }
+                        else
+                        {
+                            LogAuto.Notify("无法读取电夹爪状态！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                            m_nStep = (int)Mainflow_WorkStep.Completed;
+                        }
+                    }
+                    else
+                    {
+                        LogAuto.Notify("电夹爪夹取超时！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                        showHinttEvent("电夹爪夹取超时，请检查！");
+                        m_nStep = (int)Mainflow_WorkStep.Completed;
+                    }
                     break;
                 case Mainflow_WorkStep.取料完成Z轴向上:
                     HardWareControl.movePoint(EnumParam_Point.Z轴安全位);
@@ -527,23 +613,68 @@ namespace Cowain_AutoMotion.Flow._2Work
                     break;
 
                 case Mainflow_WorkStep.等待引导点位运动完成:
-                    if (HardWareControl.getMotor(EnumParam_Axis.X).isIDLE() && HardWareControl.getMotor(EnumParam_Axis.Y).isIDLE()
-                        && HardWareControl.getMotor(EnumParam_Axis.R1).isIDLE())
+                    if (!MachineDataDefine.machineState.b_UseTestRun)
                     {
-                        LogAuto.Notify("电夹爪打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
 
+                        if (HardWareControl.getMotor(EnumParam_Axis.X).isIDLE() && HardWareControl.getMotor(EnumParam_Axis.Y).isIDLE()
+                        && HardWareControl.getMotor(EnumParam_Axis.R1).isIDLE())
+                        {
+                            LogAuto.Notify("电夹爪开始打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                           
+                                // 全速全力打开到 0mm 位置
+                                if (miSuMiControl.OpenToZero())
+                            {
+                                m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
+                            }
+                            else
+                            {
+                                LogAuto.Notify("电夹爪打开指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                                m_nStep = (int)Mainflow_WorkStep.Completed;
+                            }
+                        }
+                    }
+                    else
+                    {
 
+                        if (HardWareControl.getPointIdel(EnumParam_Point.组装位))
+                        {
+                            LogAuto.Notify("电夹爪开始打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                            HardWareControl.movePoint(EnumParam_Point.上相机拍照位);
 
-                        m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
+                            m_nStep = (int)Mainflow_WorkStep.触发侧复检相机拍照;
+                            break;
+
+                            //// 全速全力打开到 0mm 位置
+                            //if (miSuMiControl.OpenToZero())
+                            //{
+                            //    m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
+                            //}
+                            //else
+                            //{
+                            //    LogAuto.Notify("电夹爪打开指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                            //    m_nStep = (int)Mainflow_WorkStep.Completed;
+                            //}
+                          
+                        }
                     }
                     break;
 
                 case Mainflow_WorkStep.电夹爪打开状态结束:
-                   
-                        LogAuto.Notify("电夹爪打开状态结束移动到上相机拍照位复检！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    LogAuto.Notify("等待电夹爪打开完成！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    
+                    // 等待电爪打开完成
+                    if (miSuMiControl.WaitMovementComplete(10000))
+                    {
+                        LogAuto.Notify("电夹爪打开成功，移动到复检位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.movePoint(EnumParam_Point.上相机拍照位);
                         m_nStep = (int)Mainflow_WorkStep.触发侧复检相机拍照;
-                   
+                    }
+                    else
+                    {
+                        LogAuto.Notify("电夹爪打开超时！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                        showHinttEvent("电夹爪打开超时，请检查！");
+                        m_nStep = (int)Mainflow_WorkStep.Completed;
+                    }
                     break;
 
                 case Mainflow_WorkStep.触发侧复检相机拍照:
@@ -624,7 +755,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.Completed:
                     
                         isWorking = false;
-                        m_nStep = (int)Mainflow_WorkStep.移动到待命位;
+                        m_nStep = (int)Mainflow_WorkStep.Start;
                    
                     break;
             }
@@ -633,7 +764,18 @@ namespace Cowain_AutoMotion.Flow._2Work
         {
             //RunnerIn.SN = "";
             PutProduct = false;
-            isWorking=false ;
+            isWorking=false;
+            
+            // 停止时断开电爪连接
+            try
+            {
+                miSuMiControl?.Disconnect();
+            }
+            catch (Exception ex)
+            {
+                LogAuto.Notify($"断开电爪连接失败：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+            }
+            
             base.Stop();
         }
         private string SubSN(string str)
