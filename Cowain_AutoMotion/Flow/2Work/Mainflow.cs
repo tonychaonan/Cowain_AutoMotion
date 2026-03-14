@@ -24,9 +24,11 @@ namespace Cowain_AutoMotion.Flow._2Work
     //.Flow._2Work
     public class Mainflow : Base
     {
-        public Mainflow_HomeStep currentHomeStep;
+        private Mainflow_HomeStep currentHomeStep;
         private Mainflow_WorkStep currentWorkStep;
         private MiSuMiControl miSuMiControl;
+        private int gripRetryCount = 0;
+        private const int MAX_GRIP_RETRY = 3;
         public static double speed = 80;
         /// <summary>
         /// 前龙门可放料
@@ -262,6 +264,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                         //ShowLogEvent("开始作料");
                         isWorking = true;
                         listData.Clear();
+                        gripRetryCount = 0;  // 重置电爪重试计数
                         LogAuto.Notify("开始作料！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         //product.startTime = DateTime.Now;
 
@@ -326,29 +329,54 @@ namespace Cowain_AutoMotion.Flow._2Work
                         {
                             LogAuto.Notify($"电夹爪状态：{status.ToString()}", (int)MachineStation.主监控, MotionLogLevel.Info);
                             
-                            // 检查是否成功夹到工件
-                            if (status.GripState == MiSuMiControl.GRIP_HOLDING || status.GripState == MiSuMiControl.GRIP_ARRIVED)
+                            // 只有 GRIP_HOLDING (0x03) 才表示真正夹到工件
+                            if (status.GripState == MiSuMiControl.GRIP_HOLDING)
                             {
                                 LogAuto.Notify("电夹爪夹取成功！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                                gripRetryCount = 0;  // 重置重试计数
                                 m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
                             }
                             else
                             {
-                                LogAuto.Notify($"电夹爪夹取异常，状态={status.GripState}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
-                                showHinttEvent("电夹爪夹取失败，请检查！");
-                                m_nStep = (int)Mainflow_WorkStep.Completed;
+                                // 夹取失败，尝试重试
+                                gripRetryCount++;
+                                LogAuto.Notify($"电夹爪夹取失败(状态={status.GripState})，第{gripRetryCount}次尝试", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                                
+                                if (gripRetryCount < MAX_GRIP_RETRY)
+                                {
+                                    // 自动重试：先打开电爪，然后重新夹取
+                                    LogAuto.Notify($"准备第{gripRetryCount + 1}次重试夹取", (int)MachineStation.主监控, MotionLogLevel.Info);
+                                    miSuMiControl.OpenToZero();
+                                    System.Threading.Thread.Sleep(500);  // 等待打开完成
+                                    m_nStep = (int)Mainflow_WorkStep.电夹爪夹;  // 重新夹取
+                                }
+                                else
+                                {
+                                    // 超过最大重试次数
+                                    LogAuto.Notify($"电夹爪夹取失败超过最大重试次数({MAX_GRIP_RETRY}次)！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                                    showHinttEvent($"电夹爪夹取失败，已重试{MAX_GRIP_RETRY}次，请检查物料是否正常！");
+                                    miSuMiControl.OpenToZero();  // 打开电爪释放
+                                    gripRetryCount = 0;  // 重置计数
+                                    m_nStep = (int)Mainflow_WorkStep.Completed;
+                                }
                             }
                         }
                         else
                         {
                             LogAuto.Notify("无法读取电夹爪状态！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                            showHinttEvent("无法读取电夹爪状态，请检查通讯！");
+                            miSuMiControl.OpenToZero();  // 打开电爪
+                            gripRetryCount = 0;
                             m_nStep = (int)Mainflow_WorkStep.Completed;
                         }
                     }
                     else
                     {
+                        // 超时处理
                         LogAuto.Notify("电夹爪夹取超时！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
                         showHinttEvent("电夹爪夹取超时，请检查！");
+                        miSuMiControl.OpenToZero();  // 打开电爪
+                        gripRetryCount = 0;
                         m_nStep = (int)Mainflow_WorkStep.Completed;
                     }
                     break;
