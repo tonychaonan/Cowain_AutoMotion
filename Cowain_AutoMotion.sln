@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决�
 		Editor\WorkFlow\WorkFlow.csproj = Editor\WorkFlow\WorkFlow.csproj
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionBase", "MachineBase\MotionBase\MotionBase\MotionBase.csproj", "{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,14 @@ Global
 		{6E58DFD7-5154-4AA3-96DF-E562DE00393B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E58DFD7-5154-4AA3-96DF-E562DE00393B}.Release|x64.ActiveCfg = Release|x64
 		{6E58DFD7-5154-4AA3-96DF-E562DE00393B}.Release|x64.Build.0 = Release|x64
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Debug|x64.ActiveCfg = Debug|x64
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Debug|x64.Build.0 = Debug|x64
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Release|x64.ActiveCfg = Release|x64
+		{D6BA6332-1A10-4C4C-809D-2CB730AF4FE1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
