@@ -39,7 +39,7 @@ namespace Cowain_Form.FormView
             pMachine = pM;
         }
         public clsMachine pMachine;
-
+        
         private void frm_Recipe_Load(object sender, EventArgs e)
         {
             this.propertyGrid1.SelectedObject = MESDataDefine.MESLXData;
@@ -309,10 +309,10 @@ namespace Cowain_Form.FormView
                 DialogResult dr = MessageBox.Show(JudgeLanguage.JudgeLag("将进行联合标定"), JudgeLanguage.JudgeLag("警告"), MessageBoxButtons.OKCancel);
                 if (dr == DialogResult.OK)
                 {
-
+                    MachineDataDefine.electriccalib = false;
                     LogAuto.Notify("走九点标定", (int)MachineStation.主监控, MotionLogLevel.Info);
-                    //WorkProcessLoad.instance.workProcess_AxisTakeIn.axisCalibration.DoStep(0);
-                    //WorkProcessLoad.instance.workProcess_AxisTakeIn.axisCalibration.Action();
+                    WorkProcessLoad.instance.workProcess_Mainflow.axisCalibration.DoStep(0);
+                    WorkProcessLoad.instance.workProcess_Mainflow.axisCalibration.Action();
                 }
             }
         }
@@ -454,13 +454,13 @@ namespace Cowain_Form.FormView
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show(JudgeLanguage.JudgeLag("将进行电批标定"), JudgeLanguage.JudgeLag("警告"), MessageBoxButtons.OKCancel);
+            DialogResult dr = MessageBox.Show(JudgeLanguage.JudgeLag("将进行九点标定"), JudgeLanguage.JudgeLag("警告"), MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
             {
                 MachineDataDefine.electriccalib = true;
-                LogAuto.Notify("走电批九点标定", (int)MachineStation.主监控, MotionLogLevel.Info);
-                //WorkProcessLoad.instance.workProcess_AxisTakeIn.axisCalibration.DoStep(0);
-                //WorkProcessLoad.instance.workProcess_AxisTakeIn.axisCalibration.Action();
+                LogAuto.Notify("走九点标定", (int)MachineStation.主监控, MotionLogLevel.Info);
+                WorkProcessLoad.instance.workProcess_Mainflow.axisCalibration.DoStep(0);
+                WorkProcessLoad.instance.workProcess_Mainflow.axisCalibration.Action();
             }
         }
 

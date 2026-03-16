@@ -167,6 +167,7 @@
     <Compile Include="Flow\1AutoMachine\CheckDoors.cs" />
     <Compile Include="Flow\1AutoMachine\DispenserDataCheck.cs" />
     <Compile Include="Flow\1AutoMachine\WorkProcessLoad.cs" />
+    <Compile Include="Flow\2Work\AxisCalibration.cs" />
     <Compile Include="Flow\2Work\Mainflow.cs" />
     <Compile Include="Flow\2Work\ProductPoint.cs" />
     <Compile Include="Flow\2Work\TestProcess.cs" />
