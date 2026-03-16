@@ -1,33 +1,34 @@
-﻿using System;
-using System.IO;
+﻿using Cowain;
+using Cowain_AutoMotion;
+using Cowain_AutoMotion.Flow;
+using Cowain_AutoMotion.Flow._1AutoMachine;
+using Cowain_AutoMotion.Flow.Common;
+using Cowain_AutoMotion.Flow.Hive;
+using Cowain_AutoMotion.Simulat.view;
+using Cowain_Machine;
+using Cowain_Machine.Flow;
+using DevExpress.XtraEditors.Controls;
+using LightUI;
+using MotionBase;
+using NetronLight;
+using ReadAndWriteConfig;
+using Sunny.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cowain_Machine.Flow;
-using MotionBase;
 using ToolTotal;
-using Cowain_AutoMotion.Flow;
-using System.Net.NetworkInformation;
-using Cowain;
-using ReadAndWriteConfig;
-using System.Threading;
-using Cowain_AutoMotion.Flow.Hive;
-using Cowain_AutoMotion;
-using System.Text.RegularExpressions;
-using System.Diagnostics;
-using Cowain_AutoMotion.Flow._1AutoMachine;
-using DevExpress.XtraEditors.Controls;
-using Cowain_Machine;
-using Cowain_AutoMotion.Simulat.view;
-using LightUI;
-using NetronLight;
-using Sunny.UI;
 
 namespace Cowain_Form.FormView
 {
@@ -532,6 +533,72 @@ namespace Cowain_Form.FormView
         {
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T1,0,0,0");
+        }
+
+        private MiSuMiControl gripperControl;
+        private bool isConnected = false;
+
+        private void btnExecute_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+
+            if (double.TryParse(txtPosition.Text, out double position) &&
+                double.TryParse(txtSpeed.Text, out double speed) &&
+                double.TryParse(txtForce.Text, out double force))
+            {
+                ushort pos = (ushort)(position * 100);
+                ushort spd = (ushort)speed;
+                ushort frc = (ushort)force;
+
+                if (gripperControl.MoveWithParams(pos, spd, frc))
+                {
+                    txtTargetDetection.Text = "执行中...";
+                }
+            }
+            else
+            {
+                MessageBox.Show("参数格式错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool CheckConnection()
+        {
+            if (!isConnected)
+            {
+                MessageBox.Show("请先连接串口和电爪！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private void btnExecuteStep_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+
+            if (double.TryParse(txtPosition.Text, out double currentPos) &&
+                double.TryParse(txtStepInterval.Text, out double step))
+            {
+                double newPos = currentPos + step;
+                txtPosition.Text = newPos.ToString("F2");
+                btnExecute_Click(sender, e);
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            gripperControl.Disable();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+
+            if (gripperControl.EnableWithSearch())
+            {
+                MessageBox.Show("正在重新搜索行程...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gripperControl.WaitReady(10000);
+            }
         }
     }
 }
