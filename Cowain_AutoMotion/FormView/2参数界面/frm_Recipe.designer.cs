@@ -40,6 +40,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.group_TestParm = new System.Windows.Forms.GroupBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.checkBox_grating = new System.Windows.Forms.CheckBox();
             this.checkBox_isNGKO = new System.Windows.Forms.CheckBox();
             this.checkBox1_hummer = new System.Windows.Forms.CheckBox();
             this.checkBox_UseHive = new System.Windows.Forms.CheckBox();
@@ -83,7 +84,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
-            this.checkBox_grating = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage0.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -175,6 +176,7 @@
             // tabPage0
             // 
             this.tabPage0.AutoScroll = true;
+            this.tabPage0.Controls.Add(this.button3);
             this.tabPage0.Controls.Add(this.groupBox9);
             this.tabPage0.Controls.Add(this.btn_Save);
             this.tabPage0.Controls.Add(this.group_TestParm);
@@ -195,7 +197,6 @@
             this.groupBox9.TabIndex = 334;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "辅助功能";
-            this.groupBox9.Visible = false;
             // 
             // button5
             // 
@@ -203,7 +204,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(134, 40);
             this.button5.TabIndex = 482;
-            this.button5.Text = "电批标定";
+            this.button5.Text = "九点标定";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
@@ -213,7 +214,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(134, 32);
             this.button4.TabIndex = 481;
-            this.button4.Text = "联合标定";
+            this.button4.Text = "旋转中心";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -247,6 +248,17 @@
             this.groupBox17.TabIndex = 465;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "功能设置";
+            // 
+            // checkBox_grating
+            // 
+            this.checkBox_grating.AutoSize = true;
+            this.checkBox_grating.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox_grating.Location = new System.Drawing.Point(17, 167);
+            this.checkBox_grating.Name = "checkBox_grating";
+            this.checkBox_grating.Size = new System.Drawing.Size(96, 16);
+            this.checkBox_grating.TabIndex = 314;
+            this.checkBox_grating.Text = "启用安全光栅";
+            this.checkBox_grating.UseVisualStyleBackColor = true;
             // 
             // checkBox_isNGKO
             // 
@@ -719,16 +731,15 @@
             this.panel13.Size = new System.Drawing.Size(1329, 609);
             this.panel13.TabIndex = 239;
             // 
-            // checkBox_grating
+            // button3
             // 
-            this.checkBox_grating.AutoSize = true;
-            this.checkBox_grating.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox_grating.Location = new System.Drawing.Point(17, 167);
-            this.checkBox_grating.Name = "checkBox_grating";
-            this.checkBox_grating.Size = new System.Drawing.Size(96, 16);
-            this.checkBox_grating.TabIndex = 314;
-            this.checkBox_grating.Text = "启用安全光栅";
-            this.checkBox_grating.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(745, 337);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 46);
+            this.button3.TabIndex = 335;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // frm_Recipe
             // 
@@ -820,5 +831,6 @@
         private System.Windows.Forms.CheckBox checkBoxTestMode;
         private System.Windows.Forms.CheckBox checkBox_isNGKO;
         private System.Windows.Forms.CheckBox checkBox_grating;
+        private System.Windows.Forms.Button button3;
     }
 }
