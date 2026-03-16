@@ -266,7 +266,7 @@
             this.checkBox_isNGKO.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox_isNGKO.Location = new System.Drawing.Point(17, 139);
             this.checkBox_isNGKO.Name = "checkBox_isNGKO";
-            this.checkBox_isNGKO.Size = new System.Drawing.Size(60, 16);
+            this.checkBox_isNGKO.Size = new System.Drawing.Size(75, 19);
             this.checkBox_isNGKO.TabIndex = 312;
             this.checkBox_isNGKO.Text = "NG过站";
             this.checkBox_isNGKO.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             this.checkBox1_hummer.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox1_hummer.Location = new System.Drawing.Point(18, 111);
             this.checkBox1_hummer.Name = "checkBox1_hummer";
-            this.checkBox1_hummer.Size = new System.Drawing.Size(84, 16);
+            this.checkBox1_hummer.Size = new System.Drawing.Size(104, 19);
             this.checkBox1_hummer.TabIndex = 311;
             this.checkBox1_hummer.Text = "禁用蜂鸣器";
             this.checkBox1_hummer.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@
             this.checkBox_UseHive.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox_UseHive.Location = new System.Drawing.Point(18, 86);
             this.checkBox_UseHive.Name = "checkBox_UseHive";
-            this.checkBox_UseHive.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_UseHive.Size = new System.Drawing.Size(91, 19);
             this.checkBox_UseHive.TabIndex = 309;
             this.checkBox_UseHive.Text = "启用Hive";
             this.checkBox_UseHive.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@
             this.cBox_Useimage.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cBox_Useimage.Location = new System.Drawing.Point(18, 220);
             this.cBox_Useimage.Name = "cBox_Useimage";
-            this.cBox_Useimage.Size = new System.Drawing.Size(96, 16);
+            this.cBox_Useimage.Size = new System.Drawing.Size(119, 19);
             this.cBox_Useimage.TabIndex = 306;
             this.cBox_Useimage.Text = "启用上传图片";
             this.cBox_Useimage.UseVisualStyleBackColor = true;
@@ -311,7 +311,7 @@
             this.cBox_UsePDCA.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cBox_UsePDCA.Location = new System.Drawing.Point(18, 198);
             this.cBox_UsePDCA.Name = "cBox_UsePDCA";
-            this.cBox_UsePDCA.Size = new System.Drawing.Size(72, 16);
+            this.cBox_UsePDCA.Size = new System.Drawing.Size(91, 19);
             this.cBox_UsePDCA.TabIndex = 298;
             this.cBox_UsePDCA.Text = "启用PDCA";
             this.cBox_UsePDCA.UseVisualStyleBackColor = true;
@@ -324,7 +324,7 @@
             this.cBoxUseCCD.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cBoxUseCCD.Location = new System.Drawing.Point(18, 20);
             this.cBoxUseCCD.Name = "cBoxUseCCD";
-            this.cBoxUseCCD.Size = new System.Drawing.Size(66, 16);
+            this.cBoxUseCCD.Size = new System.Drawing.Size(83, 19);
             this.cBoxUseCCD.TabIndex = 251;
             this.cBoxUseCCD.Text = "启用CCD";
             this.cBoxUseCCD.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
             this.checkBox_CheckDoorSR.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox_CheckDoorSR.Location = new System.Drawing.Point(18, 64);
             this.checkBox_CheckDoorSR.Name = "checkBox_CheckDoorSR";
-            this.checkBox_CheckDoorSR.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_CheckDoorSR.Size = new System.Drawing.Size(104, 19);
             this.checkBox_CheckDoorSR.TabIndex = 292;
             this.checkBox_CheckDoorSR.Text = "启用安全门";
             this.checkBox_CheckDoorSR.UseVisualStyleBackColor = true;
@@ -346,7 +346,7 @@
             this.checkBox_UseScan.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox_UseScan.Location = new System.Drawing.Point(18, 257);
             this.checkBox_UseScan.Name = "checkBox_UseScan";
-            this.checkBox_UseScan.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_UseScan.Size = new System.Drawing.Size(104, 19);
             this.checkBox_UseScan.TabIndex = 293;
             this.checkBox_UseScan.Text = "启用扫码枪";
             this.checkBox_UseScan.UseVisualStyleBackColor = true;
@@ -358,7 +358,7 @@
             this.checkBox_UseMES.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBox_UseMES.Location = new System.Drawing.Point(18, 42);
             this.checkBox_UseMES.Name = "checkBox_UseMES";
-            this.checkBox_UseMES.Size = new System.Drawing.Size(66, 16);
+            this.checkBox_UseMES.Size = new System.Drawing.Size(83, 19);
             this.checkBox_UseMES.TabIndex = 295;
             this.checkBox_UseMES.Text = "启用MES";
             this.checkBox_UseMES.UseVisualStyleBackColor = true;
@@ -383,7 +383,7 @@
             this.checkBoxTestMode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBoxTestMode.Location = new System.Drawing.Point(24, 156);
             this.checkBoxTestMode.Name = "checkBoxTestMode";
-            this.checkBoxTestMode.Size = new System.Drawing.Size(72, 16);
+            this.checkBoxTestMode.Size = new System.Drawing.Size(89, 19);
             this.checkBoxTestMode.TabIndex = 300;
             this.checkBoxTestMode.Text = "调机模式";
             this.checkBoxTestMode.UseVisualStyleBackColor = true;
@@ -395,7 +395,7 @@
             this.cBoxNolmalWork.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cBoxNolmalWork.Location = new System.Drawing.Point(24, 112);
             this.cBoxNolmalWork.Name = "cBoxNolmalWork";
-            this.cBoxNolmalWork.Size = new System.Drawing.Size(96, 16);
+            this.cBoxNolmalWork.Size = new System.Drawing.Size(119, 19);
             this.cBoxNolmalWork.TabIndex = 298;
             this.cBoxNolmalWork.Text = "正常生产模式";
             this.cBoxNolmalWork.UseVisualStyleBackColor = true;
@@ -407,7 +407,7 @@
             this.label39.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label39.Location = new System.Drawing.Point(21, 23);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(95, 12);
+            this.label39.Size = new System.Drawing.Size(125, 15);
             this.label39.TabIndex = 250;
             this.label39.Text = "运行Speed  (%):";
             // 
@@ -421,7 +421,7 @@
             0,
             0});
             this.numericUpDown_AutoSpeed.Name = "numericUpDown_AutoSpeed";
-            this.numericUpDown_AutoSpeed.Size = new System.Drawing.Size(73, 21);
+            this.numericUpDown_AutoSpeed.Size = new System.Drawing.Size(73, 25);
             this.numericUpDown_AutoSpeed.TabIndex = 249;
             this.numericUpDown_AutoSpeed.Value = new decimal(new int[] {
             100,
@@ -619,7 +619,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(556, 279);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 24);
+            this.label4.Size = new System.Drawing.Size(109, 29);
             this.label4.TabIndex = 345;
             this.label4.Text = "返回值：";
             // 
@@ -627,7 +627,7 @@
             // 
             this.txtBarcodeSN.Location = new System.Drawing.Point(671, 276);
             this.txtBarcodeSN.Name = "txtBarcodeSN";
-            this.txtBarcodeSN.Size = new System.Drawing.Size(206, 29);
+            this.txtBarcodeSN.Size = new System.Drawing.Size(206, 34);
             this.txtBarcodeSN.TabIndex = 344;
             // 
             // button10
@@ -654,7 +654,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(575, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.Size = new System.Drawing.Size(109, 29);
             this.label3.TabIndex = 341;
             this.label3.Text = "通讯类型";
             // 
@@ -663,7 +663,7 @@
             this.cBoxConnetType.FormattingEnabled = true;
             this.cBoxConnetType.Location = new System.Drawing.Point(690, 53);
             this.cBoxConnetType.Name = "cBoxConnetType";
-            this.cBoxConnetType.Size = new System.Drawing.Size(182, 32);
+            this.cBoxConnetType.Size = new System.Drawing.Size(182, 37);
             this.cBoxConnetType.TabIndex = 340;
             // 
             // btnSend
@@ -681,7 +681,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(233, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
+            this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 338;
             this.label2.Text = "指令集合";
             // 
@@ -743,7 +743,7 @@
             // 
             // frm_Recipe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 609);
             this.Controls.Add(this.tabControl1);
