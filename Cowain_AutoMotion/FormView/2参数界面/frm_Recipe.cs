@@ -535,7 +535,7 @@ namespace Cowain_Form.FormView
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T1,0,0,0");
         }
 
-        private MiSuMiControl gripperControl;
+        //private MiSuMiControl gripperControl;
         private bool isConnected = false;
 
         private void btnExecute_Click(object sender, EventArgs e)
@@ -550,7 +550,7 @@ namespace Cowain_Form.FormView
                 ushort spd = (ushort)speed;
                 ushort frc = (ushort)force;
 
-                if (gripperControl.MoveWithParams(pos, spd, frc))
+                if (MachineDataDefine.miSuMiControl.MoveWithParams(pos, spd, frc))
                 {
                     txtTargetDetection.Text = "执行中...";
                 }
@@ -563,7 +563,7 @@ namespace Cowain_Form.FormView
 
         private bool CheckConnection()
         {
-            if (!isConnected)
+            if (!MachineDataDefine.miSuMiControl.IsConnected)
             {
                 MessageBox.Show("请先连接串口和电爪！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -587,17 +587,150 @@ namespace Cowain_Form.FormView
         private void btnStop_Click(object sender, EventArgs e)
         {
             if (!CheckConnection()) return;
-            gripperControl.Disable();
+            MachineDataDefine.miSuMiControl.Disable();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             if (!CheckConnection()) return;
 
-            if (gripperControl.EnableWithSearch())
+            if (MachineDataDefine.miSuMiControl.EnableWithSearch())
             {
                 MessageBox.Show("正在重新搜索行程...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                gripperControl.WaitReady(10000);
+                MachineDataDefine.miSuMiControl.WaitReady(10000);
+            }
+        }
+
+        private void btnHalfOpen_Click(object sender, EventArgs e)
+        {
+
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.HalfOpen();
+        }
+
+        private void btnHalfClose_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.HalfClose();
+        }
+
+        private void btnFullOpen_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.FullOpen();
+        }
+
+        private void btnFullClose_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.FullClose();
+        }
+
+        private void btnLowOpen_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.LowOpen();
+        }
+
+        private void btnLowClose_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.LowClose();
+        }
+
+        private void btnResponseTimeTest_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+
+            try
+            {
+                txtResponseTime.Text = "测试中...";
+                Application.DoEvents();
+
+                // 使用半力全速模式进行响应时间测试
+                var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+                
+                // 发送半力半速关闭命令（根据需求改为半力全速）
+                if (MachineDataDefine.miSuMiControl.HalfForceFullSpeedClose(2600))
+                {
+                    // 等待动作完成并测量时间
+                    if (MachineDataDefine.miSuMiControl.WaitMovementComplete(5000))
+                    {
+                        stopwatch.Stop();
+                        long responseTimeMs = stopwatch.ElapsedMilliseconds;
+                        txtResponseTime.Text = $"{responseTimeMs} ms";
+                        
+                        LogAuto.Notify($"电夹爪响应时间测试完成：{responseTimeMs} ms", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        
+                        // 自动打开电爪准备下次测试
+                        System.Threading.Thread.Sleep(500);
+                        MachineDataDefine.miSuMiControl.HalfForceFullSpeedOpen();
+                    }
+                    else
+                    {
+                        stopwatch.Stop();
+                        txtResponseTime.Text = "超时";
+                        LogAuto.Notify("电夹爪响应时间测试超时", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                    }
+                }
+                else
+                {
+                    txtResponseTime.Text = "失败";
+                    LogAuto.Notify("电夹爪响应时间测试失败：命令发送失败", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                }
+            }
+            catch (Exception ex)
+            {
+                txtResponseTime.Text = "错误";
+                LogAuto.Notify($"电夹爪响应时间测试异常：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+            }
+        }
+
+        private void btnbanlibansu_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+
+            try
+            {
+                txtResponseTime.Text = "测试中...";
+                Application.DoEvents();
+
+                // 使用半力全速模式进行响应时间测试
+                var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+
+                // 发送半力半速关闭命令（根据需求改为半力全速）
+                if (MachineDataDefine.miSuMiControl.HalfClose())
+                {
+                    // 等待动作完成并测量时间
+                    if (MachineDataDefine.miSuMiControl.WaitMovementComplete(5000))
+                    {
+                        stopwatch.Stop();
+                        long responseTimeMs = stopwatch.ElapsedMilliseconds;
+                        txtResponseTime.Text = $"{responseTimeMs} ms";
+
+                        LogAuto.Notify($"电夹爪响应时间测试完成：{responseTimeMs} ms", (int)MachineStation.主监控, MotionLogLevel.Info);
+
+                        // 自动打开电爪准备下次测试
+                        System.Threading.Thread.Sleep(500);
+                        MachineDataDefine.miSuMiControl.HalfOpen();
+                    }
+                    else
+                    {
+                        stopwatch.Stop();
+                        txtResponseTime.Text = "超时";
+                        LogAuto.Notify("电夹爪响应时间测试超时", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                    }
+                }
+                else
+                {
+                    txtResponseTime.Text = "失败";
+                    LogAuto.Notify("电夹爪响应时间测试失败：命令发送失败", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                }
+            }
+            catch (Exception ex)
+            {
+                txtResponseTime.Text = "错误";
+                LogAuto.Notify($"电夹爪响应时间测试异常：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
             }
         }
     }

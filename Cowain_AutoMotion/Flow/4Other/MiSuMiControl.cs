@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using NModbus.Serial;
 using System.Windows.Forms;
 using NModbus.Device;
+using Cowain_Machine;
 
 namespace Cowain_AutoMotion.Flow.Common
 {
@@ -15,6 +16,27 @@ namespace Cowain_AutoMotion.Flow.Common
     {
         private SerialPort _serialPort;       // 串口（USB转485）
         private IModbusMaster _modbusMaster;  // Modbus主站
+
+        public MiSuMiControl()
+            {
+            try
+            {
+                // 连接电爪（需要根据实际串口号修改）
+               Connect("COM8"); // TODO: 从配置文件读取串口号
+
+                // 首次使用需要激活并搜索行程
+                if (!IsReady())
+                {
+                    EnableWithSearch();
+                    WaitReady(5000);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogAuto.Notify($"电爪初始化失败：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+            }
+        }
+
 
         #region 寄存器地址（根据协议文档）
         public const ushort INIT_REG = 0x0FA0;       // 初始化寄存器
@@ -127,14 +149,15 @@ namespace Cowain_AutoMotion.Flow.Common
                 _modbusMaster.Transport.Retries = 3;
                 _modbusMaster.Transport.WaitToRetryMilliseconds = 200;
                 _isConnected = true;
-                return _isConnected;
                 MessageBox.Show("夹爪连接成功！");
+                return _isConnected;
             }
             catch (Exception ex)
             {
                 _isConnected = false;
-                return _isConnected;
                 MessageBox.Show($"夹爪连接失败：{ex.Message}");
+                LogAuto.Notify($"电爪连接失败：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                return _isConnected;
             }
         }
         /// <summary>
@@ -421,9 +444,8 @@ namespace Cowain_AutoMotion.Flow.Common
             {
                 return _modbusMaster.ReadInputRegisters(SlaveAddress, STATUS_REG, 1)[0];
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"读取状态失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }
@@ -505,6 +527,44 @@ namespace Cowain_AutoMotion.Flow.Common
             return MoveWithParams(0, 100, 100);
         }
 
+        /// <summary>
+        /// 半力全速夹取到指定位置（力矩50，速度100）
+        /// </summary>
+        /// <param name="position">目标位置（单位：0.01mm，例如2600=26.00mm）</param>
+        /// <returns>是否成功</returns>
+        public bool HalfForceFullSpeedClose(ushort position)
+        {
+            return MoveWithParams(position, 100, 50);
+        }
+
+        /// <summary>
+        /// 低力全速夹取到指定位置（力矩20，速度100）
+        /// </summary>
+        /// <param name="position">目标位置（单位：0.01mm，例如2600=26.00mm）</param>
+        /// <returns>是否成功</returns>
+        public bool LowForceFullSpeedClose(ushort position)
+        {
+            return MoveWithParams(position, 100, 20);
+        }
+
+        /// <summary>
+        /// 半力全速松开（到0位置，力矩50，速度100）
+        /// </summary>
+        /// <returns>是否成功</returns>
+        public bool HalfForceFullSpeedOpen()
+        {
+            return MoveWithParams(0, 100, 50);
+        }
+
+        /// <summary>
+        /// 低力全速松开（到0位置，力矩20，速度100）
+        /// </summary>
+        /// <returns>是否成功</returns>
+        public bool LowForceFullSpeedOpen()
+        {
+            return MoveWithParams(0, 100, 20);
+        }
+
         #endregion
 
         #region 详细状态读取
@@ -530,9 +590,8 @@ namespace Cowain_AutoMotion.Flow.Common
                     CurrentForce = data[5]     // 0x1199: 当前力矩
                 };
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"读取详细状态失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -667,7 +726,7 @@ namespace Cowain_AutoMotion.Flow.Common
                 return true; // 成功夹到工件
             }
 
-            return true; // 动作完成（即使没夹到工件）
+            return false; // 动作完成但未夹到工件
         }
 
         /// <summary>

@@ -1,1 +1,12 @@
 2026/03/16	19:07:58	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0024	异常说明:(M-02)电机未Servo_On
+2026/03/16	19:56:03	StationID:站号:0 , Y	Station:Machine	ErrorCode: 0011	异常说明:(M-01)电机负极限_On
+2026/03/16	20:45:20	StationID:站号:0 , X	Station:Machine	ErrorCode: 0001	异常说明:(M-00)电机负极限_On
+2026/03/16	20:50:08	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0021	异常说明:(M-02)电机负极限_On
+2026/03/16	20:51:09	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0021	异常说明:(M-02)电机负极限_On
+2026/03/16	21:11:48	StationID:站号:0 , R2	Station:Machine	ErrorCode: 0043	异常说明:(M-04)电机驱动器异常 伺服报警码：007121
+2026/03/16	21:40:14	StationID:站号:0 , 载具打开气缸	Station:Machine	ErrorCode: 1001	异常说明:(C-1000[载具打开气缸])电磁阀Open逾时
+2026/03/16	22:21:22	StationID:站号:0 , X	Station:Machine	ErrorCode: 0002	异常说明:(M-00)电机正极限_On
+2026/03/16	22:40:38	StationID:站号:0 , X	Station:Machine	ErrorCode: 0004	异常说明:(M-00)电机未Servo_On
+2026/03/16	22:41:10	StationID:站号:0 , X	Station:Machine	ErrorCode: 0002	异常说明:(M-00)电机正极限_On
+2026/03/16	22:42:26	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0034	异常说明:(M-03)电机未Servo_On
+2026/03/16	22:48:44	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0021	异常说明:(M-02)电机负极限_On

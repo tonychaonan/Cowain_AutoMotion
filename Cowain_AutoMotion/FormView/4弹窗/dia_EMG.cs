@@ -180,7 +180,7 @@ namespace Cowain_Form.FormView
 
             if (m_enShowStatus == dia_ShowStatus.enShowEMG && pMachine.m_EmgIO.GetValue())   //急停訊號解除, 才關閉視窗
             {
-                pMachine.m_Buzzer.SetIO(false);
+                //pMachine.m_Buzzer.SetIO(false);
                 pMachine.ReMoveEmgStatus();
                 this.Close();
 

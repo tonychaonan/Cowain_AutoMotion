@@ -1,0 +1,4 @@
+2026/03/16	21:11:58	dllAPI : SetSevON  ,IMC_AxServoOn  Fail, NG_Code: 0x03200039
+2026/03/16	21:12:00	dllAPI : SetSevON  ,IMC_AxServoOn  Fail, NG_Code: 0x03200039
+2026/03/16	21:12:01	dllAPI : SetSevON  ,IMC_AxServoOn  Fail, NG_Code: 0x03200039
+2026/03/16	21:12:16	dllAPI : SetSevON  ,IMC_AxServoOn  Fail, NG_Code: 0x03200039

@@ -81,19 +81,23 @@ namespace Cowain_AutoMotion
                     m_nStep = (int)AxisCalibration_WorkStep.触发相机开始标定;
                     break;
                 case AxisCalibration_WorkStep.触发相机开始标定:
-                     HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
+                    //currentCMDClass = cmds.Dequeue();
+                    HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                     if (MachineDataDefine.electriccalib)
                     {
-
-                        LogAuto.Notify("触发相机开始标定！" + "," + "SC1" + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0, (int)MachineStation.主监控, MotionLogLevel.Info);
-                        HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("SC1" + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0);
+                    
+                        LogAuto.Notify("触发相机开始标定！" + "," + "SC1" + "," + "0" + "," + "0" + "," + 0, (int)MachineStation.主监控, MotionLogLevel.Info);
+                        HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("SC1" + "," + "0" + "," + "0" + "," + 0);
                     }
                     else
                     {
-                        LogAuto.Notify("触发相机开始标定！" + "," + "SC2" + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0, (int)MachineStation.主监控, MotionLogLevel.Info);
-                        HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("SC2" + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0);
+                        LogAuto.Notify("触发相机开始标定！" + "," + "SC2" + "," + "0" + "," + "0" + "," + 0, (int)MachineStation.主监控, MotionLogLevel.Info);
+                        HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("SC2" + "," + "0" + "," + "0" + "," + 0);
                     }
-                   m_nStep = (int)AxisCalibration_WorkStep.等待相机反馈;
+                    timerDelay.Enabled = false;
+                    timerDelay.Interval = 3000;
+                    timerDelay.Start();
+                    m_nStep = (int)AxisCalibration_WorkStep.等待相机反馈;
                   
                     break;
                 case AxisCalibration_WorkStep.等待相机反馈:
@@ -131,11 +135,12 @@ namespace Cowain_AutoMotion
 
 
                 case AxisCalibration_WorkStep.开始标定:
-                    
+                  
                     if (cmds.Count > 0)
                     {
-                        LogAuto.Notify("开始走点位！！！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         currentCMDClass = cmds.Dequeue();
+                        LogAuto.Notify("开始走点位！！！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                     
                        
                             LogAuto.Notify("走点位！！！", (int)MachineStation.主监控, MotionLogLevel.Info);
                             HardWareControl.getMotor(EnumParam_Axis.X).AbsMove(currentCMDClass.X, speed);
@@ -146,16 +151,18 @@ namespace Cowain_AutoMotion
                     }
                     else
                     {
+                           
+
                             LogAuto.Notify("后龙门标定完成！！！", (int)MachineStation.主监控, MotionLogLevel.Info);
                             MachineDataDefine.electriccalib = false;
 
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
-
+                     
                         LogAuto.Notify("九点标定完成！" + "," + "EC1" + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0, (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("EC1" + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0);
 
                         MessageBox.Show("标定成功！！！");
-                            m_nStep = (int)AxisCalibration_WorkStep.标定完成;
+                        m_nStep = (int)AxisCalibration_WorkStep.标定完成;
                     
                     }
                     break;
@@ -212,7 +219,10 @@ namespace Cowain_AutoMotion
                         LogAuto.Notify("后龙门给相机发送拍照指令！" + "," + currentCMDClass.CMDHead + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0, (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(currentCMDClass.CMDHead + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + 0);
 
-                            m_nStep = (int)AxisCalibration_WorkStep.等待相机反馈1;
+                        timerDelay.Enabled = false;
+                        timerDelay.Interval = 3000;
+                        timerDelay.Start();
+                        m_nStep = (int)AxisCalibration_WorkStep.等待相机反馈1;
                         }
                    
                     break;
@@ -225,7 +235,7 @@ namespace Cowain_AutoMotion
 
                         if (str[1] == "1")
                         {
-                            m_nStep = (int)AxisCalibration_WorkStep.Start;
+                            m_nStep = (int)AxisCalibration_WorkStep.开始标定;
                         }
                         else
                         {
@@ -246,20 +256,23 @@ namespace Cowain_AutoMotion
                     LogAuto.Notify("前龙门移动到拍照位1！", (int)MachineStation.主监控, MotionLogLevel.Info);
 
                     HardWareControl.movePoint(EnumParam_Point.下相机拍照位);
-                    m_nStep = (int)AxisCalibration_WorkStep.下相机拍照;
+                    m_nStep = (int)AxisCalibration_WorkStep.R轴负转5度;
                     break;
 
                 case AxisCalibration_WorkStep.下相机拍照:
+
                     if (HardWareControl.getPointIdel(EnumParam_Point.下相机拍照位))
                     {
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                       double  X = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data1;
                         double Y = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data2;
-                        double R = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data3;
+                        double R = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data4;
                         double Z = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data3;
                         LogAuto.Notify("给相机发送拍照指令旋转中心正转！" + "T2" + "," + X + "," + Y + "," + R, (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T2"+","+ X + ","+ Y+","+ R);
-
+                        timerDelay.Enabled = false;
+                        timerDelay.Interval = 3000;
+                        timerDelay.Start();
                         m_nStep = (int)AxisCalibration_WorkStep.等待相机反馈2;
                     }
                     break;
@@ -306,12 +319,14 @@ namespace Cowain_AutoMotion
                     {
                         double X = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data1;
                         double Y = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data2;
-                        double R = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data3;
+                        double R = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data4+2;
                         double Z = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data3;
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
-                        LogAuto.Notify("给相机发送拍照指令旋转中心正转！" + "T2" + "," + currentCMDClass.CMDHead + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + currentCMDClass.R, (int)MachineStation.主监控, MotionLogLevel.Info);
+                        //LogAuto.Notify("给相机发送拍照指令旋转中心正转！" + "T2" + "," + currentCMDClass.CMDHead + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + currentCMDClass.R, (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T2" + "," + X + "," + Y + "," + R);
-
+                        timerDelay.Enabled = false;
+                        timerDelay.Interval = 3000;
+                        timerDelay.Start();
                         m_nStep = (int)AxisCalibration_WorkStep.等待相机旋转反馈1;
                     }
                     break;
@@ -324,7 +339,8 @@ namespace Cowain_AutoMotion
 
                         if (str[1] == "1")
                         {
-                            m_nStep = (int)AxisCalibration_WorkStep.R轴负转5度;
+                            m_nStep = (int)AxisCalibration_WorkStep.Completed;
+                            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("EC2,0,0,0");
                         }
                         else
                         {
@@ -355,11 +371,13 @@ namespace Cowain_AutoMotion
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                         double X = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data1;
                         double Y = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data2;
-                        double R = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data3;
+                        double R = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data4-2;
                         double Z = HardWareControl.getPoint(EnumParam_Point.下相机拍照位).Data3;
-                        LogAuto.Notify("给相机发送拍照指令旋转中心正转！" + "T2" + "," + currentCMDClass.CMDHead + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + currentCMDClass.R, (int)MachineStation.主监控, MotionLogLevel.Info);
+                        //LogAuto.Notify("给相机发送拍照指令旋转中心正转！" + "T2" + "," + currentCMDClass.CMDHead + "," + currentCMDClass.X + "," + currentCMDClass.Y + "," + currentCMDClass.R, (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T2" + "," + X + "," + Y + "," + R);
-
+                        timerDelay.Enabled = false;
+                        timerDelay.Interval = 3000;
+                        timerDelay.Start();
                         m_nStep = (int)AxisCalibration_WorkStep.等待相机反馈3;
                     }
                     break;
@@ -372,7 +390,9 @@ namespace Cowain_AutoMotion
 
                         if (str[1] == "1")
                         {
-                            m_nStep = (int)AxisCalibration_WorkStep.Completed;
+                            HardWareControl.movePoint(EnumParam_Point.下相机拍照位);
+                            m_nStep = (int)AxisCalibration_WorkStep.下相机拍照;
+                          
                         }
                         else
                         {
@@ -407,8 +427,8 @@ namespace Cowain_AutoMotion
             double Y = 0;
             double R = 0;
             double Z = 0;
-            int Xstep = 5;
-            int YStep = 5;
+            int Xstep = 4;
+            int YStep = 4;
             int center1 = 5;
             int center2 = -5;
             if (!MachineDataDefine.electriccalib)
@@ -427,15 +447,17 @@ namespace Cowain_AutoMotion
                 R = HardWareControl.getPoint(EnumParam_Point.上相机拍照位).Data3;
                 Z = HardWareControl.getPoint(EnumParam_Point.上相机拍照位).Data3;
 
-                cmds.Enqueue(new CMDClass("T1", X, Y, R, Z, center1, center2));
-                cmds.Enqueue(new CMDClass("T1", X + Xstep, Y, R, Z, center1, center2));
-                cmds.Enqueue(new CMDClass("T1", X + Xstep, Y - YStep, R, Z, center1, center2));
-                cmds.Enqueue(new CMDClass("T1", X, Y - YStep, R, Z, center1, center2));
                 cmds.Enqueue(new CMDClass("T1", X - Xstep, Y - YStep, R, Z, center1, center2));
+                cmds.Enqueue(new CMDClass("T1", X, Y - YStep, R, Z, center1, center2));
+                cmds.Enqueue(new CMDClass("T1", X + Xstep, Y - YStep, R, Z, center1, center2));
+                cmds.Enqueue(new CMDClass("T1", X + Xstep, Y, R, Z, center1, center2));
+                cmds.Enqueue(new CMDClass("T1", X, Y, R, Z, center1, center2));
                 cmds.Enqueue(new CMDClass("T1", X - Xstep, Y, R, Z, center1, center2));
                 cmds.Enqueue(new CMDClass("T1", X - Xstep, Y + YStep, R, Z, center1, center2));
-                cmds.Enqueue(new CMDClass("T1", X, Y + YStep, R, Z, center1, center2));
+                cmds.Enqueue(new CMDClass("T1", X, Y + YStep, R, Z, center1, center2));          
                 cmds.Enqueue(new CMDClass("T1", X + Xstep, Y + YStep, R, Z, center1, center2));
+              
+              
             }
            
               m_nStep = (int)AxisCalibration_WorkStep.Start;

@@ -1,0 +1,35 @@
+2026/03/17	9:23:34	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0021	异常说明:(M-02)电机负极限_On
+2026/03/17	9:34:23	StationID:站号:0 , Y	Station:Machine	ErrorCode: 0013	异常说明:(M-01)电机驱动器异常 伺服报警码：007121
+2026/03/17	9:43:09	StationID:站号:0 , X	Station:Machine	ErrorCode: 0004	异常说明:(M-00)电机未Servo_On
+2026/03/17	9:47:40	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0033	异常说明:电机驱动器异常 伺服报警码：000234
+2026/03/17	9:48:51	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0033	异常说明:电机驱动器异常 伺服报警码：000234
+2026/03/17	9:58:20	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0033	异常说明:电机驱动器异常 伺服报警码：000234
+2026/03/17	11:09:12	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0034	异常说明:(M-03)电机未Servo_On
+2026/03/17	11:33:55	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0024	异常说明:(M-02)电机未Servo_On
+2026/03/17	13:23:55	StationID:站号:0 , R2	Station:Machine	ErrorCode: 0044	异常说明:(M-04)电机未Servo_On
+2026/03/17	13:24:34	StationID:站号:0 , X	Station:Machine	ErrorCode: 0004	异常说明:(M-00)电机未Servo_On
+2026/03/17	13:24:42	StationID:站号:0 , X	Station:Machine	ErrorCode: 0002	异常说明:(M-00)电机正极限_On
+2026/03/17	13:26:01	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0022	异常说明:(M-02)电机正极限_On
+2026/03/17	13:28:15	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0034	异常说明:(M-03)电机未Servo_On
+2026/03/17	13:44:27	StationID:站号:0 , Z	Station:Machine	ErrorCode: 0024	异常说明:(M-02)电机未Servo_On
+2026/03/17	13:45:22	StationID:站号:0 , X	Station:Machine	ErrorCode: 0004	异常说明:(M-00)电机未Servo_On
+2026/03/17	14:03:58	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	14:08:54	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	14:09:56	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	14:13:17	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	14:19:51	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:13:41	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:14:09	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:14:44	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:30:12	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:31:44	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:37:38	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:41:26	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
+2026/03/17	15:45:43	StationID:站号:0 , X	Station:Machine	ErrorCode: 0004	异常说明:(M-00)电机未Servo_On
+2026/03/17	15:58:35	StationID:站号:0 , X	Station:Machine	ErrorCode: 0002	异常说明:(M-00)电机正极限_On
+2026/03/17	16:29:58	StationID:站号:0 , Y	Station:Machine	ErrorCode: 0015	异常说明:(M-01)电机未Motion_Done
+2026/03/17	16:30:08	StationID:站号:0 , X	Station:Machine	ErrorCode: 0008	异常说明:(M-00)电机Abs位置移动逾时
+2026/03/17	17:00:23	StationID:站号:0 , X	Station:Machine	ErrorCode: 0008	异常说明:(M-00)电机Abs位置移动逾时
+2026/03/17	17:02:50	StationID:站号:0 , X	Station:Machine	ErrorCode: 0008	异常说明:(M-00)电机Abs位置移动逾时
+2026/03/17	19:00:31	StationID:站号:0 , R1	Station:Machine	ErrorCode: 0034	异常说明:(M-03)电机未Servo_On
+2026/03/17	19:16:46	StationID:站号:0 , 	Station:Machine	ErrorCode: 2019	异常说明:CCD未返回数据
