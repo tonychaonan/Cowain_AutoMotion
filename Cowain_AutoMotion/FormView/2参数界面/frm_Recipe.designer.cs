@@ -35,6 +35,16 @@
             this.listView_Recipe = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.grpQuickCommands = new System.Windows.Forms.GroupBox();
+            this.btnResponseTimeTest = new System.Windows.Forms.Button();
+            this.lblResponseTime = new System.Windows.Forms.Label();
+            this.txtResponseTime = new System.Windows.Forms.TextBox();
+            this.btnLowClose = new System.Windows.Forms.Button();
+            this.btnFullClose = new System.Windows.Forms.Button();
+            this.btnHalfClose = new System.Windows.Forms.Button();
+            this.btnLowOpen = new System.Windows.Forms.Button();
+            this.btnFullOpen = new System.Windows.Forms.Button();
+            this.btnHalfOpen = new System.Windows.Forms.Button();
             this.grpStatus = new System.Windows.Forms.GroupBox();
             this.btnModify = new System.Windows.Forms.Button();
             this.txtTemperature = new System.Windows.Forms.TextBox();
@@ -112,15 +122,9 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
-            this.grpQuickCommands = new System.Windows.Forms.GroupBox();
-            this.btnLowClose = new System.Windows.Forms.Button();
-            this.btnFullClose = new System.Windows.Forms.Button();
-            this.btnHalfClose = new System.Windows.Forms.Button();
-            this.btnLowOpen = new System.Windows.Forms.Button();
-            this.btnFullOpen = new System.Windows.Forms.Button();
-            this.btnHalfOpen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage0.SuspendLayout();
+            this.grpQuickCommands.SuspendLayout();
             this.grpStatus.SuspendLayout();
             this.grpControl.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -133,7 +137,6 @@
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).BeginInit();
-            this.grpQuickCommands.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -226,6 +229,113 @@
             this.tabPage0.TabIndex = 4;
             this.tabPage0.Text = "基本参数";
             this.tabPage0.UseVisualStyleBackColor = true;
+            // 
+            // grpQuickCommands
+            // 
+            this.grpQuickCommands.Controls.Add(this.btnResponseTimeTest);
+            this.grpQuickCommands.Controls.Add(this.lblResponseTime);
+            this.grpQuickCommands.Controls.Add(this.txtResponseTime);
+            this.grpQuickCommands.Controls.Add(this.btnLowClose);
+            this.grpQuickCommands.Controls.Add(this.btnFullClose);
+            this.grpQuickCommands.Controls.Add(this.btnHalfClose);
+            this.grpQuickCommands.Controls.Add(this.btnLowOpen);
+            this.grpQuickCommands.Controls.Add(this.btnFullOpen);
+            this.grpQuickCommands.Controls.Add(this.btnHalfOpen);
+            this.grpQuickCommands.Location = new System.Drawing.Point(962, 27);
+            this.grpQuickCommands.Name = "grpQuickCommands";
+            this.grpQuickCommands.Size = new System.Drawing.Size(351, 373);
+            this.grpQuickCommands.TabIndex = 338;
+            this.grpQuickCommands.TabStop = false;
+            this.grpQuickCommands.Text = "快捷命令";
+            // 
+            // btnResponseTimeTest
+            // 
+            this.btnResponseTimeTest.Location = new System.Drawing.Point(0, 206);
+            this.btnResponseTimeTest.Name = "btnResponseTimeTest";
+            this.btnResponseTimeTest.Size = new System.Drawing.Size(169, 35);
+            this.btnResponseTimeTest.TabIndex = 6;
+            this.btnResponseTimeTest.Text = "响应时间测试";
+            this.btnResponseTimeTest.UseVisualStyleBackColor = true;
+            this.btnResponseTimeTest.Click += new System.EventHandler(this.btnResponseTimeTest_Click);
+            // 
+            // lblResponseTime
+            // 
+            this.lblResponseTime.AutoSize = true;
+            this.lblResponseTime.Location = new System.Drawing.Point(54, 260);
+            this.lblResponseTime.Name = "lblResponseTime";
+            this.lblResponseTime.Size = new System.Drawing.Size(115, 29);
+            this.lblResponseTime.TabIndex = 7;
+            this.lblResponseTime.Text = "响应时间:";
+            // 
+            // txtResponseTime
+            // 
+            this.txtResponseTime.Location = new System.Drawing.Point(175, 255);
+            this.txtResponseTime.Name = "txtResponseTime";
+            this.txtResponseTime.ReadOnly = true;
+            this.txtResponseTime.Size = new System.Drawing.Size(152, 34);
+            this.txtResponseTime.TabIndex = 8;
+            this.txtResponseTime.Text = "0 ms";
+            this.txtResponseTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnLowClose
+            // 
+            this.btnLowClose.Location = new System.Drawing.Point(175, 150);
+            this.btnLowClose.Name = "btnLowClose";
+            this.btnLowClose.Size = new System.Drawing.Size(152, 35);
+            this.btnLowClose.TabIndex = 5;
+            this.btnLowClose.Text = "低力低速关闭";
+            this.btnLowClose.UseVisualStyleBackColor = true;
+            this.btnLowClose.Click += new System.EventHandler(this.btnLowClose_Click);
+            // 
+            // btnFullClose
+            // 
+            this.btnFullClose.Location = new System.Drawing.Point(175, 90);
+            this.btnFullClose.Name = "btnFullClose";
+            this.btnFullClose.Size = new System.Drawing.Size(152, 35);
+            this.btnFullClose.TabIndex = 4;
+            this.btnFullClose.Text = "全力全速关闭";
+            this.btnFullClose.UseVisualStyleBackColor = true;
+            this.btnFullClose.Click += new System.EventHandler(this.btnFullClose_Click);
+            // 
+            // btnHalfClose
+            // 
+            this.btnHalfClose.Location = new System.Drawing.Point(175, 35);
+            this.btnHalfClose.Name = "btnHalfClose";
+            this.btnHalfClose.Size = new System.Drawing.Size(152, 35);
+            this.btnHalfClose.TabIndex = 3;
+            this.btnHalfClose.Text = "半力半速关闭";
+            this.btnHalfClose.UseVisualStyleBackColor = true;
+            this.btnHalfClose.Click += new System.EventHandler(this.btnHalfClose_Click);
+            // 
+            // btnLowOpen
+            // 
+            this.btnLowOpen.Location = new System.Drawing.Point(4, 149);
+            this.btnLowOpen.Name = "btnLowOpen";
+            this.btnLowOpen.Size = new System.Drawing.Size(165, 35);
+            this.btnLowOpen.TabIndex = 2;
+            this.btnLowOpen.Text = "低力低速打开";
+            this.btnLowOpen.UseVisualStyleBackColor = true;
+            this.btnLowOpen.Click += new System.EventHandler(this.btnLowOpen_Click);
+            // 
+            // btnFullOpen
+            // 
+            this.btnFullOpen.Location = new System.Drawing.Point(0, 90);
+            this.btnFullOpen.Name = "btnFullOpen";
+            this.btnFullOpen.Size = new System.Drawing.Size(169, 35);
+            this.btnFullOpen.TabIndex = 1;
+            this.btnFullOpen.Text = "全力全速打开";
+            this.btnFullOpen.UseVisualStyleBackColor = true;
+            this.btnFullOpen.Click += new System.EventHandler(this.btnFullOpen_Click);
+            // 
+            // btnHalfOpen
+            // 
+            this.btnHalfOpen.Location = new System.Drawing.Point(0, 35);
+            this.btnHalfOpen.Name = "btnHalfOpen";
+            this.btnHalfOpen.Size = new System.Drawing.Size(169, 35);
+            this.btnHalfOpen.TabIndex = 0;
+            this.btnHalfOpen.Text = "半力半速打开";
+            this.btnHalfOpen.UseVisualStyleBackColor = true;
+            this.btnHalfOpen.Click += new System.EventHandler(this.btnHalfOpen_Click);
             // 
             // grpStatus
             // 
@@ -1053,81 +1163,6 @@
             this.panel13.Size = new System.Drawing.Size(1329, 609);
             this.panel13.TabIndex = 239;
             // 
-            // grpQuickCommands
-            // 
-            this.grpQuickCommands.Controls.Add(this.btnLowClose);
-            this.grpQuickCommands.Controls.Add(this.btnFullClose);
-            this.grpQuickCommands.Controls.Add(this.btnHalfClose);
-            this.grpQuickCommands.Controls.Add(this.btnLowOpen);
-            this.grpQuickCommands.Controls.Add(this.btnFullOpen);
-            this.grpQuickCommands.Controls.Add(this.btnHalfOpen);
-            this.grpQuickCommands.Location = new System.Drawing.Point(962, 39);
-            this.grpQuickCommands.Name = "grpQuickCommands";
-            this.grpQuickCommands.Size = new System.Drawing.Size(351, 200);
-            this.grpQuickCommands.TabIndex = 338;
-            this.grpQuickCommands.TabStop = false;
-            this.grpQuickCommands.Text = "快捷命令";
-            // 
-            // btnLowClose
-            // 
-            this.btnLowClose.Location = new System.Drawing.Point(181, 137);
-            this.btnLowClose.Name = "btnLowClose";
-            this.btnLowClose.Size = new System.Drawing.Size(152, 35);
-            this.btnLowClose.TabIndex = 5;
-            this.btnLowClose.Text = "低力低速关闭";
-            this.btnLowClose.UseVisualStyleBackColor = true;
-            this.btnLowClose.Click += new System.EventHandler(this.btnLowClose_Click);
-            // 
-            // btnFullClose
-            // 
-            this.btnFullClose.Location = new System.Drawing.Point(181, 88);
-            this.btnFullClose.Name = "btnFullClose";
-            this.btnFullClose.Size = new System.Drawing.Size(152, 35);
-            this.btnFullClose.TabIndex = 4;
-            this.btnFullClose.Text = "全力全速关闭";
-            this.btnFullClose.UseVisualStyleBackColor = true;
-            this.btnFullClose.Click += new System.EventHandler(this.btnFullClose_Click);
-            // 
-            // btnHalfClose
-            // 
-            this.btnHalfClose.Location = new System.Drawing.Point(181, 40);
-            this.btnHalfClose.Name = "btnHalfClose";
-            this.btnHalfClose.Size = new System.Drawing.Size(152, 35);
-            this.btnHalfClose.TabIndex = 3;
-            this.btnHalfClose.Text = "半力半速关闭";
-            this.btnHalfClose.UseVisualStyleBackColor = true;
-            this.btnHalfClose.Click += new System.EventHandler(this.btnHalfClose_Click);
-            // 
-            // btnLowOpen
-            // 
-            this.btnLowOpen.Location = new System.Drawing.Point(10, 137);
-            this.btnLowOpen.Name = "btnLowOpen";
-            this.btnLowOpen.Size = new System.Drawing.Size(165, 35);
-            this.btnLowOpen.TabIndex = 2;
-            this.btnLowOpen.Text = "低力低速打开";
-            this.btnLowOpen.UseVisualStyleBackColor = true;
-            this.btnLowOpen.Click += new System.EventHandler(this.btnLowOpen_Click);
-            // 
-            // btnFullOpen
-            // 
-            this.btnFullOpen.Location = new System.Drawing.Point(6, 88);
-            this.btnFullOpen.Name = "btnFullOpen";
-            this.btnFullOpen.Size = new System.Drawing.Size(169, 35);
-            this.btnFullOpen.TabIndex = 1;
-            this.btnFullOpen.Text = "全力全速打开";
-            this.btnFullOpen.UseVisualStyleBackColor = true;
-            this.btnFullOpen.Click += new System.EventHandler(this.btnFullOpen_Click);
-            // 
-            // btnHalfOpen
-            // 
-            this.btnHalfOpen.Location = new System.Drawing.Point(6, 40);
-            this.btnHalfOpen.Name = "btnHalfOpen";
-            this.btnHalfOpen.Size = new System.Drawing.Size(169, 35);
-            this.btnHalfOpen.TabIndex = 0;
-            this.btnHalfOpen.Text = "半力半速打开";
-            this.btnHalfOpen.UseVisualStyleBackColor = true;
-            this.btnHalfOpen.Click += new System.EventHandler(this.btnHalfOpen_Click);
-            // 
             // frm_Recipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1145,6 +1180,8 @@
             this.VisibleChanged += new System.EventHandler(this.frm_Recipe_VisibleChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage0.ResumeLayout(false);
+            this.grpQuickCommands.ResumeLayout(false);
+            this.grpQuickCommands.PerformLayout();
             this.grpStatus.ResumeLayout(false);
             this.grpStatus.PerformLayout();
             this.grpControl.ResumeLayout(false);
@@ -1162,7 +1199,6 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).EndInit();
-            this.grpQuickCommands.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1258,5 +1294,8 @@
         private System.Windows.Forms.Button btnLowOpen;
         private System.Windows.Forms.Button btnFullOpen;
         private System.Windows.Forms.Button btnHalfOpen;
+        private System.Windows.Forms.Button btnResponseTimeTest;
+        private System.Windows.Forms.Label lblResponseTime;
+        private System.Windows.Forms.TextBox txtResponseTime;
     }
 }

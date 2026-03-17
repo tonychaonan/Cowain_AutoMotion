@@ -28,6 +28,7 @@ namespace Cowain_AutoMotion.Flow._2Work
         private Mainflow_WorkStep currentWorkStep;
         private int gripRetryCount = 0;
         private const int MAX_GRIP_RETRY = 3;
+        private System.Diagnostics.Stopwatch gripTimeStopwatch = new System.Diagnostics.Stopwatch();
         public static double speed = 80;
         public AxisCalibration axisCalibration;
         /// <summary>
@@ -284,6 +285,9 @@ namespace Cowain_AutoMotion.Flow._2Work
                         }
                         LogAuto.Notify("电夹爪开始夹取！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         
+                        // 开始计时：记录从发送夹取命令到夹取完成的时间
+                        gripTimeStopwatch.Restart();
+                        
                         // 低力低速关闭，自适应夹取：一直夹直到接触产品（GRIP_HOLDING），无需预设产品尺寸
                         if (MachineDataDefine.miSuMiControl.LowClose())
                         {
@@ -312,7 +316,9 @@ namespace Cowain_AutoMotion.Flow._2Work
                             // 只有 GRIP_HOLDING (0x03) 才表示真正夹到工件
                             if (status.GripState == MiSuMiControl.GRIP_HOLDING)
                             {
-                                LogAuto.Notify("电夹爪夹取成功！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                                gripTimeStopwatch.Stop();
+                                long gripTimeMs = gripTimeStopwatch.ElapsedMilliseconds;
+                                LogAuto.Notify($"电夹爪夹取成功！夹取耗时：{gripTimeMs} ms", (int)MachineStation.主监控, MotionLogLevel.Info);
                                 gripRetryCount = 0;  // 重置重试计数
                                 m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
                             }

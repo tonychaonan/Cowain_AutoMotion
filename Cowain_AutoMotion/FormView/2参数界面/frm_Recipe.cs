@@ -637,5 +637,53 @@ namespace Cowain_Form.FormView
             if (!CheckConnection()) return;
             MachineDataDefine.miSuMiControl.LowClose();
         }
+
+        private void btnResponseTimeTest_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+
+            try
+            {
+                txtResponseTime.Text = "测试中...";
+                Application.DoEvents();
+
+                // 使用半力全速模式进行响应时间测试
+                var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+                
+                // 发送半力半速关闭命令（根据需求改为半力全速）
+                if (MachineDataDefine.miSuMiControl.HalfClose())
+                {
+                    // 等待动作完成并测量时间
+                    if (MachineDataDefine.miSuMiControl.WaitMovementComplete(5000))
+                    {
+                        stopwatch.Stop();
+                        long responseTimeMs = stopwatch.ElapsedMilliseconds;
+                        txtResponseTime.Text = $"{responseTimeMs} ms";
+                        
+                        LogAuto.Notify($"电夹爪响应时间测试完成：{responseTimeMs} ms", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        
+                        // 自动打开电爪准备下次测试
+                        System.Threading.Thread.Sleep(500);
+                        MachineDataDefine.miSuMiControl.HalfOpen();
+                    }
+                    else
+                    {
+                        stopwatch.Stop();
+                        txtResponseTime.Text = "超时";
+                        LogAuto.Notify("电夹爪响应时间测试超时", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                    }
+                }
+                else
+                {
+                    txtResponseTime.Text = "失败";
+                    LogAuto.Notify("电夹爪响应时间测试失败：命令发送失败", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                }
+            }
+            catch (Exception ex)
+            {
+                txtResponseTime.Text = "错误";
+                LogAuto.Notify($"电夹爪响应时间测试异常：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+            }
+        }
     }
 }
