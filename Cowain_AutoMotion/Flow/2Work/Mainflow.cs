@@ -28,6 +28,7 @@ namespace Cowain_AutoMotion.Flow._2Work
         private Mainflow_WorkStep currentWorkStep;
         private int gripRetryCount = 0;
         private const int MAX_GRIP_RETRY = 3;
+        private System.Diagnostics.Stopwatch gripTimeStopwatch = new System.Diagnostics.Stopwatch();
         public static double speed = 80;
         public AxisCalibration axisCalibration;
         private System.Diagnostics.Stopwatch gripTimeStopwatch = new System.Diagnostics.Stopwatch();
