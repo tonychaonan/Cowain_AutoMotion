@@ -241,7 +241,7 @@ namespace Cowain_Form.FormView
             MachineDataDefine.FormVisibled = new bool[(int)(enformList.enMax)];
             MachineDataDefine.pMachine = new clsMachine(typeof(clsMachine.enHomeStep), typeof(clsMachine.enStep), "Machine流程");
             MachineDataDefine.pMachine.pfrmMain = this;
-            MachineDataDefine.miSuMiControl = new MiSuMiControl();
+          
             String strPath = System.IO.Directory.GetCurrentDirectory();
             String strNowPath = strPath.Replace("\\Cowain_AutoMotion\\bin\\x64\\Debug", "");
             Task.Run(() =>
@@ -301,13 +301,6 @@ namespace Cowain_Form.FormView
             m_tmDelay = new System.Timers.Timer(1000);
             m_tmDelay.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent_DelayTimeOut);
             //WorkProcessLoad.instance.workProcess_AxisTakeIn.SNShowEvent += ShowSN;
-            
-            if (!MachineDataDefine.miSuMiControl.Connect("COM3"))
-            {
-                MessageBox.Show("连接失败，请检查串口/接线");
-                return;
-            }
-          //  MessageBox.Show("夹爪连接成功");
         }
 
         private frm_SignificantAdvice frm_Significant;

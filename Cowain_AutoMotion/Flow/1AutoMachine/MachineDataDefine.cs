@@ -100,7 +100,7 @@ namespace Cowain_Machine
         public static Dictionary<string, Image> ImagesDic = new Dictionary<string, Image>();
         public static clsMachine pMachine;
         private static bool b_UseLAD1 = false;
-        public static MiSuMiControl miSuMiControl;
+        public static MiSuMiControl miSuMiControl=new MiSuMiControl();
         public static HardWareConfigClass HardwareCfg = new HardWareConfigClass();
 
         /// <summary>

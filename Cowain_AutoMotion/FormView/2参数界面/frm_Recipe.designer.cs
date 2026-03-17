@@ -35,6 +35,33 @@
             this.listView_Recipe = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.grpStatus = new System.Windows.Forms.GroupBox();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.txtTemperature = new System.Windows.Forms.TextBox();
+            this.txtVoltage = new System.Windows.Forms.TextBox();
+            this.txtCurrentForce = new System.Windows.Forms.TextBox();
+            this.txtCurrentSpeed = new System.Windows.Forms.TextBox();
+            this.txtCurrentPosition = new System.Windows.Forms.TextBox();
+            this.txtTargetDetection = new System.Windows.Forms.TextBox();
+            this.lblTemperature = new System.Windows.Forms.Label();
+            this.lblVoltage = new System.Windows.Forms.Label();
+            this.lblCurrentForce = new System.Windows.Forms.Label();
+            this.lblCurrentSpeed = new System.Windows.Forms.Label();
+            this.lblCurrentPosition = new System.Windows.Forms.Label();
+            this.lblTargetDetection = new System.Windows.Forms.Label();
+            this.grpControl = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnExecuteStep = new System.Windows.Forms.Button();
+            this.btnExecute = new System.Windows.Forms.Button();
+            this.txtForce = new System.Windows.Forms.TextBox();
+            this.txtSpeed = new System.Windows.Forms.TextBox();
+            this.txtStepInterval = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.lblForce = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
+            this.lblStepInterval = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -85,35 +112,17 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
-            this.grpControl = new System.Windows.Forms.GroupBox();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.btnExecuteStep = new System.Windows.Forms.Button();
-            this.btnExecute = new System.Windows.Forms.Button();
-            this.txtForce = new System.Windows.Forms.TextBox();
-            this.txtSpeed = new System.Windows.Forms.TextBox();
-            this.txtStepInterval = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
-            this.lblForce = new System.Windows.Forms.Label();
-            this.lblSpeed = new System.Windows.Forms.Label();
-            this.lblStepInterval = new System.Windows.Forms.Label();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.grpStatus = new System.Windows.Forms.GroupBox();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.txtTemperature = new System.Windows.Forms.TextBox();
-            this.txtVoltage = new System.Windows.Forms.TextBox();
-            this.txtCurrentForce = new System.Windows.Forms.TextBox();
-            this.txtCurrentSpeed = new System.Windows.Forms.TextBox();
-            this.txtCurrentPosition = new System.Windows.Forms.TextBox();
-            this.txtTargetDetection = new System.Windows.Forms.TextBox();
-            this.lblTemperature = new System.Windows.Forms.Label();
-            this.lblVoltage = new System.Windows.Forms.Label();
-            this.lblCurrentForce = new System.Windows.Forms.Label();
-            this.lblCurrentSpeed = new System.Windows.Forms.Label();
-            this.lblCurrentPosition = new System.Windows.Forms.Label();
-            this.lblTargetDetection = new System.Windows.Forms.Label();
+            this.grpQuickCommands = new System.Windows.Forms.GroupBox();
+            this.btnLowClose = new System.Windows.Forms.Button();
+            this.btnFullClose = new System.Windows.Forms.Button();
+            this.btnHalfClose = new System.Windows.Forms.Button();
+            this.btnLowOpen = new System.Windows.Forms.Button();
+            this.btnFullOpen = new System.Windows.Forms.Button();
+            this.btnHalfOpen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage0.SuspendLayout();
+            this.grpStatus.SuspendLayout();
+            this.grpControl.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.group_TestParm.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -124,8 +133,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).BeginInit();
-            this.grpControl.SuspendLayout();
-            this.grpStatus.SuspendLayout();
+            this.grpQuickCommands.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -164,7 +172,7 @@
             this.btn_Save.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_Save.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
             this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Save.Location = new System.Drawing.Point(1107, 472);
+            this.btn_Save.Location = new System.Drawing.Point(305, 399);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(92, 75);
             this.btn_Save.TabIndex = 236;
@@ -205,6 +213,7 @@
             // tabPage0
             // 
             this.tabPage0.AutoScroll = true;
+            this.tabPage0.Controls.Add(this.grpQuickCommands);
             this.tabPage0.Controls.Add(this.grpStatus);
             this.tabPage0.Controls.Add(this.grpControl);
             this.tabPage0.Controls.Add(this.button3);
@@ -218,9 +227,281 @@
             this.tabPage0.Text = "基本参数";
             this.tabPage0.UseVisualStyleBackColor = true;
             // 
+            // grpStatus
+            // 
+            this.grpStatus.Controls.Add(this.btnModify);
+            this.grpStatus.Controls.Add(this.txtTemperature);
+            this.grpStatus.Controls.Add(this.txtVoltage);
+            this.grpStatus.Controls.Add(this.txtCurrentForce);
+            this.grpStatus.Controls.Add(this.txtCurrentSpeed);
+            this.grpStatus.Controls.Add(this.txtCurrentPosition);
+            this.grpStatus.Controls.Add(this.txtTargetDetection);
+            this.grpStatus.Controls.Add(this.lblTemperature);
+            this.grpStatus.Controls.Add(this.lblVoltage);
+            this.grpStatus.Controls.Add(this.lblCurrentForce);
+            this.grpStatus.Controls.Add(this.lblCurrentSpeed);
+            this.grpStatus.Controls.Add(this.lblCurrentPosition);
+            this.grpStatus.Controls.Add(this.lblTargetDetection);
+            this.grpStatus.Location = new System.Drawing.Point(454, 233);
+            this.grpStatus.Name = "grpStatus";
+            this.grpStatus.Size = new System.Drawing.Size(482, 250);
+            this.grpStatus.TabIndex = 337;
+            this.grpStatus.TabStop = false;
+            this.grpStatus.Text = "状态检测";
+            // 
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(370, 202);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(100, 35);
+            this.btnModify.TabIndex = 12;
+            this.btnModify.Text = "修改";
+            this.btnModify.UseVisualStyleBackColor = true;
+            // 
+            // txtTemperature
+            // 
+            this.txtTemperature.Location = new System.Drawing.Point(149, 203);
+            this.txtTemperature.Name = "txtTemperature";
+            this.txtTemperature.ReadOnly = true;
+            this.txtTemperature.Size = new System.Drawing.Size(200, 34);
+            this.txtTemperature.TabIndex = 11;
+            this.txtTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtVoltage
+            // 
+            this.txtVoltage.Location = new System.Drawing.Point(149, 168);
+            this.txtVoltage.Name = "txtVoltage";
+            this.txtVoltage.ReadOnly = true;
+            this.txtVoltage.Size = new System.Drawing.Size(200, 34);
+            this.txtVoltage.TabIndex = 10;
+            this.txtVoltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCurrentForce
+            // 
+            this.txtCurrentForce.Location = new System.Drawing.Point(149, 133);
+            this.txtCurrentForce.Name = "txtCurrentForce";
+            this.txtCurrentForce.ReadOnly = true;
+            this.txtCurrentForce.Size = new System.Drawing.Size(200, 34);
+            this.txtCurrentForce.TabIndex = 9;
+            this.txtCurrentForce.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCurrentSpeed
+            // 
+            this.txtCurrentSpeed.Location = new System.Drawing.Point(149, 98);
+            this.txtCurrentSpeed.Name = "txtCurrentSpeed";
+            this.txtCurrentSpeed.ReadOnly = true;
+            this.txtCurrentSpeed.Size = new System.Drawing.Size(200, 34);
+            this.txtCurrentSpeed.TabIndex = 8;
+            this.txtCurrentSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCurrentPosition
+            // 
+            this.txtCurrentPosition.Location = new System.Drawing.Point(149, 63);
+            this.txtCurrentPosition.Name = "txtCurrentPosition";
+            this.txtCurrentPosition.ReadOnly = true;
+            this.txtCurrentPosition.Size = new System.Drawing.Size(200, 34);
+            this.txtCurrentPosition.TabIndex = 7;
+            this.txtCurrentPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTargetDetection
+            // 
+            this.txtTargetDetection.Location = new System.Drawing.Point(149, 28);
+            this.txtTargetDetection.Name = "txtTargetDetection";
+            this.txtTargetDetection.ReadOnly = true;
+            this.txtTargetDetection.Size = new System.Drawing.Size(200, 34);
+            this.txtTargetDetection.TabIndex = 6;
+            this.txtTargetDetection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTemperature
+            // 
+            this.lblTemperature.AutoSize = true;
+            this.lblTemperature.Location = new System.Drawing.Point(20, 208);
+            this.lblTemperature.Name = "lblTemperature";
+            this.lblTemperature.Size = new System.Drawing.Size(61, 29);
+            this.lblTemperature.TabIndex = 5;
+            this.lblTemperature.Text = "温度";
+            // 
+            // lblVoltage
+            // 
+            this.lblVoltage.AutoSize = true;
+            this.lblVoltage.Location = new System.Drawing.Point(20, 173);
+            this.lblVoltage.Name = "lblVoltage";
+            this.lblVoltage.Size = new System.Drawing.Size(61, 29);
+            this.lblVoltage.TabIndex = 4;
+            this.lblVoltage.Text = "电压";
+            // 
+            // lblCurrentForce
+            // 
+            this.lblCurrentForce.AutoSize = true;
+            this.lblCurrentForce.Location = new System.Drawing.Point(20, 138);
+            this.lblCurrentForce.Name = "lblCurrentForce";
+            this.lblCurrentForce.Size = new System.Drawing.Size(109, 29);
+            this.lblCurrentForce.TabIndex = 3;
+            this.lblCurrentForce.Text = "当前力矩";
+            // 
+            // lblCurrentSpeed
+            // 
+            this.lblCurrentSpeed.AutoSize = true;
+            this.lblCurrentSpeed.Location = new System.Drawing.Point(20, 103);
+            this.lblCurrentSpeed.Name = "lblCurrentSpeed";
+            this.lblCurrentSpeed.Size = new System.Drawing.Size(109, 29);
+            this.lblCurrentSpeed.TabIndex = 2;
+            this.lblCurrentSpeed.Text = "当前速度";
+            // 
+            // lblCurrentPosition
+            // 
+            this.lblCurrentPosition.AutoSize = true;
+            this.lblCurrentPosition.Location = new System.Drawing.Point(20, 68);
+            this.lblCurrentPosition.Name = "lblCurrentPosition";
+            this.lblCurrentPosition.Size = new System.Drawing.Size(109, 29);
+            this.lblCurrentPosition.TabIndex = 1;
+            this.lblCurrentPosition.Text = "当前位置";
+            // 
+            // lblTargetDetection
+            // 
+            this.lblTargetDetection.AutoSize = true;
+            this.lblTargetDetection.Location = new System.Drawing.Point(20, 33);
+            this.lblTargetDetection.Name = "lblTargetDetection";
+            this.lblTargetDetection.Size = new System.Drawing.Size(109, 29);
+            this.lblTargetDetection.TabIndex = 0;
+            this.lblTargetDetection.Text = "目标检测";
+            // 
+            // grpControl
+            // 
+            this.grpControl.Controls.Add(this.btnReset);
+            this.grpControl.Controls.Add(this.btnStop);
+            this.grpControl.Controls.Add(this.btnExecuteStep);
+            this.grpControl.Controls.Add(this.btnExecute);
+            this.grpControl.Controls.Add(this.txtForce);
+            this.grpControl.Controls.Add(this.txtSpeed);
+            this.grpControl.Controls.Add(this.txtStepInterval);
+            this.grpControl.Controls.Add(this.txtPosition);
+            this.grpControl.Controls.Add(this.lblForce);
+            this.grpControl.Controls.Add(this.lblSpeed);
+            this.grpControl.Controls.Add(this.lblStepInterval);
+            this.grpControl.Controls.Add(this.lblPosition);
+            this.grpControl.Location = new System.Drawing.Point(454, 27);
+            this.grpControl.Name = "grpControl";
+            this.grpControl.Size = new System.Drawing.Size(502, 200);
+            this.grpControl.TabIndex = 336;
+            this.grpControl.TabStop = false;
+            this.grpControl.Text = "控制";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(370, 150);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(124, 35);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "使能";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(370, 105);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(124, 35);
+            this.btnStop.TabIndex = 10;
+            this.btnStop.Text = "停止";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnExecuteStep
+            // 
+            this.btnExecuteStep.Location = new System.Drawing.Point(370, 60);
+            this.btnExecuteStep.Name = "btnExecuteStep";
+            this.btnExecuteStep.Size = new System.Drawing.Size(124, 35);
+            this.btnExecuteStep.TabIndex = 9;
+            this.btnExecuteStep.Text = "执行步进";
+            this.btnExecuteStep.UseVisualStyleBackColor = true;
+            this.btnExecuteStep.Click += new System.EventHandler(this.btnExecuteStep_Click);
+            // 
+            // btnExecute
+            // 
+            this.btnExecute.Location = new System.Drawing.Point(370, 20);
+            this.btnExecute.Name = "btnExecute";
+            this.btnExecute.Size = new System.Drawing.Size(124, 35);
+            this.btnExecute.TabIndex = 8;
+            this.btnExecute.Text = "执行";
+            this.btnExecute.UseVisualStyleBackColor = true;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // txtForce
+            // 
+            this.txtForce.Location = new System.Drawing.Point(137, 155);
+            this.txtForce.Name = "txtForce";
+            this.txtForce.Size = new System.Drawing.Size(200, 34);
+            this.txtForce.TabIndex = 7;
+            this.txtForce.Text = "1.0";
+            this.txtForce.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSpeed
+            // 
+            this.txtSpeed.Location = new System.Drawing.Point(137, 115);
+            this.txtSpeed.Name = "txtSpeed";
+            this.txtSpeed.Size = new System.Drawing.Size(200, 34);
+            this.txtSpeed.TabIndex = 6;
+            this.txtSpeed.Text = "0.0";
+            this.txtSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtStepInterval
+            // 
+            this.txtStepInterval.Location = new System.Drawing.Point(137, 70);
+            this.txtStepInterval.Name = "txtStepInterval";
+            this.txtStepInterval.Size = new System.Drawing.Size(200, 34);
+            this.txtStepInterval.TabIndex = 5;
+            this.txtStepInterval.Text = "0.00";
+            this.txtStepInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(137, 30);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(200, 34);
+            this.txtPosition.TabIndex = 4;
+            this.txtPosition.Text = "0.00";
+            this.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblForce
+            // 
+            this.lblForce.AutoSize = true;
+            this.lblForce.Location = new System.Drawing.Point(20, 158);
+            this.lblForce.Name = "lblForce";
+            this.lblForce.Size = new System.Drawing.Size(61, 29);
+            this.lblForce.TabIndex = 3;
+            this.lblForce.Text = "力矩";
+            // 
+            // lblSpeed
+            // 
+            this.lblSpeed.AutoSize = true;
+            this.lblSpeed.Location = new System.Drawing.Point(20, 118);
+            this.lblSpeed.Name = "lblSpeed";
+            this.lblSpeed.Size = new System.Drawing.Size(61, 29);
+            this.lblSpeed.TabIndex = 2;
+            this.lblSpeed.Text = "速度";
+            // 
+            // lblStepInterval
+            // 
+            this.lblStepInterval.AutoSize = true;
+            this.lblStepInterval.Location = new System.Drawing.Point(20, 73);
+            this.lblStepInterval.Name = "lblStepInterval";
+            this.lblStepInterval.Size = new System.Drawing.Size(109, 29);
+            this.lblStepInterval.TabIndex = 1;
+            this.lblStepInterval.Text = "步进间隔";
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point(20, 33);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(61, 29);
+            this.lblPosition.TabIndex = 0;
+            this.lblPosition.Text = "位置";
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1205, 488);
+            this.button3.Location = new System.Drawing.Point(173, 428);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 46);
             this.button3.TabIndex = 335;
@@ -232,16 +513,16 @@
             // 
             this.groupBox9.Controls.Add(this.button5);
             this.groupBox9.Controls.Add(this.button4);
-            this.groupBox9.Location = new System.Drawing.Point(1087, 16);
+            this.groupBox9.Location = new System.Drawing.Point(22, 359);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(213, 404);
+            this.groupBox9.Size = new System.Drawing.Size(145, 120);
             this.groupBox9.TabIndex = 334;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "辅助功能";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(22, 113);
+            this.button5.Location = new System.Drawing.Point(6, 75);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(134, 40);
             this.button5.TabIndex = 482;
@@ -251,7 +532,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(22, 54);
+            this.button4.Location = new System.Drawing.Point(6, 31);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(134, 32);
             this.button4.TabIndex = 481;
@@ -772,277 +1053,80 @@
             this.panel13.Size = new System.Drawing.Size(1329, 609);
             this.panel13.TabIndex = 239;
             // 
-            // grpControl
+            // grpQuickCommands
             // 
-            this.grpControl.Controls.Add(this.btnReset);
-            this.grpControl.Controls.Add(this.btnStop);
-            this.grpControl.Controls.Add(this.btnExecuteStep);
-            this.grpControl.Controls.Add(this.btnExecute);
-            this.grpControl.Controls.Add(this.txtForce);
-            this.grpControl.Controls.Add(this.txtSpeed);
-            this.grpControl.Controls.Add(this.txtStepInterval);
-            this.grpControl.Controls.Add(this.txtPosition);
-            this.grpControl.Controls.Add(this.lblForce);
-            this.grpControl.Controls.Add(this.lblSpeed);
-            this.grpControl.Controls.Add(this.lblStepInterval);
-            this.grpControl.Controls.Add(this.lblPosition);
-            this.grpControl.Location = new System.Drawing.Point(525, 27);
-            this.grpControl.Name = "grpControl";
-            this.grpControl.Size = new System.Drawing.Size(556, 200);
-            this.grpControl.TabIndex = 336;
-            this.grpControl.TabStop = false;
-            this.grpControl.Text = "控制";
+            this.grpQuickCommands.Controls.Add(this.btnLowClose);
+            this.grpQuickCommands.Controls.Add(this.btnFullClose);
+            this.grpQuickCommands.Controls.Add(this.btnHalfClose);
+            this.grpQuickCommands.Controls.Add(this.btnLowOpen);
+            this.grpQuickCommands.Controls.Add(this.btnFullOpen);
+            this.grpQuickCommands.Controls.Add(this.btnHalfOpen);
+            this.grpQuickCommands.Location = new System.Drawing.Point(962, 39);
+            this.grpQuickCommands.Name = "grpQuickCommands";
+            this.grpQuickCommands.Size = new System.Drawing.Size(351, 200);
+            this.grpQuickCommands.TabIndex = 338;
+            this.grpQuickCommands.TabStop = false;
+            this.grpQuickCommands.Text = "快捷命令";
             // 
-            // btnReset
+            // btnLowClose
             // 
-            this.btnReset.Location = new System.Drawing.Point(370, 150);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(124, 35);
-            this.btnReset.TabIndex = 11;
-            this.btnReset.Text = "使能";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnLowClose.Location = new System.Drawing.Point(181, 137);
+            this.btnLowClose.Name = "btnLowClose";
+            this.btnLowClose.Size = new System.Drawing.Size(152, 35);
+            this.btnLowClose.TabIndex = 5;
+            this.btnLowClose.Text = "低力低速关闭";
+            this.btnLowClose.UseVisualStyleBackColor = true;
+            this.btnLowClose.Click += new System.EventHandler(this.btnLowClose_Click);
             // 
-            // btnStop
+            // btnFullClose
             // 
-            this.btnStop.Location = new System.Drawing.Point(370, 105);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(124, 35);
-            this.btnStop.TabIndex = 10;
-            this.btnStop.Text = "停止";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.btnFullClose.Location = new System.Drawing.Point(181, 88);
+            this.btnFullClose.Name = "btnFullClose";
+            this.btnFullClose.Size = new System.Drawing.Size(152, 35);
+            this.btnFullClose.TabIndex = 4;
+            this.btnFullClose.Text = "全力全速关闭";
+            this.btnFullClose.UseVisualStyleBackColor = true;
+            this.btnFullClose.Click += new System.EventHandler(this.btnFullClose_Click);
             // 
-            // btnExecuteStep
+            // btnHalfClose
             // 
-            this.btnExecuteStep.Location = new System.Drawing.Point(370, 60);
-            this.btnExecuteStep.Name = "btnExecuteStep";
-            this.btnExecuteStep.Size = new System.Drawing.Size(124, 35);
-            this.btnExecuteStep.TabIndex = 9;
-            this.btnExecuteStep.Text = "执行步进";
-            this.btnExecuteStep.UseVisualStyleBackColor = true;
-            this.btnExecuteStep.Click += new System.EventHandler(this.btnExecuteStep_Click);
+            this.btnHalfClose.Location = new System.Drawing.Point(181, 40);
+            this.btnHalfClose.Name = "btnHalfClose";
+            this.btnHalfClose.Size = new System.Drawing.Size(152, 35);
+            this.btnHalfClose.TabIndex = 3;
+            this.btnHalfClose.Text = "半力半速关闭";
+            this.btnHalfClose.UseVisualStyleBackColor = true;
+            this.btnHalfClose.Click += new System.EventHandler(this.btnHalfClose_Click);
             // 
-            // btnExecute
+            // btnLowOpen
             // 
-            this.btnExecute.Location = new System.Drawing.Point(370, 20);
-            this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(124, 35);
-            this.btnExecute.TabIndex = 8;
-            this.btnExecute.Text = "执行";
-            this.btnExecute.UseVisualStyleBackColor = true;
-            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            this.btnLowOpen.Location = new System.Drawing.Point(10, 137);
+            this.btnLowOpen.Name = "btnLowOpen";
+            this.btnLowOpen.Size = new System.Drawing.Size(165, 35);
+            this.btnLowOpen.TabIndex = 2;
+            this.btnLowOpen.Text = "低力低速打开";
+            this.btnLowOpen.UseVisualStyleBackColor = true;
+            this.btnLowOpen.Click += new System.EventHandler(this.btnLowOpen_Click);
             // 
-            // txtForce
+            // btnFullOpen
             // 
-            this.txtForce.Location = new System.Drawing.Point(137, 155);
-            this.txtForce.Name = "txtForce";
-            this.txtForce.Size = new System.Drawing.Size(200, 34);
-            this.txtForce.TabIndex = 7;
-            this.txtForce.Text = "1.0";
-            this.txtForce.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnFullOpen.Location = new System.Drawing.Point(6, 88);
+            this.btnFullOpen.Name = "btnFullOpen";
+            this.btnFullOpen.Size = new System.Drawing.Size(169, 35);
+            this.btnFullOpen.TabIndex = 1;
+            this.btnFullOpen.Text = "全力全速打开";
+            this.btnFullOpen.UseVisualStyleBackColor = true;
+            this.btnFullOpen.Click += new System.EventHandler(this.btnFullOpen_Click);
             // 
-            // txtSpeed
+            // btnHalfOpen
             // 
-            this.txtSpeed.Location = new System.Drawing.Point(137, 115);
-            this.txtSpeed.Name = "txtSpeed";
-            this.txtSpeed.Size = new System.Drawing.Size(200, 34);
-            this.txtSpeed.TabIndex = 6;
-            this.txtSpeed.Text = "0.0";
-            this.txtSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtStepInterval
-            // 
-            this.txtStepInterval.Location = new System.Drawing.Point(137, 70);
-            this.txtStepInterval.Name = "txtStepInterval";
-            this.txtStepInterval.Size = new System.Drawing.Size(200, 34);
-            this.txtStepInterval.TabIndex = 5;
-            this.txtStepInterval.Text = "0.00";
-            this.txtStepInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(137, 30);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(200, 34);
-            this.txtPosition.TabIndex = 4;
-            this.txtPosition.Text = "0.00";
-            this.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblForce
-            // 
-            this.lblForce.AutoSize = true;
-            this.lblForce.Location = new System.Drawing.Point(20, 158);
-            this.lblForce.Name = "lblForce";
-            this.lblForce.Size = new System.Drawing.Size(61, 29);
-            this.lblForce.TabIndex = 3;
-            this.lblForce.Text = "力矩";
-            // 
-            // lblSpeed
-            // 
-            this.lblSpeed.AutoSize = true;
-            this.lblSpeed.Location = new System.Drawing.Point(20, 118);
-            this.lblSpeed.Name = "lblSpeed";
-            this.lblSpeed.Size = new System.Drawing.Size(61, 29);
-            this.lblSpeed.TabIndex = 2;
-            this.lblSpeed.Text = "速度";
-            // 
-            // lblStepInterval
-            // 
-            this.lblStepInterval.AutoSize = true;
-            this.lblStepInterval.Location = new System.Drawing.Point(20, 73);
-            this.lblStepInterval.Name = "lblStepInterval";
-            this.lblStepInterval.Size = new System.Drawing.Size(109, 29);
-            this.lblStepInterval.TabIndex = 1;
-            this.lblStepInterval.Text = "步进间隔";
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Location = new System.Drawing.Point(20, 33);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(61, 29);
-            this.lblPosition.TabIndex = 0;
-            this.lblPosition.Text = "位置";
-            // 
-            // grpStatus
-            // 
-            this.grpStatus.Controls.Add(this.btnModify);
-            this.grpStatus.Controls.Add(this.txtTemperature);
-            this.grpStatus.Controls.Add(this.txtVoltage);
-            this.grpStatus.Controls.Add(this.txtCurrentForce);
-            this.grpStatus.Controls.Add(this.txtCurrentSpeed);
-            this.grpStatus.Controls.Add(this.txtCurrentPosition);
-            this.grpStatus.Controls.Add(this.txtTargetDetection);
-            this.grpStatus.Controls.Add(this.lblTemperature);
-            this.grpStatus.Controls.Add(this.lblVoltage);
-            this.grpStatus.Controls.Add(this.lblCurrentForce);
-            this.grpStatus.Controls.Add(this.lblCurrentSpeed);
-            this.grpStatus.Controls.Add(this.lblCurrentPosition);
-            this.grpStatus.Controls.Add(this.lblTargetDetection);
-            this.grpStatus.Location = new System.Drawing.Point(525, 251);
-            this.grpStatus.Name = "grpStatus";
-            this.grpStatus.Size = new System.Drawing.Size(556, 250);
-            this.grpStatus.TabIndex = 337;
-            this.grpStatus.TabStop = false;
-            this.grpStatus.Text = "状态检测";
-            // 
-            // btnModify
-            // 
-            this.btnModify.Location = new System.Drawing.Point(412, 203);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(100, 35);
-            this.btnModify.TabIndex = 12;
-            this.btnModify.Text = "修改";
-            this.btnModify.UseVisualStyleBackColor = true;
-            // 
-            // txtTemperature
-            // 
-            this.txtTemperature.Location = new System.Drawing.Point(149, 203);
-            this.txtTemperature.Name = "txtTemperature";
-            this.txtTemperature.ReadOnly = true;
-            this.txtTemperature.Size = new System.Drawing.Size(200, 34);
-            this.txtTemperature.TabIndex = 11;
-            this.txtTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtVoltage
-            // 
-            this.txtVoltage.Location = new System.Drawing.Point(149, 168);
-            this.txtVoltage.Name = "txtVoltage";
-            this.txtVoltage.ReadOnly = true;
-            this.txtVoltage.Size = new System.Drawing.Size(200, 34);
-            this.txtVoltage.TabIndex = 10;
-            this.txtVoltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCurrentForce
-            // 
-            this.txtCurrentForce.Location = new System.Drawing.Point(149, 133);
-            this.txtCurrentForce.Name = "txtCurrentForce";
-            this.txtCurrentForce.ReadOnly = true;
-            this.txtCurrentForce.Size = new System.Drawing.Size(200, 34);
-            this.txtCurrentForce.TabIndex = 9;
-            this.txtCurrentForce.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCurrentSpeed
-            // 
-            this.txtCurrentSpeed.Location = new System.Drawing.Point(149, 98);
-            this.txtCurrentSpeed.Name = "txtCurrentSpeed";
-            this.txtCurrentSpeed.ReadOnly = true;
-            this.txtCurrentSpeed.Size = new System.Drawing.Size(200, 34);
-            this.txtCurrentSpeed.TabIndex = 8;
-            this.txtCurrentSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCurrentPosition
-            // 
-            this.txtCurrentPosition.Location = new System.Drawing.Point(149, 63);
-            this.txtCurrentPosition.Name = "txtCurrentPosition";
-            this.txtCurrentPosition.ReadOnly = true;
-            this.txtCurrentPosition.Size = new System.Drawing.Size(200, 34);
-            this.txtCurrentPosition.TabIndex = 7;
-            this.txtCurrentPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTargetDetection
-            // 
-            this.txtTargetDetection.Location = new System.Drawing.Point(149, 28);
-            this.txtTargetDetection.Name = "txtTargetDetection";
-            this.txtTargetDetection.ReadOnly = true;
-            this.txtTargetDetection.Size = new System.Drawing.Size(200, 34);
-            this.txtTargetDetection.TabIndex = 6;
-            this.txtTargetDetection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblTemperature
-            // 
-            this.lblTemperature.AutoSize = true;
-            this.lblTemperature.Location = new System.Drawing.Point(20, 208);
-            this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(61, 29);
-            this.lblTemperature.TabIndex = 5;
-            this.lblTemperature.Text = "温度";
-            // 
-            // lblVoltage
-            // 
-            this.lblVoltage.AutoSize = true;
-            this.lblVoltage.Location = new System.Drawing.Point(20, 173);
-            this.lblVoltage.Name = "lblVoltage";
-            this.lblVoltage.Size = new System.Drawing.Size(61, 29);
-            this.lblVoltage.TabIndex = 4;
-            this.lblVoltage.Text = "电压";
-            // 
-            // lblCurrentForce
-            // 
-            this.lblCurrentForce.AutoSize = true;
-            this.lblCurrentForce.Location = new System.Drawing.Point(20, 138);
-            this.lblCurrentForce.Name = "lblCurrentForce";
-            this.lblCurrentForce.Size = new System.Drawing.Size(109, 29);
-            this.lblCurrentForce.TabIndex = 3;
-            this.lblCurrentForce.Text = "当前力矩";
-            // 
-            // lblCurrentSpeed
-            // 
-            this.lblCurrentSpeed.AutoSize = true;
-            this.lblCurrentSpeed.Location = new System.Drawing.Point(20, 103);
-            this.lblCurrentSpeed.Name = "lblCurrentSpeed";
-            this.lblCurrentSpeed.Size = new System.Drawing.Size(109, 29);
-            this.lblCurrentSpeed.TabIndex = 2;
-            this.lblCurrentSpeed.Text = "当前速度";
-            // 
-            // lblCurrentPosition
-            // 
-            this.lblCurrentPosition.AutoSize = true;
-            this.lblCurrentPosition.Location = new System.Drawing.Point(20, 68);
-            this.lblCurrentPosition.Name = "lblCurrentPosition";
-            this.lblCurrentPosition.Size = new System.Drawing.Size(109, 29);
-            this.lblCurrentPosition.TabIndex = 1;
-            this.lblCurrentPosition.Text = "当前位置";
-            // 
-            // lblTargetDetection
-            // 
-            this.lblTargetDetection.AutoSize = true;
-            this.lblTargetDetection.Location = new System.Drawing.Point(20, 33);
-            this.lblTargetDetection.Name = "lblTargetDetection";
-            this.lblTargetDetection.Size = new System.Drawing.Size(109, 29);
-            this.lblTargetDetection.TabIndex = 0;
-            this.lblTargetDetection.Text = "目标检测";
+            this.btnHalfOpen.Location = new System.Drawing.Point(6, 40);
+            this.btnHalfOpen.Name = "btnHalfOpen";
+            this.btnHalfOpen.Size = new System.Drawing.Size(169, 35);
+            this.btnHalfOpen.TabIndex = 0;
+            this.btnHalfOpen.Text = "半力半速打开";
+            this.btnHalfOpen.UseVisualStyleBackColor = true;
+            this.btnHalfOpen.Click += new System.EventHandler(this.btnHalfOpen_Click);
             // 
             // frm_Recipe
             // 
@@ -1061,6 +1145,10 @@
             this.VisibleChanged += new System.EventHandler(this.frm_Recipe_VisibleChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage0.ResumeLayout(false);
+            this.grpStatus.ResumeLayout(false);
+            this.grpStatus.PerformLayout();
+            this.grpControl.ResumeLayout(false);
+            this.grpControl.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.group_TestParm.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
@@ -1074,10 +1162,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).EndInit();
-            this.grpControl.ResumeLayout(false);
-            this.grpControl.PerformLayout();
-            this.grpStatus.ResumeLayout(false);
-            this.grpStatus.PerformLayout();
+            this.grpQuickCommands.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1166,5 +1251,12 @@
         private System.Windows.Forms.Label lblCurrentSpeed;
         private System.Windows.Forms.Label lblCurrentPosition;
         private System.Windows.Forms.Label lblTargetDetection;
+        private System.Windows.Forms.GroupBox grpQuickCommands;
+        private System.Windows.Forms.Button btnLowClose;
+        private System.Windows.Forms.Button btnFullClose;
+        private System.Windows.Forms.Button btnHalfClose;
+        private System.Windows.Forms.Button btnLowOpen;
+        private System.Windows.Forms.Button btnFullOpen;
+        private System.Windows.Forms.Button btnHalfOpen;
     }
 }

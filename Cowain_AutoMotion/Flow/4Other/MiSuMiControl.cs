@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using NModbus.Serial;
 using System.Windows.Forms;
 using NModbus.Device;
+using Cowain_Machine;
 
 namespace Cowain_AutoMotion.Flow.Common
 {
@@ -15,6 +16,27 @@ namespace Cowain_AutoMotion.Flow.Common
     {
         private SerialPort _serialPort;       // 串口（USB转485）
         private IModbusMaster _modbusMaster;  // Modbus主站
+
+        public MiSuMiControl()
+            {
+            try
+            {
+                // 连接电爪（需要根据实际串口号修改）
+               Connect("COM8"); // TODO: 从配置文件读取串口号
+
+                // 首次使用需要激活并搜索行程
+                if (!IsReady())
+                {
+                    EnableWithSearch();
+                    WaitReady(5000);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogAuto.Notify($"电爪初始化失败：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+            }
+        }
+
 
         #region 寄存器地址（根据协议文档）
         public const ushort INIT_REG = 0x0FA0;       // 初始化寄存器

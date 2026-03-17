@@ -535,7 +535,7 @@ namespace Cowain_Form.FormView
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T1,0,0,0");
         }
 
-        private MiSuMiControl gripperControl;
+        //private MiSuMiControl gripperControl;
         private bool isConnected = false;
 
         private void btnExecute_Click(object sender, EventArgs e)
@@ -550,7 +550,7 @@ namespace Cowain_Form.FormView
                 ushort spd = (ushort)speed;
                 ushort frc = (ushort)force;
 
-                if (gripperControl.MoveWithParams(pos, spd, frc))
+                if (MachineDataDefine.miSuMiControl.MoveWithParams(pos, spd, frc))
                 {
                     txtTargetDetection.Text = "执行中...";
                 }
@@ -563,7 +563,7 @@ namespace Cowain_Form.FormView
 
         private bool CheckConnection()
         {
-            if (!isConnected)
+            if (!MachineDataDefine.miSuMiControl.IsConnected)
             {
                 MessageBox.Show("请先连接串口和电爪！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -587,18 +587,55 @@ namespace Cowain_Form.FormView
         private void btnStop_Click(object sender, EventArgs e)
         {
             if (!CheckConnection()) return;
-            gripperControl.Disable();
+            MachineDataDefine.miSuMiControl.Disable();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             if (!CheckConnection()) return;
 
-            if (gripperControl.EnableWithSearch())
+            if (MachineDataDefine.miSuMiControl.EnableWithSearch())
             {
                 MessageBox.Show("正在重新搜索行程...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                gripperControl.WaitReady(10000);
+                MachineDataDefine.miSuMiControl.WaitReady(10000);
             }
+        }
+
+        private void btnHalfOpen_Click(object sender, EventArgs e)
+        {
+
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.HalfOpen();
+        }
+
+        private void btnHalfClose_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.HalfClose();
+        }
+
+        private void btnFullOpen_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.FullOpen();
+        }
+
+        private void btnFullClose_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.FullClose();
+        }
+
+        private void btnLowOpen_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.LowOpen();
+        }
+
+        private void btnLowClose_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnection()) return;
+            MachineDataDefine.miSuMiControl.LowClose();
         }
     }
 }
