@@ -36,6 +36,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage0 = new System.Windows.Forms.TabPage();
             this.grpQuickCommands = new System.Windows.Forms.GroupBox();
+            this.btnbanlibansu = new System.Windows.Forms.Button();
             this.btnResponseTimeTest = new System.Windows.Forms.Button();
             this.lblResponseTime = new System.Windows.Forms.Label();
             this.txtResponseTime = new System.Windows.Forms.TextBox();
@@ -45,20 +46,6 @@
             this.btnLowOpen = new System.Windows.Forms.Button();
             this.btnFullOpen = new System.Windows.Forms.Button();
             this.btnHalfOpen = new System.Windows.Forms.Button();
-            this.grpStatus = new System.Windows.Forms.GroupBox();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.txtTemperature = new System.Windows.Forms.TextBox();
-            this.txtVoltage = new System.Windows.Forms.TextBox();
-            this.txtCurrentForce = new System.Windows.Forms.TextBox();
-            this.txtCurrentSpeed = new System.Windows.Forms.TextBox();
-            this.txtCurrentPosition = new System.Windows.Forms.TextBox();
-            this.txtTargetDetection = new System.Windows.Forms.TextBox();
-            this.lblTemperature = new System.Windows.Forms.Label();
-            this.lblVoltage = new System.Windows.Forms.Label();
-            this.lblCurrentForce = new System.Windows.Forms.Label();
-            this.lblCurrentSpeed = new System.Windows.Forms.Label();
-            this.lblCurrentPosition = new System.Windows.Forms.Label();
-            this.lblTargetDetection = new System.Windows.Forms.Label();
             this.grpControl = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
@@ -122,11 +109,14 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
-            this.btnbanlibansu = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnUpCamStatic = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage0.SuspendLayout();
             this.grpQuickCommands.SuspendLayout();
-            this.grpStatus.SuspendLayout();
             this.grpControl.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.group_TestParm.SuspendLayout();
@@ -138,6 +128,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -217,8 +208,8 @@
             // tabPage0
             // 
             this.tabPage0.AutoScroll = true;
+            this.tabPage0.Controls.Add(this.groupBox1);
             this.tabPage0.Controls.Add(this.grpQuickCommands);
-            this.tabPage0.Controls.Add(this.grpStatus);
             this.tabPage0.Controls.Add(this.grpControl);
             this.tabPage0.Controls.Add(this.button3);
             this.tabPage0.Controls.Add(this.groupBox9);
@@ -249,6 +240,16 @@
             this.grpQuickCommands.TabIndex = 338;
             this.grpQuickCommands.TabStop = false;
             this.grpQuickCommands.Text = "快捷命令";
+            // 
+            // btnbanlibansu
+            // 
+            this.btnbanlibansu.Location = new System.Drawing.Point(6, 304);
+            this.btnbanlibansu.Name = "btnbanlibansu";
+            this.btnbanlibansu.Size = new System.Drawing.Size(169, 35);
+            this.btnbanlibansu.TabIndex = 9;
+            this.btnbanlibansu.Text = "半力半速";
+            this.btnbanlibansu.UseVisualStyleBackColor = true;
+            this.btnbanlibansu.Click += new System.EventHandler(this.btnbanlibansu_Click);
             // 
             // btnResponseTimeTest
             // 
@@ -338,145 +339,6 @@
             this.btnHalfOpen.Text = "半力半速打开";
             this.btnHalfOpen.UseVisualStyleBackColor = true;
             this.btnHalfOpen.Click += new System.EventHandler(this.btnHalfOpen_Click);
-            // 
-            // grpStatus
-            // 
-            this.grpStatus.Controls.Add(this.btnModify);
-            this.grpStatus.Controls.Add(this.txtTemperature);
-            this.grpStatus.Controls.Add(this.txtVoltage);
-            this.grpStatus.Controls.Add(this.txtCurrentForce);
-            this.grpStatus.Controls.Add(this.txtCurrentSpeed);
-            this.grpStatus.Controls.Add(this.txtCurrentPosition);
-            this.grpStatus.Controls.Add(this.txtTargetDetection);
-            this.grpStatus.Controls.Add(this.lblTemperature);
-            this.grpStatus.Controls.Add(this.lblVoltage);
-            this.grpStatus.Controls.Add(this.lblCurrentForce);
-            this.grpStatus.Controls.Add(this.lblCurrentSpeed);
-            this.grpStatus.Controls.Add(this.lblCurrentPosition);
-            this.grpStatus.Controls.Add(this.lblTargetDetection);
-            this.grpStatus.Location = new System.Drawing.Point(454, 233);
-            this.grpStatus.Name = "grpStatus";
-            this.grpStatus.Size = new System.Drawing.Size(482, 250);
-            this.grpStatus.TabIndex = 337;
-            this.grpStatus.TabStop = false;
-            this.grpStatus.Text = "状态检测";
-            // 
-            // btnModify
-            // 
-            this.btnModify.Location = new System.Drawing.Point(370, 202);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(100, 35);
-            this.btnModify.TabIndex = 12;
-            this.btnModify.Text = "修改";
-            this.btnModify.UseVisualStyleBackColor = true;
-            // 
-            // txtTemperature
-            // 
-            this.txtTemperature.Location = new System.Drawing.Point(149, 203);
-            this.txtTemperature.Name = "txtTemperature";
-            this.txtTemperature.ReadOnly = true;
-            this.txtTemperature.Size = new System.Drawing.Size(200, 29);
-            this.txtTemperature.TabIndex = 11;
-            this.txtTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtVoltage
-            // 
-            this.txtVoltage.Location = new System.Drawing.Point(149, 168);
-            this.txtVoltage.Name = "txtVoltage";
-            this.txtVoltage.ReadOnly = true;
-            this.txtVoltage.Size = new System.Drawing.Size(200, 29);
-            this.txtVoltage.TabIndex = 10;
-            this.txtVoltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCurrentForce
-            // 
-            this.txtCurrentForce.Location = new System.Drawing.Point(149, 133);
-            this.txtCurrentForce.Name = "txtCurrentForce";
-            this.txtCurrentForce.ReadOnly = true;
-            this.txtCurrentForce.Size = new System.Drawing.Size(200, 29);
-            this.txtCurrentForce.TabIndex = 9;
-            this.txtCurrentForce.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCurrentSpeed
-            // 
-            this.txtCurrentSpeed.Location = new System.Drawing.Point(149, 98);
-            this.txtCurrentSpeed.Name = "txtCurrentSpeed";
-            this.txtCurrentSpeed.ReadOnly = true;
-            this.txtCurrentSpeed.Size = new System.Drawing.Size(200, 29);
-            this.txtCurrentSpeed.TabIndex = 8;
-            this.txtCurrentSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCurrentPosition
-            // 
-            this.txtCurrentPosition.Location = new System.Drawing.Point(149, 63);
-            this.txtCurrentPosition.Name = "txtCurrentPosition";
-            this.txtCurrentPosition.ReadOnly = true;
-            this.txtCurrentPosition.Size = new System.Drawing.Size(200, 29);
-            this.txtCurrentPosition.TabIndex = 7;
-            this.txtCurrentPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTargetDetection
-            // 
-            this.txtTargetDetection.Location = new System.Drawing.Point(149, 28);
-            this.txtTargetDetection.Name = "txtTargetDetection";
-            this.txtTargetDetection.ReadOnly = true;
-            this.txtTargetDetection.Size = new System.Drawing.Size(200, 29);
-            this.txtTargetDetection.TabIndex = 6;
-            this.txtTargetDetection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblTemperature
-            // 
-            this.lblTemperature.AutoSize = true;
-            this.lblTemperature.Location = new System.Drawing.Point(20, 208);
-            this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(48, 24);
-            this.lblTemperature.TabIndex = 5;
-            this.lblTemperature.Text = "温度";
-            // 
-            // lblVoltage
-            // 
-            this.lblVoltage.AutoSize = true;
-            this.lblVoltage.Location = new System.Drawing.Point(20, 173);
-            this.lblVoltage.Name = "lblVoltage";
-            this.lblVoltage.Size = new System.Drawing.Size(48, 24);
-            this.lblVoltage.TabIndex = 4;
-            this.lblVoltage.Text = "电压";
-            // 
-            // lblCurrentForce
-            // 
-            this.lblCurrentForce.AutoSize = true;
-            this.lblCurrentForce.Location = new System.Drawing.Point(20, 138);
-            this.lblCurrentForce.Name = "lblCurrentForce";
-            this.lblCurrentForce.Size = new System.Drawing.Size(86, 24);
-            this.lblCurrentForce.TabIndex = 3;
-            this.lblCurrentForce.Text = "当前力矩";
-            // 
-            // lblCurrentSpeed
-            // 
-            this.lblCurrentSpeed.AutoSize = true;
-            this.lblCurrentSpeed.Location = new System.Drawing.Point(20, 103);
-            this.lblCurrentSpeed.Name = "lblCurrentSpeed";
-            this.lblCurrentSpeed.Size = new System.Drawing.Size(86, 24);
-            this.lblCurrentSpeed.TabIndex = 2;
-            this.lblCurrentSpeed.Text = "当前速度";
-            // 
-            // lblCurrentPosition
-            // 
-            this.lblCurrentPosition.AutoSize = true;
-            this.lblCurrentPosition.Location = new System.Drawing.Point(20, 68);
-            this.lblCurrentPosition.Name = "lblCurrentPosition";
-            this.lblCurrentPosition.Size = new System.Drawing.Size(86, 24);
-            this.lblCurrentPosition.TabIndex = 1;
-            this.lblCurrentPosition.Text = "当前位置";
-            // 
-            // lblTargetDetection
-            // 
-            this.lblTargetDetection.AutoSize = true;
-            this.lblTargetDetection.Location = new System.Drawing.Point(20, 33);
-            this.lblTargetDetection.Name = "lblTargetDetection";
-            this.lblTargetDetection.Size = new System.Drawing.Size(86, 24);
-            this.lblTargetDetection.TabIndex = 0;
-            this.lblTargetDetection.Text = "目标检测";
             // 
             // grpControl
             // 
@@ -1165,15 +1027,55 @@
             this.panel13.Size = new System.Drawing.Size(1329, 609);
             this.panel13.TabIndex = 239;
             // 
-            // btnbanlibansu
+            // groupBox1
             // 
-            this.btnbanlibansu.Location = new System.Drawing.Point(6, 304);
-            this.btnbanlibansu.Name = "btnbanlibansu";
-            this.btnbanlibansu.Size = new System.Drawing.Size(169, 35);
-            this.btnbanlibansu.TabIndex = 9;
-            this.btnbanlibansu.Text = "半力半速";
-            this.btnbanlibansu.UseVisualStyleBackColor = true;
-            this.btnbanlibansu.Click += new System.EventHandler(this.btnbanlibansu_Click);
+            this.groupBox1.Controls.Add(this.button14);
+            this.groupBox1.Controls.Add(this.button13);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnUpCamStatic);
+            this.groupBox1.Location = new System.Drawing.Point(491, 246);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(369, 120);
+            this.groupBox1.TabIndex = 339;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "动静态";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 69);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(156, 40);
+            this.button6.TabIndex = 482;
+            this.button6.Text = "下相机静态拍照";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnUpCamStatic
+            // 
+            this.btnUpCamStatic.Location = new System.Drawing.Point(6, 31);
+            this.btnUpCamStatic.Name = "btnUpCamStatic";
+            this.btnUpCamStatic.Size = new System.Drawing.Size(156, 32);
+            this.btnUpCamStatic.TabIndex = 481;
+            this.btnUpCamStatic.Text = "上相机静态拍照";
+            this.btnUpCamStatic.UseVisualStyleBackColor = true;
+            this.btnUpCamStatic.Click += new System.EventHandler(this.btnUpCamStatic_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(179, 31);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(156, 32);
+            this.button13.TabIndex = 483;
+            this.button13.Text = "上相机动态拍照";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(179, 73);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(156, 36);
+            this.button14.TabIndex = 484;
+            this.button14.Text = "下相机动态拍照";
+            this.button14.UseVisualStyleBackColor = true;
             // 
             // frm_Recipe
             // 
@@ -1194,8 +1096,6 @@
             this.tabPage0.ResumeLayout(false);
             this.grpQuickCommands.ResumeLayout(false);
             this.grpQuickCommands.PerformLayout();
-            this.grpStatus.ResumeLayout(false);
-            this.grpStatus.PerformLayout();
             this.grpControl.ResumeLayout(false);
             this.grpControl.PerformLayout();
             this.groupBox9.ResumeLayout(false);
@@ -1211,6 +1111,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1285,20 +1186,6 @@
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.Label lblStepInterval;
         private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.GroupBox grpStatus;
-        private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.TextBox txtTemperature;
-        private System.Windows.Forms.TextBox txtVoltage;
-        private System.Windows.Forms.TextBox txtCurrentForce;
-        private System.Windows.Forms.TextBox txtCurrentSpeed;
-        private System.Windows.Forms.TextBox txtCurrentPosition;
-        private System.Windows.Forms.TextBox txtTargetDetection;
-        private System.Windows.Forms.Label lblTemperature;
-        private System.Windows.Forms.Label lblVoltage;
-        private System.Windows.Forms.Label lblCurrentForce;
-        private System.Windows.Forms.Label lblCurrentSpeed;
-        private System.Windows.Forms.Label lblCurrentPosition;
-        private System.Windows.Forms.Label lblTargetDetection;
         private System.Windows.Forms.GroupBox grpQuickCommands;
         private System.Windows.Forms.Button btnLowClose;
         private System.Windows.Forms.Button btnFullClose;
@@ -1310,5 +1197,10 @@
         private System.Windows.Forms.Label lblResponseTime;
         private System.Windows.Forms.TextBox txtResponseTime;
         private System.Windows.Forms.Button btnbanlibansu;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnUpCamStatic;
     }
 }

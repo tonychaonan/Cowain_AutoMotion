@@ -161,6 +161,8 @@ namespace Cowain_Form.FormView
             int iSelect = comboBox_Mode.SelectedIndex;
             DrvValve.enActionMode enSelectMode = (DrvValve.enActionMode)(iSelect);
             pSelectValve.Open(enSelectMode);
+            HardWareControl.getInputIO(EnumParam_InputIO.吸真空静点).SetIO(true); HardWareControl.getInputIO(EnumParam_InputIO.吸真空动点).SetIO(true);
+
         }
 
         private void btn_Repeat_Click(object sender, EventArgs e)
@@ -175,6 +177,8 @@ namespace Cowain_Form.FormView
             int iSelect = comboBox_Mode.SelectedIndex;
             DrvValve.enActionMode enSelectMode = (DrvValve.enActionMode)(iSelect);
             pSelectValve.Close(enSelectMode);
+            HardWareControl.getInputIO(EnumParam_InputIO.吸真空动点).SetIO(true);
+            HardWareControl.getInputIO(EnumParam_InputIO.吸真空静点).SetIO(true);
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)
