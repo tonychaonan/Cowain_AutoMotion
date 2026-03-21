@@ -1,4 +1,5 @@
-﻿using Cowain_AutoMotion.Flow;
+﻿using Cowain;
+using Cowain_AutoMotion.Flow;
 using Cowain_AutoMotion.Flow._3MESAndPDCA;
 using Cowain_AutoMotion.Flow.Common;
 using Cowain_AutoMotion.Flow.Hive;
@@ -31,7 +32,6 @@ namespace Cowain_AutoMotion.Flow._2Work
         private System.Diagnostics.Stopwatch gripTimeStopwatch = new System.Diagnostics.Stopwatch();
         public static double speed = 80;
         public AxisCalibration axisCalibration;
-        private System.Diagnostics.Stopwatch gripTimeStopwatch = new System.Diagnostics.Stopwatch();
         /// <summary>
         /// 前龙门可放料
         /// </summary>
@@ -134,7 +134,7 @@ namespace Cowain_AutoMotion.Flow._2Work
             解析数据2,
             触发相机计算,
             接收相机反馈结果,
-            移动到组装位,
+            移动到组装XY位,
             移动到组装Z位,
             移动到组装Z位到位,
             等待引导点位运动完成,
@@ -224,6 +224,8 @@ namespace Cowain_AutoMotion.Flow._2Work
                     {
                         LogAuto.Notify("XY轴回原点开始复位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.movePoint(EnumParam_Point.待命位);
+                        MachineDataDefine.miSuMiControl.OpenToZero();
+                        HardWareControl.getInputIO(EnumParam_InputIO.吸真空静点).SetIO(true);// 气缸后退
                         m_nHomeStep = (int)Mainflow_HomeStep.Completed;
                     }
                     break;
@@ -288,7 +290,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                         //{
                             gripTimeStopwatch.Restart();
 
-                            if (MachineDataDefine.miSuMiControl.LowClose())
+                            if (MachineDataDefine.miSuMiControl.MoveWithParams(1650, 3, 8)) // 1650对应短柄耳机
                             {
                                 m_nStep = (int)Mainflow_WorkStep.判断电夹爪夹取状态;
                                 LogAuto.Notify("电夹爪开始夹取！", (int)MachineStation.主监控, MotionLogLevel.Info);
@@ -327,6 +329,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                                 gripTimeStopwatch.Stop();
                                 long gripTimeMs = gripTimeStopwatch.ElapsedMilliseconds;
                                 LogAuto.Notify($"电夹爪夹取成功！夹取耗时：{gripTimeMs} ms", (int)MachineStation.主监控, MotionLogLevel.Info);
+                                HardWareControl.getOutputIO(EnumParam_OutputIO.载具打开气缸).SetIO(false);// 气缸后退
                                 gripRetryCount = 0;  // 重置重试计数
                                 m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
                             }
@@ -375,8 +378,14 @@ namespace Cowain_AutoMotion.Flow._2Work
                     }
                     break;
                 case Mainflow_WorkStep.取料完成Z轴向上:
-                    HardWareControl.movePoint(EnumParam_Point.Z轴安全位);
-                    m_nStep = (int)Mainflow_WorkStep.Y轴移动到下相机;
+                    
+                    bool bisOpen  = HardWareControl.getInputIO(EnumParam_InputIO.载具打开气缸原点).GetValue();// 
+                   
+                    if (bisOpen)
+                    {
+                        HardWareControl.movePoint(EnumParam_Point.Z轴安全位);
+                        m_nStep = (int)Mainflow_WorkStep.Y轴移动到下相机;
+                    }                 
                    
                     break;
                 case Mainflow_WorkStep.Y轴移动到下相机:
@@ -400,7 +409,8 @@ namespace Cowain_AutoMotion.Flow._2Work
                             double axisX = HardWareControl.getMotor(EnumParam_Axis.X).GetPosition();
                             double axisY = HardWareControl.getMotor(EnumParam_Axis.Y).GetPosition();
                             double axisR = HardWareControl.getMotor(EnumParam_Axis.R1).GetPosition();
-                            string str = "T1,1,"+axisX + "," + axisY + ","+ axisR;
+                            string SN = "1";
+                            string str = "T1,"+SN+","+axisX + "," + axisY + ","+ axisR;
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(str);
                             ShowLogEvent("发送拍照指令：" + str);
@@ -471,7 +481,9 @@ namespace Cowain_AutoMotion.Flow._2Work
                             double axisX = HardWareControl.getMotor(EnumParam_Axis.X).GetPosition();
                             double axisY = HardWareControl.getMotor(EnumParam_Axis.Y).GetPosition();
                             double axisR = HardWareControl.getMotor(EnumParam_Axis.R1).GetPosition();
-                            string str = "T2,1," + axisX + "," + axisY + "," + axisR;
+
+                            string SN = "1";
+                            string str = "T2,"+SN + "," + axisX + "," + axisY + "," + axisR+",1";
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(str);
                             m_nStep = (int)Mainflow_WorkStep.等待相机返回数据2;
@@ -479,7 +491,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                         else
                         {
                             LogAuto.Notify("未启用相机！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                            m_nStep = (int)Mainflow_WorkStep.移动到组装位;
+                            m_nStep = (int)Mainflow_WorkStep.移动到组装XY位;
                         }
                     }
                     break;
@@ -589,7 +601,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                             datas.Add("OutX", ccd[2]);
                             datas.Add("OutY", ccd[3]);
                             datas.Add("OutR", ccd[4]);
-                            m_nStep = (int)Mainflow_WorkStep.移动到组装位;
+                            m_nStep = (int)Mainflow_WorkStep.移动到组装XY位;
 
                         }
                            else
@@ -614,24 +626,24 @@ namespace Cowain_AutoMotion.Flow._2Work
                         m_nStep = (int)Mainflow_WorkStep.移动到待命位;
                     }
                     break;
-                case Mainflow_WorkStep.移动到组装位:
+                case Mainflow_WorkStep.移动到组装XY位:
                     if (!MachineDataDefine.machineState.b_UseCCD)
                     {
                         LogAuto.Notify("空跑模式下直接走固定位置！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                        HardWareControl.movePoint(EnumParam_Point.组装位);
+                        HardWareControl.movePoint(EnumParam_Point.组装XY位);
                     }
                     else
                     {
-                        LogAuto.Notify("移动组装位XYR绝对坐标！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                        double OutX = Convert.ToDouble(datas["OutX"]);
-                        double OutY = Convert.ToDouble(datas["OutY"]);
-                        double OutR = Convert.ToDouble(datas["OutR"]);
-                        HardWareControl.getMotor(EnumParam_Axis.X).AbsMove(OutX, MachineDataDefine.machineState.machineSpeed);
-            
-
-
+                        LogAuto.Notify("移动XY组装XY位XYR绝对坐标！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        //double OutX = Convert.ToDouble(datas["OutX"]);
+                        //double OutY = Convert.ToDouble(datas["OutY"]);
+                        //double OutR = Convert.ToDouble(datas["OutR"]);
+                        double OutX = HardWareControl.getPoint(EnumParam_Point.组装XY位).Data1;
+                        double OutY = HardWareControl.getPoint(EnumParam_Point.组装XY位).Data2;
+                        double OutR1 = HardWareControl.getPoint(EnumParam_Point.组装XY位).Data4;
+                        HardWareControl.getMotor(EnumParam_Axis.X).AbsMove(OutX, MachineDataDefine.machineState.machineSpeed);          
                         HardWareControl.getMotor(EnumParam_Axis.Y).AbsMove(OutY, MachineDataDefine.machineState.machineSpeed);
-                        HardWareControl.getMotor(EnumParam_Axis.R1).AbsMove(OutY, MachineDataDefine.machineState.machineSpeed);
+                        HardWareControl.getMotor(EnumParam_Axis.R1).AbsMove(OutR1, MachineDataDefine.machineState.machineSpeed);
                     }
        
                     m_nStep = (int)Mainflow_WorkStep.移动到组装Z位; 
@@ -653,7 +665,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                     }
                     else
                     {
-                        if (HardWareControl.getPointIdel(EnumParam_Point.组装位))
+                        if (HardWareControl.getPointIdel(EnumParam_Point.组装XY位))
                         {
                             LogAuto.Notify("未启用相机移动到组装Z位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                             HardWareControl.movePoint(EnumParam_Point.组装Z位);
@@ -665,6 +677,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.移动到组装Z位到位:
                     if (HardWareControl.getPointIdel(EnumParam_Point.组装Z位))
                     {
+                        HardWareControl.getOutputIO(EnumParam_OutputIO.吸真空).SetIO(true);
                         LogAuto.Notify("移动到组装Z位到位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                        
                         m_nStep = (int)Mainflow_WorkStep.等待引导点位运动完成;
@@ -678,7 +691,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                             LogAuto.Notify("电夹爪开始打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
                            
                                 // 全速全力打开到 0mm 位置
-                           if (MachineDataDefine.miSuMiControl.OpenToZero())
+                           if (MachineDataDefine.miSuMiControl.MoveWithParams(1000, 1, 1))
                             {
                                 m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
                             }
@@ -742,7 +755,9 @@ namespace Cowain_AutoMotion.Flow._2Work
                             double axisX = HardWareControl.getMotor(EnumParam_Axis.X).GetPosition();
                             double axisY = HardWareControl.getMotor(EnumParam_Axis.Y).GetPosition();
                             double axisR = HardWareControl.getMotor(EnumParam_Axis.R1).GetPosition();
-                            string str = "T4,1," + axisX + "," + axisY + "," + axisR;
+
+                            string SN = "1";
+                            string str = "T4," + SN + ","+ axisX + "," + axisY + "," + axisR;
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(str);
                             m_nStep = (int)Mainflow_WorkStep.等待复检相机返回数据;
@@ -786,6 +801,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                                 showHinttEvent("上相机拍照结果999！请重新拍照");
                                 
                             }
+                            HardWareControl.movePoint(EnumParam_Point.后相机拍照位);
                             m_nStep = (int)Mainflow_WorkStep.触发后相机拍照;
                         }
                         else
@@ -816,10 +832,12 @@ namespace Cowain_AutoMotion.Flow._2Work
                             double axisX = HardWareControl.getMotor(EnumParam_Axis.X).GetPosition();
                             double axisY = HardWareControl.getMotor(EnumParam_Axis.Y).GetPosition();
                             double axisR = HardWareControl.getMotor(EnumParam_Axis.R1).GetPosition();
-                            string str = "T5,1," + axisX + "," + axisY + "," + axisR;
+
+                            string SN = "1";
+                            string str = "T5," +SN+","+ axisX + "," + axisY + "," + axisR;
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
                             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(str);
-                            m_nStep = (int)Mainflow_WorkStep.等待复检相机返回数据;
+                            m_nStep = (int)Mainflow_WorkStep.等待复检后相机返回数据;
                         }
                         else
                         {
@@ -885,6 +903,10 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.移动到待命位:
                     LogAuto.Notify("XY移动到夹取位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                     HardWareControl.movePoint(EnumParam_Point.待命位);
+                    MachineDataDefine.miSuMiControl.HalfForceFullSpeedOpen();
+                    HardWareControl.getOutputIO(EnumParam_OutputIO.载具打开气缸).SetIO(true);
+                    HardWareControl.getOutputIO(EnumParam_OutputIO.吸真空).SetIO(false);
+
                     m_nStep = (int)Mainflow_WorkStep.Completed;
                     break;
                 case Mainflow_WorkStep.Completed:

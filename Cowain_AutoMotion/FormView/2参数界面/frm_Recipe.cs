@@ -8,6 +8,7 @@ using Cowain_AutoMotion.Simulat.view;
 using Cowain_Machine;
 using Cowain_Machine.Flow;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraPrinting;
 using LightUI;
 using MotionBase;
 using NetronLight;
@@ -531,8 +532,9 @@ namespace Cowain_Form.FormView
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
-            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T1,0,0,0");
+            HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(true);
+            Thread.Sleep(500);
+            HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(false);
         }
 
         //private MiSuMiControl gripperControl;
@@ -552,7 +554,7 @@ namespace Cowain_Form.FormView
 
                 if (MachineDataDefine.miSuMiControl.MoveWithParams(pos, spd, frc))
                 {
-                    txtTargetDetection.Text = "执行中...";
+                   
                 }
             }
             else
@@ -733,5 +735,30 @@ namespace Cowain_Form.FormView
                 LogAuto.Notify($"电夹爪响应时间测试异常：{ex.Message}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
             }
         }
+        int command = 0;
+        private void btnUpCamStatic_Click(object sender, EventArgs e)
+        {
+            command = 1;
+        }
+
+        public void Run()
+        {
+            switch (command)
+                {
+                case 1:
+                    HardWareControl.movePoint(EnumParam_Point.上相机拍照位);
+                    if(HardWareControl.getPointIdel(EnumParam_Point.上相机拍照位))
+                    {
+                        HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("T6,1");
+                    }
+                    break;
+                }
+        }
+
+        public void staticRun()
+        {
+            
+        }
+
     }
 }

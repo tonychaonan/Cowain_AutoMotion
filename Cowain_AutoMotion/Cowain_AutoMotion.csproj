@@ -176,6 +176,7 @@
     <Compile Include="Flow\2Work\ProductPoint.cs" />
     <Compile Include="Flow\2Work\TestProcess.cs" />
     <Compile Include="Flow\2Work\TimeManage.cs" />
+    <Compile Include="Flow\2Work\动静态.cs" />
     <Compile Include="Flow\3MESAndPDCA\clsPDCAPushClass.cs" />
     <Compile Include="Flow\3MESAndPDCA\MESDataDefine.cs" />
     <Compile Include="Flow\3MESAndPDCA\MesMachineState.cs" />
