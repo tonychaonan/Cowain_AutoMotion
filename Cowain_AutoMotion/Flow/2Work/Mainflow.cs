@@ -96,7 +96,6 @@ namespace Cowain_AutoMotion.Flow._2Work
         {
             axisCalibration =  new Cowain_AutoMotion.AxisCalibration(typeof(Base.HomeStep_Base), typeof(AxisCalibration.AxisCalibration_WorkStep), "标定流程", this);
             AddBase(ref axisCalibration.m_NowAddress);
-          
         }
         public enum Mainflow_HomeStep
         {
