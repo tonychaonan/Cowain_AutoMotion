@@ -578,16 +578,16 @@ namespace Cowain_AutoMotion.Flow.Common
             try
             {
                 // 读取0x1194-0x1199共6个寄存器
-                ushort[] data = _modbusMaster.ReadInputRegisters(SlaveAddress, STATUS_REG, 6);
+                ushort[] data = _modbusMaster.ReadInputRegisters(SlaveAddress, STATUS_REG, 3);
                 
                 return new GripperStatus
                 {
                     InitStatus = data[0],      // 0x1194: 初始化状态
                     FaultCode = data[1],       // 0x1195: 故障码
                     GripState = data[2],       // 0x1196: 夹持状态
-                    CurrentPosition = data[3], // 0x1197: 当前位置
-                    CurrentSpeed = data[4],    // 0x1198: 当前速度
-                    CurrentForce = data[5]     // 0x1199: 当前力矩
+                    //CurrentPosition = data[3], // 0x1197: 当前位置
+                    //CurrentSpeed = data[4],    // 0x1198: 当前速度
+                    //CurrentForce = data[5]     // 0x1199: 当前力矩
                 };
             }
             catch
@@ -669,8 +669,6 @@ namespace Cowain_AutoMotion.Flow.Common
                             return true;
                         }
                     }
-
-                    System.Threading.Thread.Sleep(1);
                 }
                 catch
                 {

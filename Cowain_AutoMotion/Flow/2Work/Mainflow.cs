@@ -1,4 +1,5 @@
-﻿using Cowain;
+﻿using Chart;
+using Cowain;
 using Cowain_AutoMotion.Flow;
 using Cowain_AutoMotion.Flow._3MESAndPDCA;
 using Cowain_AutoMotion.Flow.Common;
@@ -40,7 +41,10 @@ namespace Cowain_AutoMotion.Flow._2Work
         ProductPoint product = new ProductPoint();
         int tiaozhengjuli = 0;
 
-        DateTime startTime = DateTime.Now;
+        DateTime 准备放料startTime = DateTime.Now;
+        DateTime 向下取料startTime = DateTime.Now;
+        DateTime 准备夹取startTime = DateTime.Now;
+        DateTime 取料准备向上startTime = DateTime.Now;
 
         /// <summary>
         /// 当前循环次数
@@ -342,6 +346,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.夹取向下夹取:
                     if (HardWareControl.getPointIdel(EnumParam_Point.物料夹取XY位))
                     {
+                        向下取料startTime = DateTime.Now;
                         LogAuto.Notify("Z移动到夹取位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.movePoint(EnumParam_Point.物料夹取Z位);
                         m_nStep = (int)Mainflow_WorkStep.电夹爪夹;
@@ -351,24 +356,26 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.电夹爪夹:
                     if (HardWareControl.getPointIdel(EnumParam_Point.物料夹取Z位))
                     {
-                        //if (MachineDataDefine.machineState.b_UseTestRun)
-                        //{
 
-                            product.startTime = DateTime.Now;
-                            if (MachineDataDefine.miSuMiControl.MoveWithParams(1650, 100, 5)) // 1650对应短柄耳机
-                            {
-                                m_nStep = (int)Mainflow_WorkStep.判断电夹爪夹取状态;
-                                LogAuto.Notify("电夹爪开始夹取！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        //product.startTime = DateTime.Now;
+                        DateTime endTime = DateTime.Now;
+                        double OpenTime = double.Parse((endTime - 向下取料startTime).TotalSeconds.ToString("0.00"));
+                        LogAuto.Notify($"向下取料！耗时：{OpenTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        准备夹取startTime = DateTime.Now; 
+                        if (MachineDataDefine.miSuMiControl.MoveWithParams(1650, 100, 5)) // 1650对应短柄耳机
+                        {
+                            m_nStep = (int)Mainflow_WorkStep.判断电夹爪夹取状态;
+                            LogAuto.Notify("电夹爪开始夹取！", (int)MachineStation.主监控, MotionLogLevel.Info);
 
-                            }
-                            else
-                            {
-                                LogAuto.Notify("电夹爪关闭指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
-                                m_nStep = (int)Mainflow_WorkStep.移动到待命位;
-                            }
+                        }
+                        else
+                        {
+                            LogAuto.Notify("电夹爪关闭指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                            m_nStep = (int)Mainflow_WorkStep.移动到待命位;
+                        }
                           
-                            break;
-                        //}
+                        break;
+                    //}
                     
                         // 低力低速关闭，自适应夹取：一直夹直到接触产品（GRIP_HOLDING），无需预设产品尺寸
                         // 开始计时：记录从发送夹取命令到夹取完成的时间
@@ -382,16 +389,19 @@ namespace Cowain_AutoMotion.Flow._2Work
                     // 等待电爪动作完成（最多10秒）
                     if (MachineDataDefine.miSuMiControl.WaitMovementComplete(10000))
                     {
+                        DateTime 动作完成endTime = DateTime.Now;
+                        double Time = double.Parse((动作完成endTime - 准备夹取startTime).TotalSeconds.ToString("0.00"));
+                        LogAuto.Notify($"夹取动作完成！耗时：{Time} s", (int)MachineStation.主监控, MotionLogLevel.Info);
                         // 读取详细状态
                         var status = MachineDataDefine.miSuMiControl.ReadDetailedStatus();
                         if (status != null)
-                        {
-                            LogAuto.Notify($"电夹爪状态：{status.ToString()}", (int)MachineStation.主监控, MotionLogLevel.Info);
-                            
+                        {                            
                             // 只有 GRIP_HOLDING (0x03) 才表示真正夹到工件
                             if (status.GripState == MiSuMiControl.GRIP_HOLDING)
-                            {                             
-                                HardWareControl.getOutputIO(EnumParam_OutputIO.载具打开气缸).SetIO(false);// 气缸后退
+                            {
+                                DateTime endTime = DateTime.Now;
+                                double OpenTime = double.Parse((endTime - 准备夹取startTime).TotalSeconds.ToString("0.00"));
+                                LogAuto.Notify($"判断真正夹到工件！耗时：{OpenTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
                                 HardWareControl.getOutputIO(EnumParam_OutputIO.载具打开气缸).SetIO(false);// 气缸后退
                                 gripRetryCount = 0;  // 重置重试计数
                                 m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
@@ -446,10 +456,8 @@ namespace Cowain_AutoMotion.Flow._2Work
                    
                     if (bisOpen)
                     {
-                        HardWareControl.movePoint(EnumParam_Point.Z轴安全位);
-                        product.endTime = DateTime.Now;
-                        double closeTime = double.Parse((product.endTime - product.startTime).TotalSeconds.ToString("0.00"));
-                        LogAuto.Notify($"取料完成向上！耗时：{closeTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        取料准备向上startTime = DateTime.Now;
+                        HardWareControl.movePoint(EnumParam_Point.Z轴安全位);                
                         m_nStep = (int)Mainflow_WorkStep.Y轴移动到下相机;
                     }                 
                    
@@ -457,6 +465,9 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.Y轴移动到下相机:
                     if (HardWareControl.getPointIdel(EnumParam_Point.Z轴安全位))
                     {
+                        DateTime endTime = DateTime.Now;
+                        double closeTime = double.Parse((endTime - 取料准备向上startTime).TotalSeconds.ToString("0.00"));
+                        LogAuto.Notify($"取料完成向上！耗时：{closeTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
                         LogAuto.Notify("Y轴移动到下相机位！", (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.movePoint(EnumParam_Point.下相机拍照位);
                         m_nStep = (int)Mainflow_WorkStep.触发下相机拍照;
@@ -743,47 +754,19 @@ namespace Cowain_AutoMotion.Flow._2Work
                     break;
 
                 case Mainflow_WorkStep.等待引导点位运动完成:
-                    //if (MachineDataDefine.machineState.b_UseCCD)
-                    //{
-
-                            LogAuto.Notify("电夹爪开始打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                            startTime = DateTime.Now;
-                            // 全速全力打开到 0mm 位置
-                            if (MachineDataDefine.miSuMiControl.MoveWithParams(300, 100, 5))
-                            {
-                                m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
-                            }
-                            else
-                            {
-                                LogAuto.Notify("电夹爪打开指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
-                                m_nStep = (int)Mainflow_WorkStep.移动到待命位;
-                            }
+                    LogAuto.Notify("电夹爪开始打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    准备放料startTime = DateTime.Now;
+                    // 全速全力打开到 0mm 位置
+                    if (MachineDataDefine.miSuMiControl.MoveWithParams(300, 100, 5))
+                    {
+                        m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
+                    }
+                    else
+                    {
+                        LogAuto.Notify("电夹爪打开指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                        m_nStep = (int)Mainflow_WorkStep.移动到待命位;
+                    }
                         
-                    //}
-                    //else
-                    //{
-
-                    //    if (HardWareControl.getPointIdel(EnumParam_Point.组装位))
-                    ////    {
-                    //        LogAuto.Notify("电夹爪开始打开！", (int)MachineStation.主监控, MotionLogLevel.Info);
-                    //        HardWareControl.movePoint(EnumParam_Point.上相机拍照位);
-
-                    //        m_nStep = (int)Mainflow_WorkStep.触发侧复检相机拍照;
-                    //        break;
-
-                            //// 全速全力打开到 0mm 位置
-                            //if (miSuMiControl.OpenToZero())
-                            //{
-                            //    m_nStep = (int)Mainflow_WorkStep.电夹爪打开状态结束;
-                            //}
-                            //else
-                            //{
-                            //    LogAuto.Notify("电夹爪打开指令发送失败！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
-                            //    m_nStep = (int)Mainflow_WorkStep.Completed;
-                            //}
-                          
-                      //  }
-                    //}
                     break;
 
                 case Mainflow_WorkStep.电夹爪打开状态结束:
@@ -793,8 +776,8 @@ namespace Cowain_AutoMotion.Flow._2Work
                     if (MachineDataDefine.miSuMiControl.WaitMovementComplete(10000))
                     {
                         DateTime endTime = DateTime.Now;
-                        double OpenTime = double.Parse((endTime - startTime).TotalSeconds.ToString("0.00"));
-                        LogAuto.Notify($"电夹爪打开！耗时：{OpenTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
+                        double OpenTime = double.Parse((endTime - 准备放料startTime).TotalSeconds.ToString("0.00"));
+                        LogAuto.Notify($"放料松开夹爪！耗时：{OpenTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
                         LogAuto.Notify("电夹爪打开成功，移动到复检位！", (int)MachineStation.主监控, MotionLogLevel.Info);                    
                         m_nStep = (int)Mainflow_WorkStep.抬Z轴去安全位;
                     }
@@ -814,6 +797,9 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.等待Z轴到位:
                     if (HardWareControl.getPointIdel(EnumParam_Point.Z轴安全位))
                     {
+                        //DateTime endTime = DateTime.Now;
+                        //double OpenTime = double.Parse((endTime - startTime).TotalSeconds.ToString("0.00"));
+                        //LogAuto.Notify($"放料完抬到Z轴！耗时：{OpenTime} s", (int)MachineStation.主监控, MotionLogLevel.Info);
                         HardWareControl.movePoint(EnumParam_Point.Y轴往后);
                         m_nStep = (int)Mainflow_WorkStep.Y轴往前;
                     }
@@ -1023,7 +1009,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                 case Mainflow_WorkStep.夹取放料耳机:
                     if (HardWareControl.getPointIdel(EnumParam_Point.组装Z位))
                     {
-                        if (MachineDataDefine.miSuMiControl.MoveWithParams(1650, 100, 5)) // 1650对应短柄耳机
+                        if (MachineDataDefine.miSuMiControl.MoveWithParams(1700, 100, 8)) // 1650对应短柄耳机
                         {
                             m_nStep = (int)Mainflow_WorkStep.判断夹取放料状态;
                         }
