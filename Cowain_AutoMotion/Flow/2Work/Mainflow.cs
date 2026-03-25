@@ -392,6 +392,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                             if (status.GripState == MiSuMiControl.GRIP_HOLDING)
                             {                             
                                 HardWareControl.getOutputIO(EnumParam_OutputIO.载具打开气缸).SetIO(false);// 气缸后退
+                                HardWareControl.getOutputIO(EnumParam_OutputIO.载具打开气缸).SetIO(false);// 气缸后退
                                 gripRetryCount = 0;  // 重置重试计数
                                 m_nStep = (int)Mainflow_WorkStep.取料完成Z轴向上;
                             }

@@ -131,6 +131,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -1101,6 +1102,43 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 69);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(156, 40);
+            this.button6.TabIndex = 482;
+            this.button6.Text = "下相机静态拍照";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnUpCamStatic
+            // 
+            this.btnUpCamStatic.Location = new System.Drawing.Point(6, 31);
+            this.btnUpCamStatic.Name = "btnUpCamStatic";
+            this.btnUpCamStatic.Size = new System.Drawing.Size(156, 32);
+            this.btnUpCamStatic.TabIndex = 481;
+            this.btnUpCamStatic.Text = "上相机静态拍照";
+            this.btnUpCamStatic.UseVisualStyleBackColor = true;
+            this.btnUpCamStatic.Click += new System.EventHandler(this.btnUpCamStatic_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(179, 31);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(156, 32);
+            this.button13.TabIndex = 483;
+            this.button13.Text = "上相机动态拍照";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(179, 73);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(156, 36);
+            this.button14.TabIndex = 484;
+            this.button14.Text = "下相机动态拍照";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
             // frm_Recipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
@@ -1136,6 +1174,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
