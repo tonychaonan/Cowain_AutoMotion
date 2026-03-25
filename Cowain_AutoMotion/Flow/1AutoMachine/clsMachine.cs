@@ -582,7 +582,10 @@ namespace Cowain_Machine.Flow
                         //HardWareControl.getValve(EnumParam_Valve.出料位阻挡气缸).Open();
                         //HardWareControl.getValve(EnumParam_Valve.出料位顶升气缸).Close();
                         //HardWareControl.getValve(EnumParam_Valve.左侧Driver进料滑台气缸).Close();
-                        //HardWareControl.getValve(EnumParam_Valve.标定吸真空电磁阀ON).Close();
+                        //HardWareControl.getValve(EnumParam_Valve.标定吸真空
+                        //
+                        //
+                        //ON).Close();
                         //HardWareControl.getValve(EnumParam_Valve.取螺丝吸真空电磁阀ON).Close();
                         HardWareControl.movePoint(EnumParam_Point.待命位);
                         m_nStep = (int)enStep.AllStAuto;

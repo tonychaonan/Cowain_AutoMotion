@@ -22,7 +22,7 @@ namespace Cowain_AutoMotion.Flow.Common
             try
             {
                 // 连接电爪（需要根据实际串口号修改）
-               Connect("COM8"); // TODO: 从配置文件读取串口号
+                Connect("COM8"); // TODO: 从配置文件读取串口号
 
                 // 首次使用需要激活并搜索行程
                 if (!IsReady())
@@ -669,7 +669,8 @@ namespace Cowain_AutoMotion.Flow.Common
                             return true;
                         }
                     }
-                    System.Threading.Thread.Sleep(100);
+
+                    System.Threading.Thread.Sleep(1);
                 }
                 catch
                 {
