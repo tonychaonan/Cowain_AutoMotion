@@ -776,5 +776,24 @@ namespace Cowain_Form.FormView
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(str);
         }
+
+        private void btnOPT_Click(object sender, EventArgs e)
+        {
+            string SN = "1";
+            string str = "T1," + SN + "," + 1 + "," + 1 + "," + 1;
+            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
+            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("CCD4,hou,SN,1");
+
+            if (HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr != "")
+            {
+                string ccdResult2 = HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr;
+                string[] ccd = ccdResult2.Split(',');
+
+                if (ccd[1] == "OK")//结果ok
+                {
+
+                }
+            }
+        }
     }
 }
