@@ -35,6 +35,9 @@
             this.listView_Recipe = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
+            this.btnOPT = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
@@ -115,7 +118,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
-            this.button15 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage0.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -131,7 +134,6 @@
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -170,7 +172,7 @@
             this.btn_Save.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_Save.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
             this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Save.Location = new System.Drawing.Point(305, 399);
+            this.btn_Save.Location = new System.Drawing.Point(454, 372);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(92, 75);
             this.btn_Save.TabIndex = 236;
@@ -211,6 +213,8 @@
             // tabPage0
             // 
             this.tabPage0.AutoScroll = true;
+            this.tabPage0.Controls.Add(this.button17);
+            this.tabPage0.Controls.Add(this.btnOPT);
             this.tabPage0.Controls.Add(this.button15);
             this.tabPage0.Controls.Add(this.button11);
             this.tabPage0.Controls.Add(this.groupBox1);
@@ -226,6 +230,35 @@
             this.tabPage0.TabIndex = 4;
             this.tabPage0.Text = "基本参数";
             this.tabPage0.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(303, 490);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(95, 46);
+            this.button17.TabIndex = 343;
+            this.button17.Text = "拍照通迅";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // btnOPT
+            // 
+            this.btnOPT.Location = new System.Drawing.Point(303, 428);
+            this.btnOPT.Name = "btnOPT";
+            this.btnOPT.Size = new System.Drawing.Size(95, 46);
+            this.btnOPT.TabIndex = 342;
+            this.btnOPT.Text = "OPT拍照";
+            this.btnOPT.UseVisualStyleBackColor = true;
+            this.btnOPT.Click += new System.EventHandler(this.btnOPT_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(173, 480);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(95, 46);
+            this.button15.TabIndex = 341;
+            this.button15.Text = "拍照通迅";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button11
             // 
@@ -407,6 +440,7 @@
             // 
             // grpControl
             // 
+            this.grpControl.Controls.Add(this.label1);
             this.grpControl.Controls.Add(this.btnReset);
             this.grpControl.Controls.Add(this.btnStop);
             this.grpControl.Controls.Add(this.btnExecuteStep);
@@ -432,7 +466,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(124, 35);
             this.btnReset.TabIndex = 11;
-            this.btnReset.Text = "使能";
+            this.btnReset.Text = "设置参数";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -472,7 +506,7 @@
             this.txtForce.Name = "txtForce";
             this.txtForce.Size = new System.Drawing.Size(200, 29);
             this.txtForce.TabIndex = 7;
-            this.txtForce.Text = "1.0";
+            this.txtForce.Text = "1";
             this.txtForce.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSpeed
@@ -481,7 +515,7 @@
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(200, 29);
             this.txtSpeed.TabIndex = 6;
-            this.txtSpeed.Text = "0.0";
+            this.txtSpeed.Text = "100";
             this.txtSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtStepInterval
@@ -497,9 +531,9 @@
             // 
             this.txtPosition.Location = new System.Drawing.Point(137, 30);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(200, 29);
+            this.txtPosition.Size = new System.Drawing.Size(111, 29);
             this.txtPosition.TabIndex = 4;
-            this.txtPosition.Text = "0.00";
+            this.txtPosition.Text = "16";
             this.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblForce
@@ -1092,52 +1126,15 @@
             this.panel13.Size = new System.Drawing.Size(1329, 609);
             this.panel13.TabIndex = 239;
             // 
-            // button15
+            // label1
             // 
-            this.button15.Location = new System.Drawing.Point(173, 480);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(95, 46);
-            this.button15.TabIndex = 341;
-            this.button15.Text = "拍照通迅";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(6, 69);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(156, 40);
-            this.button6.TabIndex = 482;
-            this.button6.Text = "下相机静态拍照";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // btnUpCamStatic
-            // 
-            this.btnUpCamStatic.Location = new System.Drawing.Point(6, 31);
-            this.btnUpCamStatic.Name = "btnUpCamStatic";
-            this.btnUpCamStatic.Size = new System.Drawing.Size(156, 32);
-            this.btnUpCamStatic.TabIndex = 481;
-            this.btnUpCamStatic.Text = "上相机静态拍照";
-            this.btnUpCamStatic.UseVisualStyleBackColor = true;
-            this.btnUpCamStatic.Click += new System.EventHandler(this.btnUpCamStatic_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(179, 31);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(156, 32);
-            this.button13.TabIndex = 483;
-            this.button13.Text = "上相机动态拍照";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(179, 73);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(156, 36);
-            this.button14.TabIndex = 484;
-            this.button14.Text = "下相机动态拍照";
-            this.button14.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(254, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 24);
+            this.label1.TabIndex = 251;
+            this.label1.Text = "mm";
             // 
             // frm_Recipe
             // 
@@ -1174,7 +1171,6 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CMD)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1267,5 +1263,8 @@
         private System.Windows.Forms.Button btnUpCamStatic;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnOPT;
+        private System.Windows.Forms.Label label1;
     }
 }

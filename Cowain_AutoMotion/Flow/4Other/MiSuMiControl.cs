@@ -16,6 +16,27 @@ namespace Cowain_AutoMotion.Flow.Common
     {
         private SerialPort _serialPort;       // 串口（USB转485）
         private IModbusMaster _modbusMaster;  // Modbus主站
+        public ushort speed = 100;
+        public ushort Speed
+        {
+            get { return speed; }
+            set { speed = value; }
+        }
+        public ushort force = 1;
+        public ushort Force
+        {
+            get { return force; }
+            set { force = value; }
+        }
+        public ushort position = 1650;
+        public ushort Position
+        {
+            get { return position; }
+            set
+            {
+                position = value;
+            }
+        }
 
         public MiSuMiControl()
             {
@@ -647,6 +668,68 @@ namespace Cowain_AutoMotion.Flow.Common
         #endregion
 
         #region 等待动作完成
+
+        /// <summary>
+        /// 等待电夹爪进入夹持状态（GRIP_HOLDING）
+        /// </summary>
+        /// <param name="timeoutMs">超时时间（毫秒）</param>
+        /// <param name="pollIntervalMs">轮询间隔（毫秒）</param>
+        /// <returns>是否检测到夹持成功</returns>
+        public bool WaitGripHolding(int timeoutMs = 10000, int pollIntervalMs = 5)
+        {
+            var start = Environment.TickCount;
+            while (Environment.TickCount - start < timeoutMs)
+            {
+                try
+                {
+                    var status = ReadDetailedStatus();
+                    if (status != null && status.GripState == GRIP_HOLDING)
+                    {
+                        return true;
+                    }
+                }
+                catch
+                {
+                    System.Threading.Thread.Sleep(Math.Max(1, pollIntervalMs));
+                    continue;
+                }
+
+                System.Threading.Thread.Sleep(Math.Max(1, pollIntervalMs));
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// 等待电夹爪确认已释放
+        /// </summary>
+        /// <param name="timeoutMs">超时时间（毫秒）</param>
+        /// <param name="pollIntervalMs">轮询间隔（毫秒）</param>
+        /// <returns>是否检测到已释放</returns>
+        public bool WaitGripReleased(int timeoutMs = 10000, int pollIntervalMs = 5)
+        {
+            var start = Environment.TickCount;
+            while (Environment.TickCount - start < timeoutMs)
+            {
+                try
+                {
+                    var status = ReadDetailedStatus();
+                    if (status != null && status.GripState != GRIP_MOVING && status.GripState != GRIP_HOLDING)
+                    {
+                        return true;
+                    }
+                }
+                catch
+                {
+                    System.Threading.Thread.Sleep(Math.Max(1, pollIntervalMs));
+                    continue;
+                }
+
+                System.Threading.Thread.Sleep(Math.Max(1, pollIntervalMs));
+            }
+
+            return false;
+        }
 
         /// <summary>
         /// 等待移动完成（轮询夹持状态直到到位或超时）

@@ -590,10 +590,14 @@ namespace Cowain_Form.FormView
         {
             if (!CheckConnection()) return;
 
-            if (MachineDataDefine.miSuMiControl.EnableWithSearch())
+            if (double.TryParse(txtPosition.Text, out double position) &&
+               double.TryParse(txtSpeed.Text, out double speed) &&
+               double.TryParse(txtForce.Text, out double force))
             {
-                MessageBox.Show("正在重新搜索行程...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MachineDataDefine.miSuMiControl.WaitReady(10000);
+                MachineDataDefine.miSuMiControl.position = (ushort)(position * 100); // 将MM转换
+                MachineDataDefine.miSuMiControl.speed = (ushort)speed;
+                MachineDataDefine.miSuMiControl.force = (ushort)force; 
+
             }
         }
 
@@ -761,9 +765,9 @@ namespace Cowain_Form.FormView
                 for (int i = 0; i < 37; i++)
                 {
                     HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(true);
-                    Thread.Sleep(11);
+                    Thread.Sleep(1000);
                     HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(false);
-                    Thread.Sleep(19);
+                    Thread.Sleep(10);
                 }
             }));
            
@@ -775,6 +779,25 @@ namespace Cowain_Form.FormView
             string str = "T1," + SN + "," + 1 + "," + 1 + "," + 1;
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
             HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG(str);
+        }
+
+        private void btnOPT_Click(object sender, EventArgs e)
+        {
+            string SN = "1";
+            string str = "T1," + SN + "," + 1 + "," + 1 + "," + 1;
+            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr = "";
+            HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).SendMSG("CCD4,hou,SN,1");
+
+            if (HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr != "")
+            {
+                string ccdResult2 = HardWareControl.getSocketControl(EnumParam_ConnectionName.CCD).returnStr;
+                string[] ccd = ccdResult2.Split(',');
+
+                if (ccd[1] == "OK")//结果ok
+                {
+
+                }
+            }
         }
     }
 }
