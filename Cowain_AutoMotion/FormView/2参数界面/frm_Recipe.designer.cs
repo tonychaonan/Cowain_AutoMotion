@@ -35,6 +35,14 @@
             this.listView_Recipe = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbMotionMode = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btnMotion4 = new System.Windows.Forms.Button();
+            this.btnMotion2 = new System.Windows.Forms.Button();
+            this.btnMotion3 = new System.Windows.Forms.Button();
+            this.btnMotion1 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.btnOPT = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -56,6 +64,7 @@
             this.btnFullOpen = new System.Windows.Forms.Button();
             this.btnHalfOpen = new System.Windows.Forms.Button();
             this.grpControl = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnExecuteStep = new System.Windows.Forms.Button();
@@ -118,9 +127,10 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.timer_ScalesData = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage0.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpQuickCommands.SuspendLayout();
             this.grpControl.SuspendLayout();
@@ -172,7 +182,7 @@
             this.btn_Save.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_Save.Image = global::Cowain_AutoMotion.Properties.Resources.file_Save;
             this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Save.Location = new System.Drawing.Point(454, 372);
+            this.btn_Save.Location = new System.Drawing.Point(340, 359);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(92, 75);
             this.btn_Save.TabIndex = 236;
@@ -213,6 +223,7 @@
             // tabPage0
             // 
             this.tabPage0.AutoScroll = true;
+            this.tabPage0.Controls.Add(this.groupBox2);
             this.tabPage0.Controls.Add(this.button17);
             this.tabPage0.Controls.Add(this.btnOPT);
             this.tabPage0.Controls.Add(this.button15);
@@ -231,9 +242,105 @@
             this.tabPage0.Text = "基本参数";
             this.tabPage0.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cmbMotionMode);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.btnMotion4);
+            this.groupBox2.Controls.Add(this.btnMotion2);
+            this.groupBox2.Controls.Add(this.btnMotion3);
+            this.groupBox2.Controls.Add(this.btnMotion1);
+            this.groupBox2.Location = new System.Drawing.Point(454, 233);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(494, 177);
+            this.groupBox2.TabIndex = 344;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "动作拆解";
+            // 
+            // cmbMotionMode
+            // 
+            this.cmbMotionMode.FormattingEnabled = true;
+            this.cmbMotionMode.Items.AddRange(new object[] {
+            "从放料位一直取料",
+            "从放料位一直取放料",
+            "从放料位一直取放料+拍照复检"});
+            this.cmbMotionMode.Location = new System.Drawing.Point(6, 99);
+            this.cmbMotionMode.Name = "cmbMotionMode";
+            this.cmbMotionMode.Size = new System.Drawing.Size(93, 32);
+            this.cmbMotionMode.TabIndex = 487;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(6, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 20);
+            this.label5.TabIndex = 486;
+            this.label5.Text = "循环次数：";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDown1.Location = new System.Drawing.Point(10, 63);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(45, 30);
+            this.numericUpDown1.TabIndex = 485;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btnMotion4
+            // 
+            this.btnMotion4.Location = new System.Drawing.Point(321, 91);
+            this.btnMotion4.Name = "btnMotion4";
+            this.btnMotion4.Size = new System.Drawing.Size(142, 40);
+            this.btnMotion4.TabIndex = 484;
+            this.btnMotion4.Text = "动作四";
+            this.btnMotion4.UseVisualStyleBackColor = true;
+            this.btnMotion4.Click += new System.EventHandler(this.btnMotion4_Click);
+            // 
+            // btnMotion2
+            // 
+            this.btnMotion2.Location = new System.Drawing.Point(321, 28);
+            this.btnMotion2.Name = "btnMotion2";
+            this.btnMotion2.Size = new System.Drawing.Size(142, 43);
+            this.btnMotion2.TabIndex = 483;
+            this.btnMotion2.Text = "一直取放料";
+            this.btnMotion2.UseVisualStyleBackColor = true;
+            this.btnMotion2.Click += new System.EventHandler(this.btnMotion2_Click);
+            // 
+            // btnMotion3
+            // 
+            this.btnMotion3.Location = new System.Drawing.Point(121, 91);
+            this.btnMotion3.Name = "btnMotion3";
+            this.btnMotion3.Size = new System.Drawing.Size(181, 40);
+            this.btnMotion3.TabIndex = 482;
+            this.btnMotion3.Text = "完整流程+一致性";
+            this.btnMotion3.UseVisualStyleBackColor = true;
+            this.btnMotion3.Click += new System.EventHandler(this.btnMotion3_Click);
+            // 
+            // btnMotion1
+            // 
+            this.btnMotion1.Location = new System.Drawing.Point(121, 31);
+            this.btnMotion1.Name = "btnMotion1";
+            this.btnMotion1.Size = new System.Drawing.Size(181, 41);
+            this.btnMotion1.TabIndex = 481;
+            this.btnMotion1.Text = "一直取料";
+            this.btnMotion1.UseVisualStyleBackColor = true;
+            this.btnMotion1.Click += new System.EventHandler(this.btnMotion1_Click);
+            // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(303, 490);
+            this.button17.Location = new System.Drawing.Point(173, 491);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(95, 46);
             this.button17.TabIndex = 343;
@@ -242,7 +349,7 @@
             // 
             // btnOPT
             // 
-            this.btnOPT.Location = new System.Drawing.Point(303, 428);
+            this.btnOPT.Location = new System.Drawing.Point(292, 491);
             this.btnOPT.Name = "btnOPT";
             this.btnOPT.Size = new System.Drawing.Size(95, 46);
             this.btnOPT.TabIndex = 342;
@@ -252,9 +359,9 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(173, 480);
+            this.button15.Location = new System.Drawing.Point(28, 480);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(95, 46);
+            this.button15.Size = new System.Drawing.Size(127, 46);
             this.button15.TabIndex = 341;
             this.button15.Text = "拍照通迅";
             this.button15.UseVisualStyleBackColor = true;
@@ -264,9 +371,9 @@
             // 
             this.button11.Location = new System.Drawing.Point(173, 376);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(95, 46);
+            this.button11.Size = new System.Drawing.Size(104, 46);
             this.button11.TabIndex = 340;
-            this.button11.Text = "btnClose";
+            this.button11.Text = "吸真空";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -276,9 +383,9 @@
             this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.btnUpCamStatic);
-            this.groupBox1.Location = new System.Drawing.Point(491, 246);
+            this.groupBox1.Location = new System.Drawing.Point(938, 416);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 120);
+            this.groupBox1.Size = new System.Drawing.Size(369, 133);
             this.groupBox1.TabIndex = 339;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "动静态";
@@ -303,7 +410,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(6, 69);
+            this.button6.Location = new System.Drawing.Point(6, 73);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(156, 40);
             this.button6.TabIndex = 482;
@@ -314,7 +421,7 @@
             // 
             this.btnUpCamStatic.Location = new System.Drawing.Point(6, 31);
             this.btnUpCamStatic.Name = "btnUpCamStatic";
-            this.btnUpCamStatic.Size = new System.Drawing.Size(156, 32);
+            this.btnUpCamStatic.Size = new System.Drawing.Size(156, 36);
             this.btnUpCamStatic.TabIndex = 481;
             this.btnUpCamStatic.Text = "上相机静态拍照";
             this.btnUpCamStatic.UseVisualStyleBackColor = true;
@@ -334,16 +441,16 @@
             this.grpQuickCommands.Controls.Add(this.btnHalfOpen);
             this.grpQuickCommands.Location = new System.Drawing.Point(962, 27);
             this.grpQuickCommands.Name = "grpQuickCommands";
-            this.grpQuickCommands.Size = new System.Drawing.Size(351, 373);
+            this.grpQuickCommands.Size = new System.Drawing.Size(351, 320);
             this.grpQuickCommands.TabIndex = 338;
             this.grpQuickCommands.TabStop = false;
             this.grpQuickCommands.Text = "快捷命令";
             // 
             // btnbanlibansu
             // 
-            this.btnbanlibansu.Location = new System.Drawing.Point(6, 304);
+            this.btnbanlibansu.Location = new System.Drawing.Point(193, 249);
             this.btnbanlibansu.Name = "btnbanlibansu";
-            this.btnbanlibansu.Size = new System.Drawing.Size(169, 35);
+            this.btnbanlibansu.Size = new System.Drawing.Size(152, 35);
             this.btnbanlibansu.TabIndex = 9;
             this.btnbanlibansu.Text = "半力半速";
             this.btnbanlibansu.UseVisualStyleBackColor = true;
@@ -351,7 +458,7 @@
             // 
             // btnResponseTimeTest
             // 
-            this.btnResponseTimeTest.Location = new System.Drawing.Point(0, 206);
+            this.btnResponseTimeTest.Location = new System.Drawing.Point(6, 249);
             this.btnResponseTimeTest.Name = "btnResponseTimeTest";
             this.btnResponseTimeTest.Size = new System.Drawing.Size(169, 35);
             this.btnResponseTimeTest.TabIndex = 6;
@@ -362,7 +469,7 @@
             // lblResponseTime
             // 
             this.lblResponseTime.AutoSize = true;
-            this.lblResponseTime.Location = new System.Drawing.Point(54, 260);
+            this.lblResponseTime.Location = new System.Drawing.Point(40, 206);
             this.lblResponseTime.Name = "lblResponseTime";
             this.lblResponseTime.Size = new System.Drawing.Size(91, 24);
             this.lblResponseTime.TabIndex = 7;
@@ -370,7 +477,7 @@
             // 
             // txtResponseTime
             // 
-            this.txtResponseTime.Location = new System.Drawing.Point(175, 255);
+            this.txtResponseTime.Location = new System.Drawing.Point(175, 203);
             this.txtResponseTime.Name = "txtResponseTime";
             this.txtResponseTime.ReadOnly = true;
             this.txtResponseTime.Size = new System.Drawing.Size(152, 29);
@@ -460,6 +567,16 @@
             this.grpControl.TabStop = false;
             this.grpControl.Text = "控制";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(254, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 24);
+            this.label1.TabIndex = 251;
+            this.label1.Text = "mm";
+            // 
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(370, 150);
@@ -533,7 +650,7 @@
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(111, 29);
             this.txtPosition.TabIndex = 4;
-            this.txtPosition.Text = "16";
+            this.txtPosition.Text = "12";
             this.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblForce
@@ -576,7 +693,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(173, 428);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 46);
+            this.button3.Size = new System.Drawing.Size(104, 46);
             this.button3.TabIndex = 335;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -1126,16 +1243,6 @@
             this.panel13.Size = new System.Drawing.Size(1329, 609);
             this.panel13.TabIndex = 239;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(254, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 24);
-            this.label1.TabIndex = 251;
-            this.label1.Text = "mm";
-            // 
             // frm_Recipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
@@ -1153,6 +1260,9 @@
             this.VisibleChanged += new System.EventHandler(this.frm_Recipe_VisibleChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage0.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.grpQuickCommands.ResumeLayout(false);
             this.grpQuickCommands.PerformLayout();
@@ -1266,5 +1376,13 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button btnOPT;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button btnMotion4;
+        private System.Windows.Forms.Button btnMotion2;
+        private System.Windows.Forms.Button btnMotion3;
+        private System.Windows.Forms.Button btnMotion1;
+        private System.Windows.Forms.ComboBox cmbMotionMode;
     }
 }

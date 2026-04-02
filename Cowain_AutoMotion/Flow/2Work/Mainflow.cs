@@ -66,6 +66,21 @@ namespace Cowain_AutoMotion.Flow._2Work
         private bool isLoopEnabled = true;
 
         /// <summary>
+        /// 动作测试循环计数
+        /// </summary>
+        private int actionTestLoopCount = 0;
+
+        /// <summary>
+        /// 动作测试目标次数
+        /// </summary>
+        private int actionTestTargetCount = 0;
+
+        /// <summary>
+        /// 是否正在执行动作测试
+        /// </summary>
+        private bool isActionTesting = false;
+
+        /// <summary>
         /// UC
         /// </summary>
         public static string UC = "";
@@ -199,6 +214,7 @@ namespace Cowain_AutoMotion.Flow._2Work
             接收相机反馈结果,
             移动到组装XY位,
             移动到组装Z位,
+            预组装Z位,
             移动到组装Z位到位,
             等待引导点位运动完成,
             电夹爪打开,
@@ -602,12 +618,18 @@ namespace Cowain_AutoMotion.Flow._2Work
                     break;
                 case Mainflow_WorkStep.移动到组装XY位:
                     //if (!MachineDataDefine.machineState.b_UseCCD)
-                    //if(OutX!=0 && OutY!=0&& OutR1!=0)
+                    //if (OutX != 0 && OutY != 0 && OutR1 != 0)
                     //{
                     //    HardWareControl.getMotor(EnumParam_Axis.X).AbsMove(OutX, MachineDataDefine.machineState.machineSpeed);
                     //    HardWareControl.getMotor(EnumParam_Axis.Y).AbsMove(OutY, MachineDataDefine.machineState.machineSpeed);
-                    //    HardWareControl.getMotor(EnumParam_Axis.R1).AbsMove(OutR1, MachineDataDefine.machineState.machineSpeed);
-                        
+                    //    if (OutR1 < -6 || OutR1 > 6)
+                    //    {
+                    //        HardWareControl.getMotor(EnumParam_Axis.R1).AbsMove(-0.756, MachineDataDefine.machineState.machineSpeed);
+                    //    }
+                    //    else
+                    //    {
+                    //        HardWareControl.getMotor(EnumParam_Axis.R1).AbsMove(OutR1, MachineDataDefine.machineState.machineSpeed);
+                    //    }
                     //}
 
                     HardWareControl.movePoint(EnumParam_Point.放料组装XY位);
@@ -649,6 +671,14 @@ namespace Cowain_AutoMotion.Flow._2Work
                     }
 
                     break;
+                //case Mainflow_WorkStep.预组装Z位:
+                    
+                //    if (HardWareControl.getPointIdel(EnumParam_Point.预组装Z位))
+                //    {
+                //        HardWareControl.movePoint(EnumParam_Point.组装Z位);
+                //        m_nStep = (int)Mainflow_WorkStep.移动到组装Z位到位;
+                //    }
+                //    break;
                 case Mainflow_WorkStep.移动到组装Z位到位:
                     if (HardWareControl.getPointIdel(EnumParam_Point.组装Z位))
                     {
@@ -1174,7 +1204,7 @@ namespace Cowain_AutoMotion.Flow._2Work
                     gripTimeStopwatch.Stop();
                     long gripTimeMs = gripTimeStopwatch.ElapsedMilliseconds;
                     LogAuto.Notify($"取放料全流程！耗时：{gripTimeMs} ms", (int)MachineStation.主监控, MotionLogLevel.Info);
-                    m_nStep = (int)Mainflow_WorkStep.回到组装XY位;
+                    m_nStep = (int)Mainflow_WorkStep.Completed;
                     break;
                 case Mainflow_WorkStep.回到组装XY位:
                     // 移动到组装XY位
@@ -1310,6 +1340,154 @@ namespace Cowain_AutoMotion.Flow._2Work
             
             base.Stop();
         }
+
+        /// <summary>
+        /// 执行动作测试循环
+        /// </summary>
+        /// <param name="cycleCount">循环次数</param>
+        /// <param name="actionNumber">动作编号（1=动作一，2=动作二，3=动作三，4=动作四）</param>
+        public void ExecuteActionCycle(int cycleCount, int actionNumber = 1)
+        {
+            if (isActionTesting)
+            {
+                LogAuto.Notify("动作测试正在进行中，请等待完成！", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                return;
+            }
+
+            actionTestTargetCount = cycleCount;
+            actionTestLoopCount = 0;
+            isActionTesting = true;
+
+            LogAuto.Notify($"开始执行动作{actionNumber}测试，循环次数：{cycleCount}", (int)MachineStation.主监控, MotionLogLevel.Info);
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    // 启用测试模式，不需要按启动按钮
+                    Motion.isTestMode = true;
+                    
+                    // 创建Motion实例用于测试
+                    Motion testMotion = new Motion(typeof(Base.HomeStep_Base), typeof(Motion.Motion_WorkStep), "动作测试", this, 0);
+                    
+                    for (int i = 0; i < cycleCount; i++)
+                    {
+                        if (!isActionTesting)
+                        {
+                            LogAuto.Notify("动作测试已停止", (int)MachineStation.主监控, MotionLogLevel.Info);
+                            break;
+                        }
+
+                        actionTestLoopCount = i + 1;
+                        LogAuto.Notify($"========== 开始第 {actionTestLoopCount}/{actionTestTargetCount} 次循环（动作{actionNumber}）==========", (int)MachineStation.主监控, MotionLogLevel.Info);
+
+                        // 重置Motion到初始状态（Start步骤）
+                        testMotion.DoStep(0);
+                        Motion.isWorking = false;
+                        
+                        // 持续驱动状态机直到完成一个完整周期（从Start到Completed再回到Start）
+                        int maxSteps = 2000; // 防止无限循环
+                        int stepCount = 0;
+                        double dbTime = 0;
+                        bool cycleStarted = false; // 标记周期是否已开始
+                        
+                        while (stepCount < maxSteps && isActionTesting)
+                        {
+                            // 根据动作编号调用不同的方法
+                            switch (actionNumber)
+                            {
+                                case 1:
+                                    testMotion.StepCycle一直取料(ref dbTime);
+                                    break;
+                                case 2:
+                                    testMotion.StepCycle一直放料(ref dbTime);
+                                    break;
+                                case 3:
+                                    testMotion.StepCycle2(ref dbTime);// 
+                                    break;
+                                case 4:
+                                    testMotion.StepCycle3(ref dbTime);
+                                    break;
+                                default:
+                                    testMotion.StepCycle(ref dbTime);
+                                    break;
+                            }
+                            
+                            Thread.Sleep(50); // 50ms循环周期，模拟MotionBase的调用频率
+                            stepCount++;
+                            
+                            // 检测周期开始：isWorking从false变为true
+                            if (!cycleStarted && Motion.isWorking)
+                            {
+                                cycleStarted = true;
+                                LogAuto.Notify($"第 {actionTestLoopCount} 次循环已启动", (int)MachineStation.主监控, MotionLogLevel.Info);
+                            }
+                            
+                            // 检测周期完成：isWorking从true变回false（表示已到达Completed并回到Start）
+                            if (cycleStarted && !Motion.isWorking)
+                            {
+                                LogAuto.Notify($"第 {actionTestLoopCount} 次循环完成，共执行 {stepCount} 步", (int)MachineStation.主监控, MotionLogLevel.Info);
+                                break;
+                            }
+                        }
+                        
+                        if (stepCount >= maxSteps)
+                        {
+                            LogAuto.Notify($"第 {actionTestLoopCount} 次循环超时（执行了{stepCount}步），可能陷入死循环或等待超时", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                            Motion.isWorking = false;
+                            break;
+                        }
+                        
+                        // 循环间隔
+                        Thread.Sleep(500);
+                    }
+
+                    LogAuto.Notify($"========== 动作测试完成，共执行 {actionTestLoopCount} 次 ==========", (int)MachineStation.主监控, MotionLogLevel.Info);
+                }
+                catch (Exception ex)
+                {
+                    LogAuto.Notify($"动作测试异常：{ex.Message}\n{ex.StackTrace}", (int)MachineStation.主监控, MotionLogLevel.Alarm);
+                }
+                finally
+                {
+                    Motion.isTestMode = false; // 重置测试模式
+                    Motion.isWorking = false;  // 重置工作状态
+                    isActionTesting = false;
+                    actionTestLoopCount = 0;
+                    actionTestTargetCount = 0;
+                }
+            });
+        }
+
+        // 添加超时时间（秒）而不是步数
+        //int maxTimeoutSeconds = 60; // 60秒超时
+        //var startTime = DateTime.Now;
+
+        //while ((DateTime.Now - startTime).TotalSeconds<maxTimeoutSeconds && isActionTesting)
+        //{
+        //    testMotion.StepCycle1(ref dbTime);
+        //    Thread.Sleep(50);
+    
+        //    if (cycleStarted && !Motion.isWorking)
+        //    {
+        //        LogAuto.Notify($"第 {actionTestLoopCount} 次循环完成，耗时 {(DateTime.Now - startTime).TotalSeconds:F2} 秒");
+        //        break;
+        //    }
+        //}
+
+///
+/// <summary>
+/// 停止动作测试
+/// </summary>
+public void StopActionTest()
+        {
+            if (isActionTesting)
+            {
+                isActionTesting = false;
+                LogAuto.Notify("正在停止动作测试...", (int)MachineStation.主监控, MotionLogLevel.Info);
+            }
+        }
+
         private string SubSN(string str)
         {
             if (str.Contains("SN="))

@@ -28,7 +28,7 @@ namespace Cowain_AutoMotion.Flow.Common
             get { return force; }
             set { force = value; }
         }
-        public ushort position = 1650;
+        public ushort position = 1200;
         public ushort Position
         {
             get { return position; }
@@ -511,14 +511,36 @@ namespace Cowain_AutoMotion.Flow.Common
         /// </summary>
         /// <param name="position">目标位置（单位：0.01mm，例如2600表示26.00mm）</param>
         /// <param name="speed">速度（0-100，100为最高速度）</param>
-        /// <param name="force">力矩（0-100，100为最大力矩）</param>
+        /// <param name="forceInNewtons">力矩（单位：牛，范围0-15N，最大力15牛）</param>
         /// <returns>是否成功</returns>
-        public bool MoveWithParams(ushort position, ushort speed, ushort force)
+        public bool MoveWithParams(ushort position, ushort speed, double forceInNewtons)
         {
             try
             {
+                // 将牛转换为百分比：百分比 = (输入的牛 / 15) × 100
+                // 例如：1牛 = (1/15)*100 ≈ 6.67%
+                //      7.5牛 = (7.5/15)*100 = 50%
+                //      15牛 = (15/15)*100 = 100%
+                const double MAX_FORCE_NEWTONS = 15.0; // 夹爪最大力15牛
+                
+                // 限制输入范围
+                if (forceInNewtons < 0) forceInNewtons = 0;
+                if (forceInNewtons > MAX_FORCE_NEWTONS) forceInNewtons = MAX_FORCE_NEWTONS;
+                
+                // 转换为百分比
+                double forcePercentage = (forceInNewtons / MAX_FORCE_NEWTONS) * 100.0;
+                
+                // 转换为ushort（四舍五入）
+                ushort forceValue = (ushort)Math.Round(forcePercentage);
+                
+                // 确保在0-100范围内
+                if (forceValue > 100) forceValue = 100;
+                
+                LogAuto.Notify($"力矩转换：{forceInNewtons:F2}N → {forcePercentage:F2}% → {forceValue}", 
+                    (int)MachineStation.主监控, MotionLogLevel.Info);
+                
                 // 写入4个寄存器：位置(0x0FA2)、速度(0x0FA3)、力矩(0x0FA4)、触发(0x0FA5)
-                ushort[] data = new ushort[] { position, speed, force, 0x0001 };
+                ushort[] data = new ushort[] { position, speed, forceValue, 0x0001 };
                 _modbusMaster.WriteMultipleRegisters(SlaveAddress, POSITION_REG, data);
                 return true;
             }
@@ -530,60 +552,60 @@ namespace Cowain_AutoMotion.Flow.Common
         }
 
         /// <summary>
-        /// 全速全力关闭到指定位置
+        /// 全速全力关闭到指定位置（15牛最大力）
         /// </summary>
         /// <param name="position">目标位置（单位：0.01mm）</param>
         /// <returns>是否成功</returns>
         public bool CloseToPosition(ushort position)
         {
-            return MoveWithParams(position, 100, 100);
+            return MoveWithParams(position, 100, 15.0); // 15牛 = 100%
         }
 
         /// <summary>
-        /// 全速全力打开（到0位置）
+        /// 全速全力打开（到0位置，15牛最大力）
         /// </summary>
         /// <returns>是否成功</returns>
         public bool OpenToZero()
         {
-            return MoveWithParams(0, 100, 100);
+            return MoveWithParams(0, 100, 15.0); // 15牛 = 100%
         }
 
         /// <summary>
-        /// 半力全速夹取到指定位置（力矩50，速度100）
+        /// 半力全速夹取到指定位置（7.5牛，速度100）
         /// </summary>
         /// <param name="position">目标位置（单位：0.01mm，例如2600=26.00mm）</param>
         /// <returns>是否成功</returns>
         public bool HalfForceFullSpeedClose(ushort position)
         {
-            return MoveWithParams(position, 100, 50);
+            return MoveWithParams(position, 100, 7.5); // 7.5牛 = 50%
         }
 
         /// <summary>
-        /// 低力全速夹取到指定位置（力矩20，速度100）
+        /// 低力全速夹取到指定位置（3牛，速度100）
         /// </summary>
         /// <param name="position">目标位置（单位：0.01mm，例如2600=26.00mm）</param>
         /// <returns>是否成功</returns>
         public bool LowForceFullSpeedClose(ushort position)
         {
-            return MoveWithParams(position, 100, 20);
+            return MoveWithParams(position, 100, 3.0); // 3牛 = 20%
         }
 
         /// <summary>
-        /// 半力全速松开（到0位置，力矩50，速度100）
+        /// 半力全速松开（到0位置，7.5牛，速度100）
         /// </summary>
         /// <returns>是否成功</returns>
         public bool HalfForceFullSpeedOpen()
         {
-            return MoveWithParams(0, 100, 50);
+            return MoveWithParams(0, 100, 7.5); // 7.5牛 = 50%
         }
 
         /// <summary>
-        /// 低力全速松开（到0位置，力矩20，速度100）
+        /// 低力全速松开（到0位置，3牛，速度100）
         /// </summary>
         /// <returns>是否成功</returns>
         public bool LowForceFullSpeedOpen()
         {
-            return MoveWithParams(0, 100, 20);
+            return MoveWithParams(0, 100, 3.0); // 3牛 = 20%
         }
 
         #endregion
@@ -599,16 +621,22 @@ namespace Cowain_AutoMotion.Flow.Common
             try
             {
                 // 读取0x1194-0x1199共6个寄存器
-                ushort[] data = _modbusMaster.ReadInputRegisters(SlaveAddress, STATUS_REG, 3);
+                ushort[] data = _modbusMaster.ReadInputRegisters(SlaveAddress, STATUS_REG, 6);
+                
+                // 将力矩百分比转换为实际牛值
+                // 公式：牛 = (百分比 / 100) × 15
+                const double MAX_FORCE_NEWTONS = 15.0; // 夹爪最大力15牛
+                ushort forcePercentage = data[5];      // 读取的百分比值（0-100）
+                double forceInNewtons = (forcePercentage / 100.0) * MAX_FORCE_NEWTONS;
                 
                 return new GripperStatus
                 {
-                    InitStatus = data[0],      // 0x1194: 初始化状态
-                    FaultCode = data[1],       // 0x1195: 故障码
-                    GripState = data[2],       // 0x1196: 夹持状态
-                    //CurrentPosition = data[3], // 0x1197: 当前位置
-                    //CurrentSpeed = data[4],    // 0x1198: 当前速度
-                    //CurrentForce = data[5]     // 0x1199: 当前力矩
+                    InitStatus = data[0],           // 0x1194: 初始化状态
+                    FaultCode = data[1],            // 0x1195: 故障码
+                    GripState = data[2],            // 0x1196: 夹持状态
+                    CurrentPosition = data[3],      // 0x1197: 当前位置（单位：0.01mm）
+                    CurrentSpeed = data[4],         // 0x1198: 当前速度（百分比0-100）
+                    CurrentForce = forceInNewtons   // 0x1199: 当前力矩（转换为牛N）
                 };
             }
             catch
@@ -844,13 +872,13 @@ namespace Cowain_AutoMotion.Flow.Common
         public ushort InitStatus { get; set; }      // 初始化状态（0x1194）
         public ushort FaultCode { get; set; }       // 故障码（0x1195）
         public ushort GripState { get; set; }       // 夹持状态（0x1196）
-        public ushort CurrentPosition { get; set; } // 当前位置（0x1197）
-        public ushort CurrentSpeed { get; set; }    // 当前速度（0x1198）
-        public ushort CurrentForce { get; set; }    // 当前力矩（0x1199）
+        public ushort CurrentPosition { get; set; } // 当前位置（0x1197，单位：0.01mm）
+        public ushort CurrentSpeed { get; set; }    // 当前速度（0x1198，百分比0-100）
+        public double CurrentForce { get; set; }    // 当前力矩（单位：牛N，范围0-15N）
 
         public override string ToString()
         {
-            return $"状态={InitStatus}, 故障={FaultCode}, 夹持={GripState}, 位置={CurrentPosition}, 速度={CurrentSpeed}, 力矩={CurrentForce}";
+            return $"状态={InitStatus}, 故障={FaultCode}, 夹持={GripState}, 位置={CurrentPosition}, 速度={CurrentSpeed}, 力矩={CurrentForce:F2}N";
         }
     }
 }

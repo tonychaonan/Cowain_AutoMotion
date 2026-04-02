@@ -173,6 +173,7 @@
     <Compile Include="Flow\1AutoMachine\WorkProcessLoad.cs" />
     <Compile Include="Flow\2Work\AxisCalibration.cs" />
     <Compile Include="Flow\2Work\Mainflow.cs" />
+    <Compile Include="Flow\2Work\Motion.cs" />
     <Compile Include="Flow\2Work\ProductPoint.cs" />
     <Compile Include="Flow\2Work\TestProcess.cs" />
     <Compile Include="Flow\2Work\TimeManage.cs" />

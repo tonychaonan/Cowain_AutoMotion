@@ -548,7 +548,7 @@ namespace Cowain_Form.FormView
 
                 if (MachineDataDefine.miSuMiControl.MoveWithParams(pos, spd, frc))
                 {
-                   
+                    var status = MachineDataDefine.miSuMiControl.ReadDetailedStatus();
                 }
             }
             else
@@ -755,7 +755,8 @@ namespace Cowain_Form.FormView
 
         private void button11_Click(object sender, EventArgs e)
         {
-            HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(false);
+            HardWareControl.getOutputIO(EnumParam_OutputIO.吸真空).SetIO(false);
+            bool bisOpen = HardWareControl.getOutputIO(EnumParam_OutputIO.吸真空).GetValue();// 
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -765,9 +766,9 @@ namespace Cowain_Form.FormView
                 for (int i = 0; i < 37; i++)
                 {
                     HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(true);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(9);
                     HardWareControl.getOutputIO(EnumParam_OutputIO.Opt).SetIO(false);
-                    Thread.Sleep(10);
+                    Thread.Sleep(2);
                 }
             }));
            
@@ -797,6 +798,95 @@ namespace Cowain_Form.FormView
                 {
 
                 }
+            }
+        }
+
+        private void btnMotion1_Click(object sender, EventArgs e)
+        {
+            if (!MachineDataDefine.IsAutoing && MachineDataDefine.pMachine.GetHomeCompleted())
+            {
+                int cycleCount = 1;
+                numericUpDown1.Value = 1;
+                DialogResult dr = MessageBox.Show(
+                    JudgeLanguage.JudgeLag($"将执行动作一，循环次数：{cycleCount}\n\n确认执行吗？"),
+                    JudgeLanguage.JudgeLag("警告"),
+                    MessageBoxButtons.OKCancel);
+
+                if (dr == DialogResult.OK)
+                {
+                    LogAuto.Notify($"动作一开始执行，循环次数：{cycleCount}", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    WorkProcessLoad.instance.workProcess_Mainflow.ExecuteActionCycle(cycleCount, 1);
+                }
+            }
+            else
+            {
+                MessageBox.Show("设备未回原点或正在自动运行中，无法执行动作测试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnMotion2_Click(object sender, EventArgs e)
+        {
+            if (!MachineDataDefine.IsAutoing && MachineDataDefine.pMachine.GetHomeCompleted())
+            {
+                int cycleCount = (int)numericUpDown1.Value;
+                DialogResult dr = MessageBox.Show(
+                    JudgeLanguage.JudgeLag($"将执行动作二，循环次数：{cycleCount}\n\n确认执行吗？"),
+                    JudgeLanguage.JudgeLag("警告"),
+                    MessageBoxButtons.OKCancel);
+
+                if (dr == DialogResult.OK)
+                {
+                    LogAuto.Notify($"动作二开始执行，循环次数：{cycleCount}", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    WorkProcessLoad.instance.workProcess_Mainflow.ExecuteActionCycle(cycleCount, 2);
+                }
+            }
+            else
+            {
+                MessageBox.Show("设备未回原点或正在自动运行中，无法执行动作测试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnMotion3_Click(object sender, EventArgs e)
+        {
+            if (!MachineDataDefine.IsAutoing && MachineDataDefine.pMachine.GetHomeCompleted())
+            {
+                int cycleCount = (int)numericUpDown1.Value;
+                DialogResult dr = MessageBox.Show(
+                    JudgeLanguage.JudgeLag($"将执行动作三，循环次数：{cycleCount}\n\n确认执行吗？"),
+                    JudgeLanguage.JudgeLag("警告"),
+                    MessageBoxButtons.OKCancel);
+
+                if (dr == DialogResult.OK)
+                {
+                    LogAuto.Notify($"动作三开始执行，循环次数：{cycleCount}", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    WorkProcessLoad.instance.workProcess_Mainflow.ExecuteActionCycle(cycleCount, 3);
+                }
+            }
+            else
+            {
+                MessageBox.Show("设备未回原点或正在自动运行中，无法执行动作测试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnMotion4_Click(object sender, EventArgs e)
+        {
+            if (!MachineDataDefine.IsAutoing && MachineDataDefine.pMachine.GetHomeCompleted())
+            {
+                int cycleCount = (int)numericUpDown1.Value;
+                DialogResult dr = MessageBox.Show(
+                    JudgeLanguage.JudgeLag($"将执行动作四，循环次数：{cycleCount}\n\n确认执行吗？"),
+                    JudgeLanguage.JudgeLag("警告"),
+                    MessageBoxButtons.OKCancel);
+
+                if (dr == DialogResult.OK)
+                {
+                    LogAuto.Notify($"动作四开始执行，循环次数：{cycleCount}", (int)MachineStation.主监控, MotionLogLevel.Info);
+                    WorkProcessLoad.instance.workProcess_Mainflow.ExecuteActionCycle(cycleCount, 4);
+                }
+            }
+            else
+            {
+                MessageBox.Show("设备未回原点或正在自动运行中，无法执行动作测试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
